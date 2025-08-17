@@ -1,83 +1,77 @@
-<section class="bg-white">
-<div class="container mx-auto px-4 py-16">
-      
-        <header class="text-center mb-12">
-            <h1 class="font-fira-code text-4xl md:text-5xl font-bold text-gray-800">
-                &lt;BLOGS / &gt;
-            </h1>
-            <p class="text-gray-500 mt-2">// Our latest thoughts and discoveries</p>
-        </header>
+---
+import blogs from "../content/blogs.json"; 
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+type ColorKey = "blue" | "green" | "red";
+const colorCycle: ColorKey[] = ["blue", "green", "red"];
 
-            <div class="group bg-white border border-gray-200 border-t-4 border-t-blue-500 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <a href="#">
-                    <h2 class="font-fira-code text-2xl font-bold text-gray-900">AI applications in cyber security</h2>
-                    <p class="text-sm text-gray-500 mt-2 mb-4">// by carl pinto • jul 00, 0000</p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Exploring how machine learning algorithms are becoming the first line of defense against sophisticated cyber threats...
-                    </p>
-                    <span class="font-fira-code text-blue-600 mt-6 inline-block group-hover:underline">read_more &rarr;</span>
-                </a>
+const colorMap: Record<ColorKey, { border: string; text: string }> = {
+  blue: {
+    border: "border-t-blue-500",
+    text: "text-blue-600",
+  },
+  green: {
+    border: "border-t-green-500",
+    text: "text-green-600",
+  },
+  red: {
+    border: "border-t-red-500",
+    text: "text-red-600",
+  },
+};
+
+const getColorForIndex = (index: number): ColorKey => {
+  return colorCycle[index % colorCycle.length];
+};
+---
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-major-mono {
+            font-family: 'Major Mono Display', monospace;
+        }
+        .font-jetbrains-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <header class="text-center mb-12">
+
+      <h1 class="font-fira-code text-4xl md:text-5xl font-bold text-gray-800">
+        <span class="text-blue-600">&lt;</span> BLOGS <span class="text-green-600">/</span> <span class="text-red-600">&gt;</span>
+      </h1>
+      <p class="font-jetbrains-mono text-gray-500 mt-3 text-sm">// Our latest thoughts and discoveries</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        blogs.map((blog, index) => {
+          const colorName = getColorForIndex(index);
+          const borderColor = colorMap[colorName].border;
+          const textColor = colorMap[colorName].text;
+
+          return (
+            <div class={`group bg-white border border-gray-200 border-t-4 ${borderColor} p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}>
+              <a href={blog.link} target="_blank" rel="noopener noreferrer">
+                <h2 class="font-jetbrains-mono text-2xl font-bold text-gray-900">{blog.title}</h2>
+                <p class="font-jetbrains-mono text-sm text-gray-500 mt-2 mb-4">// by {blog.author} • {blog.date}</p>
+                <p class="text-gray-700 leading-relaxed">{blog.excerpt}</p>
+                <span class={`font-jetbrains-mono ${textColor} mt-6 inline-block group-hover:underline`}>
+                  read_more &rarr;
+                </span>
+              </a>
             </div>
-
-            <div class="group bg-white border border-gray-200 border-t-4 border-t-green-500 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <a href="#">
-                    <h2 class="font-fira-code text-2xl font-bold text-gray-900">Reinforcement Learning in LLMs</h2>
-                    <p class="text-sm text-gray-500 mt-2 mb-4">// by aswil colaco • jul 00, 0000</p>
-                    <p class="text-gray-700 leading-relaxed">
-                        A deep dive into how Reinforcement Learning from Human Feedback (RLHF) is shaping the future of large language models...
-                    </p>
-                    <span class="font-fira-code text-green-600 mt-6 inline-block group-hover:underline">read_more &rarr;</span>
-                </a>
-            </div>
-
-            <div class="group bg-white border border-gray-200 border-t-4 border-t-red-500 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <a href="#">
-                    <h2 class="font-fira-code text-2xl font-bold text-gray-900">FlutterFlow Workshop</h2>
-                    <p class="text-sm text-gray-500 mt-2 mb-4">// by aadithya rao • Jul 00, 0000</p>
-                    <p class="text-gray-700 leading-relaxed">
-                        A recap of our recent workshop on building stunning cross-platform apps with FlutterFlow, complete with resources and tips...
-                    </p>
-                    <span class="font-fira-code text-red-600 mt-6 inline-block group-hover:underline">read_more &rarr;</span>
-                </a>
-            </div>
-            <div class="group bg-white border border-gray-200 border-t-4 border-t-blue-500 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <a href="#">
-                    <h2 class="font-fira-code text-2xl font-bold text-gray-900">AI applications in cyber security</h2>
-                    <p class="text-sm text-gray-500 mt-2 mb-4">// by carl pinto • jul 00, 0000</p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Exploring how machine learning algorithms are becoming the first line of defense against sophisticated cyber threats...
-                    </p>
-                    <span class="font-fira-code text-blue-600 mt-6 inline-block group-hover:underline">read_more &rarr;</span>
-                </a>
-            </div>
-
-            <div class="group bg-white border border-gray-200 border-t-4 border-t-green-500 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <a href="#">
-                    <h2 class="font-fira-code text-2xl font-bold text-gray-900">Reinforcement Learning in LLMs</h2>
-                    <p class="text-sm text-gray-500 mt-2 mb-4">// by aswil colaco • jul 00, 0000</p>
-                    <p class="text-gray-700 leading-relaxed">
-                        A deep dive into how Reinforcement Learning from Human Feedback (RLHF) is shaping the future of large language models...
-                    </p>
-                    <span class="font-fira-code text-green-600 mt-6 inline-block group-hover:underline">read_more &rarr;</span>
-                </a>
-            </div>
-
-            <div class="group bg-white border border-gray-200 border-t-4 border-t-red-500 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <a href="#">
-                    <h2 class="font-fira-code text-2xl font-bold text-gray-900">FlutterFlow Workshop</h2>
-                    <p class="text-sm text-gray-500 mt-2 mb-4">// by aadithya rao • Jul 00, 0000</p>
-                    <p class="text-gray-700 leading-relaxed">
-                        A recap of our recent workshop on building stunning cross-platform apps with FlutterFlow, complete with resources and tips...
-                    </p>
-                    <span class="font-fira-code text-red-600 mt-6 inline-block group-hover:underline">read_more &rarr;</span>
-                </a>
-            </div>
-
-        </div>
+          );
+        })
+      }
     </div>
-
-</body>
-</html>
+  </div>
 </section>
