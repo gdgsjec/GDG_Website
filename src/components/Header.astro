@@ -6,29 +6,29 @@ import GDG_LOGO from '../assets/GDG_Logo.png';
   <div id="navbar" class="w-full flex items-center h-20 px-4 text-black transition-all duration-500">
 
     <div class="flex items-center h-20 max-w-[1240px] w-full mx-auto px-4 text-black">
-      <img src={GDG_LOGO.src} alt="GDG Logo" class="w-15 h-10 mr-2" />
+      <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-15 h-10 p-2 mr-2 bg-black" />
       <span class="font-bold text-xl">GDG</span>
 
-      <ul class="hidden md:flex mx-auto space-x-4" style="font-family: 'Roboto', sans-serif;">
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-300">
+      <ul class="hidden md:flex mx-auto space-x-4" style="font-family: Roboto Condensed, sans-serif;">
+        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
           START
           <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
         </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-300">
+        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
           ABOUT
           <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
         </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-300">
+        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
           RESOURCES
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-700 group-hover:w-full"></span>
         </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-300">
+        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
           BLOG
           <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
         </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-300">
+        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-400">
           CONTACT
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-600 group-hover:w-full"></span>
         </li>
       </ul>
 
@@ -48,8 +48,11 @@ import GDG_LOGO from '../assets/GDG_Logo.png';
 
   <nav id="mobile-menu"
        class="fixed left-[-100%] top-0 w-[60%] h-full bg-white/30 backdrop-blur-md shadow-lg z-50 font-sans text-black transition-all duration-500 md:hidden">
-    <h1 class="font-bold text-xl m-4">GDG</h1>
-    <ul class="p-4" style="font-family: 'Roboto', sans-serif;">
+   <div class="flex items-center m-4">
+    <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 ml-2 bg-black" />
+  </div>
+    <ul class="p-4" style="font-family: Roboto Condensed, sans-serif;">
+      
       <li class="p-4 relative border-b border-[#DCC5B2]">START</li>
       <li class="p-4 relative border-b border-[#DCC5B2]">ABOUT</li>
       <li class="p-4 relative border-b border-[#DCC5B2]">RESOURCES</li>
