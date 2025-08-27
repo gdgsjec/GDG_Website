@@ -1,60 +1,78 @@
 ---
+// @ts-ignore - TS6133: 'gdg_on_campus_sjec' is declared but its value is never read.
 import gdg_on_campus_sjec from '../assets/gdg_on_campus_sjec.png';
+import "../styles/global.css";
 ---
-<footer class = "page-footer">
-  <div class="container footer-top">
-     ::before
-    <div class="col-md-4 left logo-footer-column"> 
-     <img src=" "
-    </div>
-    <div class ="col-md-4 left Nav">   </div>
-    <div class ="col-md-4 left"> </div>
-
-
-
-
-
-
-
-   ::after
-  </div>
-  <div class ="fooer-bottom">
-
-
-
-
-
-  </div>
-<div class ="footer-container">
-   <!--navigation links  -->
-   <nav class ="footer-nav">
-     <a href="#Home"> Home </a>
-     <a href="#about us"> About Us </a>
-     <a href="#Events"> Events </a>
-     <a href="#Teams"> Teams </a>
-     <a href="#Blogs"> Blogs </a>
-   </nav>
-    </div>
-  
-    <!--social media icons -->
-    <div class="social-icons">
-    <a href="https://github.com/gdgsjec " target="_blank">
-        <img src=" " alt="Github">
-    </a>
-    <a href="https://www.instagram.com/gdg.sjec/ " target="_blank">
-    <img src=" " alt="Instagram" >   
-    </a>   
-     <a href ="https://www.linkedin.com/company/gdg-campus-sjec/posts/?feedView=all " target="_blank">
-    <img src=" " alt="LinkedIn">
-    <a href="https://gdscsjec.in/" target="_blank">
-    <img src=" " alt="gdsc">
-    <a href =" " target="_blank">
-    <img src=" " alt="gmail" >
-   </a>
-  </div>
+<!-- left logo -->
+<footer class="flex flex-col items-center gap-4 text-left border-t border-[#d7d7d7] text-[13px] h-auto bg-white text-[#202124] border-[#dadce0] p-4">
+  <div class="flex justify-between items-center bg-white text-[#202124] ">
    
-    <!--CopyRight -->
-
-    <p> &copy; 2025 Google Upcoming Events. All Rights Reserved. </p>
-
+    <div class="col-md-4 left font-bold text-lg logo-footer-column">
+      <img src={gdg_on_campus_sjec.src} alt="gdg_logo" class="w-48 block m1-0"/>
+      <div class="footer-description"></div> 
+    </div>
+    <!--Center : Nav Links -->
+    <div class="col-md-4 left quick links flex-gap-6">
+      <h1>Navigation Links</h1>
+      
+      <ol class="flex  gap-6 list-none">
+        <li>
+          <a href="/src/components/About.astro" class="hover:underline">> About Us</a>
+        </li>
+        <li>
+          <a href="/src/components/Blog.astro" class="hover:underline">> Blogs</a>
+        </li>
+        <li>
+          <a href="/src/components/Team.astro" class="hover:underline">> Team</a>
+        </li>
+        <li>
+          <a href="/src/components/Header.astro" class="hover:underline">> Header</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">>Terms</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">>Privacy</a>
+        </li>
+      </ol>
+    </div>
+   <!--social-links -->
+    <div class="col-md-6 left gap-8 flex space-x-6">
+      <h2>STAY CONNECTED </h2>
+      <ul class="social-links ">
+     <!--Github-->
+          <a class="social-button-icon-github" href="https://github.com/gdgsjec" target="_blank" rel="noopener noreferrer" title="Github">
+            <span class="sr-only">GitHub</span>
+          </a>
+        </li>
+        <!-- Instagram-->
+          <a class="social-button-icon-insta" href="https://www.instagram.com/gdg.sjec/" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <span class="sr-only">Instagram</span>
+          </a>
+        </li>
+        <!-- LinkedIn-->
+          <a class="social-button-icon-linkedin" href="https://www.linkedin.com/company/gdg-campus-sjec/posts/?feedView=all" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <span class="sr-only">LinkedIn</span>       
+           </a>
+          <a class="social-button-icon-Discord" href=" " target="_blank" rel="noopener noreferrer" title="Discord">
+            <span class="sr-only">Discord</span>
+          </a>
+           
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="site-info">
+          <div class="copyright">
+            &copy; {new Date().getFullYear()} Google Developers Group
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<a data-v-b9302bcd="" class="link" href="/" aria-label="Navigate to the Top">Back To Top</a>
+  
 </footer>
