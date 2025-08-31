@@ -1,29 +1,21 @@
 ---
 import blogs from "../content/blogs.json";
 
-type ColorKey = "blue" | "green" | "red";
-const colorCycle: ColorKey[] = ["blue", "green", "red"];
-
-const colorMap: Record<ColorKey, { border: string; text: string }> = {
-  blue: {
-    border: "border-t-blue-500",
-    text: "text-blue-600",
-  },
-  green: {
-    border: "border-t-green-500",
-    text: "text-green-600",
-  },
-  red: {
-    border: "border-t-red-500",
-    text: "text-red-600",
-  },
+// The color configuration is now more streamlined.
+const colorConfig = {
+  blue: { border: "border-t-blue-500", text: "text-blue-600" },
+  green: { border: "border-t-green-500", text: "text-green-600" },
+  red: { border: "border-t-red-500", text: "text-red-600" },
 };
 
-const getColorForIndex = (index: number): ColorKey => {
+const colorCycle = Object.keys(colorConfig);
+
+const getColorForIndex = (index: number) => {
   return colorCycle[index % colorCycle.length];
 };
 
 const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
+const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initialRightCardBlog)) : 'blue';
 ---
 
 <head>
@@ -48,19 +40,16 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
       </h1>
       <p class="font-jetbrains-mono text-gray-500 mt-3 text-sm">// Our latest thoughts and discoveries</p>
     </header>
-
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-25">
-
-      <div class="space-y-8">
+      <div id="left-cards-container" class="space-y-8">
         {
           blogs.slice(0, 3).map((blog, index) => {
             const colorName = getColorForIndex(index);
-            const borderColor = colorMap[colorName].border;
-            const textColor = colorMap[colorName].text;
+            const { border, text } = colorConfig[colorName];
 
             return (
               <div
-                class={`group bg-white border border-gray-200 border-t-4 ${borderColor} p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 blog-card-left`}
+                class={`group bg-white border border-gray-200 border-t-4 ${border} p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 blog-card-left`}
                 data-title={blog.title}
                 data-author={blog.author}
                 data-date={blog.date}
@@ -73,7 +62,7 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
                   <h2 class="font-jetbrains-mono text-2xl font-bold text-gray-900">{blog.title}</h2>
                   <p class="font-jetbrains-mono text-sm text-gray-500 mt-2 mb-4">// by {blog.author} • {blog.date}</p>
                   <p class="text-gray-700 leading-relaxed">{blog.excerpt}</p>
-                  <span class={`font-jetbrains-mono ${textColor} mt-6 inline-block group-hover:underline`}>
+                  <span class={`font-jetbrains-mono ${text} mt-6 inline-block group-hover:underline`}>
                     read_more &rarr;
                   </span>
                 </a>
@@ -82,20 +71,17 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
           })
         }
       </div>
-
-      <!-- Right side: one big card -->
-      {/* This container now centers its child vertically on large screens */}
       <div class="hidden lg:flex lg:items-center">
         {
           initialRightCardBlog && (
-            <div id="right-card" class="group bg-white border border-gray-200 border-t-4 border-blue-500 rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+            <div id="right-card" class={`group bg-white border border-gray-200 border-t-4 ${colorConfig[initialColor].border} rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden`}>
               <a id="right-card-link" href={initialRightCardBlog.link} target="_blank" rel="noopener noreferrer">
                 <img id="right-card-image" src={initialRightCardBlog.img} alt={initialRightCardBlog.title} class="w-full h-64 object-cover" />
                 <div class="p-6">
                   <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900">{initialRightCardBlog.title}</h2>
                   <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
                   <p id="right-card-excerpt" class="text-gray-700 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
-                  <span id="right-card-read-more" class="font-jetbrains-mono text-blue-600 mt-6 inline-block group-hover:underline text-lg">
+                  <span id="right-card-read-more" class={`font-jetbrains-mono ${colorConfig[initialColor].text} mt-6 inline-block group-hover:underline text-lg`}>
                     read_more &rarr;
                   </span>
                 </div>
@@ -107,28 +93,15 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
     </div>
   </div>
 </section>
+<script define:vars={{ colorConfig }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const leftCardsContainer = document.getElementById('left-cards-container');
+    const rightCard = document.getElementById('right-card');
 
-{/* --- The script tag remains the same --- */}
-<script>
-  const colorMap = {
-    blue: {
-      border: "border-t-blue-500",
-      text: "text-blue-600",
-    },
-    green: {
-      border: "border-t-green-500",
-      text: "text-green-600",
-    },
-    red: {
-      border: "border-t-red-500",
-      text: "text-red-600",
-    },
-  };
+    if (!leftCardsContainer || !rightCard) {
+      return;
+    }
 
-  const leftCards = document.querySelectorAll('.blog-card-left');
-  const rightCard = document.getElementById('right-card');
-
-  if (rightCard) {
     const rightCardLink = document.getElementById('right-card-link');
     const rightCardImage = document.getElementById('right-card-image');
     const rightCardTitle = document.getElementById('right-card-title');
@@ -136,20 +109,26 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
     const rightCardExcerpt = document.getElementById('right-card-excerpt');
     const rightCardReadMore = document.getElementById('right-card-read-more');
 
-    leftCards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        const { title, author, date, excerpt, link, color, img } = card.dataset;
-
+    leftCardsContainer.addEventListener('mouseenter', (event) => {
+      const card = event.target.closest('.blog-card-left');
+      if (!card) {
+        return;
+      }
+      const { title, author, date, excerpt, link, color, img } = card.dataset;
+      const theme = colorConfig[color];
+      if (theme) {
         rightCardTitle.textContent = title;
         rightCardMeta.textContent = `// by ${author} • ${date}`;
         rightCardExcerpt.textContent = excerpt;
-        rightCardLink.href = link;
         rightCardImage.src = img;
         rightCardImage.alt = title;
 
-        rightCard.className = rightCard.className.replace(/border-t-(blue|green|red)-500/, colorMap[color].border);
-        rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red)-600/, colorMap[color].text);
-      });
-    });
-  }
+        if (rightCardLink) {
+          rightCardLink.href = link;
+        }
+        rightCard.className = rightCard.className.replace(/border-t-(blue|green|red)-500/, theme.border);
+        rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red)-600/, theme.text);
+      }
+    }, true); 
+  });
 </script>
