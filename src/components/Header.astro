@@ -1,63 +1,63 @@
 ---
-import GDG_LOGO from '../assets/GDG_Logo.png';
+import GDG_LOGO from '../assets/GDG_LOGO.png';
 ---
 
 <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
   <div id="navbar" class="w-full flex items-center h-17 px-4 text-black transition-all duration-500">
+    <div class="flex items-center justify-between h-20 max-w-[1240px] w-full mx-auto px-4 text-black">
+      <div class="flex-shrink-0">
+        <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 cursor-pointer" />
+      </div>
 
-    <div class="flex items-center h-20 max-w-[1240px] w-full mx-auto px-4 text-black">
-      <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 mr-2 bg-black" />
-      <span class="font-bold text-xl">GDG</span>
-
-      <ul class="hidden md:flex mx-auto space-x-4" style="font-family: Roboto Condensed, sans-serif;">
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
-          START
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
-        </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+      <ul class="hidden md:flex space-x-6 text-sm font-medium" style="font-family: Roboto Condensed, sans-serif;">
+        <li class="p-2 relative group cursor-pointer text-black hover:text-[#00df9a] transition-colors duration-400">
           ABOUT
           <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
         </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
-          RESOURCES
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-700 group-hover:w-full"></span>
-        </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
-          BLOG
+        <li class="p-2 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+          BLOGS
           <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
         </li>
-        <li class="p-4 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-400">
-          CONTACT
+        <li class="p-2 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+          TEAM
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-700 group-hover:w-full"></span>
+        </li>
+        <li class="p-2 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+          EVENTS
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
+        </li>
+        <li class="p-2 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-400">
+          PROJECTS
           <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-600 group-hover:w-full"></span>
         </li>
       </ul>
 
-      <button id="menu-btn" class="md:hidden z-50 ml-auto">
-        <svg id="hamburger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="close" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
+      <div class="flex items-center space-x-4">
+        <button id="menu-btn" class="md:hidden z-50">
+          <svg id="hamburger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 
-
   <nav id="mobile-menu"
        class="fixed left-[-100%] top-0 w-[60%] h-full bg-white/30 backdrop-blur-md shadow-lg z-50 font-sans text-black transition-all duration-500 md:hidden">
-   <div class="flex items-center m-4">
-    <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 ml-2 bg-black" />
-  </div>
+    <div class="flex items-center m-4">
+      <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 ml-2" />
+    </div>
     <ul class="p-4" style="font-family: Roboto Condensed, sans-serif;">
-      
-      <li class="p-4 relative border-b border-[#DCC5B2]">START</li>
       <li class="p-4 relative border-b border-[#DCC5B2]">ABOUT</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">RESOURCES</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">BLOG</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">CONTACT</li>
+      <li class="p-4 relative border-b border-[#DCC5B2]">BLOGS</li>
+      <li class="p-4 relative border-b border-[#DCC5B2]">TEAM</li>
+      <li class="p-4 relative border-b border-[#DCC5B2]">EVENTS</li>
+      <li class="p-4 relative border-b border-[#DCC5B2]">PROJECTS</li>
     </ul>
   </nav>
 </header>
@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const close = document.getElementById("close");
   const navbar = document.getElementById("navbar");
 
- 
   if (btn) {
     btn.addEventListener("click", () => {
       mobileMenu.classList.toggle("left-0");
@@ -80,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 20) {
       navbar.classList.add("backdrop-blur-md", "bg-white/30", "shadow-lg");
