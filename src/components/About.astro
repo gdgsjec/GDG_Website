@@ -1,30 +1,75 @@
-<section class="bg-white w-full h-auto">
-<div style=" font-family: monospace;" class="text-blue-800 text-[30px] font-bold text-center p-4 m-4 hover:text-blue-500 transition duration-300 sm:text-[35px] md:text-[50px]"> <span class="text-yellow-300">&lt; </span>ABOUT US<span class="text-yellow-300"> /&gt; </span></div>
+---
+import members from '../assets/members.png';
+import session from '../assets/session.png';
+import speakers from '../assets/speakers.png';
+import workshop from '../assets/workshop.png';
+---
 
-<div class="flex flex-col flex-wrap items-center justify-center">
-<div class="max-w-7xl">
-<div class="text-md m-2 p-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sunt dolores perferendis dolor, dolorum neque debitis culpa ut inventore provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, nisi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod voluptates praesentium illum, excepturi quaerat enim modi velit harum distinctio beatae eius dolorum porro officia adipisci corporis veritatis debitis. Harum, minus. </div>
+<body>
+<section class="bg-white w-full h-auto flex flex-col justify-center items-center" id="aboutUs">
+	<div class="flex flex-col flex-wrap justify-center items-center">
+	<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4 hover:text-[#57caff] transition duration-300 sm:text-[35px] md:text-[50px]"> Our Impact </div>
 
-<div class="flex flex-col-reverse justify-around items-center gap-1.5 p-4 md:flex-row">
-	<img src="https://images.pexels.com/photos/32868540/pexels-photo-32868540.jpeg" alt="image" title="gdg_img" class="rounded-2xl w-[300px] cursor-pointer hover:scale-105 transition-transform duration-300 md:rounded-2xl md:w-3xs">
-	<div class="flex flex-wrap flex-col p-4 m-2">
-		<h1 class="pb-3 text-xl text-red-500 text-shadow-md border-b-2 border-b-amber-200">Lorem, ipsum : </h1>
-<p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores ipsum beatae assumenda, non magni laudantium soluta nihil placeat sunt ad ipsam quae dolorum voluptatem vitae provident veniam maiores. Dignissimos aliquid quidem enim dolore nihil ea pariatur nam omnis hic, inventore quam, odio nobis iste eius soluta consectetur exercitationem quos!</p>
-</div></div>
+	<div class="max-w-7xl">
+	<p class="text-lg p-2 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
+	</div>
 
-<div class="flex flex-col justify-around items-center gap-1.5  p-4  md:flex-row ">
-	<div class="flex flex-wrap flex-col p-4 m-2">
-		<h1 class="pb-3 text-xl text-green-700 text-shadow-md border-b-2 border-b-amber-200">Lorem, ipsum : </h1>
-<p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores ipsum beatae assumenda, non magni laudantium soluta nihil placeat sunt ad ipsam quae dolorum voluptatem vitae provident veniam maiores. Dignissimos aliquid quidem enim dolore nihil ea pariatur nam omnis hic, inventore quam, odio nobis iste eius soluta consectetur exercitationem quos!</p>
-	<ul  class="p-4 m-3 text-gray-600"> Lorem, ipsum dolor :
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
+<div class="flex flex-wrap gap-8 justify-center items-center">
+	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 card1">
+		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
+		<div class="text-[#ea4335] font-extrabold text-3xl">600+</div>
+		<div class="text-lg">Active Members</div>
+	</div>
+
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 card2">
+		<div class="m-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
+		<div class="text-[#ffD427] font-extrabold text-3xl">20+</div>
+		<div class="text-lg">Sessions Conducted</div>
+	</div>
+
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 card3">
+		<div class="m-3"><img src={speakers.src} alt="gdg_speakers" width="40px" height="40px"></div>
+		<div class="text-[#34a853] font-extrabold text-3xl">12+</div>
+		<div class="text-lg">Expert Speakers</div>
+	</div>
+
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 card4">
+		<div class="m-3"><img src={workshop.src} alt="gdg_workshop" width="40px" height="40px"></div>
+		<div class="text-[#4285f4] font-extrabold text-3xl">10+</div>
+		<div class="text-lg text-center">Hands-on Workshops</div>
+	</div>
 </div>
-	<img src="https://images.pexels.com/photos/32868540/pexels-photo-32868540.jpeg" alt="image" title="gdg_img" class="rounded-2xl w-[300px] cursor-pointer hover:scale-105 transition-transform duration-300 md:rounded-2xl md:w-3xs">
 </div>
-</div>
-</div>
-</section> 
 
 
+<div class="flex flex-col justify-center items-center">
+	<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4 hover:text-[#57caff] transition duration-300 sm:text-[35px] md:text-[50px]">ABOUT US</div>
+	<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cum dolores minus soluta reprehenderit. Voluptatum repellendus eum ullam minima dolorum optio soluta mollitia, architecto aspernatur temporibus numquam nihil magni incidunt perferendis rerum iure officiis perspiciatis ut tempore impedit. Debitis ytj uj jjs656 gae4 tenetur, ex quidem natus soluta vitae nisi repudiandae doloremque alias. Eius.kjfh hvnl cvs</p>
+	<p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, esse fugit suscipit nemo, rem aliquam cupiditate vel eius labore dolor facere. Esse recusandae rerum nostrum, illum consectetur consequuntur fugiat optio.</p>
+</div>
+
+<div>
+<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4 hover:text-[#57caff] transition duration-300 sm:text-[35px] md:text-[50px]">OUR MISSION</div>
+<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos dolorem, facere commodi praesentium neque necessitatibus laborum impedit recusandae incidunt.</p>
+
+<div class="flex flex-wrap gap-8 justify-center items-center">
+	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap border-l-6 border-[#ea4335] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 cards1">
+		<div class="text-[#ea4335] font-bold text-2xl m-2.5">Lorem ipsum dolor sit. </div>
+		<div class="text-lg"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ullam quam incidunt odit, iure at provident et autem esse facilis delectus tempora omnis. Assumenda id in, cum explicabo animi distinctio. </div>
+	</div>
+
+	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap border-l-6 border-[#ffD427] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 cards2">
+		<div class="text-[#ffD427] font-bold text-2xl m-2.5">Lorem ipsum & dolor sit.</div>
+		<div class="text-lg"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ullam quam incidunt odit, iure at provident et autem esse facilis delectus tempora omnis. Assumenda id in, cum explicabo animi distinctio. </div>
+	</div>
+
+	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap border-l-6 border-[#34a853] rounded-2xl mt-4 p-3 hover:scale-102 transition-transform duration-300 cards3">
+		<div class="text-[#34a853] font-extrabold text-2xl m-2.5">Lorem ipsum dolor sit.</div>
+		<div class="text-lg"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ullam quam incidunt odit, iure at provident et autem esse facilis delectus tempora omnis. Assumenda id in, cum explicabo animi distinctio.greuy tuj4oqer8b; 9ty irhiogu/h jtkhgk hoiguiog jrknhfkolh </div>
+	</div>
+</div>
+</div>
+
+</div>
+</section>
+</body>
