@@ -23,7 +23,6 @@ const getColorForIndex = (index: number): ColorKey => {
   return colorCycle[index % colorCycle.length];
 };
 
-// Assuming the first blog post to show on the right is blogs[3] if it exists, otherwise the first one.
 const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
 ---
 
@@ -51,7 +50,7 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-25">
-      <!-- Left side: stacked 3 cards -->
+
       <div class="space-y-8">
         {
           blogs.slice(0, 3).map((blog, index) => {
@@ -84,16 +83,19 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
         }
       </div>
 
-      <div>
+      <!-- Right side: one big card -->
+      {/* This container now centers its child vertically on large screens */}
+      <div class="hidden lg:flex lg:items-center">
         {
           initialRightCardBlog && (
-            <div id="right-card" class="group bg-white border border-gray-200 border-t-4 border-blue-500 rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">  <a id="right-card-link" href={initialRightCardBlog.link} target="_blank" rel="noopener noreferrer">
+            <div id="right-card" class="group bg-white border border-gray-200 border-t-4 border-blue-500 rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+              <a id="right-card-link" href={initialRightCardBlog.link} target="_blank" rel="noopener noreferrer">
                 <img id="right-card-image" src={initialRightCardBlog.img} alt={initialRightCardBlog.title} class="w-full h-64 object-cover" />
-                <div class="p-8">
+                <div class="p-6">
                   <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900">{initialRightCardBlog.title}</h2>
                   <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
                   <p id="right-card-excerpt" class="text-gray-700 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
-                  <span id="right-card-read-more" class="font-jetbrains-mono text-blue-600 mt-8 inline-block group-hover:underline text-lg">
+                  <span id="right-card-read-more" class="font-jetbrains-mono text-blue-600 mt-6 inline-block group-hover:underline text-lg">
                     read_more &rarr;
                   </span>
                 </div>
@@ -106,6 +108,7 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
   </div>
 </section>
 
+{/* --- The script tag remains the same --- */}
 <script>
   const colorMap = {
     blue: {
@@ -124,29 +127,29 @@ const initialRightCardBlog = blogs.length > 3 ? blogs[3] : blogs[0];
 
   const leftCards = document.querySelectorAll('.blog-card-left');
   const rightCard = document.getElementById('right-card');
-  const rightCardLink = document.getElementById('right-card-link');
-  const rightCardImage = document.getElementById('right-card-image');
-  const rightCardTitle = document.getElementById('right-card-title');
-  const rightCardMeta = document.getElementById('right-card-meta');
-  const rightCardExcerpt = document.getElementById('right-card-excerpt');
-  const rightCardReadMore = document.getElementById('right-card-read-more');
 
-  leftCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      // Destructure all data attributes from the hovered card
-      const { title, author, date, excerpt, link, color, img } = card.dataset;
+  if (rightCard) {
+    const rightCardLink = document.getElementById('right-card-link');
+    const rightCardImage = document.getElementById('right-card-image');
+    const rightCardTitle = document.getElementById('right-card-title');
+    const rightCardMeta = document.getElementById('right-card-meta');
+    const rightCardExcerpt = document.getElementById('right-card-excerpt');
+    const rightCardReadMore = document.getElementById('right-card-read-more');
 
-      // Update the content
-      rightCardTitle.textContent = title;
-      rightCardMeta.textContent = `// by ${author} • ${date}`;
-      rightCardExcerpt.textContent = excerpt;
-      rightCardLink.href = link;
-      rightCardImage.src = img;
-      rightCardImage.alt = title; // Update alt text for accessibility
+    leftCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const { title, author, date, excerpt, link, color, img } = card.dataset;
 
-      // Update colors
-      rightCard.className = rightCard.className.replace(/border-t-(blue|green|red)-500/, colorMap[color].border);
-      rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red)-600/, colorMap[color].text);
+        rightCardTitle.textContent = title;
+        rightCardMeta.textContent = `// by ${author} • ${date}`;
+        rightCardExcerpt.textContent = excerpt;
+        rightCardLink.href = link;
+        rightCardImage.src = img;
+        rightCardImage.alt = title;
+
+        rightCard.className = rightCard.className.replace(/border-t-(blue|green|red)-500/, colorMap[color].border);
+        rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red)-600/, colorMap[color].text);
+      });
     });
-  });
+  }
 </script>
