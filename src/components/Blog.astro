@@ -8,9 +8,14 @@ const colorConfig = {
   yellow: { border: "border-t-amber-500", text: "text-amber-600" },
 };
 
-const colorCycle = Object.keys(colorConfig);
+// ✅ STEP 1: Define a specific type for the keys of our config object.
+type Color = keyof typeof colorConfig;
 
-const getColorForIndex = (index: number) => {
+// ✅ STEP 2: Assert that the array of keys matches our specific Color type.
+const colorCycle = Object.keys(colorConfig) as Color[];
+
+// ✅ STEP 3: Specify that our function returns one of the valid Color keys.
+const getColorForIndex = (index: number): Color => {
   return colorCycle[index % colorCycle.length];
 };
 
@@ -28,7 +33,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Preload all blog images -->
@@ -79,12 +84,14 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       <div id="left-cards-container" class="space-y-8">
         {
           blogs.slice(0, 4).map((blog, index) => {
+            // Now `colorName` is correctly typed as Color, not string
             const colorName = getColorForIndex(index);
+            // This line will no longer produce a TypeScript error
             const { border, text } = colorConfig[colorName];
 
             return (
               <div
-                class={`group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 border-t-4 ${border} rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 blog-card-left overflow-hidden`}
+                class={`group bg-white dark:bg-gray-800 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 blog-card-left overflow-hidden border-t-4 ${border} border-x border-b border-x-gray-200 border-b-gray-200 dark:border-x-gray-700 dark:border-b-gray-700`}
                 data-title={blog.title}
                 data-author={blog.author}
                 data-date={blog.date}
@@ -102,12 +109,10 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
                   />
                   <div class="p-5">
                     <h2 class="font-jetbrains-mono text-2xl font-bold text-gray-900 dark:text-gray-100">{blog.title}</h2>
-                    <p class="font-jetbrains-mono text-xs text-gray-400 dark:text-gray-500 mt-2">// by {blog.author} • {blog.date}</p>
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-4 lg:hidden">{truncateText(blog.excerpt, 15)}</p>
-                    
-                    {/* ✅ Wrapped span in a div with text-right */}
-                    <div class="text-right mt-4">
-                      <span class={`font-jetbrains-mono ${text} inline-block`}>
+                    <div class="flex justify-between items-center mt-4">
+                      <p class="font-jetbrains-mono text-xs text-gray-400 dark:text-gray-500">// by {blog.author} • {blog.date}</p>
+                      <span class={`font-jetbrains-mono text-sm ${text}`}>
                         read_more &rarr;
                       </span>
                     </div>
@@ -123,7 +128,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       <div class="hidden lg:flex lg:items-center">
         {
           initialRightCardBlog && (
-            <div id="right-card" class={`group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 border-t-4 ${colorConfig[initialColor].border} rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden`}>
+            <div id="right-card" class={`group bg-white dark:bg-gray-800 rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden border-t-4 ${colorConfig[initialColor].border} border-x border-b border-x-gray-200 border-b-gray-200 dark:border-x-gray-700 dark:border-b-gray-700`}>
               <a id="right-card-link" href={initialRightCardBlog.link} target="_blank" rel="noopener noreferrer">
                 <div class="image-container">
                   {blogs.map((blog) => (
@@ -140,13 +145,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
                   <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100">{initialRightCardBlog.title}</h2>
                   <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-500 dark:text-gray-400 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
                   <p id="right-card-excerpt" class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
-                  
-                  {/* ✅ Wrapped span in a div with text-right */}
-                  <div class="text-right mt-6">
-                    <span id="right-card-read-more" class={`font-jetbrains-mono ${colorConfig[initialColor].text} inline-block text-lg`}>
-                      read_more &rarr;
-                    </span>
-                  </div>
                 </div>
               </a>
             </div>
@@ -182,25 +180,25 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
     const rightCardReadMore = document.getElementById('right-card-read-more');
     const imageEls = rightCard.querySelectorAll('.image-container img');
 
-    // Use event delegation for hover effect
     leftCardsContainer.addEventListener('mouseenter', (event) => {
       const card = event.target.closest('.blog-card-left');
       if (!card) return;
 
       const { title, author, date, excerpt, link, color, img } = card.dataset;
-      const theme = colorConfig[color];
+      const theme = colorConfig[color]; 
       if (!theme) return;
 
       rightCardTitle.textContent = title;
       rightCardMeta.textContent = `// by ${author} • ${date}`;
       rightCardExcerpt.textContent = excerpt; 
-
       if (rightCardLink) rightCardLink.href = link;
       
       rightCard.className = rightCard.className.replace(/border-t-(blue|green|red|amber)-500/, theme.border);
-      rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red|amber)-600/, theme.text);
+      
+      if (rightCardReadMore) {
+        rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red|amber)-600/, theme.text);
+      }
 
-      // Fade image swap
       imageEls.forEach(imgEl => {
         if (imgEl.getAttribute("src") === img) {
           imgEl.classList.add("active");
