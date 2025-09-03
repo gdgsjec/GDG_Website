@@ -2,16 +2,14 @@
 import "../styles/global.css";
 ---
 
-<html>
+<html id="hero" class="dark">
   <head>
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Google+Sans|Consolas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      .background-des {
-        background: linear-gradient(to right, white, rgba(180, 220, 248, 1));
-      }
       .main {
         display: flex;
-        justify-content: center;
         font-weight: bolder;
         font-family: Google Sans;
       }
@@ -21,134 +19,262 @@ import "../styles/global.css";
       .a:hover {
         transform: scale(1.04);
       }
-      grey{
-          color: grey;
-        }
-        blue{
-          color:#6495ed
-        }
-        orange{
-          color:rgb(238, 161, 20);
-          background-color: ;
-        }
-        light{
-          color:rgb(154, 241, 241);
-        }
-        .typewriter {
-          overflow: hidden;
-          border-right: .15em solid oklch(37.2% 0.044 257.287);
-          white-space: nowrap;
-          visibility: hidden;
-          animation: 
+      grey {
+        color: grey;
+      }
+      blue {
+        color: #6495ed;
+      }
+      orange {
+        color: rgb(238, 161, 20);
+      }
+      light {
+        color: rgb(154, 241, 241);
+      }
+      .typewriter {
+        overflow: hidden;
+        border-right: 0.15em solid oklch(37.2% 0.044 257.287);
+        white-space: nowrap;
+        visibility: hidden;
+        animation:
           showText 0s forwards,
-          typing 3.5s steps(30,end),
-          blink-caret .5s step-end infinite;
+          typing 3.5s steps(30, end),
+          blink-caret 0.5s step-end infinite;
+      }
+      @keyframes showText {
+        to {
+          visibility: visible;
         }
-        @keyframes showText {
-          to{
-            visibility: visible;
-          }
+      }
+      @keyframes typing {
+        from {
+          width: 0;
         }
-        @keyframes typing{
-          from{
-            width:0;
-          }
-          to{
-            width: 100%;
-          }
+        to {
+          width: 100%;
         }
-        @keyframes blick-caret{
-          from, to {
-            border-color: transparent;
-          }
-          50% {
-            border-color:oklch(44.6% 0.043 257.281);
-          }
+      }
+      @keyframes blick-caret {
+        from,
+        to {
+          border-color: transparent;
         }
-        .t1{
-          animation-delay: 1.4s;
+        50% {
+          border-color: oklch(44.6% 0.043 257.281);
         }
-        .t2{
-          animation-delay: 3.5s;
+      }
+      .t1 {
+        animation-delay: 1.4s;
+      }
+      .t2 {
+        animation-delay: 3.5s;
+      }
+      .t3 {
+        animation-delay: 5.6s;
+      }
+      .t4 {
+        animation-delay: 8s;
+      }
+      .t5 {
+        animation-delay: 10.4s;
+      }
+      .t6 {
+        animation-delay: 11.9s;
+      }
+      .t7 {
+        animation-delay: 14s;
+      }
+      @media screen and (max-width:900px) {
+        div.a1{
+          display:flex;
+          flex-direction: column;
         }
-        .t3{
-          animation-delay: 5.6s;
+        div.a{
+          width: 80%;
+          margin-left: 10%;
         }
-        .t4{
-          animation-delay: 8s;
+        div.h1{
+          height:350px;
         }
-        .t5{
-          animation-delay: 10.4s;
+        div.m1{
+          font-size:40px;
         }
-        .t6{
-          animation-delay: 11.9s;
+        div.m2{
+          font-size: 110%;
         }
-        .t7{
-          animation-delay:14s;
+        div.h2{
+          margin-top: 50px;
+          width:65%;
+          margin-left: 17%;
         }
+        div.a2{
+          width: 50%;
+          height:10%;
+        }
+        img.a3{
+          margin-left: 36%;
+        }
+        div.a4{
+          font-size:80%;
+        }
+        div.a5{
+          margin-left: 0%;
+        }
+        div.typewriter{
+          margin-left: 6%;
+        }
+      }
+      @media screen and (max-width:550px) {
+        div.m1{
+          margin-left: 7%;
+        }
+        div.a1{
+          height:120%;
+        }
+        div.m2{
+          margin-left: 6%;
+          margin-top: 5%;
+          padding-bottom: 50px;
+        }
+        div.h1{
+          width:85%;
+          margin-left:8%;
+        }
+        div.h2{
+          width:88%;
+          margin-left:7%;
+        }
+        div.a2{
+          width:60%;
+        }
+        img.a3{
+          margin-left: 30%;
+        }
+        div.a4{
+          font-size: 60%;
+        }
+        div.a5{
+          margin-left: -6%;
+        }
+        div.typewriter{
+          margin-left: 9%;
+          width: 100%;
+        }
+      }
     </style>
   </head>
-  <body>
-    <div class="flex sm:flex-row flex-col"> <!--two cards -->
-      <div class="a h-[400px] sm:h-[600px] w-3/4 sm:w-1/2 bg-white drop-shadow-lg/30 mt-15 sm:mt-25 ml-17 sm:ml-20 rounded-xl">
+  <body class="dark:bg-[#486581]">
+    <div class="flex flex-row a1 h-screen">
+      <!--two cards -->
+      <div
+        class="a h-[600px] w-1/2 bg-white dark:bg-slate-800 drop-shadow-lg/30 mt-20 ml-12 rounded-xl h1"
+      >
         <!--first card -->
         <div class="flex flex-col text-shadow-lg">
           <!--Title -->
-          <div class="main text-[50px] sm:text-[80px] ml-4 sm:ml-5 mt-5">
+          <div class="main text-[80px] ml-5 mt-5 m1 dark:text-[#ffffff]">
             GOOGLE DEVELOPER <br />GROUP
           </div>
-          <div class="main text-[21px] sm:text-[25px] ml-4 sm:-ml-15 mt-5 sm:mt-10">
-            <e class="text-[#6495ed]">On Campus</e>.&nbsp;St Joseph Engineering
-            College
-          </div>
+          <div
+            class="main text-[25px] ml-7 mt-10 m2"
+          >
+            <e class="text-[#6495ed]">On Campus</e>&nbsp;<div class="dark:text-[#ffffff]">.&nbsp;St Joseph Engineering
+            College</div>
+          </div> 
         </div>
-        
       </div>
       <!--VS CODE -->
-        <div class="a w-3/4 sm:w-4/10 sm:h-[450px] bg-slate-700 flex flex-col mt-[80px] sm:mt-[175px] mx-16 sm:mx-10 rounded-lg drop-shadow-xl/20">
-      <div class="flex w-1/2 sm:w-1/3 h-10 bg-slate-400 rounded-md drop-shadow-xl">
-        <img class="w-1/8 mx-2 my-2 rounded-full" src="/gdgfull.jpg">
-        <div class="text-white my-1.5 text-shadow-lg">gdg.dev</div>
-        <img src="/close.png" class="w-1/4 sm:w-1/6 mx-11 sm:mx-15 sm:my-1">
-      </div>
-      <div class="flex flex-col my-5 mx-10 text-left font-normal text-white font-[consolas] py-[20px] text-[8px] sm:text-[16px]">
       
-      <div class="flex py-[5px]">
-        <div class="text-[#54bcf9]">1</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter">&nbsp;<grey>&lt;</grey><blue>div</blue><light> class</light>="<orange>flex</orange>"<grey>&gt;</grey></div>      
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">2</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t1">&nbsp;<grey>&lt;</grey><blue>div</blue><grey>&gt;</grey>Join a Google Developer Group to </div>  
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">3</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t2">&nbsp;build new skills and connect with </div>
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">4</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t3">&nbsp;local developers, online and in person.</div>      
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">5</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t4">&nbsp;Whether you're a beginner or a pro, </div>
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">6</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t5">&nbsp;all interested in technology are </div>
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">7</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t6">&nbsp;welcome in this inclusive community<grey>&lt;/</grey><blue>div</blue><grey>&gt;</grey></div>
-      </div>
-      <div class="flex py-[10px]">
-        <div class="text-[#54bcf9]">8</div>
-        <div class="w-7/8 h-[20px] bg-slate-700 mx-10 my-0.2 rounded-lg typewriter t7">&nbsp;<grey>&lt;/</grey><blue>div</blue><grey>&gt;</grey></div>
-      </div>
-    
-    </div>
+        <div
+          class="a w-4/10 h-[450px] bg-slate-700 dark:bg-amber-50 flex flex-col mt-[150px] ml-10 rounded-lg drop-shadow-xl/20 h2"
+        >
+          <div
+            class="flex w-1/2 h-10 bg-slate-400 dark:bg-amber-100 rounded-md drop-shadow-xl a2"
+          >
+            <img class="w-1/11 h-7 mx-2 my-1.5 rounded-full" src="/gdgfull.jpg" />
+            <div class="text-white dark:text-black my-1.5 text-shadow-lg">gdg.dev</div>
+            <img
+              src="/close.png"
+              class="w-1/6 ml-[140px] a3"
+            />
+          </div>
+          <div
+            class="flex flex-col my-5 mx-10 text-left font-normal text-white font-[consolas] py-[20px] text-[16px] a4"
+          >
+            <div class="flex py-[5px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">1</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter"
+              >
+                &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><light>
+                  class</light
+                >="<orange>flex</orange>"<grey class="dark:text-gray-300">&gt;</grey>
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">2</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t1"
+              >
+                &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>Join a
+                Google Developer Group to
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">3</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t2"
+              >
+                &nbsp;build new skills and connect with
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">4</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t3"
+              >
+                &nbsp;local developers, online and in person.
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">5</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t4"
+              >
+                &nbsp;Whether you're a beginner or a pro,
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">6</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t5"
+              >
+                &nbsp;all interested in technology are
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">7</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t6"
+              >
+                &nbsp;welcome in this inclusive community<grey class="dark:text-gray-300">&lt;/</grey><blue class="dark:text-[#0F4A85]"
+                  >div</blue
+                ><grey class="dark:text-gray-300">&gt;</grey>
+              </div>
+            </div>
+            <div class="flex py-[10px] a5">
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">8</div>
+              <div
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t7"
+              >
+                &nbsp;<grey class="dark:text-gray-300">&lt;/</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      </div>
+
+      <!--The neccessary design -->
     </div>
   </body>
 </html>
