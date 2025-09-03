@@ -107,16 +107,16 @@ import ThemeToggleMobile from "./ui/ThemeToggleMobile.astro";
 
   <nav
     id="mobile-menu"
-    class="absolute top-15 left-0 w-full h-0 bg-white/75 dark:bg-black/90 backdrop-blur-md overflow-hidden transition-all rounded-b-xl duration-500 md:hidden"
+    class="absolute top-17 left-0 w-full h-0  bg-white/75 dark:bg-black/90 backdrop-blur-md overflow-hidden transition-all rounded-b-xl duration-500 md:hidden"
   >
     <ul
       class="flex flex-col justify-start pl-8 pt-4 space-y-5 text-sm font-medium text-black dark:text-gray-200"
     >
-      <li class="cursor-pointer p-2 rounded-md">ABOUT</li>
-      <li class="cursor-pointer p-2 rounded-md">BLOGS</li>
-      <li class="cursor-pointer p-2 rounded-md">TEAM</li>
-      <li class="cursor-pointer p-2 rounded-md">EVENTS</li>
-      <li class="cursor-pointer p-2 rounded-md">PROJECTS</li>
+      <li class="cursor-pointer p-2   font-bold border-black dark:border-white ">ABOUT</li>
+      <li class="cursor-pointer p-2   font-bold border-black dark:border-white">BLOGS</li>
+      <li class="cursor-pointer p-2   font-bold border-black dark:border-white">TEAM</li>
+      <li class="cursor-pointer p-2   font-bold border-black dark:border-white">EVENTS</li>
+      <li class="cursor-pointer p-2   font-bold border-black dark:border-white">PROJECTS</li>
     </ul>
   </nav>
 </header>
@@ -143,18 +143,17 @@ import ThemeToggleMobile from "./ui/ThemeToggleMobile.astro";
       const isDark = html.classList.contains("dark");
       const isMenuOpen = !mobileMenu.classList.contains("h-0"); 
 
-      if (window.scrollY > 10) {
+      if (window.scrollY > 10 && !isMenuOpen) {
+        // Add shadow only if scrolled AND menu is closed
         navbar.classList.add("backdrop-blur-md", "shadow-md");
         navbar.classList.toggle("bg-white/80", !isDark);
         navbar.classList.toggle("bg-black/60", isDark);
       } else {
+        // Remove shadow if at top OR menu is open
         navbar.classList.add("backdrop-blur-md");
         navbar.classList.toggle("bg-white/80", !isDark);
         navbar.classList.toggle("bg-black/60", isDark);
-
-        if (!isMenuOpen) {
-          navbar.classList.remove("shadow-md");
-        }
+        navbar.classList.remove("shadow-md");
       }
     };
 
