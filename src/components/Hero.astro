@@ -27,7 +27,6 @@ import "../styles/global.css";
       }
       orange {
         color: rgb(238, 161, 20);
-        background-color:;
       }
       light {
         color: rgb(154, 241, 241);
@@ -129,8 +128,13 @@ import "../styles/global.css";
         div.m1{
           margin-left: 7%;
         }
+        div.a1{
+          height:120%;
+        }
         div.m2{
           margin-left: 6%;
+          margin-top: 5%;
+          padding-bottom: 50px;
         }
         div.h1{
           width:85%;
@@ -160,7 +164,7 @@ import "../styles/global.css";
     </style>
   </head>
   <body class="dark:bg-[#486581]">
-    <div class="flex flex-row a1">
+    <div class="flex flex-row a1 h-screen">
       <!--two cards -->
       <div
         class="a h-[600px] w-1/2 bg-white dark:bg-slate-800 drop-shadow-lg/30 mt-20 ml-12 rounded-xl h1"
@@ -182,13 +186,13 @@ import "../styles/global.css";
       <!--VS CODE -->
       
         <div
-          class="a w-4/10 h-[450px] bg-slate-700 flex flex-col mt-[150px] ml-10 rounded-lg drop-shadow-xl/20 h2"
+          class="a w-4/10 h-[450px] bg-slate-700 dark:bg-amber-50 flex flex-col mt-[150px] ml-10 rounded-lg drop-shadow-xl/20 h2"
         >
           <div
-            class="flex w-1/2 h-10 bg-slate-400 rounded-md drop-shadow-xl a2"
+            class="flex w-1/2 h-10 bg-slate-400 dark:bg-amber-100 rounded-md drop-shadow-xl a2"
           >
             <img class="w-1/11 h-7 mx-2 my-1.5 rounded-full" src="/gdgfull.jpg" />
-            <div class="text-white my-1.5 text-shadow-lg">gdg.dev</div>
+            <div class="text-white dark:text-black my-1.5 text-shadow-lg">gdg.dev</div>
             <img
               src="/close.png"
               class="w-1/6 ml-[140px] a3"
@@ -198,72 +202,72 @@ import "../styles/global.css";
             class="flex flex-col my-5 mx-10 text-left font-normal text-white font-[consolas] py-[20px] text-[16px] a4"
           >
             <div class="flex py-[5px] a5">
-              <div class="text-[#54bcf9]">1</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">1</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter"
               >
-                &nbsp;<grey>&lt;</grey><blue>div</blue><light>
+                &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><light>
                   class</light
-                >="<orange>flex</orange>"<grey>&gt;</grey>
+                >="<orange>flex</orange>"<grey class="dark:text-gray-300">&gt;</grey>
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">2</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">2</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t1"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t1"
               >
-                &nbsp;<grey>&lt;</grey><blue>div</blue><grey>&gt;</grey>Join a
+                &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>Join a
                 Google Developer Group to
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">3</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">3</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t2"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t2"
               >
                 &nbsp;build new skills and connect with
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">4</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">4</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t3"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t3"
               >
                 &nbsp;local developers, online and in person.
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">5</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">5</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t4"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t4"
               >
                 &nbsp;Whether you're a beginner or a pro,
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">6</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">6</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t5"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t5"
               >
                 &nbsp;all interested in technology are
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">7</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">7</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t6"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t6"
               >
-                &nbsp;welcome in this inclusive community<grey>&lt;/</grey><blue class="dark:text-[#0F4A85]"
+                &nbsp;welcome in this inclusive community<grey class="dark:text-gray-300">&lt;/</grey><blue class="dark:text-[#0F4A85]"
                   >div</blue
-                ><grey>&gt;</grey>
+                ><grey class="dark:text-gray-300">&gt;</grey>
               </div>
             </div>
             <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9]">8</div>
+              <div class="text-[#54bcf9] dark:text-[#6495ed]">8</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 ml-10 my-0.2 rounded-lg typewriter t7"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t7"
               >
-                &nbsp;<grey>&lt;/</grey><blue>div</blue><grey>&gt;</grey>
+                &nbsp;<grey class="dark:text-gray-300">&lt;/</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>
               </div>
             </div>
           </div>
