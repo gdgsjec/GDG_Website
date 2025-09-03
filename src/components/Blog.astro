@@ -8,13 +8,8 @@ const colorConfig = {
   yellow: { border: "border-t-amber-500", text: "text-amber-600" },
 };
 
-// ✅ STEP 1: Define a specific type for the keys of our config object.
 type Color = keyof typeof colorConfig;
-
-// ✅ STEP 2: Assert that the array of keys matches our specific Color type.
 const colorCycle = Object.keys(colorConfig) as Color[];
-
-// ✅ STEP 3: Specify that our function returns one of the valid Color keys.
 const getColorForIndex = (index: number): Color => {
   return colorCycle[index % colorCycle.length];
 };
@@ -48,11 +43,10 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
     .font-jetbrains-mono {
       font-family: 'JetBrains Mono', monospace;
     }
-    /* Fade transition for right-card images */
     #right-card .image-container {
       position: relative;
       width: 100%;
-      height: 16rem; /* h-64 */
+      height: 16rem;
       overflow: hidden;
     }
     #right-card .image-container img {
@@ -84,11 +78,9 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       <div id="left-cards-container" class="space-y-8">
         {
           blogs.slice(0, 4).map((blog, index) => {
-            // Now `colorName` is correctly typed as Color, not string
+            
             const colorName = getColorForIndex(index);
-            // This line will no longer produce a TypeScript error
             const { border, text } = colorConfig[colorName];
-
             return (
               <div
                 class={`group bg-white dark:bg-gray-800 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 blog-card-left overflow-hidden border-t-4 ${border} border-x border-b border-x-gray-200 border-b-gray-200 dark:border-x-gray-700 dark:border-b-gray-700`}
@@ -113,7 +105,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
                     <div class="flex justify-between items-center mt-4">
                       <p class="font-jetbrains-mono text-xs text-gray-400 dark:text-gray-500">// by {blog.author} • {blog.date}</p>
                       <span class={`font-jetbrains-mono text-sm ${text}`}>
-                        read_more &rarr;
+                        View &rarr;
                       </span>
                     </div>
                   </div>
@@ -143,7 +135,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
                 </div>
                 <div class="p-6">
                   <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100">{initialRightCardBlog.title}</h2>
-                  <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-500 dark:text-gray-400 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
+                  <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-400 dark:text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
                   <p id="right-card-excerpt" class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
                 </div>
               </a>
@@ -153,7 +145,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       </div>
     </div>
 
-    {/* "View More" link moved outside the grid for true centering */}
     <div class="text-center mt-12">
       <a 
         href="/blogsd" 
@@ -165,7 +156,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
     
   </div>
 </section>
-
 <script define:vars={{ colorConfig }}>
   document.addEventListener('DOMContentLoaded', () => {
     const leftCardsContainer = document.getElementById('left-cards-container');
@@ -198,7 +188,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       if (rightCardReadMore) {
         rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red|amber)-600/, theme.text);
       }
-
       imageEls.forEach(imgEl => {
         if (imgEl.getAttribute("src") === img) {
           imgEl.classList.add("active");
