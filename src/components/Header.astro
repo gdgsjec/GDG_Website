@@ -1,90 +1,167 @@
 ---
-import GDG_LOGO from '../assets/GDG_LOGO.png';
+import GDG_LOGO from "../assets/GDG_LOGO.png";
+import ThemeToggle from "./ui/ThemeToggle.astro";
+import ThemeToggleMobile from "./ui/ThemeToggleMobile.astro";
 ---
 
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
-  <div id="navbar" class="w-full flex items-center h-17 px-4 text-black transition-all duration-500">
-    <div class="flex items-center justify-between h-20 max-w-[1240px] w-full mx-auto px-4 text-black">
-      <div class="flex-shrink-0">
-        <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 cursor-pointer" />
+<header
+  class="fixed top-0 left-0 w-full z-50 dark:bg-black/90 transition-all duration-500"
+>
+  <div
+    id="navbar"
+    class="w-full flex items-center h-17 px-4 text-black dark:text-white transition-all duration-500"
+  >
+    <div
+      class="flex items-center justify-between h-20 max-w-[1240px] w-full mx-auto px-4 text-black dark:text-white"
+    >
+      <div class="flex items-center space-x-4">
+        <img
+          src={GDG_LOGO.src}
+          alt="GDG Logo"
+          class="rounded-xl w-14 h-10 p-2 cursor-pointer"
+        />
       </div>
 
-      <ul class="hidden md:flex space-x-6 text-sm font-medium" style="font-family: Roboto Condensed, sans-serif;">
-        <li class="p-2 relative group cursor-pointer text-black hover:text-[#00df9a] transition-colors duration-400">
+      <ul
+        class="hidden md:flex space-x-6 text-sm font-semibold"
+        style="font-family: Roboto Condensed, sans-serif;"
+      >
+        <li
+          class="p-2 relative group cursor-pointer text-black dark:text-white hover:text-[#3e5a51] dark:hover:text-[#00df9a] transition-colors duration-400"
+        >
           ABOUT
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
+          <span
+            class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] dark:bg-amber-50 transition-all duration-500 group-hover:w-full"
+          ></span>
         </li>
-        <li class="p-2 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+        <li
+          class="p-2 relative group cursor-pointer text-black dark:text-white hover:text-[#3e5a51] dark:hover:text-[#00df9a] transition-colors duration-400"
+        >
           BLOGS
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
+          <span
+            class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] dark:bg-amber-50 transition-all duration-500 group-hover:w-full"
+          ></span>
         </li>
-        <li class="p-2 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+        <li
+          class="p-2 relative group cursor-pointer text-black dark:text-white hover:text-[#3e5a51] dark:hover:text-[#00df9a] transition-colors duration-700"
+        >
           TEAM
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-700 group-hover:w-full"></span>
+          <span
+            class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] dark:bg-amber-50 transition-all duration-700 group-hover:w-full"
+          ></span>
         </li>
-        <li class="p-2 relative group cursor-pointer text-black hover:text-[#3e5a51] transition-colors duration-400">
+        <li
+          class="p-2 relative group cursor-pointer text-black dark:text-white hover:text-[#3e5a51] dark:hover:text-[#00df9a] transition-colors duration-400"
+        >
           EVENTS
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-500 group-hover:w-full"></span>
+          <span
+            class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] dark:bg-amber-50 transition-all duration-500 group-hover:w-full"
+          ></span>
         </li>
-        <li class="p-2 relative group cursor-pointer text-black hover:text-[#1C352D] transition-colors duration-400">
+        <li
+          class="p-2 relative group cursor-pointer text-black dark:text-white hover:text-[#1C352D] dark:hover:text-[#00df9a] transition-colors duration-400"
+        >
           PROJECTS
-          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] transition-all duration-600 group-hover:w-full"></span>
+          <span
+            class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#00df9a] dark:bg-amber-50 transition-all duration-600 group-hover:w-full"
+          ></span>
         </li>
       </ul>
 
-      <div class="flex items-center space-x-4">
-        <button id="menu-btn" class="md:hidden z-50">
-          <svg id="hamburger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
+      <div class="hidden md:flex">
+        <ThemeToggle />
+      </div>
+      <div class="md:hidden border-b border-none fixed right-4 z-[70] flex items-center space-x-4">
+        <ThemeToggleMobile/>
+        <button id="menu-btn" class="text-black dark:text-white">
+          <svg
+            id="hamburger"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <svg id="close" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M6 18L18 6M6 6l12 12" />
+          <svg
+            id="close"
+            class="hidden w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <nav id="mobile-menu"
-       class="fixed left-[-100%] top-0 w-[60%] h-full bg-white/30 backdrop-blur-md shadow-lg z-50 font-sans text-black transition-all duration-500 md:hidden">
-    <div class="flex items-center m-4">
-      <img src={GDG_LOGO.src} alt="GDG Logo" class="rounded-xl w-14 h-10 p-2 ml-2" />
-    </div>
-    <ul class="p-4" style="font-family: Roboto Condensed, sans-serif;">
-      <li class="p-4 relative border-b border-[#DCC5B2]">ABOUT</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">BLOGS</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">TEAM</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">EVENTS</li>
-      <li class="p-4 relative border-b border-[#DCC5B2]">PROJECTS</li>
+  <nav
+    id="mobile-menu"
+    class="absolute top-15 left-0 w-full h-0 bg-white/75 dark:bg-black/90 backdrop-blur-md overflow-hidden transition-all rounded-b-xl duration-500 md:hidden"
+  >
+    <ul
+      class="flex flex-col justify-start pl-8 pt-4 space-y-5 text-sm font-medium text-black dark:text-gray-200"
+    >
+      <li class="cursor-pointer p-2 rounded-md">ABOUT</li>
+      <li class="cursor-pointer p-2 rounded-md">BLOGS</li>
+      <li class="cursor-pointer p-2 rounded-md">TEAM</li>
+      <li class="cursor-pointer p-2 rounded-md">EVENTS</li>
+      <li class="cursor-pointer p-2 rounded-md">PROJECTS</li>
     </ul>
   </nav>
 </header>
 
 <script is:inline>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const hamburger = document.getElementById("hamburger");
-  const close = document.getElementById("close");
-  const navbar = document.getElementById("navbar");
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburger = document.getElementById("hamburger");
+    const close = document.getElementById("close");
+    const navbar = document.getElementById("navbar");
+    const html = document.documentElement;
 
-  if (btn) {
     btn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("left-0");
-      mobileMenu.classList.toggle("left-[-100%]");
+      mobileMenu.classList.toggle("h-0");
+      mobileMenu.classList.toggle("h-[40vh]");
       hamburger.classList.toggle("hidden");
       close.classList.toggle("hidden");
-    });
-  }
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add("backdrop-blur-md", "bg-white/30", "shadow-lg");
-    } else {
-      navbar.classList.remove("backdrop-blur-md", "bg-white/30", "shadow-lg");
-    }
+      updateNavbarBackground();
+    });
+
+    const updateNavbarBackground = () => {
+      const isDark = html.classList.contains("dark");
+      const isMenuOpen = !mobileMenu.classList.contains("h-0"); 
+
+      if (window.scrollY > 10) {
+        navbar.classList.add("backdrop-blur-md", "shadow-md");
+        navbar.classList.toggle("bg-white/80", !isDark);
+        navbar.classList.toggle("bg-black/60", isDark);
+      } else {
+        navbar.classList.add("backdrop-blur-md");
+        navbar.classList.toggle("bg-white/80", !isDark);
+        navbar.classList.toggle("bg-black/60", isDark);
+
+        if (!isMenuOpen) {
+          navbar.classList.remove("shadow-md");
+        }
+      }
+    };
+
+    updateNavbarBackground();
+    window.addEventListener("scroll", updateNavbarBackground);
+
+    const observer = new MutationObserver(updateNavbarBackground);
+    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
   });
-});
 </script>
