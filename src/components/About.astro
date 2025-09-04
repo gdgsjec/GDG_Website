@@ -8,12 +8,12 @@ import checkmark from '../assets/checkmark.png';
 
 <head>
 	<style>
-.cards3{
+.cards1, .cards2, .cards3{
     position: relative;
     border-radius: 1rem; 
     overflow: hidden; 
 }
-.cards3::before {
+.cards1::before, .cards2::before, .cards3::before {
     content: "";
     position: absolute;
     left: 0;
@@ -24,54 +24,10 @@ import checkmark from '../assets/checkmark.png';
     border-top-right-radius: 1rem;
     background: linear-gradient(
         to right,
-        green,
-        yellow,
-        red,
-        blue
-    );
-}
-.cards2{
-    position: relative;
-    border-radius: 1rem; 
-    overflow: hidden; 
-}
-.cards2::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 4px;  
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background: linear-gradient(
-        to right,
-        green,
-        yellow,
-        red,
-        blue
-    );
-}
-.cards1{
-    position: relative;
-    border-radius: 1rem; 
-    overflow: hidden; 
-}
-.cards1::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 4px;  
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background: linear-gradient(
-        to right,
-        green,
-        yellow,
-        red,
-        blue
+         #34a853,
+        #ffD427,
+        #ea4335,
+        #4285f4
     );
 }
 	</style>
@@ -79,39 +35,40 @@ import checkmark from '../assets/checkmark.png';
 
 
 <body>
-<section class="bg-white w-full h-auto flex flex-col justify-center items-center" id="aboutUs">
+<section class="bg-gray-50 w-full h-auto flex flex-col justify-center items-center dark:bg-gray-900 dark:text-[#ffffff]" id="aboutUs">
 	<div class="flex flex-col flex-wrap justify-center items-center">
 	<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4  sm:text-[35px] md:text-[50px]"> Our Impact </div>
 
 	<div class="max-w-7xl">
-	<p class="text-lg p-2 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
+	<p class="text-lg p-4 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
 	</div>
 
-<div class="flex flex-wrap gap-8 justify-center items-center">
-	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 card1">
+<div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500">
+
+	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1">
 		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
-		<div class="text-[#ea4335] font-extrabold text-3xl">600+</div>
+		<div class="text-[#ea4335] font-extrabold text-3xl" id="members">600+</div>
 		<div class="text-lg">Active Members</div>
 	</div>
 
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 cursor-pointer card2">
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card2">
 		<div class="m-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#ffD427] font-extrabold text-3xl">20+</div>
+		<div class="text-[#ffD427] font-extrabold text-3xl" id="sessions">20+</div>
 		<div class="text-lg">Sessions Conducted</div>
 	</div>
 
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 cursor-pointer card3">
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card3">
 		<div class="m-3"><img src={speakers.src} alt="gdg_speakers" width="40px" height="40px"></div>
-		<div class="text-[#34a853] font-extrabold text-3xl">12+</div>
+		<div class="text-[#34a853] font-extrabold text-3xl" id="speakers">12+</div>
 		<div class="text-lg">Expert Speakers</div>
 	</div>
 
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 cursor-pointer card4">
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card4">
 		<div class="m-3"><img src={workshop.src} alt="gdg_workshop" width="40px" height="40px"></div>
-		<div class="text-[#4285f4] font-extrabold text-3xl">10+</div>
+		<div class="text-[#4285f4] font-extrabold text-3xl" id="workshops">10+</div>
 		<div class="text-lg text-center">Hands-on Workshops</div>
 	</div>
 </div>
@@ -120,7 +77,7 @@ import checkmark from '../assets/checkmark.png';
 
 <div class="flex flex-col justify-center items-center">
 	<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4 xt-[35px] md:text-[50px]">ABOUT US</div>
-	<div class="max-w-5xl">
+	<div class="max-w-5xl p-4">
 	<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cum dolores minus soluta reprehenderit. Voluptatum repellendus eum ullam minima dolorum optio soluta mollitia, architecto aspernatur temporibus numquam nihil magni incidunt perferendis rerum iure officiis perspiciatis ut tempore impedit. Debitis ytj uj jjs656 gae4 tenetur, ex quidem natus soluta vitae nisi repudiandae doloremque alias. Eius.kjfh hvnl cvs</p>
 	<p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, esse fugit suscipit nemo, rem aliquam cupiditate vel eius labore dolor facere. Esse recusandae rerum nostrum, illum consectetur consequuntur fugiat optio.</p>
 	</div>
@@ -128,17 +85,17 @@ import checkmark from '../assets/checkmark.png';
 
 <div>
 <div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4 xt-[35px] md:text-[50px]">OUR MISSION</div>
-<p class="text-center max-w-5xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos dolorem, facere commodi praesentium neque necessitatibus laborum impedit recusandae incidunt.</p>
+<p class="text-center max-w-5xl p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos dolorem, facere commodi praesentium neque necessitatibus laborum impedit recusandae incidunt.</p>
 
-<div class="flex flex-wrap gap-12 m-2 justify-center items-center">
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer cards1">
+<div class="flex flex-wrap gap-12 m-2 justify-center items-center dark:text-gray-500">
+	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards1">
 		<div class="flex flex-wrap justify-center items-center p-3">
 		<div class="m-3 bg-[#ea4335] rounded-4xl p-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
 		<div class="text-[#4285f4] font-medium text-xl m-2.5">Lorem ipsum dolor sit.</div>
 		<div class="text-md text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, inventore!</div>
 		</div>
 		<div>
-			<ul class="text-gray-600 px-2">
+			<ul class="text-gray-600 px-3">
 				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">euku jk. 6eeu6 </li>
 				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> 7ri6ik drt u</li>
 				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> jgj hmjhgd </li>
@@ -147,14 +104,14 @@ import checkmark from '../assets/checkmark.png';
 		</div>
 	</div>
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer cards2">
+	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards2">
 		<div class="flex flex-wrap justify-center items-center p-3">
 		<div class="m-3 bg-[#34a853] rounded-4xl p-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
 		<div class="text-[#ea4335] font-medium text-xl m-2.5">Lorem ipsum dolor sit.</div>
 		<div class="text-md text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, inventore!</div>
 		</div>
 		<div>
-			<ul class="text-gray-600 px-2">
+			<ul class="text-gray-600 px-3">
 				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">euku jk. 6eeu6 </li>
 				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> 7ri6ik drt u</li>
 				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> jgj hmjhgd </li>
@@ -163,14 +120,14 @@ import checkmark from '../assets/checkmark.png';
 		</div>
 	</div>
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer cards3">
+	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards3">
 		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#ffD427] rounded-4xl p-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
+		<div class="m-3 bg-[#ffd427] rounded-4xl p-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
 		<div class="text-[#34a853] font-medium text-xl m-2.5">Lorem ipsum dolor sit.</div>
 		<div class="text-md text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, inventore!</div>
 		</div>
 		<div>
-			<ul class="text-gray-600 px-2">
+			<ul class="text-gray-600 px-3">
 				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">euku jk. 6eeu6 </li>
 				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> 7ri6ik drt u</li>
 				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> jgj hmjhgd </li>
