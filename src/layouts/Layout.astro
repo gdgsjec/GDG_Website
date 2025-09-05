@@ -22,38 +22,40 @@
   </head>
   <body>
     <slot />
-    <script is:inline>
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeIcons = document.querySelectorAll(".theme-icon");
+   <script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeIcons = document.querySelectorAll(".theme-icon");
 
-        function updateIcons() {
-          const isDark = document.documentElement.classList.contains("dark");
-          themeIcons.forEach((icon) => {
-            icon.textContent = isDark ? "☀️" : "🌙";
-          });
-        }
-
-        function setTheme(theme) {
-          if (theme === "dark") {
-            document.documentElement.classList.add("dark");
-          } else {
-            document.documentElement.classList.remove("dark");
-          }
-          localStorage.setItem("theme", theme);
-          updateIcons();
-        }
-
-        document.body.addEventListener("click", (e) => {
-          if (e.target.closest(".theme-toggle-btn")) {
-            e.preventDefault();
-            const isDark = document.documentElement.classList.contains("dark");
-            setTheme(isDark ? "light" : "dark");
-          }
-        });
-
-        updateIcons();
+    function updateIcons() {
+      const isDark = document.documentElement.classList.contains("dark");
+      themeIcons.forEach((icon) => {
+        // Sun for light mode, Moon for dark mode
+        icon.textContent = isDark ?  "☾" : "☀"; 
       });
-    </script>
+    }
+
+    function setTheme(theme) {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      localStorage.setItem("theme", theme);
+      updateIcons();
+    }
+
+    document.body.addEventListener("click", (e) => {
+      if (e.target.closest(".theme-toggle-btn")) {
+        e.preventDefault();
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(isDark ? "light" : "dark");
+      }
+    });
+
+    updateIcons();
+  });
+</script>
+
   </body>
 </html>
 
