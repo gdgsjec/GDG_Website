@@ -41,6 +41,11 @@ import "../styles/global.css";
           typing 3.5s steps(30, end),
           blink-caret 0.5s step-end infinite;
       }
+      
+        .dark.typewriter{
+          border-right: 0.15em solid white;
+        }
+      
       @keyframes showText {
         to {
           visibility: visible;
@@ -88,6 +93,7 @@ import "../styles/global.css";
         div.a1{
           display:flex;
           flex-direction: column;
+          height:115%;
         }
         div.a{
           width: 80%;
@@ -122,6 +128,14 @@ import "../styles/global.css";
         }
         div.typewriter{
           margin-left: 6%;
+        }
+        img.i1{
+          margin-top:5px;
+          padding-bottom: 5px;
+        }
+        img.i2{
+          margin-top:5px;
+          padding-bottom: 5px;
         }
       }
       @media screen and (max-width:550px) {
@@ -160,14 +174,23 @@ import "../styles/global.css";
           margin-left: 9%;
           width: 100%;
         }
+        img.i1{
+          margin-top: 4px;
+          padding-bottom: 8px;
+        }
+        img.i2{
+          margin-top: 4px;
+          padding-bottom: 8px;
+        }
       }
+      
     </style>
   </head>
   <body class="dark:bg-[#486581]">
     <div class="flex flex-row a1 h-screen">
       <!--two cards -->
       <div
-        class="a h-[600px] w-1/2 bg-white dark:bg-slate-800 drop-shadow-lg/30 mt-20 ml-12 rounded-xl h1"
+        class="a h-[600px] w-1/2 bg-white dark:bg-slate-800 drop-shadow-lg/30 mt-30 ml-12 rounded-xl h1"
       >
         <!--first card -->
         <div class="flex flex-col text-shadow-lg">
@@ -184,27 +207,26 @@ import "../styles/global.css";
         </div>
       </div>
       <!--VS CODE -->
-      
         <div
-          class="a w-4/10 h-[450px] bg-slate-700 dark:bg-amber-50 flex flex-col mt-[150px] ml-10 rounded-lg drop-shadow-xl/20 h2"
+          class="a w-4/10 h-[450px] bg-slate-700 dark:bg-amber-50 flex flex-col mt-[175px] ml-10 rounded-lg drop-shadow-xl/20 h2"
         >
           <div
             class="flex w-1/2 h-10 bg-slate-400 dark:bg-amber-100 rounded-md drop-shadow-xl a2"
           >
-            <img class="w-1/11 h-7 mx-2 my-1.5 rounded-full" src="/gdgfull.jpg" />
+            <img class="w-1/11 h-7 mx-2 my-1.5 rounded-full" src="src/assets/gdgfull.jpg" />
             <div class="text-white dark:text-black my-1.5 text-shadow-lg">gdg.dev</div>
             <img
-              src="/close.png"
+              src="src/assets/close.png"
               class="w-1/6 ml-[140px] a3"
             />
           </div>
           <div
-            class="flex flex-col my-5 mx-10 text-left font-normal text-white font-[consolas] py-[20px] text-[16px] a4"
+            class="flex flex-col my-5 mx-10 text-left font-normal text-white dark:text-black font-[consolas] py-[20px] text-[16px] a4"
           >
             <div class="flex py-[5px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">1</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter"
               >
                 &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><light>
                   class</light
@@ -214,7 +236,7 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">2</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t1"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t1"
               >
                 &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>Join a
                 Google Developer Group to
@@ -223,7 +245,7 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">3</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t2"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t2"
               >
                 &nbsp;build new skills and connect with
               </div>
@@ -231,7 +253,7 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">4</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t3"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t3"
               >
                 &nbsp;local developers, online and in person.
               </div>
@@ -239,7 +261,7 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">5</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t4"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t4"
               >
                 &nbsp;Whether you're a beginner or a pro,
               </div>
@@ -247,7 +269,7 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">6</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t5"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t5"
               >
                 &nbsp;all interested in technology are
               </div>
@@ -255,7 +277,7 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">7</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t6"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t6"
               >
                 &nbsp;welcome in this inclusive community<grey class="dark:text-gray-300">&lt;/</grey><blue class="dark:text-[#0F4A85]"
                   >div</blue
@@ -265,16 +287,18 @@ import "../styles/global.css";
             <div class="flex py-[10px] a5">
               <div class="text-[#54bcf9] dark:text-[#6495ed]">8</div>
               <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t7"
+                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 typewriter t7"
               >
                 &nbsp;<grey class="dark:text-gray-300">&lt;/</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>
               </div>
             </div>
           </div>
         </div>
-
-
+        </div>
       <!--The neccessary design -->
-    </div>
+      <img src="src/assets/light.png" alt="light mode" class=" w-full dark:hidden block -mt-30 i1 mb-20">
+      <img src="src/assets/dark.png" alt="dark mode" class="w-full dark:block hidden -mt-30 i2 mb-20">
+      
+      
   </body>
 </html>
