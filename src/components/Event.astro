@@ -1,33 +1,110 @@
 ---
-import dummy from '../assets/dummy.jpeg';
+import cat1 from '../assets/cat.jpg';
 ---
-
-<h1 id="event" class ="justify-center text-center text-3xl font-bold font-sans my-6"> EVENTS </h1>
-<div class ="w-full max-w-sm mx-auto font-sans bg-white p-4 rounded-md shadow-md">
-<!---card -->
-<div class ="shadow-md rounded-md flex flex-col h-full transition duration-200">
-<!--image -->
-<div class ="overflow-hidden rounded-t-md h-full">
-    <img src={dummy.src} alt="Event Image" class= "rounded-t-md w-full object-cover h-full"/>
-</div>
-<!---body -->
-<div class="p-6 text-justify font-serif text-gray-800 flex-1">
-    <!--title -->
-    <a href="#" class="no-underline group">
-        <h2 class="text-4xl font-medium my-2 text-blue-600 transition duration-200 group-hover:text-yellow-600">
-            Meow Meow 
-        </h2>
+<section id="event" class="my-12 bg-gray-300">
+<h1 class ="text-center text-5xl sm:text-5xl font-serif my-12 bg-gray-400 border-t-1 p-8"> EVENTS </h1>
+<p class=" font-sans text-lg sm:text-xl text-gray-400  mt-4  my-12 text-center line-clamp-1">"The main motive behind each and every event conducted by GDG On Campus-SJEC  has always been spreading knowledge and giving inspiration to developers."</p>
+<!--event list-->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+<!-------------------------------------------------------CARD 1 ------------------------------------------------->
+<div class="flex flex-col rounded-xl shadow-md transition duration-200 shadow-black h-[500px]  w-[320PX] mx-auto">
+<!----------------------------------------------------CARD IMAGE-------------------------------------------------------------->
+<div class="overflow-hidden h-60 sm:h-72 md:h-80 rounded-t-xl">
+    <img src={cat1.src} alt="Event Image" class="w-full h-full object-cover rounded-t-xl"/>
+    </div>
+<!-------------------------------------CARD HEADING ------------------------------------------------------------------>
+<div class="flex-1 px-4 sm:px-6 py-4 text-justify font-sans text-black rounded-b-md transition duration-200">
+    <a href="#" class="no-underline group hover:bg-black">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium my-2 hover:text-gray-600 text-black transition duration-200 shadow-gray-900">MEOW MEOW</h2>
     </a>
-    <h3 class="text-sm font-bold my-2 text-gray-800"> meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</h3>
-
-    <!--description -->
-    <p class ="text-sm mb-4">
-        meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
-    </p>
-    <!--button -->
-    <a href="#" class="inline-block text-blue-600 text-sm font-medium h-9 leading-9 px-2 cursor-pointer transition duration-200 rounded hover:bg-blue-50">
-        Learn More
-    </a>
-        </div>
+<!----------------------------------CARD DATE ------------------------------------------------------>
+    <h3 class="text-xs sm:text-sm md:text-base font-bold mb-3 text-black transition duration-200">13 JAN 2025</h3>
+<!--------------------------------------CARD DESCRIPTION ------------------------------------------->
+        <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-4">meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</p>
     </div>
 </div>
+<!--------------------------------------CARD 2 -------------------------------------------------->
+<div class="flex flex-col rounded-xl shadow-md transition duration-200 shadow-black h-[500px] w-[320PX]  mx-auto">
+<!--------------------------------------CARD IMAGE------------------------------------------->
+<div class="overflow-hidden h-60 sm:h-72 md:h-80 rounded-t-xl">
+    <img src={cat1.src} alt="Event Image" class="w-full h-full object-cover rounded-t-xl"/>
+    </div>
+<!--------------------------------------CARD HEADING ---------------------------------------------->
+<div class="flex-1 px-4 sm:px-6 py-4 text-justify font-sans text-black rounded-b-md transition duration-200">
+    <a href="#" class="no-underline group hover:bg-gray-300">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium my-2 hover:text-gray-600 text-black transition duration-200 shadow-gray-900">MEOW MEOW</h2>
+    </a>
+<!--------------------------------------CARD DATE ---------------------------------------------->
+    <h3 class="text-xs sm:text-sm md:text-base font-bold mb-3 text-black transition duration-200">13 JAN 2025</h3>
+<!------------------------------------------------CARD DESCRIPTION ---------------------------------------------->
+        <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-4">meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</p>
+    </div>
+</div>
+<!--------------------------------------------------CARD 3--------------------------------------------->
+<div class="flex flex-col rounded-xl shadow-md transition duration-200 shadow-black h-[500px] w-[320PX]  mx-auto">
+<!------------------------------------CARD IMAGE------------------------------------------------->
+<div class="overflow-hidden h-60 sm:h-72 md:h-80 rounded-t-xl">
+    <img src={cat1.src} alt="Event Image" class="w-full h-full object-cover rounded-t-xl"/>
+    </div>
+<!-------------------------------------CARD HEADING ---------------------------------------------------->
+<div class="flex-1 px-4 sm:px-6 py-4 text-justify font-sans text-black rounded-b-md transition duration-200">
+    <a href="#" class="no-underline group hover:bg-gray-300">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium my-2 hover:text-gray-600  text-black transition duration-200 shadow-gray-900">MEOW MEOW</h2>
+    </a>
+<!--------------------------------------CARD DATE ---------------------------------------------------->
+    <h3 class="text-xs sm:text-sm md:text-base font-bold mb-3 text-black transition duration-200">13 JAN 2025</h3>
+    <!----------------CARD DESCRIPTION --------------->
+        <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-4">meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</p>
+    </div>
+</div><!-----------------CARD 4 ----------------------->
+<div class="flex flex-col rounded-xl shadow-md transition duration-200 shadow-black h-[500px] w-[320PX]  mx-auto">
+    <!------------CARD IMAGE-------------------->
+<div class="overflow-hidden h-60 sm:h-72 md:h-80 rounded-t-xl">
+    <img src={cat1.src} alt="Event Image" class="w-full h-full object-cover rounded-t-xl"/>
+    </div>
+    <!------------CARD HEADING ---------------------->
+<div class="flex-1 px-4 sm:px-6 py-4 text-justify font-sans text-black rounded-b-md transition duration-200">
+    <a href="#" class="no-underline group hover:bg-gray-300">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium my-2 hover:text-gray-600 text-black transition duration-200 shadow-gray-900">MEOW MEOW</h2>
+    </a>
+    <!--------------CARD DATE ---------------------->
+    <h3 class="text-xs sm:text-sm md:text-base font-bold mb-3 text-black transition duration-200">13 JAN 2025</h3>
+    <!----------------CARD DESCRIPTION --------------->
+        <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-4">meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</p>
+    </div>
+</div><!-----------------CARD 5 ----------------------->
+<div class="flex flex-col rounded-xl shadow-md transition duration-200 shadow-black h-[500px] w-[320PX]  mx-auto">
+    <!------------CARD IMAGE-------------------->
+<div class="overflow-hidden h-60 sm:h-72 md:h-80 rounded-t-xl">
+    <img src={cat1.src} alt="Event Image" class="w-full h-full object-cover rounded-t-xl"/>
+    </div>
+    <!------------CARD HEADING ---------------------->
+<div class="flex-1 px-4 sm:px-6 py-4 text-justify font-sans text-black rounded-b-md transition duration-200">
+    <a href="#" class="no-underline group hover:bg-gray-300">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium my-2 hover:text-gray-600 text-black transition duration-200 shadow-gray-900">MEOW MEOW</h2>
+    </a>
+    <!--------------CARD DATE ---------------------->
+    <h3 class="text-xs sm:text-sm md:text-base font-bold mb-3 text-black transition duration-200">13 JAN 2025</h3>
+    <!----------------CARD DESCRIPTION --------------->
+        <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-4">meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</p>
+    </div>
+</div>
+<!-----------------------------------------card6 ---------------------------------------------------------------->
+<div class="flex flex-col rounded-xl shadow-md transition duration-200 shadow-black h-[500px] w-[320PX]  mx-auto">
+    <!------------CARD IMAGE-------------------->
+<div class="overflow-hidden h-60 sm:h-72 md:h-80 rounded-t-xl">
+    <img src={cat1.src} alt="Event Image" class="w-full h-full object-cover rounded-t-xl"/>
+    </div>
+<!----------------------------------------CARD HEADING ---------------------------------------->
+<div class="flex-1 px-4 sm:px-6 py-4 text-justify font-sans text-black rounded-b-md transition duration-200">
+    <a href="#" class="no-underline group hover:bg-gray-300">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-medium my-2 hover:text-gray-600 text-black transition duration-200 shadow-gray-900">MEOW MEOW</h2>
+    </a>
+<!--------------------------------------CARD DATE -------------------------------------------->
+    <h3 class="text-xs sm:text-sm md:text-base font-bold mb-3 text-black transition duration-200">13 JAN 2025</h3>
+<!----------------------------------CARD DESCRIPTION -------------------------------------------->
+        <p class="text-xs sm:text-sm md:text-base leading-relaxed mb-4">meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow</p>
+    </div>
+</div>
+</div>
+</section>
