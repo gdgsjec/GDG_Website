@@ -31,7 +31,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Preload all blog images -->
   {blogs.map(blog => (
     <link rel="preload" as="image" href={blog.img} />
   ))}
@@ -65,7 +64,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
   </style>
 </head>
 
-<section class="bg-gray-50 dark:bg-gray-900 py-12">
+<section id="blog" class="bg-gray-50 dark:bg-gray-900 py-12">
   <div class="container mx-auto px-4">
     <header class="text-center mb-10">
       <h1 class="font-fira-code text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100">
@@ -78,12 +77,11 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       <div id="left-cards-container" class="space-y-8">
         {
           blogs.slice(0, 4).map((blog, index) => {
-            
             const colorName = getColorForIndex(index);
             const { border, text } = colorConfig[colorName];
             return (
               <div
-                class={`group bg-white dark:bg-gray-800 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 blog-card-left overflow-hidden border-t-4 ${border} border-x border-b border-x-gray-200 border-b-gray-200 dark:border-x-gray-700 dark:border-b-gray-700`}
+                class={`group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden blog-card-left border-t-4 ${border}`}
                 data-title={blog.title}
                 data-author={blog.author}
                 data-date={blog.date}
@@ -116,29 +114,26 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
         }
       </div>
       
-      {/* Right Column (Desktop) */}
       <div class="hidden lg:flex lg:items-center">
         {
           initialRightCardBlog && (
-            <div id="right-card" class={`group bg-white dark:bg-gray-800 rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden border-t-4 ${colorConfig[initialColor].border} border-x border-b border-x-gray-200 border-b-gray-200 dark:border-x-gray-700 dark:border-b-gray-700`}>
-              <a id="right-card-link" href={initialRightCardBlog.link} target="_blank" rel="noopener noreferrer">
-                <div class="image-container">
-                  {blogs.map((blog) => (
-                    <img 
-                      src={blog.img} 
-                      alt={blog.title} 
-                      class={blog === initialRightCardBlog ? "active" : ""} 
-                      data-title={blog.title}
-                      loading="eager"
-                    />
-                  ))}
-                </div>
-                <div class="p-6">
-                  <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100">{initialRightCardBlog.title}</h2>
-                  <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-400 dark:text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
-                  <p id="right-card-excerpt" class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
-                </div>
-              </a>
+            <div id="right-card" class="group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+              <div class="image-container">
+                {blogs.map((blog) => (
+                  <img 
+                    src={blog.img} 
+                    alt={blog.title} 
+                    class={blog === initialRightCardBlog ? "active" : ""} 
+                    data-title={blog.title}
+                    loading="eager"
+                  />
+                ))}
+              </div>
+              <div class="p-6">
+                <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100">{initialRightCardBlog.title}</h2>
+                <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-400 dark:text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
+                <p id="right-card-excerpt" class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
+              </div>
             </div>
           )
         }
@@ -146,12 +141,13 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
     </div>
 
     <div class="text-center mt-12">
-      <a 
-        href="/blogsd" 
-        class="font-jetbrains-mono text-lg text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-300"
-      >
-        view_more_blogs &rarr;
-      </a>
+      <button 
+  onclick="window.location.href='/blogsd'" 
+  class="px-6 py-2 rounded-full bg-blue-600 text-white font-jetbrains-mono text-lg hover:bg-blue-700 transition-colors duration-200"
+>
+  View More Blogs &rarr;
+</button>
+
     </div>
     
   </div>
@@ -163,7 +159,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
 
     if (!leftCardsContainer || !rightCard) return;
 
-    const rightCardLink = document.getElementById('right-card-link');
     const rightCardTitle = document.getElementById('right-card-title');
     const rightCardMeta = document.getElementById('right-card-meta');
     const rightCardExcerpt = document.getElementById('right-card-excerpt');
@@ -181,7 +176,6 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       rightCardTitle.textContent = title;
       rightCardMeta.textContent = `// by ${author} • ${date}`;
       rightCardExcerpt.textContent = excerpt; 
-      if (rightCardLink) rightCardLink.href = link;
       
       rightCard.className = rightCard.className.replace(/border-t-(blue|green|red|amber)-500/, theme.border);
       
