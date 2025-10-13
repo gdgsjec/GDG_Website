@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+@media (min-width: 768px) {
+  .dark #theme-toggle::before,
+  .dark #theme-toggle::after {
+    border-color: white; /* make the corner borders white */
+  }
+}
