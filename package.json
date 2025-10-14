@@ -9,9 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "@lucide/astro": "^0.542.0",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.0",
+    "glider-js": "^1.7.9",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/glider-js": "^1.7.12"
   }
 }

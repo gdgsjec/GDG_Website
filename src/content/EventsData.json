@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Tech Conference 2025",
+    "Speaker" :"Ms.Minora Dias",
+    "date": "Nov 15, 2024",
+    "location": "SJEC",
+    "image": "",
+    "description": "Join us for the biggest tech conference of the year",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Developer Path",
+    "Speaker" :"Ms.Minora Dias",
+    "date": "Nov 20, 2024",
+    "location": "SJEC",
+    "image": "",
+    "description": "Network with local developers and share knowledge",
+    "link": "#"
+  },
+  {
+    "id":3 ,
+    "title": "Flutter Workshop",
+    "Speaker" :"Ms.Minora Dias",
+    "date": "Dec 5, 2024",
+    "location": "SJEC",
+    "image": "",
+    "description": "Learn the latest design trends and techniques",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "GSoC Organisation",
+    "Speaker" :"Ms.Minora Dias",
+    "date": "Dec 12, 2024",
+    "location": "SJEC",
+    "image": "",
+    "description": "Connect with entrepreneurs and investors",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "Generative AI Session",
+    "Speaker" :"Ms.Minora Dias",
+    "date": "Jan 8, 2026",
+    "location": "SJEC",
+    "image": "#",
+    "description": "Explore the future of artificial intelligence",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "HTF 3.0",
+    "Speaker" :"Ms.Minora Dias",
+    "date": "Jan 8, 2025",
+    "location": "SJEC",
+    "image": "",
+    "description": "Tech Weekend",
+    "link": "#"
+  }
+]
