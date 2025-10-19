@@ -1,280 +1,199 @@
 ---
 import "../styles/global.css";
 ---
-
-<html id="hero" class="dark">
+<html>
   <head>
-    <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Google+Sans|Consolas">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      .main {
-        display: flex;
-        font-weight: bolder;
-        font-family: Google Sans;
+      .rotate {
+          animation: spin 5s linear infinite; /* 5s = rotation speed */
       }
-      .a {
-        transition: transform 0.3s ease-in-out;
-      }
-      .a:hover {
-        transform: scale(1.04);
-      }
-      grey {
-        color: grey;
-      }
-      blue {
-        color: #6495ed;
-      }
-      orange {
-        color: rgb(238, 161, 20);
-      }
-      light {
-        color: rgb(154, 241, 241);
-      }
-      .typewriter {
-        overflow: hidden;
-        border-right: 0.15em solid oklch(37.2% 0.044 257.287);
-        white-space: nowrap;
-        visibility: hidden;
-        animation:
-          showText 0s forwards,
-          typing 3.5s steps(30, end),
-          blink-caret 0.5s step-end infinite;
-      }
-      @keyframes showText {
-        to {
-          visibility: visible;
-        }
-      }
-      @keyframes typing {
+
+/* Define the animation keyframes */
+      @keyframes spin {
         from {
-          width: 0;
+          transform: rotate(0deg);
         }
         to {
-          width: 100%;
+          transform: rotate(360deg);
         }
       }
-      @keyframes blick-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: oklch(44.6% 0.043 257.281);
-        }
-      }
-      .t1 {
-        animation-delay: 1.4s;
-      }
-      .t2 {
-        animation-delay: 3.5s;
-      }
-      .t3 {
-        animation-delay: 5.6s;
-      }
-      .t4 {
-        animation-delay: 8s;
-      }
-      .t5 {
-        animation-delay: 10.4s;
-      }
-      .t6 {
-        animation-delay: 11.9s;
-      }
-      .t7 {
-        animation-delay: 14s;
-      }
-      @media screen and (max-width:900px) {
-        div.a1{
-          display:flex;
-          flex-direction: column;
-        }
-        div.a{
-          width: 80%;
-          margin-left: 10%;
-        }
-        div.h1{
-          height:350px;
-        }
-        div.m1{
-          font-size:40px;
-        }
-        div.m2{
-          font-size: 110%;
-        }
-        div.h2{
-          margin-top: 50px;
-          width:65%;
-          margin-left: 17%;
-        }
-        div.a2{
-          width: 50%;
-          height:10%;
-        }
-        img.a3{
-          margin-left: 36%;
-        }
-        div.a4{
-          font-size:80%;
-        }
-        div.a5{
-          margin-left: 0%;
-        }
-        div.typewriter{
-          margin-left: 6%;
-        }
-      }
-      @media screen and (max-width:550px) {
-        div.m1{
-          margin-left: 7%;
-        }
-        div.a1{
-          height:120%;
-        }
-        div.m2{
-          margin-left: 6%;
-          margin-top: 5%;
-          padding-bottom: 50px;
-        }
-        div.h1{
-          width:85%;
-          margin-left:8%;
-        }
-        div.h2{
-          width:88%;
-          margin-left:7%;
-        }
-        div.a2{
-          width:60%;
-        }
-        img.a3{
-          margin-left: 30%;
-        }
-        div.a4{
-          font-size: 60%;
-        }
-        div.a5{
-          margin-left: -6%;
-        }
-        div.typewriter{
-          margin-left: 9%;
-          width: 100%;
-        }
-      }
+      .waves {
+  position: relative;
+  width: 100%;
+  height: 25vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 250px;
+}
+
+.content {
+  position: relative;
+  height: 10vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .waves {
+    height: 150px;
+    min-height: 40px;
+  }
+
+  .content {
+    height: 50vh;
+  }
+}
+@media (max-width:1100px) and (min-width:768px){
+  .txt1{
+    font-size: 60px;
+  }
+  .txt2{
+    font-size: 18px;
+  }
+  .waves{
+    margin-top: -10px;
+  }
+  .main{
+    height: 95vh;
+  }
+}
+@media (max-width: 768px) and (min-width:420px){
+  .txt1{
+    font-size: 45px;
+    width: 100%;
+    margin-top: -40px;
+  }
+  .main{
+    height: 97vh;
+  }
+  .txt2{
+    font-size: 18px;
+  }
+  .waves{
+    margin-top: 25px;
+  }
+  .button{
+    width: 15vh;
+  }
+}
+@media (max-width: 420px) and (min-width:300px){
+  .txt1{
+    font-size: 45px;
+    width: 100%;
+    margin-top: -40px;
+    margin-left: -20%;
+  }
+  .main{
+    height: 102vh;
+  }
+  .txt2{
+    font-size: 18px;
+    margin-left: -25%;
+    width: 150%;
+  }
+  .waves{
+    margin-top: 65px;
+  }
+  .button{
+    width: 15vh;
+  }
+}
+
+
     </style>
   </head>
-  <body class="dark:bg-[#486581]">
-    <div class="flex flex-row a1 h-screen">
-      <!--two cards -->
-      <div
-        class="a h-[600px] w-1/2 bg-white dark:bg-slate-800 drop-shadow-lg/30 mt-20 ml-12 rounded-xl h1"
-      >
-        <!--first card -->
-        <div class="flex flex-col text-shadow-lg">
-          <!--Title -->
-          <div class="main text-[80px] ml-5 mt-5 m1 dark:text-[#ffffff]">
-            GOOGLE DEVELOPER <br />GROUP
-          </div>
-          <div
-            class="main text-[25px] ml-7 mt-10 m2"
-          >
-            <e class="text-[#6495ed]">On Campus</e>&nbsp;<div class="dark:text-[#ffffff]">.&nbsp;St Joseph Engineering
-            College</div>
-          </div> 
-        </div>
-      </div>
-      <!--VS CODE -->
+  <div class="h-[93vh] bg-[#fff] dark:bg-[#1e1e1e] main">
+  
+  <div class="flex flex-col px-10 pt-30 pb-20 w-full mt-3 h-150 ">
+    <div class="h-150 gap-15 flex flex-col py-8 px-10 rounded-xl">
+  
+  <div class="text-8xl font-bold w-full dark:text-[#f0f0f0] flex justify-center items-center txt1">Google Developers Group</div>
+  <div class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2">
+    <div class="w-full flex justify-center">Join a Google Developer Group to build new skills and connect with local developers, online and in person.</div>
+
+
+    <div class=" w-full flex justify-center">Whether you're a beginner or a pro, all interested in technology are welcome in this inclusive community.</div>
+  </div>
+  <div class="w-30 flex flex-col justify-center mx-auto button">
+    <button class="bg-[#4285f4] text-[#fff] rounded-2xl h-10 hover:scale-105">Get Started</button>
+  </div>
+  </div>
+  </div>
+  <!--Waves -->
+    <div class="waves">
       
-        <div
-          class="a w-4/10 h-[450px] bg-slate-700 dark:bg-amber-50 flex flex-col mt-[150px] ml-10 rounded-lg drop-shadow-xl/20 h2"
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
         >
-          <div
-            class="flex w-1/2 h-10 bg-slate-400 dark:bg-amber-100 rounded-md drop-shadow-xl a2"
-          >
-            <img class="w-1/11 h-7 mx-2 my-1.5 rounded-full" src="/gdgfull.jpg" />
-            <div class="text-white dark:text-black my-1.5 text-shadow-lg">gdg.dev</div>
-            <img
-              src="/close.png"
-              class="w-1/6 ml-[140px] a3"
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
             />
-          </div>
-          <div
-            class="flex flex-col my-5 mx-10 text-left font-normal text-white font-[consolas] py-[20px] text-[16px] a4"
-          >
-            <div class="flex py-[5px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">1</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter"
-              >
-                &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><light>
-                  class</light
-                >="<orange>flex</orange>"<grey class="dark:text-gray-300">&gt;</grey>
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">2</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t1"
-              >
-                &nbsp;<grey class="dark:text-gray-300">&lt;</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>Join a
-                Google Developer Group to
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">3</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t2"
-              >
-                &nbsp;build new skills and connect with
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">4</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t3"
-              >
-                &nbsp;local developers, online and in person.
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">5</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t4"
-              >
-                &nbsp;Whether you're a beginner or a pro,
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">6</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t5"
-              >
-                &nbsp;all interested in technology are
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">7</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t6"
-              >
-                &nbsp;welcome in this inclusive community<grey class="dark:text-gray-300">&lt;/</grey><blue class="dark:text-[#0F4A85]"
-                  >div</blue
-                ><grey class="dark:text-gray-300">&gt;</grey>
-              </div>
-            </div>
-            <div class="flex py-[10px] a5">
-              <div class="text-[#54bcf9] dark:text-[#6495ed]">8</div>
-              <div
-                class="w-8/9 h-[20px] bg-slate-700 dark:bg-amber-50 ml-10 my-0.2 rounded-lg typewriter t7"
-              >
-                &nbsp;<grey class="dark:text-gray-300">&lt;/</grey><blue>div</blue><grey class="dark:text-gray-300">&gt;</grey>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      <!--The neccessary design -->
-    </div>
-  </body>
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(195,236,246,0.7)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(195,236,246,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(195,236,246,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#c3ecf6" />
+          </g>
+        </svg>
+      </div>
+  </div>
 </html>
