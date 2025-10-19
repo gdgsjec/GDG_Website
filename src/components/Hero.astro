@@ -79,26 +79,84 @@ import "../styles/global.css";
     height: 50vh;
   }
 }
+@media (max-width:1100px) and (min-width:768px){
+  .txt1{
+    font-size: 60px;
+  }
+  .txt2{
+    font-size: 18px;
+  }
+  .waves{
+    margin-top: -10px;
+  }
+  .main{
+    height: 95vh;
+  }
+}
+@media (max-width: 768px) and (min-width:420px){
+  .txt1{
+    font-size: 45px;
+    width: 100%;
+    margin-top: -40px;
+  }
+  .main{
+    height: 97vh;
+  }
+  .txt2{
+    font-size: 18px;
+  }
+  .waves{
+    margin-top: 25px;
+  }
+  .button{
+    width: 15vh;
+  }
+}
+@media (max-width: 420px) and (min-width:300px){
+  .txt1{
+    font-size: 45px;
+    width: 100%;
+    margin-top: -40px;
+    margin-left: -20%;
+  }
+  .main{
+    height: 102vh;
+  }
+  .txt2{
+    font-size: 18px;
+    margin-left: -25%;
+    width: 150%;
+  }
+  .waves{
+    margin-top: 65px;
+  }
+  .button{
+    width: 15vh;
+  }
+}
 
 
     </style>
   </head>
-  <div class="h-screen bg-white dark:bg-[#1e1e1e]">
+  <div class="h-[93vh] bg-[#fff] dark:bg-[#1e1e1e] main">
   
   <div class="flex flex-col px-10 pt-30 pb-20 w-full mt-3 h-150 ">
     <div class="h-150 gap-15 flex flex-col py-8 px-10 rounded-xl">
   
-  <div class="text-8xl font-bold w-full dark:text-[#f0f0f0] flex justify-center items-center">Google Developers Group</div>
-  <div class="w-3/4 text-xl dark:text-white flex flex-col gap-5 mx-auto">
-    <div class="w-4/3">Join a Google Developer Group to build new skills and connect with local developers, online and in person.</div>
+  <div class="text-8xl font-bold w-full dark:text-[#f0f0f0] flex justify-center items-center txt1">Google Developers Group</div>
+  <div class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2">
+    <div class="w-full flex justify-center">Join a Google Developer Group to build new skills and connect with local developers, online and in person.</div>
 
 
-    <div class=" w-4/3">Whether you're a beginner or a pro, all interested in technology are welcome in this inclusive community.</div>
+    <div class=" w-full flex justify-center">Whether you're a beginner or a pro, all interested in technology are welcome in this inclusive community.</div>
+  </div>
+  <div class="w-30 flex flex-col justify-center mx-auto button">
+    <button class="bg-[#4285f4] text-[#fff] rounded-2xl h-10 hover:scale-105">Get Started</button>
   </div>
   </div>
   </div>
   <!--Waves -->
-    <div class="mt-15">
+    <div class="waves">
       
         <svg
           class="waves"
@@ -136,9 +194,6 @@ import "../styles/global.css";
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#c3ecf6" />
           </g>
         </svg>
-       
       </div>
   </div>
-
 </html>
-
