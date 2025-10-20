@@ -117,7 +117,7 @@ import "../styles/global.css";
     font-size: 45px;
     width: 100%;
     margin-top: -40px;
-    margin-left: -20%;
+    margin-left: 0%;
   }
   .main{
     height: 102vh;
@@ -137,6 +137,25 @@ import "../styles/global.css";
 
 
     </style>
+    
+<script>
+  var i = 0;
+  var txt1 = 'Join a Google Developer Group to build new skills and connect with local developers, online and in person.';
+  var txt2= '';
+  var speed = 50;
+
+  function typeWriter() {
+    const demo = document.getElementById("demo");
+    if (demo && i < txt1.length) {
+      demo.innerHTML += txt1.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  typeWriter();
+</script>
+
   </head>
   <div class="h-[93vh] bg-[#fff] dark:bg-[#1e1e1e] main">
   
@@ -145,10 +164,9 @@ import "../styles/global.css";
   
   <div class="text-8xl font-bold w-full dark:text-[#f0f0f0] flex justify-center items-center txt1">Google Developers Group</div>
   <div class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2">
-    <div class="w-full flex justify-center">Join a Google Developer Group to build new skills and connect with local developers, online and in person.</div>
+    <div class="w-full flex justify-center" id="demo"></div>
 
-
-    <div class=" w-full flex justify-center">Whether you're a beginner or a pro, all interested in technology are welcome in this inclusive community.</div>
+    <div class=" w-full flex justify-center" id="demo">Whether you`re a beginner or a pro, all interested in technology are welcome in this inclusive community.</div>
   </div>
   <div class="w-30 flex flex-col justify-center mx-auto button">
     <button class="bg-[#4285f4] text-[#fff] rounded-2xl h-10 hover:scale-105">Get Started</button>
