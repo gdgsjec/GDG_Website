@@ -33,6 +33,23 @@ import growth from '../assets/growth.png';
         #4285f4
     );
 }
+
+
+
+
+.scroll-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 	</style>
 </head>
 
@@ -46,7 +63,7 @@ import growth from '../assets/growth.png';
 	<p class="text-[17px] p-4 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
 	</div>
 
-<div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 ">
+<div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 scroll-section">
 
 	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1">
 		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
@@ -87,14 +104,13 @@ import growth from '../assets/growth.png';
 
 <div>
 <div class="text-[#4285f4] font-bold text-center p-4 m-4 sm:text-[35px] md:text-[50px] text-[30px]">OUR MISSION</div>
-<p class="text-center text-[17px] max-w-5xl p-4 sm:m-3">Our mission is to be a guiding light for students, helping bridge the gap between beginner curiosity and professional skills. DSC aims to empower every member – regardless of experience – by fostering growth, exploration, and collaboration across diverse interests. We are dedicated to nurturing skills not only in technology but also in leadership, management, and creativity.</p>
+<p class="text-center text-[17px] max-w-5xl p-4 sm:m-3 scroll-section">Our mission is to be a guiding light for students, helping bridge the gap between beginner curiosity and professional skills. DSC aims to empower every member – regardless of experience – by fostering growth, exploration, and collaboration across diverse interests. We are dedicated to nurturing skills not only in technology but also in leadership, management, and creativity.</p>
 
-<div class="flex flex-wrap gap-12 m-2 justify-center items-center dark:text-gray-500">
+<div class="flex flex-wrap gap-12 m-2 justify-center items-center dark:text-gray-500 scroll-section">
 	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards1">
 		<div class="flex flex-wrap justify-center items-center p-3">
 		<div class="m-3 bg-[#ea4335] rounded-4xl p-3"><img src={growth.src} alt="gdg_sessions" width="40px" height="40px"></div>
 		<div class="text-[#4285f4] font-medium text-xl m-2.5">Technical Growth</div>
-		<!-- <div class="text-md text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, inventore!</div> -->
 		</div>
 		<div>
 			<ul class="text-gray-600 px-3">
@@ -140,5 +156,24 @@ import growth from '../assets/growth.png';
 	</div>
 </div>
 </div>
+
+
+
+<script>
+	const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.scroll-section').forEach(section => {
+  observer.observe(section);
+});
+</script>
+
 </section>
 </body>
