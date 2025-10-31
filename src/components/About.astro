@@ -34,9 +34,6 @@ import growth from '../assets/growth.png';
     );
 }
 
-
-
-
 .scroll-section {
   opacity: 0;
   transform: translateY(50px);
@@ -48,8 +45,63 @@ import growth from '../assets/growth.png';
   transform: translateY(0);
 }
 
+.card,
+.cards1,
+.cards2,
+.cards3 {
+  box-shadow: none !important;
+  border-radius: 1.2rem;
+}
+
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+  }
+
+  .card-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
 
 
+  @media (min-width: 769px) {
+    .card-container {
+      gap: 20px;
+	  transform: none !important;
+  transition: none !important; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel {
+      width: 100%;
+      max-width: 200px;
+	  border-radius: 1.2em;
+	  max-height: 200px;
+    }
+
+    .card-container {
+      transform: translateX(0);
+	  transition: transform 0.5s ease-in-out;
+    }
+
+    .card {
+      flex: 0 0 100%;
+      filter: blur(3px);
+      opacity: 0.5;
+      transform: scale(0.9);
+      margin: 0; 
+	  
+    }
+
+    .card.active {
+      filter: blur(0);
+      opacity: 1;
+      transform: scale(1);
+    }
+}
 	</style>
 </head>
 
@@ -63,37 +115,50 @@ import growth from '../assets/growth.png';
 	<p class="text-[17px] p-4 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
 	</div>
 
-<div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 scroll-section">
 
-	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1">
+
+
+
+<div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 scroll-section carousel">
+<div class="card-container" id="cardContainer">
+
+	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1 card active">
 		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
 		<div class="text-[#ea4335] font-extrabold text-3xl" id="members">600+</div>
 		<div class="text-lg">Active Members</div>
 	</div>
 
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card2">
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card2 card">
 		<div class="m-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
 		<div class="text-[#ffD427] font-extrabold text-3xl" id="sessions">20+</div>
 		<div class="text-lg">Sessions Conducted</div>
 	</div>
 
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card3">
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card3 card">
 		<div class="m-3"><img src={speakers.src} alt="gdg_speakers" width="40px" height="40px"></div>
 		<div class="text-[#34a853] font-extrabold text-3xl" id="speakers">12+</div>
 		<div class="text-lg">Expert Speakers</div>
 	</div>
 
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card4">
+	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 cursor-pointer dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card4 card">
 		<div class="m-3"><img src={workshop.src} alt="gdg_workshop" width="40px" height="40px"></div>
 		<div class="text-[#4285f4] font-extrabold text-3xl" id="workshops">10+</div>
 		<div class="text-lg text-center">Hands-on Workshops</div>
 	</div>
 </div>
+
+	  <div class="controls">
+    <button class="btn" id="prevBtn"></button>
+    <button class="btn" id="nextBtn"></button>
+  </div>
 </div>
 
+
+
+</div>
 
 <div class="flex flex-col justify-center items-center">
 	<div class="text-[#4285f4] font-bold text-center p-4 m-4  sm:text-[35px] md:text-[50px] text-[30px]">ABOUT US</div>
@@ -173,7 +238,68 @@ import growth from '../assets/growth.png';
 document.querySelectorAll('.scroll-section').forEach(section => {
   observer.observe(section);
 });
+
+
+
+  const cards = document.querySelectorAll('.card');
+  const container = document.getElementById('cardContainer');
+  const next = document.getElementById('nextBtn');
+  const prev = document.getElementById('prevBtn');
+  let index = 0;
+  let autoSlideInterval;
+
+  function updateCards() {
+    cards.forEach(card => card.classList.remove('active'));
+    cards[index].classList.add('active');
+
+    // Slide full width per card
+    container.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextCard() {
+    index = (index + 1) % cards.length;
+    updateCards();
+  }
+
+  function prevCard() {
+    index = (index - 1 + cards.length) % cards.length;
+    updateCards();
+  }
+
+  next.addEventListener('click', () => {
+    nextCard();
+    resetAutoSlide();
+  });
+
+  prev.addEventListener('click', () => {
+    prevCard();
+    resetAutoSlide();
+  });
+
+ 
+  function startAutoSlide() {
+ 	autoSlideInterval = setInterval(nextCard, 1500);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+
+  let startX = 0;
+  container.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  container.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) { nextCard(); resetAutoSlide(); }
+    if (endX - startX > 50) { prevCard(); resetAutoSlide(); }
+  });
+
+  startAutoSlide();
+
 </script>
 
 </section>
 </body>
+
+
