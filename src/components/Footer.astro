@@ -5,19 +5,17 @@ import GDGblack from '../assets/GDGblack.png';
 <footer class="bg-gray-100 dark:bg-gray-800 ">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
     <!-- Column 1: Logo -->
-    <div class="flex justify-center md:justify-start items-start h-full w-sm">
+    <div class="flex justify-center md:justify-start items-start lg:w-64  sm:w-16 md:w-20 h-auto w-auto cursor-pointer" id="logo">
 <img
   src={GDGwhite.src}
   alt="GDG Logo Dark"
-  class="hidden dark:block items-center "
-/>
+  class="hidden dark:block justify-center w-auto h-auto ">
 
 <img
   src={GDGblack.src}
   alt="GDG Logo Light"
-  class="block dark:hidden items-center "
-/>
-   </div>
+  class="block dark:hidden justify-center h-auto w-auto"/>
+  </div>
 
     <!-- Column 2: Explore Links -->
     <div class="text-center">
@@ -75,7 +73,7 @@ import GDGblack from '../assets/GDGblack.png';
       <a href="https://policies.google.com/terms?hl=en" class="underline">Terms & Conditions</a> | 
       <a href="https://policies.google.com/privacy?hl=en" class="underline">Privacy Policy</a>
     </p>
-    <div class="mb-8 sm:mb-10"> </div>
+    
     
   </div>
 
