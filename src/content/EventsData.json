@@ -54,6 +54,72 @@
             "start_date": "2025-09-13T03:30:06Z",
             "title": "HackEVL - SJEC Hackathon 2025",
             "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-hackevl-sjec-hackathon-2025/"
+        },
+        {
+            "cohost_registration_url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-generative-ai-world-of-opportunities/",
+            "cropped_banner_url": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/IMG_0217_4epvJXg.png",
+            "cropped_picture_url": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/IMG_0218_FQipCNX.jpeg",
+            "description": "<p>Join us for an insightful dive into the \"World of Opportunities\" with Generative AI! This event will unravel the foundations of Generative AI, introduce you to the art of Prompt Engineering, and guide you through the initial steps of Agentic AI. Get an exclusive overview of Google AI Studio while learning about the importance of using AI safely and responsibly. Our esteemed speaker, Om Ashish Mishra, a Product Data Scientist with over 4 years of industry experience and a renowned AI consultant, will lead this engaging session. This is your chance to explore the possibilities of AI and connect with fellow enthusiasts. Mark your calendars and be part of this transformative experience! See you there.</p><p></p><p style=\"text-align: right;\">*Participants are required to get their laptops fully charged</p>",
+            "description_short": "Join us for an insightful dive into the \"World of Opportunities\" with Generative AI! This event will unravel the foundations of Generative AI, introduce you to the art of Prompt Engineering, and guide you through the initial steps of Agentic AI. ",
+            "event_type_title": "Speaker Session / Tech Talk",
+            "start_date": "2025-05-13T05:30:18Z",
+            "title": "Generative AI – World of Opportunities",
+            "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-generative-ai-world-of-opportunities/"
+        },
+        {
+            "cohost_registration_url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-flutterflow-workshop/",
+            "cropped_banner_url": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_1.0_mul_h_sub_1.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/BANNER_owS7GSz.png",
+            "cropped_picture_url": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/FLUTTER-FLOW%20LOGO_uQvjOLN.png",
+            "description": "This event is designed to help you dive into the exciting world of app development with FlutterFlow, a powerful no-code/low-code platform built on top of Flutter. Through engaging sessions and a hands-on workshop led by experienced mentors, you’ll gain the perfect blend of theory and practical skills to start building beautiful, responsive mobile apps — all with minimal or no coding.<p>Whether you're a designer, a student developer, or just someone with a great app idea, This FlutterFlow Workshop will equip you with the tools to bring your vision to life. Walk in with curiosity, walk out with a working prototype!</p><p>All participants will receive an e-certificate of participation upon completion.</p><p>Topics Covered:</p><ul><li>Introduction to FlutterFlow &amp; the no-code revolution</li><li>Building cross-platform apps visually</li><li>Firebase integration for back-end services</li><li>Creating interactive UIs &amp; adding custom logic</li><li>Responsive design best practices</li><li>Exporting code &amp; deploying your app</li><li>Roadmap to becoming a Flutter or FlutterFlow developer</li></ul><p align=\"right\">*All participants must bring their own laptops.</p>",
+            "description_short": "Unlock the power of app development without writing a single line of code! Join us for a hands-on FlutterFlow Workshop where you'll learn how to design, build, and launch fully functional mobile applications using FlutterFlow — a powerful visual development platform built on Flutter.",
+            "event_type_title": "Workshop / Study Group",
+            "start_date": "2025-04-26T04:00:00Z",
+            "title": "FlutterFlow Workshop",
+            "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-flutterflow-workshop/"
+        },
+        {
+            "cohost_registration_url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-web3-connect/",
+            "cropped_banner_url": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/Untitled%20design%282%29_MOYVeXN.png",
+            "cropped_picture_url": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Untitled%20design%283%29_jbbrrSo.png",
+            "description": "<p>Welcome to Web3 Connect! This event is your gateway to the world of blockchain and decentralized technology. Through engaging talks and a hands-on workshop by the experts from ConnectVerse, you'll gain both theoretical knowledge and practical experience in blockchain-based application development. Learn the fundamentals of blockchain, explore the roadmap to becoming a blockchain developer, and dive into smart contract development using Solidity. Whether you're curious about NFTs, the Metaverse, or deploying your own ERC20 token, this session will set you on the right path. Plus, enjoy exciting swag giveaways and network with like-minded peers. Perfect for students eager to explore the future of Web3!</p><p><br></p><p><b><u>Topics Covered:</u></b></p><p><b>•</b>Basics of Blockchain Technology</p><p>•Roadmap to Becoming a Blockchain Developer</p><p>•Introduction to Solidity &amp; Creating an ERC20 Token</p><p>•Types of Assets on Blockchain</p><p>•NFTs and the Metaverse</p><p>•Smart Contract Development Using Solidity</p><p>•Deploying an NFT Token on Blockchain</p><p><br></p><p align=\"right\">*All Participants must get their own laptop</p>",
+            "description_short": "Join Web3 Connect to explore blockchain technology through insightful talks and a hands-on workshop. Learn smart contract development, NFTs, and the roadmap to becoming a blockchain developer!",
+            "event_type_title": "Speaker Session / Tech Talk",
+            "start_date": "2025-03-03T04:00:00Z",
+            "title": "Web3 Connect",
+            "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-web3-connect/"
+        },
+        {
+            "cohost_registration_url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-tech-winter-break-gdg-on-campus-st-joseph-engineering-college/",
+            "cropped_banner_url": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/Tech%20Winter%20Break%20Banner_xVZGUs2.png",
+            "cropped_picture_url": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/WhatsApp%20Image%202025-01-09%20at%207.21.53%20PM_AYZzCwR.jpeg",
+            "description": "<p>Tech Winter Break is a one-week challenge running from December 24th to 31st, designed to ignite creativity and technical skills. Participants can build an app or website of their choice, competing for exciting prizes and opportunities. Open to everyone, including beginners, this event offers the perfect platform to learn, innovate, and showcase talent.</p><p>This challenge also serves as a warm-up for the Google Solution Challenge, starting in January, providing a chance to brainstorm ideas, form teams, and sharpen technical skills in a collaborative environment.</p><p>Don’t miss this opportunity to make your winter break both productive and fun. Register now and follow us for updates!</p>",
+            "description_short": "Tech Winter Break is here! From December 24th to 31st, take on an exciting one-week challenge to build an app or website of your choice. Open to all, including beginners, this is a chance to learn, develop new skills, and showcase your creativity. Compete for prizes and gear up for the Google Solution Challenge starting in January. Make your winter break productive and fun—register now!",
+            "event_type_title": "Hackathon",
+            "start_date": "2024-12-24T03:30:00Z",
+            "title": "Tech Winter Break - GDG on Campus St Joseph Engineering College",
+            "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-tech-winter-break-gdg-on-campus-st-joseph-engineering-college/"
+        },
+         {
+            "cohost_registration_url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-build-with-ai/",
+            "cropped_banner_url": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/GDG23%20Web%20Banner%20Green%20%281%29_QvmaLqy.jpg",
+            "cropped_picture_url": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/event_banners/GDG_Bevy_DefaultEventThumbnail_2_ku8UfdU.png",
+            "description": "<p>Build with AI is an engaging hands-on info session where participants explore the foundations of AI and machine learning. Dive into TensorFlow, Google Gemini, Vertex AI, and Google Cloud, while learning to build a basic neural network. The program also introduces working with large language models (LLMs), offering practical insights into AI-powered development. The sessions guide you in building a basic neural network, understanding AI concepts, and working with large language models (LLMs). Whether you're a beginner or a tech enthusiast, this program offers a solid foundation in modern AI development with practical, hands-on learning.</p>",
+            "description_short": "Build with AI is an engaging hands-on info session where participants explore the foundations of AI and machine learning. Dive into TensorFlow, Google Gemini, Vertex AI, and Google Cloud, while learning to build a basic neural network. The program also introduces working with large language models (LLMs), offering practical insights into AI-powered development. ",
+            "event_type_title": "Info session",
+            "start_date": "2024-11-18T17:00:00Z",
+            "title": "Build with AI",
+            "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-build-with-ai/"
+        },
+        {
+            "cohost_registration_url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-the-developers-path/",
+            "cropped_banner_url": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/GDG23%20Web%20Banner%20Green%20%281%29_aWgpI5h.jpg",
+            "cropped_picture_url": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/devpath_poster_r0e3IOA.jpg",
+            "description": "<p>Welcome to The Developers' Path! This event offers sessions led by alumni and rising professionals, designed to guide you on starting your journey in tech. Learn how to begin coding, break into the tech industry, and identify the best path for you. Whether you're curious about web development, Android development, machine learning, or just wondering where to start, this event is for you. Get insights into securing internships, participating in hackathons, and excelling in the world of development. Perfect for freshers navigating the early steps of a tech career!</p>",
+            "description_short": "Welcome to The Developers' Path! This event offers sessions led by alumni and rising professionals, designed to guide you on starting your journey in tech. Learn how to begin coding, break into the tech industry, and identify the best path for you.  Perfect for freshers navigating the early steps of a tech career!",
+            "event_type_title": "Speaker Session / Tech Talk",
+            "start_date": "2024-11-01T11:30:00Z",
+            "title": "The Developers' Path",
+            "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-the-developers-path/"
         }
     ]
 }
