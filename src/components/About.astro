@@ -11,7 +11,6 @@ import growth from '../assets/growth.png';
 
 <head>
 	<style>
-
 .cards1, .cards2, .cards3{
     position: relative;
     border-radius: 1rem; 
@@ -34,18 +33,15 @@ import growth from '../assets/growth.png';
         #4285f4
     );
 }
-
 .scroll-section {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .scroll-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 .card,
 .cards1,
 .cards2,
@@ -53,20 +49,16 @@ import growth from '../assets/growth.png';
   box-shadow: none !important;
   border-radius: 1.2rem;
 }
-
 .carousel {
     position: relative;
     width: 90%;
     max-width: 900px;
     overflow: hidden;
   }
-
   .card-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
   }
-
-
   @media (min-width: 769px) {
     .card-container {
       gap: 20px;
@@ -74,7 +66,6 @@ import growth from '../assets/growth.png';
   transition: none !important; 
     }
   }
-
   @media (max-width: 768px) {
     .carousel {
       width: 100%;
@@ -82,28 +73,23 @@ import growth from '../assets/growth.png';
 	  border-radius: 1.2em;
 	  max-height: 200px;
     }
-
     .card-container {
       transform: translateX(0);
 	  transition: transform 0.5s ease-in-out;
     }
-
     .card {
       flex: 0 0 100%;
       filter: blur(3px);
       opacity: 0.5;
       transform: scale(0.9);
       margin: 0; 
-	  
     }
-
     .card.active {
       filter: blur(0);
       opacity: 1;
       transform: scale(1);
     }
 }
-
 @media (min-width: 779px) and (max-width: 935px) {
   .carousel {
     width: 95%;  
@@ -125,7 +111,6 @@ import growth from '../assets/growth.png';
 	</style>
 </head>
 
-
 <body>
 <section class="bg-gray-50 w-full h-auto flex flex-col justify-center items-center dark:bg-gray-900 dark:text-[#ffffff]" id="aboutUs">
 	<div class="flex flex-col flex-wrap justify-center items-center">
@@ -138,7 +123,7 @@ import growth from '../assets/growth.png';
 <div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 scroll-section carousel">
 <div class="card-container" id="cardContainer">
 
-	<div class="bg-[#ffffff] shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1 card active">
+	<div class="bg-[#ffffff] h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1 card active">
 		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
 		<div class="text-[#ea4335] font-extrabold text-3xl" id="members">600+</div>
 		<div class="text-lg">Active Members</div>
@@ -171,9 +156,6 @@ import growth from '../assets/growth.png';
     <button class="btn" id="nextBtn"></button>
   </div>
 </div>
-
-
-
 </div>
 
 <div class="flex flex-col justify-center items-center">
@@ -238,8 +220,6 @@ import growth from '../assets/growth.png';
 </div>
 </div>
 
-
-
 <script>
 	const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -250,58 +230,44 @@ import growth from '../assets/growth.png';
 }, {
   threshold: 0.1
 });
-
 document.querySelectorAll('.scroll-section').forEach(section => {
   observer.observe(section);
 });
-
-
-
   const cards = document.querySelectorAll<HTMLDivElement>('.card');
 const container = document.getElementById('cardContainer') as HTMLDivElement | null;
 const next = document.getElementById('nextBtn') as HTMLButtonElement | null;
 const prev = document.getElementById('prevBtn') as HTMLButtonElement | null;
-
 let index = 0;
 let autoSlideInterval: ReturnType<typeof setInterval> | undefined;
-
 function updateCards(): void {
   if (!container) return; // Prevent null errors
   cards.forEach(card => card.classList.remove('active'));
   if (cards[index]) cards[index].classList.add('active');
   container.style.transform = `translateX(-${index * 100}%)`;
 }
-
 function nextCard(): void {
   index = (index + 1) % cards.length;
   updateCards();
 }
-
 function prevCard(): void {
   index = (index - 1 + cards.length) % cards.length;
   updateCards();
 }
-
 next?.addEventListener('click', () => {
   nextCard();
   resetAutoSlide();
 });
-
 prev?.addEventListener('click', () => {
   prevCard();
   resetAutoSlide();
 });
-
 function startAutoSlide(): void {
   autoSlideInterval = setInterval(nextCard, 1500);
 }
-
 function resetAutoSlide(): void {
   if (autoSlideInterval) clearInterval(autoSlideInterval);
   startAutoSlide();
 }
-
-// === Swipe Support for Mobile ===
 let startX = 0;
 container?.addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
@@ -317,12 +283,8 @@ container?.addEventListener('touchend', e => {
     resetAutoSlide();
   }
 });
-
 startAutoSlide();
-
-
 </script>
-
 </section>
 </body>
 
