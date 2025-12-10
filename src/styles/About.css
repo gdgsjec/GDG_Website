@@ -1,0 +1,136 @@
+.cards1, .cards2, .cards3{
+    position: relative;
+    border-radius: 1rem; 
+    overflow: hidden; 
+}
+.cards1::before, .cards2::before, .cards3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;  
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background: linear-gradient(
+        to right, #34a853, #ffD427, #ea4335, #4285f4 );}
+.scroll-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}.scroll-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}.card,.cards1,.cards2,.cards3 {
+  box-shadow: none !important;
+  border-radius: 1.2rem;
+}.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+  }.card-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }@media (min-width: 769px) {
+    .card-container {
+      gap: 20px;
+	  transform: none !important;
+  transition: none !important; 
+    } }@media (max-width: 768px) {
+    .carousel {
+      width: 100%;
+      max-width: 250px;
+	  border-radius: 1.2em;
+	  max-height: 200px; 
+  }.card-container {
+      transform: translateX(0);
+	  transition: transform 0.5s ease-in-out;
+    }.card {
+      flex: 0 0 100%;
+      filter: blur(3px);
+      opacity: 0.5;
+      transform: scale(0.9);
+      margin: 0; 
+    }.card.active {
+      filter: blur(0);
+      opacity: 1;
+      transform: scale(1);
+    }}
+@media (min-width: 779px) and (max-width: 935px) {
+  .carousel {
+    width: 95%;  
+    max-width: 800px; 
+    margin: 0 auto;  
+  }.card-container {
+    gap: 15px; 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  }.card {
+    width: 250px;  
+    height: 250px;
+  }}.mission-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.mission-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+}.mission-card-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}.mission-card {
+  flex: 0 0 100%;
+  transition: all 0.5s ease-in-out;
+}.mission-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(66, 133, 244, 0.8);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}.mission-arrow:hover {
+  background-color: rgba(66, 133, 244, 1);
+}.mission-arrow.left {
+  left: 10px;
+}.mission-arrow.right {
+  right: 10px;
+}@media (min-width: 666px) {
+  .mission-carousel-wrapper {
+    display: block;
+  }.mission-carousel {
+    max-width: 100%;
+    overflow: visible;
+  } .mission-card-container {
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    transform: none !important;
+  }  .mission-card {
+    flex: 0 0 auto;
+  }.mission-arrow {
+    display: none;
+  }}
+@media (max-width: 665px) {.horizontal {
+    margin: 0;
+    gap: 0;
+  }.mission-card {
+    width: 300px;
+    height: 400px;
+  }}

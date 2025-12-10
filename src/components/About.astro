@@ -7,232 +7,106 @@ import checkmark from '../assets/checkmark.png';
 import opportunities from '../assets/opportunities.png';
 import skill from '../assets/skill.png';
 import growth from '../assets/growth.png';
+import "../styles/About.css";
 ---
-
-<head>
-	<style>
-.cards1, .cards2, .cards3{
-    position: relative;
-    border-radius: 1rem; 
-    overflow: hidden; 
-}
-.cards1::before, .cards2::before, .cards3::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 4px;  
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background: linear-gradient(
-        to right,
-         #34a853,
-        #ffD427,
-        #ea4335,
-        #4285f4
-    );
-}
-.scroll-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.scroll-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.card,
-.cards1,
-.cards2,
-.cards3 {
-  box-shadow: none !important;
-  border-radius: 1.2rem;
-}
-.carousel {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
-    overflow: hidden;
-  }
-  .card-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  @media (min-width: 769px) {
-    .card-container {
-      gap: 20px;
-	  transform: none !important;
-  transition: none !important; 
-    }
-  }
-  @media (max-width: 768px) {
-    .carousel {
-      width: 100%;
-      max-width: 250px;
-	  border-radius: 1.2em;
-	  max-height: 200px;
-    }
-    .card-container {
-      transform: translateX(0);
-	  transition: transform 0.5s ease-in-out;
-    }
-    .card {
-      flex: 0 0 100%;
-      filter: blur(3px);
-      opacity: 0.5;
-      transform: scale(0.9);
-      margin: 0; 
-    }
-    .card.active {
-      filter: blur(0);
-      opacity: 1;
-      transform: scale(1);
-    }
-}
-@media (min-width: 779px) and (max-width: 935px) {
-  .carousel {
-    width: 95%;  
-    max-width: 800px; 
-    margin: 0 auto;  
-  }
-  .card-container {
-    gap: 15px; 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-  }
-  .card {
-    width: 250px;  
-    height: 250px;
-  }
-}
-	</style>
-</head>
 
 <body>
 <section class="bg-gray-50 w-full h-auto flex flex-col justify-center items-center dark:bg-gray-900 dark:text-[#ffffff]" id="aboutUs">
 	<div class="flex flex-col flex-wrap justify-center items-center">
 	<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4  sm:text-[35px] md:text-[50px]"> OUR IMPACT </div>
-
 	<div class="max-w-7xl">
 	<p class="text-[17px] p-4 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
 	</div>
-
 <div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 scroll-section carousel">
 <div class="card-container" id="cardContainer">
-
 	<div class="bg-[#ffffff] h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1 card active">
 		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
 		<div class="text-[#ea4335] font-extrabold text-3xl" id="members">600+</div>
 		<div class="text-lg">Active Members</div>
 	</div>
-
-
 	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card2 card">
 		<div class="m-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
 		<div class="text-[#ffD427] font-extrabold text-3xl" id="sessions">20+</div>
 		<div class="text-lg">Sessions Conducted</div>
 	</div>
-
-
 	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card3 card">
 		<div class="m-3"><img src={speakers.src} alt="gdg_speakers" width="40px" height="40px"></div>
 		<div class="text-[#34a853] font-extrabold text-3xl" id="speakers">12+</div>
 		<div class="text-lg">Expert Speakers</div>
 	</div>
-
-
 	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card4 card">
 		<div class="m-3"><img src={workshop.src} alt="gdg_workshop" width="40px" height="40px"></div>
 		<div class="text-[#4285f4] font-extrabold text-3xl" id="workshops">10+</div>
 		<div class="text-lg text-center">Hands-on Workshops</div>
 	</div>
 </div>
-
 	  <div class="controls">
     <button class="btn" id="prevBtn"></button>
     <button class="btn" id="nextBtn"></button>
   </div>
 </div>
 </div>
-
 <div class="flex flex-col justify-center items-center">
 	<div class="text-[#4285f4] font-bold text-center p-4 m-4  sm:text-[35px] md:text-[50px] text-[30px]">ABOUT US</div>
 	<div class="max-w-7xl p-4">
 	<p class="text-center text-[17px] sm:m-3">Driven by the ingenuity of Google Developers, the Developer Student Club (DSC) at St. Joseph Engineering College is a testament to our commitment to learning and growth. Whether you are new to coding or already tech-savvy, DSC is the club where you can turbocharge your programming skills and network with peers and experts. We welcome students from all fields, guiding everyone from their first "Hello, World!" to advanced coding tricks and collaborative tech projects. Our vibrant club hosts activities, shares resources, and offers opportunities for learning in both technical and creative domains.</p>
-	</div>
-</div>
-
+	</div></div>
 <div>
 <div class="text-[#4285f4] font-bold text-center p-4 m-4 sm:text-[35px] md:text-[50px] text-[30px]">OUR MISSION</div>
 <p class="text-center text-[17px] max-w-7xl p-4 sm:m-3">Our mission is to be a guiding light for students, helping bridge the gap between beginner curiosity and professional skills. DSC aims to empower every member – regardless of experience – by fostering growth, exploration, and collaboration across diverse interests. We are dedicated to nurturing skills not only in technology but also in leadership, management, and creativity.</p>
-
-<div class="flex flex-wrap gap-12 m-2 justify-center items-center dark:text-gray-500 scroll-section">
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards1">
-		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#ea4335] rounded-4xl p-3"><img src={growth.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#4285f4] font-medium text-xl m-2.5">Technical Growth</div>
-		</div>
-		<div>
-			<ul class="text-gray-600 px-3">
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Web Development</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Android Development</li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> AIML </li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Cloud Technologies</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Flutter</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  UI/UX</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards2">
-		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#34a853] rounded-4xl p-3"><img src={skill.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#ea4335] font-medium text-xl m-2.5">Creative and Non-Technical Skill-Building</div>
-		</div>
-		<div>
-			<ul class="text-gray-600 px-3">
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Operations & Events</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Campaign Coordination</li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Media and Content Creation</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Program Coordination</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards3">
-		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#ffd427] rounded-4xl p-3"><img src={opportunities.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#34a853] font-medium text-xl m-2.5">Expanding Opportunities</div>
-		</div>
-		<div>
-			<ul class="text-gray-600 px-3">
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Game Dev, UI/UX </li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Resources for all levels</li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Events and workshops </li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Collaborative community </li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Cross-domain connection </li>
-			</ul>
-		</div>
-	</div>
+<div class="mission-carousel-wrapper">
+  <button class="mission-arrow left" id="missionPrevBtn">&#8249;</button>
+  <div class="mission-carousel">
+    <div class="mission-card-container horizontal" id="missionCardContainer">
+      <div class="bg-[#ffffff] shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards1 mission-card">
+        <div class="flex flex-wrap justify-center items-center p-3">
+          <div class="m-3 bg-[#ea4335] rounded-4xl p-3"><img src={growth.src} alt="gdg_sessions" width="40px" height="40px"></div>
+          <div class="text-[#4285f4] font-medium text-xl m-2.5">Technical Growth</div>
+        </div>
+        <div>
+          <ul class="text-gray-600 px-3">
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Web Development</li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Android Development</li>
+            <li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> AIML </li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Cloud Technologies</li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Flutter</li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  UI/UX</li>
+          </ul> </div></div>
+      <div class="bg-[#ffffff] shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards2 mission-card">
+        <div class="flex flex-wrap justify-center items-center p-3">
+          <div class="m-3 bg-[#34a853] rounded-4xl p-3"><img src={skill.src} alt="gdg_sessions" width="40px" height="40px"></div>
+          <div class="text-[#ea4335] font-medium text-xl m-2.5">Creative and Non-Technical Skill-Building</div> </div>
+        <div>
+          <ul class="text-gray-600 px-3">
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Operations & Events</li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Campaign Coordination</li>
+            <li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Media and Content Creation</li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Program Coordination</li>
+          </ul></div> </div>
+      <div class="bg-[#ffffff] shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards3 mission-card">
+        <div class="flex flex-wrap justify-center items-center p-3">
+          <div class="m-3 bg-[#ffd427] rounded-4xl p-3"><img src={opportunities.src} alt="gdg_sessions" width="40px" height="40px"></div>
+          <div class="text-[#34a853] font-medium text-xl m-2.5">Expanding Opportunities</div></div>
+        <div>
+          <ul class="text-gray-600 px-3">
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Game Dev, UI/UX </li>
+            <li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Resources for all levels</li>
+            <li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Events and workshops </li>
+            <li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Collaborative community </li>
+            <li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Cross-domain connection </li>
+          </ul> </div></div> </div></div>
+  <button class="mission-arrow right" id="missionNextBtn">&#8250;</button>
 </div>
 </div>
-
 <script>
 	const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.1
-});
+    } });}, {
+  threshold: 0.1 });
 document.querySelectorAll('.scroll-section').forEach(section => {
-  observer.observe(section);
-});
+  observer.observe(section); });
   const cards = document.querySelectorAll<HTMLDivElement>('.card');
 const container = document.getElementById('cardContainer') as HTMLDivElement | null;
 const next = document.getElementById('nextBtn') as HTMLButtonElement | null;
@@ -243,49 +117,54 @@ function updateCards(): void {
   if (!container) return; // Prevent null errors
   cards.forEach(card => card.classList.remove('active'));
   if (cards[index]) cards[index].classList.add('active');
-  container.style.transform = `translateX(-${index * 100}%)`;
-}
+  container.style.transform = `translateX(-${index * 100}%)`;}
 function nextCard(): void {
-  index = (index + 1) % cards.length;
-  updateCards();
-}
-function prevCard(): void {
-  index = (index - 1 + cards.length) % cards.length;
-  updateCards();
-}
-next?.addEventListener('click', () => {
-  nextCard();
-  resetAutoSlide();
-});
-prev?.addEventListener('click', () => {
-  prevCard();
-  resetAutoSlide();
-});
-function startAutoSlide(): void {
-  autoSlideInterval = setInterval(nextCard, 1500);
-}
+  index = (index + 1) % cards.length; updateCards();}
+function prevCard(): void { index = (index - 1 + cards.length) % cards.length; updateCards();}
+next?.addEventListener('click', () => { nextCard(); resetAutoSlide();});
+prev?.addEventListener('click', () => { prevCard(); resetAutoSlide(); });
+function startAutoSlide(): void { autoSlideInterval = setInterval(nextCard, 1500);}
 function resetAutoSlide(): void {
-  if (autoSlideInterval) clearInterval(autoSlideInterval);
-  startAutoSlide();
-}
+  if (autoSlideInterval) clearInterval(autoSlideInterval);startAutoSlide();}
 let startX = 0;
-container?.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
+container?.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
 container?.addEventListener('touchend', e => {
   const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) {
-    nextCard();
-    resetAutoSlide();
-  }
-  if (endX - startX > 50) {
-    prevCard();
-    resetAutoSlide();
-  }
-});
+  if (startX - endX > 50) { nextCard(); resetAutoSlide();}
+  if (endX - startX > 50) { prevCard(); resetAutoSlide(); }});
 startAutoSlide();
+const missionCards = document.querySelectorAll<HTMLDivElement>('.mission-card');
+const missionContainer = document.getElementById('missionCardContainer') as HTMLDivElement | null;
+const missionNext = document.getElementById('missionNextBtn') as HTMLButtonElement | null;
+const missionPrev = document.getElementById('missionPrevBtn') as HTMLButtonElement | null;
+let missionIndex = 0;
+function updateMissionCards(): void {
+  if (!missionContainer || window.innerWidth > 665) return;
+  missionContainer.style.transform = `translateX(-${missionIndex * 100}%)`;}
+function nextMissionCard(): void {
+  if (window.innerWidth > 665) return;
+  missionIndex = (missionIndex + 1) % missionCards.length; updateMissionCards();}
+function prevMissionCard(): void {
+  if (window.innerWidth > 665) return;
+  missionIndex = (missionIndex - 1 + missionCards.length) % missionCards.length;
+  updateMissionCards();}
+missionNext?.addEventListener('click', nextMissionCard);
+missionPrev?.addEventListener('click', prevMissionCard);
+let missionStartX = 0;
+missionContainer?.addEventListener('touchstart', e => {
+  if (window.innerWidth > 665) return; missionStartX = e.touches[0].clientX; });
+missionContainer?.addEventListener('touchend', e => {
+  if (window.innerWidth > 665) return;
+  const endX = e.changedTouches[0].clientX;
+  if (missionStartX - endX > 50) {nextMissionCard();}
+  if (endX - missionStartX > 50) {prevMissionCard(); }});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 665 && missionContainer) { missionContainer.style.transform = 'none'; missionIndex = 0; }});
 </script>
 </section>
 </body>
+
+
+
 
 
