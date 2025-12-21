@@ -4,27 +4,27 @@ import "../styles/Header.css";
 ---
 
 <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[80%] rounded-xl
-               backdrop-blur-sm bg-white/10 dark:bg-black/10 border border-black/10 dark:border-white/20 font-['Roboto']">
+               backdrop-blur-lg bg-white/10 dark:bg-black/10 border border-black/10 dark:border-white/20 font-['Roboto']">
 
   <div class="flex items-center justify-between px-6 py-3">
     <!-- Logo -->
     <a href="/" class="flex items-center space-x-2">
       <img src={GDG_LOGO.src} alt="GDG Logo" class="h-8 w-13" />
-      <span class="text-lg font-extrabold text-black dark:text-white tracking-wide">GDG</span>
+      <span class="text-lg font-extrabold text-black dark:text-white tracking-wide hidden lg:block">GDG</span>
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-6 font-bold uppercase text-sm tracking-wider text-black dark:text-white">
+    <nav class="hidden md:flex items-center space-x-6 font-bold uppercase text-xs tracking-wider text-[#3C3C43] dark:text-[#F2F4F7]">
       <a href="/About" class="corner-link">About</a>
-      <a href="/blogs" class="corner-link">Blogs</a>
-      <a href="/team" class="corner-link">Team</a>
+      <a href="/Blog" class="corner-link">Blogs</a>
+      <a href="/Team" class="corner-link">Team</a>
       <a href="/events" class="corner-link">Events</a>
       <a href="/projects" class="corner-link">Projects</a>
     </nav>
 
     <!-- Desktop Theme Toggle -->
     <div class="hidden md:flex">
-      <button id="theme-toggle" class="corner-btn">🌙 Dark</button>
+     <button id="theme-toggle" class="corner-btn text-black dark:text-white"></button>
     </div>
 
     <!-- Mobile Hamburger -->
@@ -43,15 +43,26 @@ import "../styles/Header.css";
 <nav
   id="mobile-menu"
   class="fixed md:hidden top-[calc(4rem+1rem)] left-1/2 -translate-x-1/2 w-[95%] max-w-none flex-col rounded-xl
-         bg-white/10 dark:bg-black/10 dark:text-white font-bold backdrop-blur-sm shadow-2xl border border-black/10 dark:border-white/20
+         bg-white/30 dark:bg-black/30 backdrop-blur-md
+ dark:text-white font-bold dark:backdrop-blur-md shadow-2xl border border-black/10 dark:border-white/20
          p-6 space-y-6 transform -translate-y-4 opacity-0 pointer-events-none transition-all duration-300 ease-out z-50"
+  aria-hidden="true"
+  role="navigation"
+  aria-label="Mobile navigation menu"
 >
-  <a href="/about" class="corner-link w-full text-center text-black dark:text-white">About</a>
-  <a href="/blogs" class="corner-link w-full text-center text-black dark:text-white">Blogs</a>
-  <a href="/team" class="corner-link w-full text-center text-black dark:text-white">Team</a>
-  <a href="/events" class="corner-link w-full text-center text-black dark:text-white">Events</a>
-  <a href="/projects" class="corner-link w-full text-center text-black dark:text-white">Projects</a>
-  <button id="theme-toggle-mobile" class="corner-btn w-full text-black dark:text-white">🌙</button>
+  <a href="/about" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">About</a>
+  <a href="/blogs" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Blogs</a>
+  <a href="/team" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Team</a>
+  <a href="/events" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Events</a>
+  <a href="/projects" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Projects</a>
+  <button 
+    id="theme-toggle-mobile" 
+    class="corner-btn w-full font-extrabold  text-[#3C3C43] dark:text-[#DFDFD6] py-2 hover:scale-105 active:scale-95 transition-transform"
+    aria-label="Toggle dark mode"
+    type="button"
+  >
+   🌙︎
+  </button>
 </nav>
 
 <style>
@@ -82,7 +93,6 @@ import "../styles/Header.css";
     position: relative;
     padding: 0.5rem 1rem;
     background: transparent;
-    color: inherit;
     font-weight: 700;
     border: none;
     cursor: pointer;
@@ -102,6 +112,19 @@ import "../styles/Header.css";
   .corner-btn::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
   .corner-btn:hover::before,
   .corner-btn:hover::after { opacity: 1; }
+
+  @media (min-width: 768px) and (max-width: 900px) {
+  header .corner-link {
+    margin-right: 0.45rem; /* reduce spacing */
+    font-size: 0.85rem;
+  }
+
+  header img {
+    height: 1.5rem;
+    width: auto;
+  }
+}
+
 </style>
 
 <script is:inline>
@@ -132,12 +155,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const setMode = (dark) => {
     if (dark) {
       html.classList.add("dark");
-      desktopToggle.textContent = "☀️";
-      if (mobileToggle) mobileToggle.textContent = "☀️";
+      desktopToggle.textContent = "✹";
+      if (mobileToggle) mobileToggle.textContent = "✹";
     } else {
       html.classList.remove("dark");
-      desktopToggle.textContent = "🌙";
-      if (mobileToggle) mobileToggle.textContent = "🌙";
+      desktopToggle.textContent = "🌙︎";
+      if (mobileToggle) mobileToggle.textContent = "🌙︎";
     }
   };
 
