@@ -1,91 +1,35 @@
----
-//import EventData from "../data/EventData.json";
-// Astro component for animated timeline
-const timelineEvents = [
-  { year: "2020", title: "Project Started", description: "The journey begins" },
-  { year: "2021", title: "First Milestone", description: "Reached 1000 users" },
-  { year: "2022", title: "Major Update", description: "Version 2.0 released" },
-  { year: "2023", title: "Expansion", description: "Global presence achieved" },
-  { year: "2024", title: "Innovation", description: "AI features launched" },
-];
----
-<div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 px-4 flex items-center justify-start overflow-hidden">
-  <div class="relative w-full max-w-7xl">
-    <!-- Top Marquee: Left to Right -->
-    <div class="absolute top-[10%] -left-1/2 -right-1/2 -rotate-12 ">
-      <div class="bg-gradient-to-br from-green-800 to-yellow-800 py-10 shadow-2xl overflow-hidden  ">
-        <div class="flex animate-marquee-left">
-          <!-- Repeated content for seamless loop -->
-          <div class="flex shrink-0">
-            {Array(10).fill(null).map(() => (
-              <span class="inline-block px-8 text-6xl md:text-8xl lg:text-9xl font-bold text-black tracking-wider text-[clamp(0.9rem,2.5vw,1.2rem)]">
 
-               From Workshops to Hackathons
-              </span>
-            ))}
-          </div>
-          <!-- Duplicate for seamless loop -->
-          <div class="flex shrink-0">
-            {Array(10).fill(null).map(() => (
-              <span class="inline-block px-8 text-6xl md:text-8xl lg:text-9xl font-bold text-black tracking-wider text-[clamp(0.9rem,2.5vw,1.2rem)]">
-               From Workshops to Hackathons
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Marquee: Right to Left -->
-    <div class="absolute bottom-[20%] -left-1/2 -right-1/2 rotate-8">
-      <div class="bg-gradient-to-br from-red-700 to-blue-700 py-10 shadow-2xl overflow-hidden">
-        <div class="flex animate-marquee-right">
-          <div class="flex shrink-0">
-            {Array(8).fill(null).map(() => (
-              <span class="inline-block px-8 text-5xl md:text-7xl lg:text-8xl font-bold text-black tracking-wide text-[clamp(0.9rem,2.5vw,1.2rem)]">
-                What’s Happening at GDG SJEC
-              </span>
-            ))}
-          </div>
-          <div class="flex shrink-0">
-            {Array(8).fill(null).map(() => (
-              <span class="inline-block px-8 text-5xl md:text-7xl lg:text-8xl font-bold text-black tracking-wide text-[clamp(0.9rem,2.5vw,1.2rem)]">
-               From Workshops to Hackathons
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- TOP strip : what's happening in sjec-->
+<div class="w-[110vw] -rotate-2 flex items-center overflow-hidden bg-gradient-to-bl from-amber-100 via-red-500 to-blue-800 py-2">
+  <div class="flex animate-[scroll_90s_linear_infinite] hover:pause">
+    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-bold uppercase text-white pr-4 pl-4">What's Happening In SJEC?</span>
+    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-bold uppercase text-white pr-4 pl-4 ">What's Happening In SJEC? </span>
+    <span class="whitespace-nowrap text-[2rem] sm:text-[7rem] lg:text-[4rem] font-bold uppercase text-white pr-4 pl-4">What's Happening In SJEC? </span>
   </div>
-
-  <!-- Tailwind Animation Keyframes -->
-  <style>
-    @keyframes marquee-left {
-      0% {
-        transform: translateX(-50%);
-      }
-      100% {
-        transform: translateX(0%);
-      }
-    }
-
-    @keyframes marquee-right {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-marquee-left {
-      animation: marquee-left 40s linear infinite;
-    }
-
-    .animate-marquee-right {
-      animation: marquee-right 50s linear infinite;
-    }
-  </style>
 </div>
-  
+
+<!-- BOTTOM strip: workshops to hackathon -->
+<div class="w-[110vw] rotate-2 flex items-center overflow-hidden bg-gradient-to-br from-amber-100 via-green-600 to-yellow-500 py-2 ">
+  <div class="flex animate-[scroll_10s_linear_infinite] hover:pause">
+    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-semibold uppercase text-white pr-4 pl-4 ">From Workshop To Hackathons! </span>
+    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-semibold uppercase text-white pr-4 pl-4 ">From Workshop To Hackathons! </span>
+  </div>
+</div>
+
+<!-- keyframe definition (add once anywhere on the page) -->
+<style>
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+  }
+  /* pause on parent hover */
+  .hover\\:pause:hover > * { animation-play-state: paused; }
+</style>
+
+
+
+
+
+
+
+
