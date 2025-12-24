@@ -1,228 +1,126 @@
 ---
 import blogs from "../content/blogs.json";
-
-const colorConfig = {
-  blue: { border: "border-t-blue-500", text: "text-blue-600" },
-  green: { border: "border-t-green-500", text: "text-green-600" },
-  red: { border: "border-t-red-500", text: "text-red-600" },
-  yellow: { border: "border-t-amber-500", text: "text-amber-600" },
-};
-
-type Color = keyof typeof colorConfig;
-const colorCycle = Object.keys(colorConfig) as Color[];
-const getColorForIndex = (index: number): Color => {
-  return colorCycle[index % colorCycle.length];
-};
-
-const truncateText = (text: string, wordLimit: number) => {
-  const words = text.split(" ");
-  if (words.length <= wordLimit) {
-    return text;
-  }
-  return words.slice(0, wordLimit).join(" ") + "...";
-};
-
-const initialRightCardBlog = blogs.length > 4 ? blogs[4] : blogs[0];
-const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initialRightCardBlog)) : 'blue';
 ---
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  {blogs.map(blog => (
-    <link rel="preload" as="image" href={blog.img} />
-  ))}
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .font-jetbrains-mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-    #right-card .image-container {
-      position: relative;
-      width: 100%;
-      height: 16rem;
-      overflow: hidden;
-    }
-    #right-card .image-container img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
-    #right-card .image-container img.active {
-      opacity: 1;
-      z-index: 2;
-    }
-    
-    /* Mobile horizontal scroll styles */
-    @media (max-width: 1023px) {
-      #left-cards-container {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 1rem;
-        padding-bottom: 0.5rem;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(66,133,244,0.4) transparent;
-      }
-      
-      #left-cards-container > * {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-      }
-      
-      #left-cards-container::-webkit-scrollbar {
-        height: 6px;
-      }
-      
-      #left-cards-container::-webkit-scrollbar-thumb {
-        background-color: rgba(66,133,244,0.4);
-        border-radius: 9999px;
-      }
-      
-      .blog-card-left {
-        flex: 0 0 85%;
-        scroll-snap-align: start;
-      }
-    }
-  </style>
-</head>
-
-<section id="blog" class="bg-gray-50 dark:bg-gray-900 py-12">
-  <div class="container mx-auto px-4">
-    <header class="text-center mb-10">
-      <h1 class="font-fira-code text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100">
-        <span class="text-blue-600">&lt;</span> BLOGS <span class="text-green-600">/</span> <span class="text-red-600">&gt;</span>
-      </h1>
-      <p class="font-jetbrains-mono text-gray-500 dark:text-gray-400 mt-3 text-sm">// Our latest thoughts and discoveries</p>
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-25">
-      <div id="left-cards-container" class="space-y-8">
-        {
-          blogs.slice(0, 4).map((blog, index) => {
-            const colorName = getColorForIndex(index);
-            const { border, text } = colorConfig[colorName];
-            return (
-              <div
-                class={`group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden blog-card-left border-t-4 ${border} flex flex-col`}
-                data-title={blog.title}
-                data-author={blog.author}
-                data-date={blog.date}
-                data-excerpt={blog.excerpt}
-                data-link={blog.link}
-                data-color={colorName}
-                data-img={blog.img}
-              >
-                <a href={blog.link} target="_blank" rel="noopener noreferrer" class="flex flex-col flex-grow">
-                  <img 
-                    src={blog.img} 
-                    alt={blog.title} 
-                    class="w-full h-48 object-cover lg:hidden" 
-                    loading="lazy"
-                  />
-                  <div class="p-5 flex flex-col flex-grow">
-                    <h2 class="font-jetbrains-mono text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{blog.title}</h2>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm lg:hidden mb-6 flex-grow">{truncateText(blog.excerpt, 15)}</p>
-                    <div class="flex justify-between items-center mt-auto">
-                      <p class="font-jetbrains-mono text-xs text-gray-400 dark:text-gray-500">// by {blog.author}</p>
-                      <span class={`font-jetbrains-mono text-sm ${text}`}>
-                        View &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            );
-          })
-        }
+<section id="blogs-section" class="bg-white dark:bg-[#0B0D17] py-24 px-6 md:px-12 lg:px-24 font-sans transition-colors duration-300 overflow-hidden">
+  <div class="max-w-[1600px] mx-auto">
+    <!-- Header Section -->
+    <div class="flex justify-between items-end mb-16 px-4">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+          Latest Blogs
+        </h2>
       </div>
-      
-      <div class="hidden lg:flex lg:items-center">
-        {
-          initialRightCardBlog && (
-            <div id="right-card" class="group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
-              <div class="image-container">
-                {blogs.map((blog) => (
-                  <img 
-                    src={blog.img} 
-                    alt={blog.title} 
-                    class={blog === initialRightCardBlog ? "active" : ""} 
-                    data-title={blog.title}
-                    loading="eager"
-                  />
-                ))}
-              </div>
-              <div class="p-6">
-                <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100">{initialRightCardBlog.title}</h2>
-                <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-400 dark:text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
-                <p id="right-card-excerpt" class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
-              </div>
+      <a 
+        href="/blogs" 
+        class="group px-8 py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
+      >
+        View blog
+      </a>
+    </div>
+
+    <!-- Blog Container with Horizontal Scroll -->
+    <div 
+      id="blog-slider" 
+      class="flex overflow-x-auto snap-x snap-mandatory gap-8 lg:gap-10 pb-8 no-scrollbar scroll-smooth px-4"
+    >
+      {blogs.map((blog) => (
+        <div class="group flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start flex flex-col">
+          <!-- Featured Image -->
+          <div class="relative aspect-square w-full mb-8 overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-gray-800/50 shadow-sm border border-gray-100 dark:border-gray-800">
+            <img 
+              src={blog.img.startsWith('src/') ? '/' + blog.img : blog.img} 
+              alt={blog.title} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/5 dark:bg-white/[0.02] group-hover:opacity-0 transition-opacity"></div>
+          </div>
+          
+          <!-- Blog Info -->
+          <div class="flex flex-col flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-[1.3] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 min-h-[3.5rem] line-clamp-2">
+              {blog.title}
+            </h3>
+            
+            <div class="flex items-center gap-2.5 text-gray-500 dark:text-gray-400 text-xs font-semibold mb-6 uppercase tracking-widest">
+              <span>{blog.date}</span>
+              <span class="w-1 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></span>
+              <span class="truncate">{blog.author}</span>
             </div>
-          )
-        }
-      </div>
+
+            <div class="mt-auto">
+              <a 
+                href={blog.link} 
+                target="_blank" 
+                class="inline-flex items-center text-lg font-bold text-gray-900 dark:text-white group/link transition-colors"
+              >
+                <span class="border-b-2 border-transparent group-hover/link:border-blue-600 dark:group-hover/link:border-blue-400">Read blog</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
 
-    <div class="text-center mt-12">
+    <!-- Navigation Arrows -->
+    <div class="flex items-center gap-4 mt-12 px-4">
       <button 
-  onclick="window.location.href='/blogsd'" 
-  class="px-6 py-2 rounded-full bg-blue-600 text-white font-jetbrains-mono text-lg hover:bg-blue-700 transition-colors duration-200"
->
-  View More Blogs &rarr;
-</button>
-
+        id="prev-blog"
+        aria-label="Previous blog"
+        class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      <button 
+        id="next-blog"
+        aria-label="Next blog"
+        class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
     </div>
-    
   </div>
 </section>
-<script define:vars={{ colorConfig }}>
-  document.addEventListener('DOMContentLoaded', () => {
-    const leftCardsContainer = document.getElementById('left-cards-container');
-    const rightCard = document.getElementById('right-card');
 
-    if (!leftCardsContainer || !rightCard) return;
+<script>
+  const slider = document.getElementById('blog-slider');
+  const nextBtn = document.getElementById('next-blog');
+  const prevBtn = document.getElementById('prev-blog');
 
-    const rightCardTitle = document.getElementById('right-card-title');
-    const rightCardMeta = document.getElementById('right-card-meta');
-    const rightCardExcerpt = document.getElementById('right-card-excerpt');
-    const rightCardReadMore = document.getElementById('right-card-read-more');
-    const imageEls = rightCard.querySelectorAll('.image-container img');
+  if (slider && nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = slider.querySelector('.group')?.clientWidth || 300;
+      slider.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
+    });
 
-    leftCardsContainer.addEventListener('mouseenter', (event) => {
-      const card = event.target.closest('.blog-card-left');
-      if (!card) return;
-
-      const { title, author, date, excerpt, link, color, img } = card.dataset;
-      const theme = colorConfig[color]; 
-      if (!theme) return;
-
-      rightCardTitle.textContent = title;
-      rightCardMeta.textContent = `// by ${author} • ${date}`;
-      rightCardExcerpt.textContent = excerpt; 
-      
-      rightCard.className = rightCard.className.replace(/border-t-(blue|green|red|amber)-500/, theme.border);
-      
-      if (rightCardReadMore) {
-        rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red|amber)-600/, theme.text);
-      }
-      imageEls.forEach(imgEl => {
-        if (imgEl.getAttribute("src") === img) {
-          imgEl.classList.add("active");
-        } else {
-          imgEl.classList.remove("active");
-        }
-      });
-    }, true); 
-  });
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = slider.querySelector('.group')?.clientWidth || 300;
+      slider.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' });
+    });
+  }
 </script>
+
+<style>
+  section {
+    font-family: var(--font-sans, "Google Sans", "Inter", sans-serif);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+</style>
