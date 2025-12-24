@@ -1,8 +1,8 @@
 [
   {
     "name": "Ashley Pinto",
-    "role": "Lead",
-    "bio": "Passionate about creating intuitive user experiences and leading the creative vision of the campus group.",
+    "role": "Organizer",
+    "bio": "Error 404: Free time missing, Organizer.exe still running.",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
     "linkedin": "https://linkedin.com",
     "github": "https://github.com",
@@ -10,8 +10,8 @@
   },
   {
     "name": "Santhsim Dsouza",
-    "role": "Co Lead",
-    "bio": "Full-stack developer with a love for cloud architecture and mentoring aspiring developers.",
+    "role": "Co Organizer",
+    "bio": "I treat production like a 5-hour contest, one wrong submission and chaos begins.",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
     "linkedin": "https://linkedin.com",
     "github": "https://github.com",
@@ -20,7 +20,7 @@
   {
     "name": "Viona Noronha",
     "role": "Secretary",
-    "bio": "Building bridges between technology and people. Expert in event management and advocacy.",
+    "bio": "While others commit code, I commit to keeping the team sane",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
     "linkedin": "https://linkedin.com",
     "github": "https://github.com",
@@ -29,10 +29,64 @@
   {
     "name": "Shreya Shettigar",
     "role": "Joint Secretary",
-    "bio": "Ensuring smooth sailing for all club activities with precision and strategic planning.",
+    "bio": "Coordinating chaos into clarity, one plan at a time",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
     "linkedin": "https://linkedin.com",
     "github": "https://github.com",
     "color": "green"
+  },
+  {
+    "name": "Dion Lobo",
+    "role": "Cloud Lead",
+    "bio": "I prefer the cloud, because when it crashes, at least it takes everyone down with me",
+    "image": "",
+    "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290",
+    "github": "https://github.com/dionjoshualobo",
+    "color": "blue"
+  },
+  {
+    "name": "Reuben A Vinod",
+    "role": "Web Lead",
+    "bio": "I always prefer dark mode, because light attracts bugs. Pun intended",
+    "image": "",
+    "linkedin": "",
+    "github": "",
+    "color": "red"
+  },
+  {
+    "name": "Jeethan Roche",
+    "role": "App Lead",
+    "bio": "If the app didn't crash so far, then it is the silence before the storm of bugs",
+    "image": "",
+    "linkedin": "https://www.linkedin.com/in/jeethan-roche",
+    "github": "https://github.com/roche-jeethan",
+    "color": "yellow"
+  },
+  {
+    "name": "Ankit Shah",
+    "role": "AI/ML Lead",
+    "bio": "Training models and minds, both need patience and good data.",
+    "image": "",
+    "linkedin": "",
+    "github": "",
+    "color": "green"
+  },
+  {
+    "name": "Shamitha",
+    "role": "Events Lead",
+    "bio": "From idea to spotlight, I run the show (literally)",
+    "image": "",
+    "linkedin": "",
+    "github": "",
+    "color": "blue"
+  },
+  {
+    "name": "Reevan Fernandes",
+    "role": "Media Lead",
+    "bio": "I click, create and sometimes forget to eat. Also don't expect the photos to be sent on time",
+    "image": "",
+    "linkedin": "",
+    "github": "",
+    "color": "red"
   }
 ]
