@@ -23,24 +23,27 @@ const truncateText = (text: string, wordLimit: number) => {
 };
 
 const initialRightCardBlog = blogs.length > 4 ? blogs[4] : blogs[0];
-const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initialRightCardBlog)) : 'blue';
+const initialColor = initialRightCardBlog
+  ? getColorForIndex(blogs.indexOf(initialRightCardBlog))
+  : "blue";
 ---
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 
-  {blogs.map(blog => (
-    <link rel="preload" as="image" href={blog.img} />
-  ))}
+  {blogs.map((blog) => <link rel="preload" as="image" href={blog.img} />)}
 
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
     .font-jetbrains-mono {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: "JetBrains Mono", monospace;
     }
     #right-card .image-container {
       position: relative;
@@ -50,7 +53,8 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
     }
     #right-card .image-container img {
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -61,7 +65,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
       opacity: 1;
       z-index: 2;
     }
-    
+
     /* Mobile horizontal scroll styles */
     @media (max-width: 1023px) {
       #left-cards-container {
@@ -73,38 +77,74 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
         gap: 1rem;
         padding-bottom: 0.5rem;
         scrollbar-width: thin;
-        scrollbar-color: rgba(66,133,244,0.4) transparent;
+        scrollbar-color: rgba(66, 133, 244, 0.4) transparent;
       }
-      
+
       #left-cards-container > * {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
       }
-      
+
       #left-cards-container::-webkit-scrollbar {
         height: 6px;
       }
-      
+
       #left-cards-container::-webkit-scrollbar-thumb {
-        background-color: rgba(66,133,244,0.4);
+        background-color: rgba(66, 133, 244, 0.4);
         border-radius: 9999px;
       }
-      
+
       .blog-card-left {
         flex: 0 0 85%;
         scroll-snap-align: start;
       }
+    }
+
+    /* Fade-in on scroll */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
+    }
+
+    .fade-in-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 
 <section id="blog" class="bg-gray-50 dark:bg-gray-900 py-12">
   <div class="container mx-auto px-4">
-    <header class="text-center mb-10">
-      <h1 class="font-fira-code text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100">
-        <span class="text-blue-600">&lt;</span> BLOGS <span class="text-green-600">/</span> <span class="text-red-600">&gt;</span>
+    <header class="text-center mb-10 fade-in-section">
+      <h1
+        class="font-fira-code text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100"
+      >
+        <span class="text-blue-600">&lt;</span> BLOGS <span
+          class="text-green-600">/</span
+        >
+        <span class="text-red-600">&gt;</span>
       </h1>
-      <p class="font-jetbrains-mono text-gray-500 dark:text-gray-400 mt-3 text-sm">// Our latest thoughts and discoveries</p>
+      <p
+        class="font-jetbrains-mono text-gray-500 dark:text-gray-400 mt-3 text-sm"
+      >
+        // Our latest thoughts and discoveries
+      </p>
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-25">
@@ -115,7 +155,7 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
             const { border, text } = colorConfig[colorName];
             return (
               <div
-                class={`group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden blog-card-left border-t-4 ${border} flex flex-col`}
+                class={`fade-in-card group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden blog-card-left border-t-4 ${border} flex flex-col`}
                 data-title={blog.title}
                 data-author={blog.author}
                 data-date={blog.date}
@@ -124,18 +164,29 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
                 data-color={colorName}
                 data-img={blog.img}
               >
-                <a href={blog.link} target="_blank" rel="noopener noreferrer" class="flex flex-col flex-grow">
-                  <img 
-                    src={blog.img} 
-                    alt={blog.title} 
-                    class="w-full h-48 object-cover lg:hidden" 
+                <a
+                  href={blog.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex flex-col flex-grow"
+                >
+                  <img
+                    src={blog.img}
+                    alt={blog.title}
+                    class="w-full h-48 object-cover lg:hidden"
                     loading="lazy"
                   />
                   <div class="p-5 flex flex-col flex-grow">
-                    <h2 class="font-jetbrains-mono text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{blog.title}</h2>
-                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm lg:hidden mb-6 flex-grow">{truncateText(blog.excerpt, 15)}</p>
+                    <h2 class="font-jetbrains-mono text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                      {blog.title}
+                    </h2>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm lg:hidden mb-6 flex-grow">
+                      {truncateText(blog.excerpt, 15)}
+                    </p>
                     <div class="flex justify-between items-center mt-auto">
-                      <p class="font-jetbrains-mono text-xs text-gray-400 dark:text-gray-500">// by {blog.author}</p>
+                      <p class="font-jetbrains-mono text-xs text-gray-400 dark:text-gray-500">
+                        // by {blog.author}
+                      </p>
                       <span class={`font-jetbrains-mono text-sm ${text}`}>
                         View &rarr;
                       </span>
@@ -147,82 +198,133 @@ const initialColor = initialRightCardBlog ? getColorForIndex(blogs.indexOf(initi
           })
         }
       </div>
-      
+
       <div class="hidden lg:flex lg:items-center">
         {
           initialRightCardBlog && (
-            <div id="right-card" class="group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+            <div
+              id="right-card"
+              class="group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
+            >
               <div class="image-container">
                 {blogs.map((blog) => (
-                  <img 
-                    src={blog.img} 
-                    alt={blog.title} 
-                    class={blog === initialRightCardBlog ? "active" : ""} 
+                  <img
+                    src={blog.img}
+                    alt={blog.title}
+                    class={blog === initialRightCardBlog ? "active" : ""}
                     data-title={blog.title}
                     loading="eager"
                   />
                 ))}
               </div>
               <div class="p-6">
-                <h2 id="right-card-title" class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100">{initialRightCardBlog.title}</h2>
-                <p id="right-card-meta" class="font-jetbrains-mono text-sm text-gray-400 dark:text-gray-500 mt-3 mb-6">// by {initialRightCardBlog.author} • {initialRightCardBlog.date}</p>
-                <p id="right-card-excerpt" class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{initialRightCardBlog.excerpt}</p>
+                <h2
+                  id="right-card-title"
+                  class="font-jetbrains-mono text-3xl font-bold text-gray-900 dark:text-gray-100"
+                >
+                  {initialRightCardBlog.title}
+                </h2>
+                <p
+                  id="right-card-meta"
+                  class="font-jetbrains-mono text-sm text-gray-400 dark:text-gray-500 mt-3 mb-6"
+                >
+                  // by {initialRightCardBlog.author} •{" "}
+                  {initialRightCardBlog.date}
+                </p>
+                <p
+                  id="right-card-excerpt"
+                  class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg"
+                >
+                  {initialRightCardBlog.excerpt}
+                </p>
               </div>
             </div>
           )
         }
       </div>
     </div>
-
-    <div class="text-center mt-12">
-      <button 
-  onclick="window.location.href='/blogsd'" 
-  class="px-6 py-2 rounded-full bg-blue-600 text-white font-jetbrains-mono text-lg hover:bg-blue-700 transition-colors duration-200"
->
-  View More Blogs &rarr;
-</button>
-
-    </div>
-    
   </div>
 </section>
 <script define:vars={{ colorConfig }}>
-  document.addEventListener('DOMContentLoaded', () => {
-    const leftCardsContainer = document.getElementById('left-cards-container');
-    const rightCard = document.getElementById('right-card');
+  document.addEventListener("DOMContentLoaded", () => {
+    const leftCardsContainer = document.getElementById("left-cards-container");
+    const rightCard = document.getElementById("right-card");
 
     if (!leftCardsContainer || !rightCard) return;
 
-    const rightCardTitle = document.getElementById('right-card-title');
-    const rightCardMeta = document.getElementById('right-card-meta');
-    const rightCardExcerpt = document.getElementById('right-card-excerpt');
-    const rightCardReadMore = document.getElementById('right-card-read-more');
-    const imageEls = rightCard.querySelectorAll('.image-container img');
+    const rightCardTitle = document.getElementById("right-card-title");
+    const rightCardMeta = document.getElementById("right-card-meta");
+    const rightCardExcerpt = document.getElementById("right-card-excerpt");
+    const rightCardReadMore = document.getElementById("right-card-read-more");
+    const imageEls = rightCard.querySelectorAll(".image-container img");
 
-    leftCardsContainer.addEventListener('mouseenter', (event) => {
-      const card = event.target.closest('.blog-card-left');
-      if (!card) return;
+    leftCardsContainer.addEventListener(
+      "mouseenter",
+      (event) => {
+        const card = event.target.closest(".blog-card-left");
+        if (!card) return;
 
-      const { title, author, date, excerpt, link, color, img } = card.dataset;
-      const theme = colorConfig[color]; 
-      if (!theme) return;
+        const { title, author, date, excerpt, link, color, img } = card.dataset;
+        const theme = colorConfig[color];
+        if (!theme) return;
 
-      rightCardTitle.textContent = title;
-      rightCardMeta.textContent = `// by ${author} • ${date}`;
-      rightCardExcerpt.textContent = excerpt; 
-      
-      rightCard.className = rightCard.className.replace(/border-t-(blue|green|red|amber)-500/, theme.border);
-      
-      if (rightCardReadMore) {
-        rightCardReadMore.className = rightCardReadMore.className.replace(/text-(blue|green|red|amber)-600/, theme.text);
-      }
-      imageEls.forEach(imgEl => {
-        if (imgEl.getAttribute("src") === img) {
-          imgEl.classList.add("active");
-        } else {
-          imgEl.classList.remove("active");
+        rightCardTitle.textContent = title;
+        rightCardMeta.textContent = `// by ${author} • ${date}`;
+        rightCardExcerpt.textContent = excerpt;
+
+        rightCard.className = rightCard.className.replace(
+          /border-t-(blue|green|red|amber)-500/,
+          theme.border
+        );
+
+        if (rightCardReadMore) {
+          rightCardReadMore.className = rightCardReadMore.className.replace(
+            /text-(blue|green|red|amber)-600/,
+            theme.text
+          );
         }
-      });
-    }, true); 
+        imageEls.forEach((imgEl) => {
+          if (imgEl.getAttribute("src") === img) {
+            imgEl.classList.add("active");
+          } else {
+            imgEl.classList.remove("active");
+          }
+        });
+      },
+      true
+    );
+  });
+</script>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      } else {
+        entry.target.classList.remove("is-visible");
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-section");
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Observe cards with staggered animation
+    const cards = document.querySelectorAll(".fade-in-card");
+    cards.forEach((card, index) => {
+      // Add staggered delay via transition-delay
+      (card as HTMLElement).style.transitionDelay = `${index * 0.1}s`;
+      observer.observe(card);
+    });
   });
 </script>
