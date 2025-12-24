@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Ashley Pinto",
+    "role": "Lead",
+    "bio": "Passionate about creating intuitive user experiences and leading the creative vision of the campus group.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com",
+    "color": "blue"
+  },
+  {
+    "name": "Santhsim Dsouza",
+    "role": "Co Lead",
+    "bio": "Full-stack developer with a love for cloud architecture and mentoring aspiring developers.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com",
+    "color": "red"
+  },
+  {
+    "name": "Viona Noronha",
+    "role": "Secretary",
+    "bio": "Building bridges between technology and people. Expert in event management and advocacy.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com",
+    "color": "yellow"
+  },
+  {
+    "name": "Shreya Shettigar",
+    "role": "Joint Secretary",
+    "bio": "Ensuring smooth sailing for all club activities with precision and strategic planning.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1kaaycZMA4sl4D1NlVzBVWYALMtCbt3oU3Q&s",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com",
+    "color": "green"
+  }
+]
