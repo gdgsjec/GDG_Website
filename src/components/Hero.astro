@@ -1,14 +1,13 @@
 ---
 import "../styles/global.css";
 ---
+
 <html>
   <head>
     <style>
       .rotate {
-          animation: spin 5s linear infinite; /* 5s = rotation speed */
-      }
-
-/* Define the animation keyframes */
+        animation: spin 5s linear infinite; /* 5s = rotation speed */
+      } /* Define the animation keyframes */
       @keyframes spin {
         from {
           transform: rotate(0deg);
@@ -18,200 +17,316 @@ import "../styles/global.css";
         }
       }
       .waves {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 25vh;
-  margin-bottom: -7px;
-  /*Fix for safari gap*/
   min-height: 100px;
   max-height: 250px;
+  margin-bottom: 0;
+  overflow: hidden;
 }
-
-.content {
+.main {
   position: relative;
-  height: 10vh;
-  text-align: center;
-  background-color: white;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Animation */
-
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      .content {
+        position: relative;
+        height: 10vh;
+        text-align: center;
+        background-color: white;
+      } /* Animation */
+      .parallax > use {
+        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      }
+      .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+      }
+      .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+      }
+      .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+      }
+      .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+      @keyframes move-forever {
+        0% {
+          transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+          transform: translate3d(85px, 0, 0);
+        }
+      }
+      @media (max-width: 768px) {
+        .waves {
+          height: 150px;
+          min-height: 40px;
+        }
+        .content {
+          height: 50vh;
+        }
+      }
+      @media (max-width: 1100px) and (min-width: 768px) {
+        .txt1 {
+          font-size: 60px;
+        }
+        .txt2 {
+          font-size: 18px;
+        }
+        .main {
+          height: 95vh;
+        }
+      }
+      @media (max-width: 768px) and (min-width: 420px) {
+        .txt1 {
+          font-size: 45px;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .main {
+          height: 97vh;
+        }
+        .txt2 {
+          font-size: 18px;
+        }
+        .button {
+          width: 15vh;
+        }
+      }
+      @media (max-width: 420px) and (min-width: 300px) {
+        .txt1 {
+          font-size: 50px;
+          width: 100%;
+          margin-top: -40px;
+          margin-left: 0%;
+        }
+        .main {
+          height: 102vh;
+        }
+        .txt2 {
+          font-size: 18px;
+          width: 100%;
+          margin-top: -30px;
+        }
+        .button {
+          width: 15vh;
+        }
+        .butt{
+          margin-top: -5px;
+        }
+      } /* Subtle motion: fade + lift */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: fadeUp 1s ease-out forwards;
+        animation-delay: 0.2s;
+      }
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      :root {
+  --wave-1: rgba(195, 236, 246, 0.7);
+  --wave-2: rgba(195, 236, 246, 0.5);
+  --wave-3: rgba(195, 236, 246, 0.3);
+  --wave-4: #c3ecf6;
+}
+.dark {
+  --wave-1: rgba(66, 133, 244, 0.5);   /* Google Blue */
+  --wave-2: rgba(52, 168, 83, 0.5);   /* Google Green */
+  --wave-4: rgba(251, 188, 5, 0.5);   /* Google Yellow */
+  --wave-3: rgba(234, 67, 53, 0.25);   /* Google Red */
 }
 
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
+.role-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
+.role-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #111;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1.5s linear;
 }
 
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
+/* ICON stays visible */
+.role-circle img,
+.role-circle svg {
+  width: 80%;
+  z-index: 1;
 }
 
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
+/* Hidden text */
+.role-text {
+  position: absolute;
+  font-weight: 700;
+  font-size:medium;
+  letter-spacing: 3px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
 }
 
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
+/* Hover effects */
+.role-circle:hover {
+  transform: rotate(360deg);
+}
 
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
+.role-circle:hover .role-text {
+  opacity: 1;
+  transform: scale(1);
 }
-@media (max-width: 768px) {
-  .waves {
-    height: 150px;
-    min-height: 40px;
-  }
+.member .role-text {
+  color: #4285f4; /* Blue */
+  font-size:larger;
+}
 
-  .content {
-    height: 50vh;
-  }
+.organizer .role-text {
+  color: #34a853; /* Green */
+  font-size:larger;
 }
-@media (max-width:1100px) and (min-width:768px){
-  .txt1{
-    font-size: 60px;
-  }
-  .txt2{
-    font-size: 18px;
-  }
-  .waves{
-    margin-top: -10px;
-  }
-  .main{
-    height: 95vh;
-  }
+
+.speaker .role-text {
+  color: #fbbc05; /* Yellow */
+  font-size: larger;
 }
-@media (max-width: 768px) and (min-width:420px){
-  .txt1{
-    font-size: 45px;
-    width: 100%;
-    margin-top: -40px;
-  }
-  .main{
-    height: 97vh;
-  }
-  .txt2{
-    font-size: 18px;
-  }
-  .waves{
-    margin-top: 25px;
-  }
-  .button{
-    width: 15vh;
-  }
+.role-circle:hover .role-text {
+  text-shadow: 0 0 12px currentColor;
 }
-@media (max-width: 420px) and (min-width:300px){
-  .txt1{
-    font-size: 45px;
-    width: 100%;
-    margin-top: -40px;
-    margin-left: 0%;
-  }
-  .main{
-    height: 102vh;
-  }
-  .txt2{
-    font-size: 18px;
-    margin-left: -25%;
-    width: 150%;
-  }
-  .waves{
-    margin-top: 65px;
-  }
-  .button{
-    width: 15vh;
-  }
-}
+
+
 
 
     </style>
-    
-<script>
-  var i = 0;
-  var txt1 = 'Join a Google Developer Group to build new skills and connect with local developers, online and in person.';
-  var txt2= '';
-  var speed = 50;
-
-  function typeWriter() {
-    const demo = document.getElementById("demo");
-    if (demo && i < txt1.length) {
-      demo.innerHTML += txt1.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-
-  typeWriter();
-</script>
-
   </head>
-  <div class="h-[93vh] bg-[#fff] dark:bg-[#1e1e1e] main">
-  
-  <div class="flex flex-col px-10 pt-30 pb-20 w-full mt-3 h-150 ">
-    <div class="h-150 gap-15 flex flex-col py-8 px-10 rounded-xl">
-  
-  <div class="text-8xl font-bold w-full dark:text-[#f0f0f0] flex justify-center items-center txt1">Google Developers Group</div>
-  <div class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2">
-    <div class="w-full flex justify-center" id="demo"></div>
+  <div class="bg-[#fff] dark:bg-[#101828] main">
+    <div class="flex flex-col px-10 pt-30 w-full h-150">
 
-    <div class=" w-full flex justify-center" id="demo">Whether you`re a beginner or a pro, all interested in technology are welcome in this inclusive community.</div>
-  </div>
-  <div class="w-30 flex flex-col justify-center mx-auto button">
-    <button class="bg-[#4285f4] text-[#fff] rounded-2xl h-10 hover:scale-105">Get Started</button>
-  </div>
-  </div>
-  </div>
-  <!--Waves -->
-    <div class="waves">
-      
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
+      <div class="h-150 gap-15 flex flex-col py-8 px-10 rounded-xl">
+        <div
+          class="text-7xl font-bold w-full dark:text-[#f0f0f0] flex justify-center items-center txt1"
         >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g class="parallax">
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="0"
-              fill="rgba(195,236,246,0.7)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="3"
-              fill="rgba(195,236,246,0.5)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="5"
-              fill="rgba(195,236,246,0.3)"
-            />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#c3ecf6" />
-          </g>
-        </svg>
-      </div>
+          Google Developers Group
+        </div>
+        <div
+          class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2 max-sm:justify-around max-sm:-ml-5"
+        >
+          <span id="subheading" class="w-full flex justify-center fade-up max-sm:border-amber-300"
+          ></span>
+        </div>
+        
+  <!-- BADGES SECTION -->
+<div class="w-full flex justify-center mt-5 mb-8">
+  <div
+    class="
+      grid grid-cols-1
+      sm:grid-cols-2
+      lg:grid-cols-3
+      gap-8
+      max-w-5xl
+      px-6
+    "
+  >
+<div class="role-card member">
+  <div class="role-circle">
+    <img
+      src="src/content/GDG2024-Member-Badge.png"
+      alt="GDG Member Badge"
+      class="w-full max-w-xs mx-auto hover:scale-105 transition"
+    />
+
+    <span class="role-text">MEMBER</span>
   </div>
+</div>
+<div class="role-card organizer">
+  <div class="role-circle">
+    <img
+      src="src/content/GDG2024-Organizer-Badge.png"
+      alt="GDG Organizer Badge"
+      class="w-full max-w-xs mx-auto hover:scale-105 transition"
+    />
+    <span class="role-text">ORGANIZER</span>
+  </div>
+</div>
+
+<div class="role-card speaker">
+  <div class="role-circle">
+    <img
+      src="src/content/GDG2024-Speaker-Badge.png"
+      alt="GDG Speaker Badge"
+      class="w-full max-w-xs mx-auto hover:scale-105 transition"
+    />
+    <span class="role-text">SPEAKER</span>
+  </div>
+</div>    
+  </div>
+</div>
+
+
+      </div>
+    </div>
+    <!--Waves -->
+    <div class="waves">
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          ></path>
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="var(--wave-1)" />
+<use xlink:href="#gentle-wave" x="48" y="3" fill="var(--wave-2)" />
+<use xlink:href="#gentle-wave" x="48" y="5" fill="var(--wave-3)" />
+<use xlink:href="#gentle-wave" x="48" y="7" fill="var(--wave-4)" />
+
+        </g>
+      </svg>
+    </div>
+  </div>
+  <script is:inline>
+    const text = "Learn, build, and grow with a community powered by Google.";
+    const speed = 50;
+    let i = 0;
+    const el = document.getElementById("subheading");
+    if (!el) {
+      console.error("Subheading element not found");
+    } else {
+      function typeText() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeText, speed);
+        }
+      }
+      typeText();
+    }
+  </script>
 </html>
