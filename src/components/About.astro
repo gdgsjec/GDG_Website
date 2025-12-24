@@ -12,7 +12,7 @@ import heroBg from "../assets/hero-bg.jpg";
       <img
         src={heroBg.src}
         alt="GDG SJEC Team"
-        class="w-full h-full object-cover grayscale opacity-90 dark:opacity-60"
+        class="w-full h-full object-cover opacity-90 dark:opacity-60"
       />
       <!-- Gradient mask for text readability -->
       <div
@@ -213,9 +213,10 @@ import heroBg from "../assets/hero-bg.jpg";
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
       <div class="border-l-4 border-blue-500 pl-6 py-4">
         <div
-          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="600"
         >
-          600+
+          0+
         </div>
         <div
           class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
@@ -225,9 +226,10 @@ import heroBg from "../assets/hero-bg.jpg";
       </div>
       <div class="border-l-4 border-red-500 pl-6 py-4">
         <div
-          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="20"
         >
-          20+
+          0+
         </div>
         <div
           class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
@@ -237,9 +239,10 @@ import heroBg from "../assets/hero-bg.jpg";
       </div>
       <div class="border-l-4 border-yellow-500 pl-6 py-4">
         <div
-          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="12"
         >
-          12+
+          0+
         </div>
         <div
           class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
@@ -249,9 +252,10 @@ import heroBg from "../assets/hero-bg.jpg";
       </div>
       <div class="border-l-4 border-green-500 pl-6 py-4">
         <div
-          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="10"
         >
-          10+
+          0+
         </div>
         <div
           class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
@@ -262,6 +266,46 @@ import heroBg from "../assets/hero-bg.jpg";
     </div>
   </div>
 </section>
+
+<script>
+  function animateCounter(el: any) {
+    const target = parseInt(el.getAttribute("data-target"));
+    const duration = 3000; // 3 seconds
+    const start = 0;
+    let startTime: number | null = null;
+
+    function step(timestamp: number) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const current = Math.floor(progress * (target - start) + start);
+      el.textContent = current + "+";
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = target + "+";
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  }
+
+  const observerOptions = {
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".counter").forEach((counter) => {
+    observer.observe(counter);
+  });
+</script>
 
 <style>
   section {
