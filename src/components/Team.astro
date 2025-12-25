@@ -1,5 +1,6 @@
 ---
 import teamMembers from '../content/team.json';
+import { Image } from "astro:assets";
 
 const colors = {
   blue: "bg-[#4285F4]",
@@ -36,10 +37,13 @@ const colors = {
               
               <!-- Image Section -->
               <div class="absolute inset-0 transition-all duration-700">
-                <img 
+                <Image
                   src={member.image} 
                   alt={member.name} 
                   class="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700"
+                  width={100}
+                  height={100}
+                  fetchpriority="high"
                 />
                 <!-- Gradient Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 transition-opacity"></div>

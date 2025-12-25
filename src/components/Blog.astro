@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 const blogs = await getCollection("blog");
 const sortedBlogs = blogs.sort(
@@ -39,11 +40,14 @@ const sortedBlogs = blogs.sort(
           <div class="group flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start flex flex-col">
             <!-- Featured Image -->
             <div class="relative aspect-square w-full mb-8 overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-gray-800/50 shadow-sm border border-gray-100 dark:border-gray-800">
-              <img
+              <Image
                 src={blog.data.image}
                 alt={blog.data.title}
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
+                width={1920}
+                height={1080}
+                fetchpriority="high"
               />
               <div class="absolute inset-0 bg-black/5 dark:bg-white/[0.02] group-hover:opacity-0 transition-opacity" />
             </div>

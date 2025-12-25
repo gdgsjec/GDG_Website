@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import projects from "../content/projects.json";
 
 interface Project {
@@ -37,11 +38,14 @@ const typedProjects: Project[] = projects;
           <!-- Project Image -->
           <div class="relative aspect-video w-full mb-8 overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-gray-800/50 shadow-sm border border-gray-100 dark:border-gray-800">
             {project.image && (
-              <img 
+              <Image
                 src={project.image.startsWith('src/') ? '/' + project.image : project.image} 
                 alt={project.title} 
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
+                width={100}
+                height={100}
+                fetchpriority="high"
               />
             )}
             <!-- Gradient Overlay -->
