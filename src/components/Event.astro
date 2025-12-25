@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 const sortedEvents = [...events].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
 ---
 
-<section id="events" class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white transition-colors duration-300 relative">
+<section id="events" class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white relative">
   
   <!-- Decorative background elements -->
   <div class="absolute top-1/2 left-0 w-96 h-96 bg-red-500/5 dark:bg-red-500/10 blur-[120px] rounded-full -translate-x-1/2"></div>
@@ -38,7 +38,7 @@ const sortedEvents = [...events].sort((a, b) => new Date(b.date).getTime() - new
     <!-- Events Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
       {sortedEvents.map((event) => (
-        <div class="group flex flex-col bg-gray-50 dark:bg-[#1A1D2B] rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-blue-500/10">
+        <div class="group flex flex-col bg-gray-50 dark:bg-[#1A1D2B] rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/5 hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-blue-500/10">
           
           <!-- Event Image -->
           <div class="relative aspect-[4/3] overflow-hidden">
