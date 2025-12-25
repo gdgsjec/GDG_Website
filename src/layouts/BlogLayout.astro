@@ -18,14 +18,12 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <title>{title} | GDG Blog</title>
         <meta name="description" content={description} />
     </head>
-    <body
-        class="bg-white dark:bg-[#0B0D17] text-gray-900 dark:text-white"
-    >
+    <body class="bg-white dark:bg-[#0B0D17] text-gray-900 dark:text-white">
         <Header />
 
         <main
@@ -148,5 +146,11 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
 
     .dark .blog-content strong {
         color: #ffffff;
+    }
+    :global(html),
+    :global(body) {
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 </style>
