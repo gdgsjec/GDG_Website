@@ -1,0 +1,133 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { frontmatter } = Astro.props;
+const { title, description, pubDate, author, image, category } = frontmatter;
+
+const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+});
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | GDG Blog</title>
+        <meta name="description" content={description} />
+    </head>
+    <body
+        class="bg-white dark:bg-[#0B0D17] text-gray-900 dark:text-white transition-colors duration-300"
+    >
+        <Header />
+
+        <main
+            class="pt-[8rem] md:pt-[12rem] pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto"
+        >
+            <!-- Article Header -->
+            <header class="flex flex-col items-center text-center mb-16">
+                <div
+                    class="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-[#3C3C43]/70 dark:text-white/50 mb-6"
+                >
+                    <span>{category}</span>
+                    <span
+                        class="w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"
+                    ></span>
+                    <span>{formattedDate}</span>
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl font-bold mb-8 max-w-5xl leading-tight tracking-tight"
+                >
+                    {title}
+                </h1>
+
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    {author}
+                </p>
+            </header>
+
+            <!-- Hero Image -->
+            <div
+                class="w-full aspect-[21/9] rounded-[3rem] overflow-hidden mb-20 bg-gradient-to-br from-blue-500/10 to-purple-600/10 dark:from-blue-500/5 dark:to-purple-600/5 shadow-2xl relative"
+            >
+                <img
+                    src={image}
+                    alt={title}
+                    class="w-full h-full object-cover relative z-10"
+                    onerror="this.style.opacity='0'"
+                />
+                <div
+                    class="absolute inset-0 flex items-center justify-center text-blue-500/20 font-bold text-[10vw]"
+                >
+                    {title.charAt(0)}
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="max-w-3xl mx-auto blog-content">
+                <slot />
+            </div>
+        </main>
+
+        <Footer />
+    </body>
+</html>
+
+<style is:global>
+    .blog-content {
+        font-size: 1.125rem;
+        line-height: 1.8;
+    }
+
+    .blog-content h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.025em;
+        color: inherit;
+    }
+
+    .blog-content p {
+        margin-bottom: 2rem;
+        color: #3c3c43;
+    }
+
+    :global(.dark) .blog-content p {
+        color: #a1a1aa;
+    }
+
+    .blog-content a {
+        color: #4285f4;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .blog-content a:hover {
+        text-decoration: underline;
+    }
+
+    .blog-content img {
+        width: 100%;
+        border-radius: 2rem;
+        margin: 3rem 0;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+        margin-bottom: 2rem;
+        padding-left: 1.5rem;
+    }
+
+    .blog-content li {
+        margin-bottom: 0.75rem;
+    }
+</style>

@@ -1,18 +1,28 @@
 ---
-import blogs from "../content/blogs.json";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog");
+const sortedBlogs = blogs.sort(
+  (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
-<section id="blogs-section" class="bg-white dark:bg-[#0B0D17] py-24 px-6 md:px-12 lg:px-24 font-sans transition-colors duration-300 overflow-hidden">
+<section
+  id="blogs-section"
+  class="bg-white dark:bg-[#0B0D17] py-24 px-6 md:px-12 lg:px-24 font-sans transition-colors duration-300 overflow-hidden"
+>
   <div class="max-w-[1600px] mx-auto">
     <!-- Header Section -->
     <div class="flex justify-between items-end mb-16 px-4">
       <div>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight"
+        >
           Latest Blogs
         </h2>
       </div>
-      <a 
-        href="/blogs" 
+      <a
+        href="/blog"
         class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
       >
         View blog
@@ -20,70 +30,110 @@ import blogs from "../content/blogs.json";
     </div>
 
     <!-- Blog Container with Horizontal Scroll -->
-    <div 
-      id="blog-slider" 
+    <div
+      id="blog-slider"
       class="flex overflow-x-auto snap-x snap-mandatory gap-8 lg:gap-10 pb-8 no-scrollbar scroll-smooth px-4"
     >
-      {blogs.map((blog) => (
-        <div class="group flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start flex flex-col">
-          <!-- Featured Image -->
-          <div class="relative aspect-square w-full mb-8 overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-gray-800/50 shadow-sm border border-gray-100 dark:border-gray-800">
-            <img 
-              src={blog.img.startsWith('src/') ? '/' + blog.img : blog.img} 
-              alt={blog.title} 
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-black/5 dark:bg-white/[0.02] group-hover:opacity-0 transition-opacity"></div>
-          </div>
-          
-          <!-- Blog Info -->
-          <div class="flex flex-col flex-grow">
-            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-[1.3] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 min-h-[3.5rem] line-clamp-2">
-              {blog.title}
-            </h3>
-            
-            <div class="flex items-center gap-2.5 text-gray-500 dark:text-gray-400 text-xs font-semibold mb-6 uppercase tracking-widest">
-              <span>{blog.date}</span>
-              <span class="w-1 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></span>
-              <span class="truncate">{blog.author}</span>
+      {
+        sortedBlogs.map((blog: any) => (
+          <div class="group flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start flex flex-col">
+            <!-- Featured Image -->
+            <div class="relative aspect-square w-full mb-8 overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-gray-800/50 shadow-sm border border-gray-100 dark:border-gray-800">
+              <img
+                src={blog.data.image}
+                alt={blog.data.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/5 dark:bg-white/[0.02] group-hover:opacity-0 transition-opacity" />
             </div>
 
-            <div class="mt-auto">
-              <a 
-                href={blog.link} 
-                target="_blank" 
-                class="inline-flex items-center text-lg font-bold text-gray-900 dark:text-white group/link transition-colors"
-              >
-                <span class="border-b-2 border-transparent group-hover/link:border-blue-600 dark:group-hover/link:border-blue-400">Read blog</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-              </a>
+            <!-- Blog Info -->
+            <div class="flex flex-col flex-grow">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-[1.3] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 min-h-[3.5rem] line-clamp-2">
+                {blog.data.title}
+              </h3>
+
+              <div class="flex items-center gap-2.5 text-gray-500 dark:text-gray-400 text-xs font-semibold mb-6 uppercase tracking-widest">
+                <span>
+                  {new Date(blog.data.pubDate).toLocaleDateString("en-US", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+                <span class="w-1 h-1 bg-gray-300 dark:bg-gray-700 rounded-full" />
+                <span class="truncate">{blog.data.author}</span>
+              </div>
+
+              <div class="mt-auto">
+                <a
+                  href={`/blog/${blog.slug}`}
+                  class="inline-flex items-center text-lg font-bold text-gray-900 dark:text-white group/link transition-colors"
+                >
+                  <span class="border-b-2 border-transparent group-hover/link:border-blue-600 dark:group-hover/link:border-blue-400">
+                    Read blog
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="3"
+                    stroke="currentColor"
+                    class="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <!-- Navigation Arrows -->
     <div class="flex items-center gap-4 mt-12 px-4">
-      <button 
+      <button
         id="prev-blog"
         aria-label="Previous blog"
         class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"></path>
         </svg>
       </button>
-      <button 
+      <button
         id="next-blog"
         aria-label="Next blog"
         class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
         </svg>
       </button>
     </div>
@@ -91,18 +141,18 @@ import blogs from "../content/blogs.json";
 </section>
 
 <script>
-  const slider = document.getElementById('blog-slider');
-  const nextBtn = document.getElementById('next-blog');
-  const prevBtn = document.getElementById('prev-blog');
+  const slider = document.getElementById("blog-slider");
+  const nextBtn = document.getElementById("next-blog");
+  const prevBtn = document.getElementById("prev-blog");
 
   if (slider && nextBtn && prevBtn) {
-    nextBtn.addEventListener('click', () => {
-      const cardWidth = slider.querySelector('.group')?.clientWidth || 300;
-      slider.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
+    nextBtn.addEventListener("click", () => {
+      const cardWidth = slider.querySelector(".group")?.clientWidth || 300;
+      slider.scrollBy({ left: cardWidth + 32, behavior: "smooth" });
     });
 
-    prevBtn.addEventListener('click', () => {
-      const cardWidth = slider.querySelector('.group')?.clientWidth || 300;
+    prevBtn.addEventListener("click", () => {
+      const cardWidth = slider.querySelector(".group")?.clientWidth || 300;
       slider.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' });
     });
   }
@@ -120,7 +170,7 @@ import blogs from "../content/blogs.json";
 
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 </style>
