@@ -84,6 +84,13 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
     .blog-content {
         font-size: 1.125rem;
         line-height: 1.8;
+        color: #3c3c43;
+    }
+
+    .dark .blog-content {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #fff;
     }
 
     .blog-content h2 {
@@ -92,16 +99,15 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
         margin-top: 4rem;
         margin-bottom: 1.5rem;
         letter-spacing: -0.025em;
-        color: inherit;
+        color: #1a1a1c;
+    }
+
+    .dark .blog-content h2 {
+        color: #ffffff;
     }
 
     .blog-content p {
         margin-bottom: 2rem;
-        color: #3c3c43;
-    }
-
-    :global(.dark) .blog-content p {
-        color: #a1a1aa;
     }
 
     .blog-content a {
@@ -129,5 +135,14 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
 
     .blog-content li {
         margin-bottom: 0.75rem;
+    }
+
+    .blog-content strong {
+        color: #1a1a1c;
+        font-weight: 700;
+    }
+
+    .dark .blog-content strong {
+        color: #ffffff;
     }
 </style>
