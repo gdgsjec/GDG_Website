@@ -5,7 +5,7 @@ import events from '../content/events.json';
 const sortedEvents = [...events].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
 ---
 
-<section id="events" class="w-full bg-white dark:bg-[#0B0D17] py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
+<section id="events" class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white transition-colors duration-300 relative">
   
   <!-- Decorative background elements -->
   <div class="absolute top-1/2 left-0 w-96 h-96 bg-red-500/5 dark:bg-red-500/10 blur-[120px] rounded-full -translate-x-1/2"></div>
