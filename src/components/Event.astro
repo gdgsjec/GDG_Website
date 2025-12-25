@@ -1,0 +1,116 @@
+---
+import events from '../content/events.json';
+
+// Helper to sort events by date (newest first)
+const sortedEvents = [...events].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
+---
+
+<section id="events" class="w-full bg-white dark:bg-[#0B0D17] py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
+  
+  <!-- Decorative background elements -->
+  <div class="absolute top-1/2 left-0 w-96 h-96 bg-red-500/5 dark:bg-red-500/10 blur-[120px] rounded-full -translate-x-1/2"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/5 dark:bg-yellow-500/10 blur-[120px] rounded-full translate-x-1/2"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="max-w-2xl">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+          Campus <span class="text-[#EA4335] italic font-serif">&</span> Tech <br/> <span class="text-[#FBBC04]">Events</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed">
+          The most recent highlights from our community workshops and sessions.
+        </p>
+      </div>
+      
+      <a 
+        href="https://gdg.community.dev/gdg-on-campus-st-joseph-engineering-college-mangaluru-india/#upcoming-events" 
+        target="_blank"
+        class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300 flex items-center gap-2 w-fit"
+      >
+        View all on Bevy
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+      {sortedEvents.map((event) => (
+        <div class="group flex flex-col bg-gray-50 dark:bg-[#1A1D2B] rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-blue-500/10">
+          
+          <!-- Event Image -->
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img 
+              src={event.image} 
+              alt={event.title} 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute top-6 left-6 flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white border border-white/20">
+                {event.type}
+              </span>
+              <span class={`px-3 py-1.5 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest border ${
+                event.status === 'Upcoming' 
+                ? 'bg-blue-500/90 text-white border-blue-400/50' 
+                : 'bg-gray-500/40 text-gray-900 dark:text-gray-300 border-white/20'
+              }`}>
+                {event.status}
+              </span>
+            </div>
+          </div>
+
+          <!-- Event Details -->
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="flex items-center gap-2 text-[#4285F4] font-bold text-sm mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+              {event.date}
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#4285F4] transition-colors line-clamp-2">
+              {event.title}
+            </h3>
+            
+            <p class="text-gray-600 dark:text-gray-400 mb-8 line-clamp-3 text-sm md:text-base leading-relaxed">
+              {event.description}
+            </p>
+
+            <div class="mt-auto">
+              <a 
+                href={event.link} 
+                class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-white group-hover:gap-3 transition-all"
+              >
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    font-family: "Google Sans", sans-serif;
+  }
+
+  /* Custom line clamp for cross-browser support */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
