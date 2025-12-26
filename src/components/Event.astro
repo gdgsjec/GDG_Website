@@ -1,35 +1,187 @@
+---
+import EventsData from '../content/EventsData.json';
+const events = EventsData.results.map(event => ({
+  title: event.title,
+  date: new Date(event.start_date).toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  }),
+  // Logic: Compare event date to current date
+  status: new Date(event.start_date) > new Date() ? 'upcoming' : 'completed',
+  statusLabel: new Date(event.start_date) > new Date() ? 'Upcoming' : 'Completed',
+  desc: event.description_short,
+  eventType: event.event_type_title
+}));
+---
 
-<!-- TOP strip : what's happening in sjec-->
-<div class="w-[110vw] -rotate-2 flex items-center overflow-hidden bg-gradient-to-bl from-amber-100 via-red-500 to-blue-800 py-2">
-  <div class="flex animate-[scroll_90s_linear_infinite] hover:pause">
-    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-bold uppercase text-white pr-4 pl-4">What's Happening In SJEC?</span>
-    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-bold uppercase text-white pr-4 pl-4 ">What's Happening In SJEC? </span>
-    <span class="whitespace-nowrap text-[2rem] sm:text-[7rem] lg:text-[4rem] font-bold uppercase text-white pr-4 pl-4">What's Happening In SJEC? </span>
-  </div>
-</div>
-
-<!-- BOTTOM strip: workshops to hackathon -->
-<div class="w-[110vw] rotate-2 flex items-center overflow-hidden bg-gradient-to-br from-amber-100 via-green-600 to-yellow-500 py-2 ">
-  <div class="flex animate-[scroll_10s_linear_infinite] hover:pause">
-    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-semibold uppercase text-white pr-4 pl-4 ">From Workshop To Hackathons! </span>
-    <span class="whitespace-nowrap text-[2rem] sm:text-[4rem] lg:text-[4rem] font-semibold uppercase text-white pr-4 pl-4 ">From Workshop To Hackathons! </span>
-  </div>
-</div>
-
-<!-- keyframe definition (add once anywhere on the page) -->
 <style>
   @keyframes scroll {
     from { transform: translateX(0); }
-    to   { transform: translateX(-100%); }
+    to { transform: translateX(-50%); }
   }
-  /* pause on parent hover */
-  .hover\\:pause:hover > * { animation-play-state: paused; }
+
+  .marquee__track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: fit-content;
+  }
+
+  .marquee__track:hover {
+    animation-play-state: paused;
+  }
 </style>
 
+<div class="bg-gray-50 min-h-screen font-sans overflow-x-hidden">
 
+  <div class="w-full rotate-1.9 bg-blue-800 py-4 mb-10 overflow-hidden shadow-lg">
+    <div class="marquee__track" style="animation-duration: 10s;"> 
+      {Array(8).fill("What's Happening In SJEC?").map(text => (
+        <span class="whitespace-nowrap text-4xl sm:text-2xl font-semibold uppercase text-white px-4">{text}</span>
+      ))}
+    </div>
+  </div>
 
+  <div class="w-full -rotate-3 bg-yellow-500 py-4 mb-10 overflow-hidden shadow-lg">
+    <div class="marquee__track" style="animation-duration: 25s;">
+      {Array(8).fill("From Workshop To Hackathons!").map(text => (
+         <span class="whitespace-nowrap text-4xl sm:text-2xl font-semibold uppercase text-white px-4 ">{text}</span>
+      ))}
+    </div>
+  </div>
 
+  <section class="py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-semibold text-center text-gray-900">
+        Event Timeline
+      </h1>
+      <p class="text-center text-lg text-gray-600 mt-4 font-medium tracking-wide">
+       // GDG SJEC ON CAMPUS EVENTS
+      </p>
+    </div>
+  </section>
 
+  <div id="timeline-section" class="relative max-w-5xl mx-auto px-4 pb-20 overflow-hidden">
+    
+    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-200 -translate-x-1/2 rounded-full z-0"></div>
+    
+    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-gray-500 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
 
+    <div id="timeline-root" class="relative z-10">
+      </div>
+  </div>
 
+</div>
 
+<script define:vars={{ events }}>
+  const timelineRoot = document.getElementById('timeline-root');
+
+  // Helper for colors
+  const getStatusColor = (status) => {
+    if (status === 'completed') return 'bg-green-500';
+    if (status === 'upcoming') return 'bg-yellow-500';
+    return 'bg-purple-600';
+  };
+
+  // 1. GENERATE HTML
+  // We use the processed 'events' variable passed from frontmatter
+  events.forEach((event, index) => {
+    const isEven = index % 2 === 0;
+
+    const containerAlignment = isEven 
+      ? 'md:mr-auto md:pr-12' 
+      : 'md:ml-auto md:pl-12';
+
+    // Dot positioning
+    const dotPosition = isEven
+      ? 'left-1.5 md:left-auto md:-right-0 md:translate-x-1/2' 
+      : 'left-1.5 md:-left-0 md:-translate-x-1/2';
+
+    // Initial animation state
+    const animationBase = "transition-all duration-700 ease-out transform opacity-0 translate-y-12";
+
+    const html = `
+      <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-4 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
+        
+        <div class="absolute top-10 w-6 h-6 bg-white border-4 border-purple-600 rounded-full z-20 hover:bg-pink-500 hover:border-pink-500 transition-colors duration-300 ${dotPosition} shadow-lg"></div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-600 hover:shadow-xl transition-shadow duration-300 relative group">
+          
+          <span class="block text-pink-600 font-bold text-sm tracking-wider uppercase mb-2">
+            ${event.date}
+          </span>
+
+          <h2 class="text-2xl font-bold text-purple-700 mb-2 group-hover:text-pink-600 transition-colors">
+            ${event.title}
+          </h2>
+
+          <p class="text-gray-600 mb-4 line-clamp-3">
+            ${event.desc}
+          </p>
+
+          <div class="flex gap-2 flex-wrap">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${getStatusColor(event.status)}">
+              ${event.statusLabel}
+            </span>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-purple-700 bg-purple-100 border border-purple-200">
+              ${event.eventType}
+            </span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // CRITICAL FIX: Append the HTML to the DOM
+    timelineRoot.insertAdjacentHTML('beforeend', html);
+  });
+
+  // 2. FADE IN ANIMATION
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-12');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    observer.observe(item);
+  });
+
+  // 3. PROGRESS BAR LOGIC
+  function updateProgressBar() {
+    const section = document.getElementById('timeline-section');
+    const progressBar = document.getElementById('progress-bar');
+    
+    if (!section || !progressBar) return;
+    
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const sectionHeight = section.offsetHeight;
+    
+    // Calculate how much of the timeline has been scrolled past
+    // We want 0% when the top of timeline hits bottom of screen
+    // We want 100% when the bottom of timeline hits bottom of screen
+    
+    let percentage = 0;
+    
+    const startOffset = windowHeight / 1.5; // Start filling when section is slightly visible
+    const relativeY = -rect.top + startOffset;
+    
+    if (relativeY > 0) {
+        percentage = (relativeY / sectionHeight) * 100;
+    }
+
+    // Clamp between 0 and 100
+    percentage = Math.max(0, Math.min(percentage, 100));
+    
+    progressBar.style.height = `${percentage}%`;
+  }
+
+  window.addEventListener('scroll', updateProgressBar);
+  window.addEventListener('resize', updateProgressBar);
+  // Run once on load
+  updateProgressBar();
+</script>
