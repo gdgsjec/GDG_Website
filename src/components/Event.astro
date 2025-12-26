@@ -37,7 +37,7 @@ const events = EventsData.results.map(event => ({
   <div class="w-full sm:text-2xl  rotate-1.9 dar:bg-amber-50 bg-slate-400 py-6 mb-10 overflow-hidden shadow-lg">
     <div class="marquee__track" style="animation-duration: 10s;"> 
       {Array(8).fill("What's Happening In SJEC?").map(text => (
-        <span class="whitespace-nowrap text-6xl sm:text-2xl font-semibold uppercase text-wblack px-4">{text}</span>
+        <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-wblack px-4">{text}</span>
       ))}
     </div>
   </div>
@@ -45,7 +45,7 @@ const events = EventsData.results.map(event => ({
   <div class="w-full -rotate-3 py-6 mb-10 dark:bg-amber-50 bg-pink-700 overflow-hidden shadow-lg">
     <div class="marquee__track" style="animation-duration: 25s;">
       {Array(8).fill("From Workshop To Hackathons!").map(text => (
-         <span class="whitespace-nowrap text-6xl sm:text-2xl font-semibold uppercase text-black px-4 ">{text}</span>
+         <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-black px-4 ">{text}</span>
       ))}
     </div>
   </div>
@@ -65,7 +65,7 @@ const events = EventsData.results.map(event => ({
     
     <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-300 -translate-x-1/2 rounded-full z-0"></div>
     
-    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-700 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
+    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-700 dark:bg-amber-200 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
 
     <div id="timeline-root" class="relative z-10">
       </div>
@@ -78,7 +78,7 @@ const events = EventsData.results.map(event => ({
 
   // Helper for colors
   const getStatusColor = (status) => {
-    if (status === 'completed') return 'bg-pink-300';
+    if (status === 'completed') return 'bg-pink-300 dark:bg-amber-100';
     if (status === 'upcoming') return 'bg-yellow-700';
     return 'bg-pink-300';
   };
@@ -103,10 +103,10 @@ const events = EventsData.results.map(event => ({
   const animationBase = "transition-all duration-700 ease-out transform opacity-0 translate-y-12";
 
   const html = `
-   <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-4 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
+   <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-8 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
   
   
-  <div class="absolute top-10 w-6 h-6 bg-white border-4 bg-pink-300 rounded-full z-20  hover:border-pink-700 transition-colors duration-300 ${dotPosition} shadow-lg"></div>
+  <div class="absolute top-10 w-6 h-6 bg-white border-4 bg-pink-300 rounded-full z-20   transition-colors duration-300 ${dotPosition} shadow-lg"></div>
 
   <time class="absolute top-10
              ${isEven
@@ -116,13 +116,13 @@ const events = EventsData.results.map(event => ({
               
              -translate-y-12
              md:translate-y-2   
-            font-bold text-pink-700 uppercase tracking-wider
+            font-bold text-pink-700 dark:text-gray-300  uppercase tracking-wider
              whitespace-nowrap">
-  <span class="text-xs md:text-xl">${event.date}</span>
+  <span class="items-start text-xs md:text-2xl">${event.date}</span>
 </time>
         
       <div class="bg-white flex flex-col p-6 space-y-4 bg-pink-300 hover:shadow-2xl rounded-2xl transition-shadow duration-300 relative group">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-pink-800 transition-colors">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-pink-800 dark:group-hover:text-gray-500  transition-colors">
           ${event.title}
         </h2>
 
