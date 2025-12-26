@@ -32,30 +32,30 @@ const events = EventsData.results.map(event => ({
   }
 </style>
 
-<div class="bg-gray-50 min-h-screen font-sans overflow-x-hidden">
+<div class="bg-gray-50 dark:bg-gray-900 min-h-screen font-sans overflow-x-hidden">
 
-  <div class="w-full rotate-1.9 bg-blue-800 py-4 mb-10 overflow-hidden shadow-lg">
+  <div class="w-full sm:text-2xl  rotate-1.9 dar:bg-amber-50 bg-slate-300 py-6 mb-10 overflow-hidden shadow-lg">
     <div class="marquee__track" style="animation-duration: 10s;"> 
       {Array(8).fill("What's Happening In SJEC?").map(text => (
-        <span class="whitespace-nowrap text-4xl sm:text-2xl font-semibold uppercase text-white px-4">{text}</span>
+        <span class="whitespace-nowrap text-6xl sm:text-2xl font-semibold uppercase text-wblack px-4">{text}</span>
       ))}
     </div>
   </div>
 
-  <div class="w-full -rotate-3 bg-yellow-500 py-4 mb-10 overflow-hidden shadow-lg">
+  <div class="w-full -rotate-3 py-6 mb-10 dark:bg-amber-50 bg-pink-300 overflow-hidden shadow-lg">
     <div class="marquee__track" style="animation-duration: 25s;">
       {Array(8).fill("From Workshop To Hackathons!").map(text => (
-         <span class="whitespace-nowrap text-4xl sm:text-2xl font-semibold uppercase text-white px-4 ">{text}</span>
+         <span class="whitespace-nowrap text-6xl sm:text-2xl font-semibold uppercase text-black px-4 ">{text}</span>
       ))}
     </div>
   </div>
 
   <section class="py-12 px-6">
     <div class="max-w-5xl mx-auto">
-      <h1 class="text-5xl md:text-6xl font-semibold text-center text-gray-900">
+      <h1 class="text-5xl md:text-6xl font-semibold text-center text-gray-900 dark:text-amber-50">
         Event Timeline
       </h1>
-      <p class="text-center text-lg text-gray-600 mt-4 font-medium tracking-wide">
+      <p class="text-center text-lg text-slate-400 mt-4 font-medium tracking-wide">
        // GDG SJEC ON CAMPUS EVENTS
       </p>
     </div>
@@ -63,9 +63,9 @@ const events = EventsData.results.map(event => ({
 
   <div id="timeline-section" class="relative max-w-5xl mx-auto px-4 pb-20 overflow-hidden">
     
-    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-200 -translate-x-1/2 rounded-full z-0"></div>
+    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-300 -translate-x-1/2 rounded-full z-0"></div>
     
-    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-gray-500 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
+    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-300 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
 
     <div id="timeline-root" class="relative z-10">
       </div>
@@ -78,9 +78,9 @@ const events = EventsData.results.map(event => ({
 
   // Helper for colors
   const getStatusColor = (status) => {
-    if (status === 'completed') return 'bg-green-500';
+    if (status === 'completed') return 'bg-pink-300';
     if (status === 'upcoming') return 'bg-yellow-500';
-    return 'bg-purple-600';
+    return 'bg-pink-300';
   };
 
   // 1. GENERATE HTML
@@ -103,15 +103,13 @@ const events = EventsData.results.map(event => ({
     const html = `
       <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-4 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
         
-        <div class="absolute top-10 w-6 h-6 bg-white border-4 border-purple-600 rounded-full z-20 hover:bg-pink-500 hover:border-pink-500 transition-colors duration-300 ${dotPosition} shadow-lg"></div>
+        <div class="absolute top-10 w-6 h-6 bg-white border-4 bg-pink-300  rounded-full z-20 hover:bg-pink-300  hover:border-pink-400 transition-colors duration-300 ${dotPosition} shadow-lg"></div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-600 hover:shadow-xl transition-shadow duration-300 relative group">
+        <div class="bg-white grid p-6   border-l-4 bg-pink-300  hover:shadow-xl transition-shadow duration-300 relative group">
           
-          <span class="block text-pink-600 font-bold text-sm tracking-wider uppercase mb-2">
-            ${event.date}
-          </span>
+        
 
-          <h2 class="text-2xl font-bold text-purple-700 mb-2 group-hover:text-pink-600 transition-colors">
+          <h2 class="text-2xl font-bold text-gray-600 mb-2 group-hover:text-pink-300 transition-colors">
             ${event.title}
           </h2>
 
@@ -120,12 +118,17 @@ const events = EventsData.results.map(event => ({
           </p>
 
           <div class="flex gap-2 flex-wrap">
-            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${getStatusColor(event.status)}">
-              ${event.statusLabel}
-            </span>
-            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-purple-700 bg-purple-100 border border-purple-200">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-gray-600 bg-purple-100 border border-purple-200">
               ${event.eventType}
             </span>
+              <span class=" text-pink-300 items-start font-bold text-sm tracking-wider uppercase mb-2">
+            ${event.date}
+          </span>
+          <span class="flex gap-2  p-4 py-1  text-xs font-bold text-white ${getStatusColor(event.status)}">
+              ${event.statusLabel}
+            </span>
+            </div>
+            
           </div>
         </div>
       </div>
