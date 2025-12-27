@@ -158,7 +158,7 @@ import "../styles/global.css";
 
 .role-circle {
   width: 200px;
-  height: 200px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: #111;
   position: relative;
@@ -166,6 +166,7 @@ import "../styles/global.css";
   align-items: center;
   justify-content: center;
   transition: transform 1.5s linear;
+  flex-shrink: 0;
 }
 
 /* ICON stays visible */
@@ -213,7 +214,67 @@ import "../styles/global.css";
 .role-circle:hover .role-text {
   text-shadow: 0 0 12px currentColor;
 }
+/* Auto rotation (JS-triggered) */
+/* One-time rotation animation */
+.role-circle.auto-rotate {
+  animation: spinOnce 1.5s linear forwards;
+}
 
+@keyframes spinOnce {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Auto show text */
+.role-circle.auto-rotate .role-text,
+.role-circle.show-text .role-text {
+  opacity: 1;
+  transform: scale(1);
+  text-shadow: 0 0 12px currentColor;
+}
+/* Final resting state */
+.role-circle.final-state {
+  transform: scale(1.03);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Colored glow per role */
+.member .role-circle.final-state {
+  box-shadow: 0 0 25px rgba(66, 133, 244, 0.45);
+}
+
+.organizer .role-circle.final-state {
+  box-shadow: 0 0 25px rgba(52, 168, 83, 0.45);
+}
+
+.speaker .role-circle.final-state {
+  box-shadow: 0 0 25px rgba(251, 188, 5, 0.45);
+}
+
+@media (max-width: 480px) {
+  .role-circle {
+    width: 120px;
+  }
+  .member .role-text {
+  color: #4285f4; /* Blue */
+  font-size:medium;
+}
+
+.organizer .role-text {
+  color: #34a853; /* Green */
+  font-size:medium;
+}
+
+.speaker .role-text {
+  color: #fbbc05; /* Yellow */
+  font-size:medium;
+}
+}
 
 
 
@@ -229,26 +290,29 @@ import "../styles/global.css";
           Google Developers Group
         </div>
         <div
-          class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2 max-sm:justify-around max-sm:-ml-5"
+          class="w-full text-2xl dark:text-[#f0f0f0] flex flex-col gap-5 txt2 max-sm:justify-around max-sm:-ml-5 max-sm:-mt-5"
         >
           <span id="subheading" class="w-full flex justify-center fade-up max-sm:border-amber-300"
           ></span>
         </div>
         
   <!-- BADGES SECTION -->
-<div class="w-full flex justify-center mt-5 mb-8">
+<div class="w-full flex justify-center mt-5 mb-8 max-sm:-mt-10 md:mb-24">
+
   <div
-    class="
-      grid grid-cols-1
-      sm:grid-cols-2
-      lg:grid-cols-3
-      gap-8
-      max-w-5xl
-      px-6
-    "
-  >
+  class="
+    grid grid-cols-1
+    gap-y-6
+    sm:grid-cols-2 sm:gap-x-4
+    md:grid-cols-3
+    max-w-5xl
+    px-6
+  "
+>
+
+
 <div class="role-card member">
-  <div class="role-circle">
+  <div class="role-circle" id="memberCircle">
     <img
       src="src/content/GDG2024-Member-Badge.png"
       alt="GDG Member Badge"
@@ -259,7 +323,7 @@ import "../styles/global.css";
   </div>
 </div>
 <div class="role-card organizer">
-  <div class="role-circle">
+  <div class="role-circle" id="organizerCircle">
     <img
       src="src/content/GDG2024-Organizer-Badge.png"
       alt="GDG Organizer Badge"
@@ -269,8 +333,10 @@ import "../styles/global.css";
   </div>
 </div>
 
-<div class="role-card speaker">
-  <div class="role-circle">
+<div class="role-card speaker flex justify-center">
+
+
+  <div class="role-circle" id="speakerCircle">
     <img
       src="src/content/GDG2024-Speaker-Badge.png"
       alt="GDG Speaker Badge"
@@ -312,21 +378,51 @@ import "../styles/global.css";
     </div>
   </div>
   <script is:inline>
-    const text = "Learn, build, and grow with a community powered by Google.";
-    const speed = 50;
-    let i = 0;
-    const el = document.getElementById("subheading");
-    if (!el) {
-      console.error("Subheading element not found");
+  const text = "Learn, build, and grow with a community powered by Google.";
+  const speed = 50;
+  let i = 0;
+  const el = document.getElementById("subheading");
+
+  const member = document.getElementById("memberCircle");
+  const organizer = document.getElementById("organizerCircle");
+  const speaker = document.getElementById("speakerCircle");
+
+  function typeText() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeText, speed);
     } else {
-      function typeText() {
-        if (i < text.length) {
-          el.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeText, speed);
-        }
-      }
-      typeText();
+      startAutoSequence();
     }
-  </script>
+  }
+
+  function rotateOnce(element, delay) {
+    setTimeout(() => {
+      element.classList.add("auto-rotate");
+
+setTimeout(() => {
+  element.classList.add("show-text");
+}, 1500);
+
+    }, delay);
+  }
+
+  function startAutoSequence() {
+  rotateOnce(member, 500);
+  rotateOnce(organizer, 2500);
+  rotateOnce(speaker, 4500);
+
+  // Final polish state
+  setTimeout(() => {
+    member.classList.add("final-state");
+    organizer.classList.add("final-state");
+    speaker.classList.add("final-state");
+  }, 6500);
+}
+
+
+  if (el) typeText();
+</script>
+
 </html>
