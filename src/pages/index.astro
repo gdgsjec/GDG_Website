@@ -8,18 +8,27 @@ import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 import Team from '../components/Team.astro';
 import Event from '../components/Event.astro';
-import Footer from '../components/Footer.astro';  
+import Footer from '../components/Footer.astro';
 ---
 
 
 <Layout>
   <Header/>
   <Hero />
-  <Project/>
-  <About />
-  <Blog />
-  <Team />
-  <Event />
+  <div id="projects">
+    <Project/>
+  </div>
+  <div id="about">
+    <About />
+  </div>
+  <div id="blogs">
+    <Blog />
+  </div>
+  <div id="team">
+    <Team />
+  </div>
+  <div id="events">
+    <Event />
+  </div>
   <Footer />
 </Layout>
-

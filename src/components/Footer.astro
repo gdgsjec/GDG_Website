@@ -1,11 +1,12 @@
 ---
 import GDGwhite from '../assets/GDGwhite.png';
 import GDGblack from '../assets/GDGblack.png';
+
 ---
-<footer class="bg-gray-100 dark:bg-gray-800 sm:mb-10 pb-8 sm:pb-12 md:pb-16 lg:pb-20 ">
+<footer class="bg-gray-100 dark:bg-gray-800 sm:mb-10 pb-8 sm:pb-12 md:pb-16 lg:pb-20  ">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
     <!-- Column 1: Logo -->
-    <div class="flex justify-center md:justify-start items-start lg:w-64  sm:w-16 md:w-20 h-auto w-auto cursor-pointer" id="logo">
+<div class="flex justify-center md:justify-start items-start lg:w-64  sm:w-16 md:w-20 h-auto w-auto cursor-pointer" id="logo">
 <img
   src={GDGwhite.src}
   alt="GDG Logo Dark"
@@ -73,10 +74,7 @@ import GDGblack from '../assets/GDGblack.png';
       <a href="https://policies.google.com/terms?hl=en" class="underline">Terms & Conditions</a> | 
       <a href="https://policies.google.com/privacy?hl=en" class="underline">Privacy Policy</a>
     </p>
-    
-    
-  </div>
-
+    </div>
 </footer>
 
 <!-- JS for Dynamic Year & Scroll-to-Top -->
@@ -112,4 +110,22 @@ import GDGblack from '../assets/GDGblack.png';
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+        const wrapper = document.getElementById('wrapper') as HTMLElement | null;
+        
+        function updateAnimation(progress: number) {
+            const translateY = -progress * 0.623286;
+            if (wrapper) {
+                wrapper.style.transform = `translate3d(0%, ${translateY}%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
+            }
+        }
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            updateAnimation(progress);
+        });
+        
+        updateAnimation(0);
+
 </script>
