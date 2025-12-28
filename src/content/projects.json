@@ -22,6 +22,14 @@
 "image": "src/content/100.png",
 "websiteLink": "#",
 "githubLink": "#"
+},
+{
+"title": "Scriptify",
+"description": "Leverage AI to transform your typed text into elegant, cursive handwriting.",
+"tag": "AI Tool",
+"image": "src/content/100.png",
+"websiteLink": "#",
+"githubLink": "#"
 }
 ]
 
