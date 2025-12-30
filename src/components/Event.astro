@@ -1,24 +1,25 @@
 ---
-import EventsData from '../content/events.json';
-const events = EventsData.results.map(event => ({
+import EventsData from "../content/events.json";
+const events = EventsData.map((event) => ({
   title: event.title,
-  date: new Date(event.start_date).toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  }),
-  // Logic: Compare event date to current date
-  status: new Date(event.start_date) > new Date() ? 'upcoming' : 'completed',
-  statusLabel: new Date(event.start_date) > new Date() ? 'Upcoming' : 'Completed',
-  desc: event.description_short,
-  eventType: event.event_type_title
+  date: event.date,
+  status: event.status.toLowerCase(),
+  statusLabel: event.status,
+  desc: event.description,
+  eventType: event.type,
+  image: event.image,
+  link: event.link,
 }));
 ---
 
 <style>
   @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .marquee__track {
@@ -32,86 +33,114 @@ const events = EventsData.results.map(event => ({
   }
 </style>
 
-<div class="bg-gray-50 dark:bg-gray-900 min-h-screen font-sans overflow-x-hidden">
-
-  <div class="w-full sm:text-2xl  rotate-1.9 dar:bg-amber-50 bg-slate-400 py-6 mb-10 overflow-hidden shadow-lg">
-    <div class="marquee__track" style="animation-duration: 10s;"> 
-      {Array(8).fill("What's Happening In SJEC?").map(text => (
-        <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-wblack px-4">{text}</span>
-      ))}
+<div
+  class="bg-gray-50 dark:bg-gray-900 min-h-screen font-sans overflow-x-hidden"
+>
+  <div
+    class="w-full sm:text-2xl rotate-1.9 dar:bg-amber-50 bg-slate-400 py-6 mb-10 overflow-hidden shadow-lg"
+  >
+    <div class="marquee__track" style="animation-duration: 10s;">
+      {
+        Array(8)
+          .fill("What's Happening In SJEC?")
+          .map((text) => (
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-wblack px-4">
+              {text}
+            </span>
+          ))
+      }
     </div>
   </div>
 
-  <div class="w-full -rotate-3 py-6 mb-10 dark:bg-amber-50 bg-pink-700 overflow-hidden shadow-lg">
+  <div
+    class="w-full -rotate-3 py-6 mb-10 dark:bg-amber-50 bg-pink-700 overflow-hidden shadow-lg"
+  >
     <div class="marquee__track" style="animation-duration: 25s;">
-      {Array(8).fill("From Workshop To Hackathons!").map(text => (
-         <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-black px-4 ">{text}</span>
-      ))}
+      {
+        Array(8)
+          .fill("From Workshop To Hackathons!")
+          .map((text) => (
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-black px-4 ">
+              {text}
+            </span>
+          ))
+      }
     </div>
   </div>
 
   <section class="py-12 px-6">
     <div class="max-w-5xl mx-auto">
-      <h1 class="text-5xl md:text-6xl font-semibold text-center text-gray-900 dark:text-amber-50">
+      <h1
+        class="text-4xl md:text-6xl font-semibold text-center text-gray-900 dark:text-amber-50"
+      >
         Event Timeline
       </h1>
-      <p class="text-center text-lg text-slate-400 mt-4 font-medium tracking-wide">
-       // GDG SJEC ON CAMPUS EVENTS
+      <p
+        class="text-center text-lg text-slate-400 mt-4 font-medium tracking-wide"
+      >
+        // GDG SJEC ON CAMPUS EVENTS
       </p>
     </div>
   </section>
 
-  <div id="timeline-section" class="relative max-w-5xl mx-auto px-4 pb-20 overflow-hidden">
-    
-    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-300 -translate-x-1/2 rounded-full z-0"></div>
-    
-    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-700 dark:bg-amber-200 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
+  <div
+    id="timeline-section"
+    class="relative max-w-5xl mx-auto px-4 pb-20 overflow-hidden"
+  >
+    <div
+      class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-300 -translate-x-1/2 rounded-full z-0"
+    >
+    </div>
 
-    <div id="timeline-root" class="relative z-10">
-      </div>
+    <div
+      id="progress-bar"
+      class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-700 dark:bg-amber-200 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"
+    >
+    </div>
+
+    <div id="timeline-root" class="relative z-10"></div>
   </div>
-
 </div>
 
 <script define:vars={{ events }}>
-  const timelineRoot = document.getElementById('timeline-root');
+  const timelineRoot = document.getElementById("timeline-root");
 
   // Helper for colors
   const getStatusColor = (status) => {
-    if (status === 'completed') return 'bg-pink-300 dark:bg-amber-100';
-    if (status === 'upcoming') return 'bg-yellow-700';
-    return 'bg-pink-300';
+    if (status === "completed") return "bg-pink-300 dark:bg-amber-100";
+    if (status === "upcoming") return "bg-yellow-700";
+    return "bg-pink-300";
   };
 
   // 1. GENERATE HTML
   // We use the processed 'events' variable passed from frontmatter
- events.forEach((event, index) => {
-  const isEven = index % 2 === 0;
+  events.forEach((event, index) => {
+    const isEven = index % 2 === 0;
 
-  const containerAlignment = isEven 
-    ? 'md:mr-auto md:pr-12' 
-    : 'md:ml-auto md:pl-12';
+    const containerAlignment = isEven
+      ? "md:mr-auto md:pr-12"
+      : "md:ml-auto md:pl-12";
 
-  // Dot positioning
-  const dotPosition = isEven
-    ? 'left-1.5 md:left-auto md:-right-0 md:translate-x-1/2' 
-    : 'left-1.5 md:-left-0 md:-translate-x-1/2';
+    // Dot positioning
+    const dotPosition = isEven
+      ? "left-1.5 md:left-auto md:-right-0 md:translate-x-1/2"
+      : "left-1.5 md:-left-0 md:-translate-x-1/2";
 
- 
+    // Initial animation state
+    const animationBase =
+      "transition-all duration-700 ease-out transform opacity-0 translate-y-12";
 
-  // Initial animation state
-  const animationBase = "transition-all duration-700 ease-out transform opacity-0 translate-y-12";
-
-  const html = `
+    const html = `
    <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-8 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
   
   
   <div class="absolute top-10 w-6 h-6 bg-white border-4 bg-pink-300 rounded-full z-20   transition-colors duration-300 ${dotPosition} shadow-lg"></div>
 
   <time class="absolute top-10
-             ${isEven
-               ? 'md:left-[calc(100%+1.5rem)]'   /* RIGHT of dot on desktop */
-               : 'md:right-[calc(100%+1.5rem)]'  /* LEFT  of dot on desktop */
+             ${
+               isEven
+                 ? "md:left-[calc(100%+1.5rem)]" /* RIGHT of dot on desktop */
+                 : "md:right-[calc(100%+1.5rem)]" /* LEFT  of dot on desktop */
              }
               
              -translate-y-12
@@ -143,56 +172,59 @@ const events = EventsData.results.map(event => ({
     </div>
   `;
 
-  timelineRoot.insertAdjacentHTML('beforeend', html);
-});
+    timelineRoot.insertAdjacentHTML("beforeend", html);
+  });
 
   // 2. FADE IN ANIMATION
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', 'translate-y-12');
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-12");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
 
-  document.querySelectorAll('.timeline-item').forEach(item => {
+  document.querySelectorAll(".timeline-item").forEach((item) => {
     observer.observe(item);
   });
 
   // 3. PROGRESS BAR LOGIC
   function updateProgressBar() {
-    const section = document.getElementById('timeline-section');
-    const progressBar = document.getElementById('progress-bar');
-    
+    const section = document.getElementById("timeline-section");
+    const progressBar = document.getElementById("progress-bar");
+
     if (!section || !progressBar) return;
-    
+
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     const sectionHeight = section.offsetHeight;
-    
+
     // Calculate how much of the timeline has been scrolled past
     // We want 0% when the top of timeline hits bottom of screen
     // We want 100% when the bottom of timeline hits bottom of screen
-    
+
     let percentage = 0;
-    
+
     const startOffset = windowHeight / 1.5; // Start filling when section is slightly visible
     const relativeY = -rect.top + startOffset;
-    
+
     if (relativeY > 0) {
-        percentage = (relativeY / sectionHeight) * 100;
+      percentage = (relativeY / sectionHeight) * 100;
     }
 
     // Clamp between 0 and 100
     percentage = Math.max(0, Math.min(percentage, 100));
-    
+
     progressBar.style.height = `${percentage}%`;
   }
 
-  window.addEventListener('scroll', updateProgressBar);
-  window.addEventListener('resize', updateProgressBar);
+  window.addEventListener("scroll", updateProgressBar);
+  window.addEventListener("resize", updateProgressBar);
   // Run once on load
   updateProgressBar();
 </script>
