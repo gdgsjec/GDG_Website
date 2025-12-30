@@ -25,7 +25,69 @@ if (limit) {
 }
 ---
 
-<section id="events" class="py-24 px-6 md:px-12 lg:px-24 font-sans overflow-hidden bg-white dark:bg-[#0B0D17]">
+<style>
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee__track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: fit-content;
+  }
+
+  .marquee__track:hover {
+    animation-play-state: paused;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<div class="bg-white dark:bg-[#0B0D17] font-sans overflow-x-hidden pt-12">
+  <div
+    class="w-full sm:text-2xl rotate-1.9 bg-yellow-500 py-6 mb-10 overflow-hidden shadow-lg"
+  >
+    <div class="marquee__track" style="animation-duration: 15s;">
+      {
+        Array(8)
+          .fill("What's Happening In SJEC?")
+          .map((text) => (
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4">
+              {text}
+            </span>
+          ))
+      }
+    </div>
+  </div>
+
+  <div
+    class="w-full -rotate-3 py-6 mb-10 bg-green-600 overflow-hidden shadow-lg"
+  >
+    <div class="marquee__track" style="animation-duration: 30s;">
+      {
+        Array(8)
+          .fill("From Workshops To Hackathons!")
+          .map((text) => (
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4 ">
+              {text}
+            </span>
+          ))
+      }
+    </div>
+  </div>
+
+  <section id="events" class="py-24 px-6 md:px-12 lg:px-24 font-sans overflow-hidden bg-white dark:bg-[#0B0D17]">
   <div class="max-w-7xl mx-auto">
     <!-- Header Section -->
     <div class="text-center mb-20">
@@ -119,18 +181,9 @@ if (limit) {
         </a>
       </div>
     )}
-  </div>
+  </div>  
 </section>
-
-<style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
+</div>
 
 <script>
   const slider = document.getElementById('event-slider');
