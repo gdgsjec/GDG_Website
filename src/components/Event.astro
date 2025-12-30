@@ -49,14 +49,14 @@ if (limit) {
   class="bg-gray-50 dark:bg-gray-900 min-h-screen mt-[4rem] font-sans overflow-x-hidden"
 >
   <div
-    class="w-full sm:text-2xl rotate-1.9 dar:bg-amber-50 bg-slate-400 py-6 mb-10 overflow-hidden shadow-lg mb"
+    class="w-full sm:text-2xl rotate-1.9 bg-yellow-500 py-6 mb-10 overflow-hidden shadow-lg"
   >
-    <div class="marquee__track" style="animation-duration: 10s;">
+    <div class="marquee__track" style="animation-duration: 15s;">
       {
         Array(8)
           .fill("What's Happening In SJEC?")
           .map((text) => (
-            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-wblack px-4">
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4">
               {text}
             </span>
           ))
@@ -65,14 +65,14 @@ if (limit) {
   </div>
 
   <div
-    class="w-full -rotate-3 py-6 mb-10 dark:bg-amber-50 bg-pink-700 overflow-hidden shadow-lg"
+    class="w-full -rotate-3 py-6 mb-10 bg-green-600 overflow-hidden shadow-lg"
   >
-    <div class="marquee__track" style="animation-duration: 25s;">
+    <div class="marquee__track" style="animation-duration: 30s;">
       {
         Array(8)
-          .fill("From Workshop To Hackathons!")
+          .fill("From Workshops To Hackathons!")
           .map((text) => (
-            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-black px-4 ">
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4 ">
               {text}
             </span>
           ))
@@ -106,7 +106,7 @@ if (limit) {
 
     <div
       id="progress-bar"
-      class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-700 dark:bg-amber-200 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"
+      class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-blue-600 dark:bg-blue-400 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"
     >
     </div>
 
@@ -118,23 +118,9 @@ if (limit) {
       <div class="flex justify-center mt-12 pb-20">
         <a
           href="/events"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-pink-700 hover:bg-pink-800 dark:bg-amber-100 dark:hover:bg-amber-200 text-white dark:text-gray-900 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl group"
+          class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
         >
-          View All Events
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 group-hover:translate-x-1 transition-transform"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
+          View all events
         </a>
       </div>
     )
@@ -146,9 +132,11 @@ if (limit) {
 
   // Helper for colors
   const getStatusColor = (status) => {
-    if (status === "completed") return "bg-pink-300 dark:bg-amber-100";
-    if (status === "upcoming") return "bg-yellow-700";
-    return "bg-pink-300";
+    if (status === "upcoming")
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
+    if (status === "completed")
+      return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300";
+    return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
   };
 
   events.forEach((event, index) => {
@@ -171,7 +159,7 @@ if (limit) {
    <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-8 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
   
   
-  <div class="absolute top-10 w-6 h-6 bg-white border-4 bg-pink-300 rounded-full z-20   transition-colors duration-300 ${dotPosition} shadow-lg"></div>
+  <div class="absolute top-10 w-6 h-6 bg-white border-4 border-blue-600 rounded-full z-20 transition-colors duration-300 ${dotPosition} shadow-lg"></div>
 
   <time class="absolute top-10
              ${
@@ -182,26 +170,26 @@ if (limit) {
               
              -translate-y-12
              md:translate-y-2   
-            font-bold text-pink-700 dark:text-gray-300  uppercase tracking-wider
+            font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest text-sm
              whitespace-nowrap">
-  <span class="items-start text-xs md:text-2xl">${event.date}</span>
+  <span class="items-start text-xs md:text-xl">${event.date}</span>
 </time>
         
-      <div class="bg-white flex flex-col p-6 space-y-4 bg-pink-300 hover:shadow-2xl rounded-2xl transition-shadow duration-300 relative group">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-pink-800 dark:group-hover:text-gray-500  transition-colors">
+      <div class="bg-white dark:bg-[#0B0D17] flex flex-col p-6 space-y-4 border border-gray-100 dark:border-gray-800 hover:shadow-2xl rounded-[2rem] transition-all duration-300 relative group">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           ${event.title}
         </h2>
 
-        <p class="text-gray-900 mb-4 line-clamp-5 text-2xs">
+        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 text-sm leading-relaxed">
           ${event.desc}
         </p>
 
         <div class="flex gap-2 flex-wrap">
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-gray-900 bg-purple-100 border border-purple-200">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 uppercase tracking-widest leading-none">
             ${event.eventType}
           </span>
             
-          <span class="inline-block px-4 rounded-2xl text-gray-900 py-1 text-xs font-bold ${getStatusColor(event.status)}">
+          <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold ${getStatusColor(event.status)} uppercase tracking-widest leading-none">
             ${event.statusLabel}
           </span>
         </div>
