@@ -127,10 +127,10 @@ import { Image } from "astro:assets";
 
   <!-- Bottom Section -->
   <div
-    class="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-800 pt-12 flex flex-col md:flex-row justify-between items-center gap-8"
+    class="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-800 pt-12 grid grid-cols-1 md:grid-cols-3 items-center gap-8"
   >
     <!-- Social Handles -->
-    <div class="flex items-center gap-6">
+    <div class="flex items-center justify-center md:justify-start gap-6">
       <a
         href="https://www.instagram.com/gdg.sjec/"
         target="_blank"
@@ -177,6 +177,62 @@ import { Image } from "astro:assets";
       </a>
     </div>
 
+    <!-- Theme Toggle (Middle) -->
+    <div class="flex justify-center">
+      <button
+        id="theme-toggle-footer"
+        class="group relative w-16 h-8 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-xl transition-all duration-500 flex items-center p-1 overflow-hidden"
+        aria-label="Toggle theme"
+      >
+        <!-- Icons (Permanent) -->
+        <div
+          class="relative z-10 flex w-full justify-between items-center px-1.5 pointer-events-none"
+        >
+          <div
+            class="sun-wrapper text-gray-400 group-hover:text-yellow-500 transition-colors"
+          >
+            <svg
+              class="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path>
+            </svg>
+          </div>
+          <div
+            class="moon-wrapper text-gray-400 group-hover:text-blue-400 transition-colors"
+          >
+            <svg
+              class="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Liquid Indicator -->
+        <div
+          id="theme-indicator-footer"
+          class="absolute left-1 w-6 h-6 rounded-full bg-white dark:bg-white shadow-[0_2px_10px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+        >
+        </div>
+      </button>
+    </div>
+
     <!-- Copyright & GDG Logo -->
     <div class="flex flex-col items-center md:items-end gap-4">
       <div id="logo-footer" class="cursor-pointer">
@@ -189,7 +245,10 @@ import { Image } from "astro:assets";
           fetchpriority="high"
         />
       </div>
-      <p id="copyright" class="text-sm text-gray-500 dark:text-gray-400">
+      <p
+        id="copyright"
+        class="text-sm text-gray-500 dark:text-gray-400 text-center md:text-right"
+      >
         &copy; {new Date().getFullYear()} GDG Campus SJEC. All Rights Reserved.
       </p>
     </div>

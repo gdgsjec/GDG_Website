@@ -404,9 +404,11 @@ import { Image } from "astro:assets";
     // Theme toggle functionality
     const html = document.documentElement;
     const desktopToggle = document.getElementById("theme-toggle");
+    const footerToggle = document.getElementById("theme-toggle-footer");
     const mobileToggle = document.getElementById("theme-toggle-mobile");
     const themeLabelMobile = document.getElementById("theme-label-mobile");
     const desktopIndicator = document.getElementById("theme-indicator");
+    const footerIndicator = document.getElementById("theme-indicator-footer");
 
     const updateThemeUI = (dark) => {
       if (themeLabelMobile)
@@ -415,6 +417,13 @@ import { Image } from "astro:assets";
       // Desktop indicator position
       if (desktopIndicator) {
         desktopIndicator.style.transform = dark
+          ? "translateX(1.75rem)"
+          : "translateX(0)";
+      }
+
+      // Footer indicator position
+      if (footerIndicator) {
+        footerIndicator.style.transform = dark
           ? "translateX(1.75rem)"
           : "translateX(0)";
       }
@@ -456,6 +465,14 @@ import { Image } from "astro:assets";
     // Add click handlers
     if (desktopToggle) {
       desktopToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isDarkNow = html.classList.contains("dark");
+        setTheme(!isDarkNow);
+      });
+    }
+
+    if (footerToggle) {
+      footerToggle.addEventListener("click", (e) => {
         e.preventDefault();
         const isDarkNow = html.classList.contains("dark");
         setTheme(!isDarkNow);
