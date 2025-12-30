@@ -1,31 +1,30 @@
 ---
-import Header from '../components/Header.astro';
-import About from '../components/About.astro';
-import Project from '../components/Project.astro';
-import Hero from '../components/Hero.astro'
-import Blog from '../components/Blog.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import About from "../components/About.astro";
+import Project from "../components/Project.astro";
+import Hero from "../components/Hero.astro";
+import Blog from "../components/Blog.astro";
+import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
-import Team from '../components/Team.astro';
-import Event from '../components/Event.astro';
-import Footer from '../components/Footer.astro';  
+import Team from "../components/Team.astro";
+import Event from "../components/Event.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-
 <Layout>
-  <Header/>
+  <Header />
   <Hero />
   <div id="about">
     <About />
   </div>
   <div id="events">
-    <Event />
+    <Event limit={3} showAllLink={true} />
   </div>
   <div id="team">
     <Team />
   </div>
   <div id="projects">
-    <Project/>
+    <Project />
   </div>
   <div id="blogs">
     <Blog />
