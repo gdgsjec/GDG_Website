@@ -29,23 +29,13 @@ if (limit) {
 
 <section id="projects" class="py-24 px-6 md:px-12 lg:px-24 font-sans overflow-hidden">
   <div class="max-w-7xl mx-auto">
-    <!-- Header Section -->
-    <div class="flex justify-between items-end mb-16">
-      <div>
-        <h2 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight">
-          Projects
-        </h2>
-      </div>
-      {
-        showAllLink && (
-          <a
-            href="/projects"
-            class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
-          >
-            View all
-          </a>
-        )
-      }
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-gray-900 dark:text-white">
+        Innovation <span class="text-[#4285F4] italic font-serif">built</span> on campus
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+        Discover the practical solutions and creative projects developed by our student community.
+      </p>
     </div>
 
     <!-- Projects Grid -->
@@ -133,6 +123,18 @@ if (limit) {
         ))
       }
     </div>
+    {
+      showAllLink && (
+        <div class="flex justify-center mt-16">
+          <a
+            href="/projects"
+            class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
+          >
+            Explore all projects
+          </a>
+        </div>
+      )
+    }
   </div>
 </section>
 
