@@ -49,41 +49,41 @@ if (limit) {
     </div>
 
     <!-- Projects Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
         typedProjects.map((project) => (
-          <div class="group bg-white dark:bg-[#0B0D17] border border-gray-100 dark:border-gray-800 rounded-[2.5rem] overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="group bg-white dark:bg-[#0B0D17] border border-gray-100 dark:border-gray-800 rounded-[1.5rem] overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
             <!-- Project Image -->
             <div class="relative aspect-video w-full overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                width={800}
-                height={450}
+                width={600}
+                height={338}
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-black/5 dark:bg-white/[0.02] group-hover:opacity-0 transition-opacity"></div>
             </div>
 
             <!-- Content -->
-            <div class="p-8 flex flex-col flex-grow">
-              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                 {project.title}
               </h3>
-              <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 line-clamp-2">
+              <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-5 line-clamp-2">
                 {project.description}
               </p>
 
               <!-- Contributors Row -->
-              <div class="pt-6 border-t border-gray-100 dark:border-gray-800 mb-6">
-                <div class="flex items-start gap-3 text-gray-400 dark:text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="pt-4 border-t border-gray-100 dark:border-gray-800 mb-4">
+                <div class="flex items-start gap-2.5 text-gray-500 dark:text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13.732 4c-.76-1.01-1.93-2-3.482-2a4.47 4.47 0 00-3.482 2" />
                   </svg>
                   <div class="flex flex-col">
-                    <span class="text-xs uppercase tracking-widest font-bold text-gray-300 dark:text-gray-600 mb-1">Contributors</span>
-                    <span class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <span class="text-[11px] uppercase tracking-[0.05em] font-bold text-gray-500 dark:text-gray-400 mb-0.5">Contributors</span>
+                    <span class="text-sm font-bold text-gray-800 dark:text-gray-100">
                       {project.contributors.slice(0, 3).join(", ")}{project.contributors.length > 3 ? " & more" : ""}
                     </span>
                   </div>
@@ -91,29 +91,29 @@ if (limit) {
               </div>
 
               <!-- Tech Stack Tags -->
-              <div class="flex flex-wrap gap-2 mb-10">
+              <div class="flex flex-wrap gap-2 mb-8">
                 {project.techStack.map((tech) => (
-                  <span class="px-3 py-1 bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 text-[10px] font-bold rounded-full border border-gray-100 dark:border-gray-800 uppercase tracking-wider">
+                  <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-[11px] font-bold rounded-md border border-gray-200 dark:border-gray-700 uppercase tracking-wide">
                     {tech}
                   </span>
                 ))}
               </div>
 
               <!-- Buttons -->
-              <div class="mt-auto flex flex-col gap-3">
+              <div class="mt-auto flex flex-col gap-2">
                 {project.websiteLink && project.websiteLink !== "#" && project.websiteLink !== "" ? (
                   <>
                     <a
                       href={project.websiteLink}
                       target="_blank"
-                      class="w-full text-center py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-2xl hover:opacity-90 transition-all duration-300 shadow-lg shadow-gray-200 dark:shadow-none"
+                      class="w-full text-center py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-xl hover:opacity-90 transition-all duration-300 shadow-md shadow-gray-200 dark:shadow-none"
                     >
                       Project Demo
                     </a>
                     <a
                       href={project.githubLink}
                       target="_blank"
-                      class="w-full text-center py-4 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
+                      class="w-full text-center py-3 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
                     >
                       View on GitHub
                     </a>
@@ -122,7 +122,7 @@ if (limit) {
                   <a
                     href={project.githubLink}
                     target="_blank"
-                    class="w-full text-center py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-2xl hover:opacity-90 transition-all duration-300 shadow-xl shadow-gray-200 dark:shadow-none"
+                    class="w-full text-center py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-xl hover:opacity-90 transition-all duration-300 shadow-md shadow-gray-200 dark:shadow-none"
                   >
                    View on GitHub
                   </a>
@@ -130,8 +130,7 @@ if (limit) {
               </div>
             </div>
           </div>
-        )
-      )
+        ))
       }
     </div>
   </div>
