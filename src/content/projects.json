@@ -1,32 +1,145 @@
 [
   {
+    "slug": "tiara-2k25",
     "title": "Tiara 2k25",
-    "description": "An intuitive mobile application for effortless task and schedule management.",
-    "tag": "Web App",
-    "image": "/images/projects/tiara2k25v2.png",
-    "websiteLink": "https://tiarasjec.com/",
-    "githubLink": "",
-    "contributors": ["Vyshnav K", "Joshua Albuquerque", "GDG Team"],
-    "techStack": ["NextJS", "Tailwind", "TypeScript", "Supabase", "RazorPay"]
+    "oneLiner": "An intuitive platform for effortless event management and participation.",
+    "description": "Tiara 2k25 is the premier technical fest platform designed to streamline event registrations, schedule tracking, and user engagement for the campus community.",
+    "category": "Web App",
+    "tags": ["Event Management", "Technical Fest"],
+    "problemStatement": "Organizing large-scale college fests involves complex coordination between multiple departments, manual registration processes, and difficulty in providing real-time updates to participants.",
+    "targetAudience": "Students, Faculty, and External Participants of the college technical fest.",
+    "detailedDescription": "The platform provides a centralized hub for all fest-related activities. Users can browse events, register with ease, track their participation, and receive real-time notifications about schedule changes.",
+    "techStack": {
+      "languages": ["TypeScript", "JavaScript"],
+      "frameworks": ["Next.js", "Tailwind CSS"],
+      "googleTechnologies": ["Google Analytics", "Google Cloud"],
+      "others": ["Supabase", "RazorPay"]
+    },
+    "links": {
+      "github": "",
+      "live": "https://tiarasjec.com/",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/projects/tiara2k25v2.png",
+      "screenshots": ["/images/projects/tiara2k25v2.png"],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": false,
+    "team": {
+      "type": "Team Project",
+      "contributors": [
+        {
+          "name": "Vyshnav K",
+          "role": "Lead Developer",
+          "gdgRole": "Lead",
+          "yearBranch": "4th Year, CSE",
+          "github": "https://github.com/",
+          "linkedin": "https://linkedin.com/in/"
+        },
+        {
+          "name": "Joshua Albuquerque",
+          "role": "Frontend Developer",
+          "gdgRole": "Core",
+          "yearBranch": "3rd Year, ISE",
+          "github": "https://github.com/",
+          "linkedin": "https://linkedin.com/in/"
+        },
+        {
+          "name": "GDG Team",
+          "role": "Support & QA",
+          "gdgRole": "Volunteer",
+          "yearBranch": "Multiple",
+          "github": "",
+          "linkedin": ""
+        }
+      ]
+    }
   },
   {
+    "slug": "memesphere",
     "title": "MemeSphere",
-    "description": "A web extension to seamlessly integrate your favorite memes and GIFs into any online conversation.",
-    "tag": "Web Extension",
-    "image": "/images/gdg2.png",
-    "websiteLink": "",
-    "githubLink": "https://github.com/gdgsjec/memesphere",
-    "contributors": ["Jeethan", "Sahil"],
-    "techStack": ["Javascript", "Chrome API", "Tailwind"]
+    "oneLiner": "Integrate memes and GIFs into your online conversations seamlessly.",
+    "description": "A web extension that brings the power of memes to every text box you use online.",
+    "category": "Web Extension",
+    "tags": ["Productivity", "Social"],
+    "problemStatement": "Searching for memes and GIFs in a separate tab interrupts the flow of online conversations.",
+    "targetAudience": "Social media users and online communicators.",
+    "detailedDescription": "MemeSphere lives in your browser and provides a quick search and insert feature for memes directly into any web-based chat application.",
+    "techStack": {
+      "languages": ["JavaScript"],
+      "frameworks": ["Chrome Extension API"],
+      "others": ["Tailwind CSS"]
+    },
+    "links": {
+      "github": "https://github.com/gdgsjec/memesphere",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/gdg2.png",
+      "screenshots": ["/images/gdg2.png"]
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "Team Project",
+      "contributors": [
+        {
+          "name": "Jeethan",
+          "role": "Developer",
+          "gdgRole": "Member"
+        },
+        {
+          "name": "Sahil",
+          "role": "Developer",
+          "gdgRole": "Member"
+        }
+      ]
+    }
   },
   {
+    "slug": "scriptify",
     "title": "Scriptify",
-    "description": "Leverage AI to transform your typed text into elegant, cursive handwriting.",
-    "tag": "AI Tool",
-    "image": "/images/gdg1.png",
-    "websiteLink": "https://scriptify.example.com",
-    "githubLink": "https://github.com/gdgsjec/scriptify",
-    "contributors": ["Jeethan", "Prithvi"],
-    "techStack": ["Python", "TensorFlow", "React"]
+    "oneLiner": "Transform typed text into elegant, cursive handwriting with AI.",
+    "description": "An AI-powered tool that generates realistic handwriting from digital text.",
+    "category": "AI Tool",
+    "tags": ["Artificial Intelligence", "Creativity"],
+    "problemStatement": "Digital text often lacks the personal touch of a handwritten note, but writing by hand is time-consuming.",
+    "targetAudience": "Educators, calligraphers, and individuals seeking a personal touch in digital communication.",
+    "detailedDescription": "Using deep learning models, Scriptify analyzes handwriting patterns and applies them to any input text to create a high-fidelity image of cursive script.",
+    "techStack": {
+      "languages": ["Python"],
+      "frameworks": ["TensorFlow", "React"],
+      "googleTechnologies": ["TensorFlow Hub"]
+    },
+    "links": {
+      "github": "https://github.com/gdgsjec/scriptify",
+      "live": "https://scriptify.example.com/",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/gdg1.png",
+      "screenshots": ["/images/gdg1.png"]
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "Team Project",
+      "contributors": [
+        {
+          "name": "Jeethan",
+          "role": "Lead",
+          "gdgRole": "Lead"
+        },
+        {
+          "name": "Prithvi",
+          "role": "Developer",
+          "gdgRole": "Member"
+        }
+      ]
+    }
   }
 ]
