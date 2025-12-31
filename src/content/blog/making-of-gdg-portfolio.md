@@ -21,7 +21,6 @@ For this project, we chose **Astro**. Its "Islands Architecture" allowed us to k
 Key features we utilized:
 - **Content Collections**: For a type-safe, scaleable blog system.
 - **Tailwind CSS**: For rapid, consistent styling of our custom design tokens.
-- **Agentic Development**: Much of this codebase was crafted in collaboration with advanced AI agents, pushing the boundaries of what's possible in "agentic coding."
 
 ## Design Philosophy
 
