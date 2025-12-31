@@ -1,24 +1,38 @@
 ---
-import EventsData from '../content/EventsData.json';
-const events = EventsData.results.map(event => ({
+import EventsData from "../content/events.json";
+import { Image } from "astro:assets";
+
+interface Props {
+  limit?: number;
+  showAllLink?: boolean;
+}
+
+const { limit, showAllLink = false } = Astro.props;
+
+let events = EventsData.map((event) => ({
   title: event.title,
-  date: new Date(event.start_date).toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  }),
-  // Logic: Compare event date to current date
-  status: new Date(event.start_date) > new Date() ? 'upcoming' : 'completed',
-  statusLabel: new Date(event.start_date) > new Date() ? 'Upcoming' : 'Completed',
-  desc: event.description_short,
-  eventType: event.event_type_title
+  date: event.date,
+  status: event.status.toLowerCase(),
+  statusLabel: event.status,
+  desc: event.description,
+  eventType: event.type,
+  image: event.image,
+  link: event.link,
 }));
+
+if (limit) {
+  events = events.slice(0, limit);
+}
 ---
 
 <style>
   @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .marquee__track {
@@ -30,169 +44,163 @@ const events = EventsData.results.map(event => ({
   .marquee__track:hover {
     animation-play-state: paused;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 </style>
 
-<div class="bg-gray-50 dark:bg-gray-900 min-h-screen font-sans overflow-x-hidden">
-
-  <div class="w-full sm:text-2xl  rotate-1.9 dar:bg-amber-50 bg-slate-400 py-6 mb-10 overflow-hidden shadow-lg">
-    <div class="marquee__track" style="animation-duration: 10s;"> 
-      {Array(8).fill("What's Happening In SJEC?").map(text => (
-        <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-wblack px-4">{text}</span>
-      ))}
+<div class="bg-white dark:bg-[#0B0D17] font-sans overflow-x-hidden pt-12">
+  <div
+    class="w-full sm:text-2xl rotate-1.9 bg-yellow-500 py-6 mb-10 overflow-hidden shadow-lg"
+  >
+    <div class="marquee__track" style="animation-duration: 15s;">
+      {
+        Array(8)
+          .fill("What's Happening In SJEC?")
+          .map((text) => (
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4">
+              {text}
+            </span>
+          ))
+      }
     </div>
   </div>
 
-  <div class="w-full -rotate-3 py-6 mb-10 dark:bg-amber-50 bg-pink-700 overflow-hidden shadow-lg">
-    <div class="marquee__track" style="animation-duration: 25s;">
-      {Array(8).fill("From Workshop To Hackathons!").map(text => (
-         <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-black px-4 ">{text}</span>
-      ))}
+  <div
+    class="w-full -rotate-3 py-6 mb-10 bg-green-600 overflow-hidden shadow-lg"
+  >
+    <div class="marquee__track" style="animation-duration: 30s;">
+      {
+        Array(8)
+          .fill("From Workshops To Hackathons!")
+          .map((text) => (
+            <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4 ">
+              {text}
+            </span>
+          ))
+      }
     </div>
   </div>
 
-  <section class="py-12 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-5xl md:text-6xl font-semibold text-center text-gray-900 dark:text-amber-50">
-        Event Timeline
-      </h1>
-      <p class="text-center text-lg text-slate-400 mt-4 font-medium tracking-wide">
-       // GDG SJEC ON CAMPUS EVENTS
+  <section id="events" class="py-24 px-6 md:px-12 lg:px-24 font-sans overflow-hidden bg-white dark:bg-[#0B0D17]">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header Section -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-gray-900 dark:text-white">
+        Event <span class="text-blue-500 dark:text-blue-400">T</span><span class="text-red-500 dark:text-red-400">I</span><span class="text-[#FBBC04] dark:text-yellow-400">M</span><span class="text-green-500 dark:text-green-400">E</span>LINE
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+        Explore our journey through workshops, hackathons, and tech talks on campus.
       </p>
     </div>
-  </section>
 
-  <div id="timeline-section" class="relative max-w-5xl mx-auto px-4 pb-20 overflow-hidden">
-    
-    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-1.5 bg-gray-300 -translate-x-1/2 rounded-full z-0"></div>
-    
-    <div id="progress-bar" class="absolute top-0 left-8 md:left-1/2 w-1.5 bg-pink-700 dark:bg-amber-200 -translate-x-1/2 rounded-full z-0 h-0 transition-all duration-100 ease-linear"></div>
-
-    <div id="timeline-root" class="relative z-10">
-      </div>
-  </div>
-
-</div>
-
-<script define:vars={{ events }}>
-  const timelineRoot = document.getElementById('timeline-root');
-
-  // Helper for colors
-  const getStatusColor = (status) => {
-    if (status === 'completed') return 'bg-pink-300 dark:bg-amber-100';
-    if (status === 'upcoming') return 'bg-yellow-700';
-    return 'bg-pink-300';
-  };
-
-  // 1. GENERATE HTML
-  // We use the processed 'events' variable passed from frontmatter
- events.forEach((event, index) => {
-  const isEven = index % 2 === 0;
-
-  const containerAlignment = isEven 
-    ? 'md:mr-auto md:pr-12' 
-    : 'md:ml-auto md:pl-12';
-
-  // Dot positioning
-  const dotPosition = isEven
-    ? 'left-1.5 md:left-auto md:-right-0 md:translate-x-1/2' 
-    : 'left-1.5 md:-left-0 md:-translate-x-1/2';
-
- 
-
-  // Initial animation state
-  const animationBase = "transition-all duration-700 ease-out transform opacity-0 translate-y-12";
-
-  const html = `
-   <div class="timeline-item relative w-full md:w-1/2 pl-20 pr-4 py-8 md:py-6 md:px-0 ${containerAlignment} ${animationBase}">
-  
-  
-  <div class="absolute top-10 w-6 h-6 bg-white border-4 bg-pink-300 rounded-full z-20   transition-colors duration-300 ${dotPosition} shadow-lg"></div>
-
-  <time class="absolute top-10
-             ${isEven
-               ? 'md:left-[calc(100%+1.5rem)]'   /* RIGHT of dot on desktop */
-               : 'md:right-[calc(100%+1.5rem)]'  /* LEFT  of dot on desktop */
-             }
+    <!-- Timeline Slider -->
+    <div class="relative group/slider">
+      <div 
+        id="event-slider" 
+        class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0 relative z-10"
+      >
+        {events.map((event, index) => (
+          <div class="flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start md:snap-start flex flex-col">
+            <!-- Event Card (Fixed height and width for total uniformity) -->
+            <div class="w-full h-[25rem] md:h-[30rem] bg-gray-50 dark:bg-[#1A1D2B] border border-gray-100 dark:border-white/5 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group shadow-sm">
               
-             -translate-y-12
-             md:translate-y-2   
-            font-bold text-pink-700 dark:text-gray-300  uppercase tracking-wider
-             whitespace-nowrap">
-  <span class="items-start text-xs md:text-2xl">${event.date}</span>
-</time>
-        
-      <div class="bg-white flex flex-col p-6 space-y-4 bg-pink-300 hover:shadow-2xl rounded-2xl transition-shadow duration-300 relative group">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-pink-800 dark:group-hover:text-gray-500  transition-colors">
-          ${event.title}
-        </h2>
+              <!-- Circular Image (Centered) -->
+              <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-6 border-4 border-white dark:border-gray-800 shadow-lg shrink-0 mx-auto">
+                <Image 
+                  src={event.image} 
+                  alt={event.title} 
+                  class="w-full h-full object-cover"
+                  width={200}
+                  height={200}
+                />
+              </div>
 
-        <p class="text-gray-900 mb-4 line-clamp-5 text-2xs">
-          ${event.desc}
-        </p>
+              <!-- Event Info -->
+              <div class="flex-grow flex flex-col items-center w-full">
+                <time class="text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs md:text-sm mb-2">
+                  {event.date}
+                </time>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                  {event.title}
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-4 leading-relaxed">
+                  {event.desc}
+                </p>
+              </div>
 
-        <div class="flex gap-2 flex-wrap">
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold text-gray-900 bg-purple-100 border border-purple-200">
-            ${event.eventType}
-          </span>
-            
-          <span class="inline-block px-4 rounded-2xl text-gray-900 py-1 text-xs font-bold ${getStatusColor(event.status)}">
-            ${event.statusLabel}
-          </span>
-        </div>
+              <div class="mt-auto pt-6 flex flex-wrap justify-center gap-2">
+                <span class="px-3 py-1 rounded-full text-[0.6rem] font-bold bg-gray-100 dark:bg-gray-800 text-gray-500 uppercase tracking-widest leading-none">
+                  {event.eventType}
+                </span>
+                <span class={`px-3 py-1 rounded-full text-[0.6rem] font-bold uppercase tracking-widest leading-none ${
+                  event.status === 'upcoming' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'
+                }`}>
+                  {event.statusLabel}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+        <!-- Spacer to fix right snapping -->
+        <div class="flex-none w-px h-full"></div>
+      </div>
+
+      <!-- Navigation Arrows (Left Aligned) -->
+      <div class="flex items-center gap-4 mt-8 px-4">
+        <button 
+          id="prev-event"
+          aria-label="Previous event"
+          class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none bg-white dark:bg-[#0B0D17] shadow-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button 
+          id="next-event"
+          aria-label="Next event"
+          class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none bg-white dark:bg-[#0B0D17] shadow-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
       </div>
     </div>
-  `;
 
-  timelineRoot.insertAdjacentHTML('beforeend', html);
-});
+    {showAllLink && (
+      <div class="flex justify-center mt-20">
+        <a href="/events" class="group px-8 py-3.5 border border-gray-900 dark:border-white text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 transition-all duration-300">
+          Explore full timeline
+        </a>
+      </div>
+    )}
+  </div>  
+</section>
+</div>
 
-  // 2. FADE IN ANIMATION
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', 'translate-y-12');
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+<script>
+  const slider = document.getElementById('event-slider');
+  const nextBtn = document.getElementById('next-event');
+  const prevBtn = document.getElementById('prev-event');
 
-  document.querySelectorAll('.timeline-item').forEach(item => {
-    observer.observe(item);
-  });
+  if (slider && nextBtn && prevBtn) {
+    const scroll = (direction: string) => {
+      const card = slider.querySelector('.flex-none');
+      if (!card) return;
+      const cardWidth = card.clientWidth;
+      const spacing = 32; // gap-8
+      const scrollVal = direction === 'next' ? (cardWidth + spacing) : -(cardWidth + spacing);
+      slider.scrollBy({ left: scrollVal, behavior: 'smooth' });
+    };
 
-  // 3. PROGRESS BAR LOGIC
-  function updateProgressBar() {
-    const section = document.getElementById('timeline-section');
-    const progressBar = document.getElementById('progress-bar');
-    
-    if (!section || !progressBar) return;
-    
-    const rect = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const sectionHeight = section.offsetHeight;
-    
-    // Calculate how much of the timeline has been scrolled past
-    // We want 0% when the top of timeline hits bottom of screen
-    // We want 100% when the bottom of timeline hits bottom of screen
-    
-    let percentage = 0;
-    
-    const startOffset = windowHeight / 1.5; // Start filling when section is slightly visible
-    const relativeY = -rect.top + startOffset;
-    
-    if (relativeY > 0) {
-        percentage = (relativeY / sectionHeight) * 100;
-    }
-
-    // Clamp between 0 and 100
-    percentage = Math.max(0, Math.min(percentage, 100));
-    
-    progressBar.style.height = `${percentage}%`;
+    nextBtn.addEventListener('click', () => scroll('next'));
+    prevBtn.addEventListener('click', () => scroll('prev'));
   }
-
-  window.addEventListener('scroll', updateProgressBar);
-  window.addEventListener('resize', updateProgressBar);
-  // Run once on load
-  updateProgressBar();
 </script>

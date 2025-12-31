@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Ashley Pinto",
+    "role": "Organizer",
+    "bio": "Error 404: Free time missing, Organizer.exe still running.",
+    "image": "/images/output/Ashley.webp",
+    "linkedin": "https://www.linkedin.com/in/ashley-cleon-pinto",
+    "github": "https://github.com/Ashley-Pinto25",
+    "color": "blue"
+  },
+  {
+    "name": "Santhsim Dsouza",
+    "role": "Co Organizer",
+    "bio": "I treat production like a 5-hour contest, one wrong submission and chaos begins.",
+    "image": "/images/output/Santhsim.webp",
+    "linkedin": "https://www.linkedin.com/in/santhsim-v-dsouza",
+    "github": "https://github.com/SANTHSIM22",
+    "color": "red"
+  },
+  {
+    "name": "Viona Noronha",
+    "role": "Secretary",
+    "bio": "While others commit code, I commit to keeping the team sane",
+    "image": "/images/output/Viona.webp",
+    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
+    "github": "https://github.com/vionoronha",
+    "color": "yellow"
+  },
+  {
+    "name": "Shreya Shettigar",
+    "role": "Joint Secretary",
+    "bio": "Coordinating chaos into clarity, one plan at a time",
+    "image": "/images/output/Shreya.webp",
+    "linkedin": "https://www.linkedin.com/in/shreya1107/",
+    "github": "https://github.com/shreyavshettigar",
+    "color": "green"
+  },
+  {
+    "name": "Dion Lobo",
+    "role": "Cloud Lead",
+    "bio": "I prefer the cloud, because when it crashes, at least it takes everyone down with me",
+    "image": "/images/output/Dion.webp",
+    "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290",
+    "github": "https://github.com/dionjoshualobo",
+    "color": "blue"
+  },
+  {
+    "name": "Reuben A Vinod",
+    "role": "Web Lead",
+    "bio": "I always prefer dark mode, because light attracts bugs. Pun intended",
+    "image": "/images/output/Reuben.webp",
+    "linkedin": "https://www.linkedin.com/in/reuben-antony-vinod/",
+    "github": "https://github.com/RagedRebel",
+    "color": "red"
+  },
+  {
+    "name": "Jeethan Roche",
+    "role": "App Lead",
+    "bio": "If the app didn't crash so far, then it is the silence before the storm of bugs",
+    "image": "/images/output/Jeethan.webp",
+    "linkedin": "https://www.linkedin.com/in/roche-jeethan/",
+    "github": "https://github.com/roche-jeethan",
+    "color": "yellow"
+  },
+  {
+    "name": "Ankit Shah",
+    "role": "AI/ML Lead",
+    "bio": "Training models and minds, both need patience and good data.",
+    "image": "/images/output/Ankit.webp",
+    "linkedin": "https://www.linkedin.com/in/ankitscreation/",
+    "github": "https://github.com/ankeet15",
+    "color": "green"
+  },
+  {
+    "name": "Shamitha",
+    "role": "Events Lead",
+    "bio": "From idea to spotlight, I run the show (literally)",
+    "image": "/images/output/Shamitha.webp",
+    "linkedin": "https://www.linkedin.com/in/shamitha-kv-70b7b6294",
+    "github": "https://github.com/Shamitha512",
+    "color": "blue"
+  },
+  {
+    "name": "Reevan Fernandes",
+    "role": "Media Lead",
+    "bio": "I click, create and sometimes forget to eat. Also don't expect the photos to be sent on time",
+    "image": "/images/output/Reevan.webp",
+    "linkedin": "",
+    "github": "",
+    "color": "red"
+  }
+]

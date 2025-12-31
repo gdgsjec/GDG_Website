@@ -1,35 +1,32 @@
 [
-{
-"title": "ChronoTask",
-"description": "An intuitive mobile application for effortless task and schedule management.",
-"tag": "Mobile App",
-"image": "src/content/100.png",
-"websiteLink": "#",
-"githubLink": "#"
-},
-{
-"title": "MemeSphere",
-"description": "A web extension to seamlessly integrate your favorite memes and GIFs into any online conversation.",
-"tag": "Web Extension",
-"image": "src/content/100.png",
-"websiteLink": "#",
-"githubLink": "#"
-},
-{
-"title": "Scriptify",
-"description": "Leverage AI to transform your typed text into elegant, cursive handwriting.",
-"tag": "AI Tool",
-"image": "src/content/100.png",
-"websiteLink": "#",
-"githubLink": "#"
-},
-{
-"title": "Scriptify",
-"description": "Leverage AI to transform your typed text into elegant, cursive handwriting.",
-"tag": "AI Tool",
-"image": "src/content/100.png",
-"websiteLink": "#",
-"githubLink": "#"
-}
+  {
+    "title": "ChronoTask",
+    "description": "An intuitive mobile application for effortless task and schedule management.",
+    "tag": "Mobile App",
+    "image": "/images/gdg1.png",
+    "websiteLink": "https://chronotask.example.com",
+    "githubLink": "https://github.com/gdgsjec/chronotask",
+    "contributors": ["Jeethan", "Rohit", "Ananya"],
+    "techStack": ["Flutter", "Firebase", "Dart"]
+  },
+  {
+    "title": "MemeSphere",
+    "description": "A web extension to seamlessly integrate your favorite memes and GIFs into any online conversation.",
+    "tag": "Web Extension",
+    "image": "/images/gdg2.png",
+    "websiteLink": "",
+    "githubLink": "https://github.com/gdgsjec/memesphere",
+    "contributors": ["Jeethan", "Sahil"],
+    "techStack": ["Javascript", "Chrome API", "Tailwind"]
+  },
+  {
+    "title": "Scriptify",
+    "description": "Leverage AI to transform your typed text into elegant, cursive handwriting.",
+    "tag": "AI Tool",
+    "image": "/images/gdg1.png",
+    "websiteLink": "https://scriptify.example.com",
+    "githubLink": "https://github.com/gdgsjec/scriptify",
+    "contributors": ["Jeethan", "Prithvi"],
+    "techStack": ["Python", "TensorFlow", "React"]
+  }
 ]
-

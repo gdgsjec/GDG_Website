@@ -1,291 +1,317 @@
 ---
-import members from '../assets/members.png';
-import session from '../assets/session.png';
-import speakers from '../assets/speakers.png';
-import workshop from '../assets/workshop.png';
-import checkmark from '../assets/checkmark.png';
-import opportunities from '../assets/opportunities.png';
-import skill from '../assets/skill.png';
-import growth from '../assets/growth.png';
+import { Image } from "astro:assets";
 ---
 
-<head>
-	<style>
-.cards1, .cards2, .cards3{
-    position: relative;
-    border-radius: 1rem; 
-    overflow: hidden; 
-}
-.cards1::before, .cards2::before, .cards3::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 4px;  
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    background: linear-gradient(
-        to right,
-         #34a853,
-        #ffD427,
-        #ea4335,
-        #4285f4
-    );
-}
-.scroll-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.scroll-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.card,
-.cards1,
-.cards2,
-.cards3 {
-  box-shadow: none !important;
-  border-radius: 1.2rem;
-}
-.carousel {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
-    overflow: hidden;
-  }
-  .card-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  @media (min-width: 769px) {
-    .card-container {
-      gap: 20px;
-	  transform: none !important;
-  transition: none !important; 
-    }
-  }
-  @media (max-width: 768px) {
-    .carousel {
-      width: 100%;
-      max-width: 250px;
-	  border-radius: 1.2em;
-	  max-height: 200px;
-    }
-    .card-container {
-      transform: translateX(0);
-	  transition: transform 0.5s ease-in-out;
-    }
-    .card {
-      flex: 0 0 100%;
-      filter: blur(3px);
-      opacity: 0.5;
-      transform: scale(0.9);
-      margin: 0; 
-    }
-    .card.active {
-      filter: blur(0);
-      opacity: 1;
-      transform: scale(1);
-    }
-}
-@media (min-width: 779px) and (max-width: 935px) {
-  .carousel {
-    width: 95%;  
-    max-width: 800px; 
-    margin: 0 auto;  
-  }
-  .card-container {
-    gap: 15px; 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-  }
-  .card {
-    width: 250px;  
-    height: 250px;
-  }
-}
-	</style>
-</head>
+<section
+  id="about"
+  class="bg-white dark:bg-[#0B0D17] font-sans overflow-hidden"
+>
+  <!-- Hero Section -->
+  <div class="relative w-full h-[70vh] md:h-[90vh] flex items-end">
+    <div class="absolute inset-0 z-0">
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="GDG SJEC Team"
+        class="w-full h-full object-cover opacity-90 dark:opacity-60"
+        width={1920}
+        height={1080}
+        fetchpriority="high"
+      />
+      <!-- Gradient mask for text readability -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-[#0B0D17] dark:via-transparent dark:to-transparent"
+      >
+      </div>
+    </div>
 
-<body>
-<section class="bg-gray-50 w-full h-auto flex flex-col justify-center items-center dark:bg-gray-900 dark:text-[#ffffff]" id="aboutUs">
-	<div class="flex flex-col flex-wrap justify-center items-center">
-	<div class="text-[#4285f4] text-[30px] font-bold text-center p-4 m-4  sm:text-[35px] md:text-[50px]"> OUR IMPACT </div>
-
-	<div class="max-w-7xl">
-	<p class="text-[17px] p-4 lg:text-xl">Building a thriving community of passionate developers and innovators.</p>
-	</div>
-
-<div class="flex flex-wrap gap-8 justify-center items-center dark:text-gray-500 mx-8 md:mx-12 sm:mx-5 scroll-section carousel">
-<div class="card-container" id="cardContainer">
-
-	<div class="bg-[#ffffff] h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ea4335] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card1 card active">
-		<div class="m-3"><img src={members.src} alt="gdg_members" width="40px" height="40px"></div>
-		<div class="text-[#ea4335] font-extrabold text-3xl" id="members">600+</div>
-		<div class="text-lg">Active Members</div>
-	</div>
-
-
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#ffD427] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card2 card">
-		<div class="m-3"><img src={session.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#ffD427] font-extrabold text-3xl" id="sessions">20+</div>
-		<div class="text-lg">Sessions Conducted</div>
-	</div>
-
-
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#34a853] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card3 card">
-		<div class="m-3"><img src={speakers.src} alt="gdg_speakers" width="40px" height="40px"></div>
-		<div class="text-[#34a853] font-extrabold text-3xl" id="speakers">12+</div>
-		<div class="text-lg">Expert Speakers</div>
-	</div>
-
-
-	<div class="bg-[#ffffff]  shadow-2xl h-[200px] w-[200px] flex flex-col flex-wrap justify-center items-center border-t-6 border-[#4285f4] rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] card4 card">
-		<div class="m-3"><img src={workshop.src} alt="gdg_workshop" width="40px" height="40px"></div>
-		<div class="text-[#4285f4] font-extrabold text-3xl" id="workshops">10+</div>
-		<div class="text-lg text-center">Hands-on Workshops</div>
-	</div>
-</div>
-
-	  <div class="controls">
-    <button class="btn" id="prevBtn"></button>
-    <button class="btn" id="nextBtn"></button>
+    <div
+      class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-12 md:mb-24"
+    >
+      <h1
+        class="text-5xl md:text-8xl lg:text-9xl font-bold text-gray-900 dark:text-white leading-[1.1] tracking-tighter"
+      >
+        We Build <br /> The Future <br /> Together
+      </h1>
+      <div
+        class="mt-8 flex items-center gap-4 text-gray-500 dark:text-gray-400"
+      >
+        <div class="w-12 h-[2px] bg-blue-500"></div>
+        <span class="text-sm font-bold uppercase"
+          >Google Developer Groups • SJEC</span
+        >
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<div class="flex flex-col justify-center items-center">
-	<div class="text-[#4285f4] font-bold text-center p-4 m-4  sm:text-[35px] md:text-[50px] text-[30px]">ABOUT US</div>
-	<div class="max-w-7xl p-4">
-	<p class="text-center text-[17px] sm:m-3">Driven by the ingenuity of Google Developers, the Developer Student Club (DSC) at St. Joseph Engineering College is a testament to our commitment to learning and growth. Whether you are new to coding or already tech-savvy, DSC is the club where you can turbocharge your programming skills and network with peers and experts. We welcome students from all fields, guiding everyone from their first "Hello, World!" to advanced coding tricks and collaborative tech projects. Our vibrant club hosts activities, shares resources, and offers opportunities for learning in both technical and creative domains.</p>
-	</div>
-</div>
+  <!-- Our Story Section -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-24 md:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+      <div class="lg:col-span-5">
+        <span
+          class="text-blue-600 dark:text-blue-400 font-bold text-xl mb-6 block"
+          >01/</span
+        >
+        <h2
+          class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
+        >
+          Our <br /> Story
+        </h2>
+      </div>
+      <div class="lg:col-span-7">
+        <p
+          class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8"
+        >
+          Driven by the ingenuity of Google Developers, the Google Developer
+          Group (GDG) at St. Joseph Engineering College is a testament to our
+          commitment to learning and growth. Whether you are new to coding or
+          already tech-savvy, GDG is the club where you can turbocharge your
+          programming skills and network with peers and experts.
+        </p>
+        <p
+          class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed"
+        >
+          We welcome students from all fields, guiding everyone from their first
+          "Hello, World!" to advanced coding tricks and collaborative tech
+          projects. Our vibrant club hosts activities, shares resources, and
+          offers opportunities for learning in both technical and creative
+          domains.
+        </p>
+      </div>
+    </div>
+  </div>
 
-<div>
-<div class="text-[#4285f4] font-bold text-center p-4 m-4 sm:text-[35px] md:text-[50px] text-[30px]">OUR MISSION</div>
-<p class="text-center text-[17px] max-w-7xl p-4 sm:m-3">Our mission is to be a guiding light for students, helping bridge the gap between beginner curiosity and professional skills. DSC aims to empower every member – regardless of experience – by fostering growth, exploration, and collaboration across diverse interests. We are dedicated to nurturing skills not only in technology but also in leadership, management, and creativity.</p>
+  <!-- Mission Section (Steps Design) -->
+  <div class="bg-gray-50 dark:bg-white/[0.02] py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <div class="mb-20">
+        <span class="text-[#EA4335] font-bold text-xl mb-6 block">02/</span>
+        <h2
+          class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white"
+        >
+          Our Mission
+        </h2>
+      </div>
 
-<div class="flex flex-wrap gap-12 m-2 justify-center items-center dark:text-gray-500 scroll-section">
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards1">
-		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#ea4335] rounded-4xl p-3"><img src={growth.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#4285f4] font-medium text-xl m-2.5">Technical Growth</div>
-		</div>
-		<div>
-			<ul class="text-gray-600 px-3">
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Web Development</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Android Development</li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> AIML </li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Cloud Technologies</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Flutter</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  UI/UX</li>
-			</ul>
-		</div>
-	</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <!-- Step 1 -->
+        <div class="group">
+          <div class="flex items-center gap-4 mb-8">
+            <span
+              class="text-xs font-bold text-gray-400 uppercase tracking-widest ring-1 ring-gray-200 dark:ring-gray-800 px-2 py-1 rounded"
+              >Step 01</span
+            >
+            <div class="h-[1px] flex-grow bg-gray-200 dark:bg-gray-800"></div>
+          </div>
+          <h3
+            class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-[#4285F4] transition-colors"
+          >
+            Technical Growth
+          </h3>
+          <ul class="space-y-4">
+            {
+              [
+                "Web Development",
+                "Android Development",
+                "AIML",
+                "Cloud Technologies",
+                "Flutter",
+                "UI/UX",
+              ].map((item) => (
+                <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                  <div class="w-1 h-1 bg-blue-500 rounded-full" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards2">
-		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#34a853] rounded-4xl p-3"><img src={skill.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#ea4335] font-medium text-xl m-2.5">Creative and Non-Technical Skill-Building</div>
-		</div>
-		<div>
-			<ul class="text-gray-600 px-3">
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Operations & Events</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Campaign Coordination</li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Media and Content Creation</li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Program Coordination</li>
-			</ul>
-		</div>
-	</div>
+        <!-- Step 2 -->
+        <div class="group">
+          <div class="flex items-center gap-4 mb-8">
+            <span
+              class="text-xs font-bold text-gray-400 uppercase tracking-widest ring-1 ring-gray-200 dark:ring-gray-800 px-2 py-1 rounded"
+              >Step 02</span
+            >
+            <div class="h-[1px] flex-grow bg-gray-200 dark:bg-gray-800"></div>
+          </div>
+          <h3
+            class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-[#EA4335] transition-colors"
+          >
+            Creative Skills
+          </h3>
+          <ul class="space-y-4">
+            {
+              [
+                "Operations & Events",
+                "Campaign Coordination",
+                "Media & Content Creation",
+                "Program Coordination",
+              ].map((item) => (
+                <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                  <div class="w-1 h-1 bg-red-500 rounded-full" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
 
-	<div class="bg-[#ffffff]  shadow-2xl h-[400px] w-[300px] flex flex-col flex-wrap rounded-2xl mt-4 p-3 dark:bg-gray-800 dark:shadow-[0_1px_4px_0_rgba(255,255,255,0.40)] cards3">
-		<div class="flex flex-wrap justify-center items-center p-3">
-		<div class="m-3 bg-[#ffd427] rounded-4xl p-3"><img src={opportunities.src} alt="gdg_sessions" width="40px" height="40px"></div>
-		<div class="text-[#34a853] font-medium text-xl m-2.5">Expanding Opportunities</div>
-		</div>
-		<div>
-			<ul class="text-gray-600 px-3">
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px">Game Dev, UI/UX </li>
-				<li class="flex gap-3 pb-2"><img src={checkmark.src} alt="checkmark" width="15px" height="10px"> Resources for all levels</li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Events and workshops </li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Collaborative community </li>
-				<li class="flex gap-3 pb-2"> <img src={checkmark.src} alt="checkmark" width="15px" height="10px">  Cross-domain connection </li>
-			</ul>
-		</div>
-	</div>
-</div>
-</div>
+        <!-- Step 3 -->
+        <div class="group">
+          <div class="flex items-center gap-4 mb-8">
+            <span
+              class="text-xs font-bold text-gray-400 uppercase tracking-widest ring-1 ring-gray-200 dark:ring-gray-800 px-2 py-1 rounded"
+              >Step 03</span
+            >
+            <div class="h-[1px] flex-grow bg-gray-200 dark:bg-gray-800"></div>
+          </div>
+          <h3
+            class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-[#34A853] transition-colors"
+          >
+            Global Opportunities
+          </h3>
+          <ul class="space-y-4">
+            {
+              [
+                "Game Dev & UI/UX",
+                "Global Resources",
+                "Workshops",
+                "Collaborative Community",
+                "Cross-domain connection",
+              ].map((item) => (
+                <li class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                  <div class="w-1 h-1 bg-green-500 rounded-full" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Impact Section -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-24 md:py-32">
+    <div
+      class="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20"
+    >
+      <div>
+        <span class="text-[#FBBC04] font-bold text-xl mb-6 block">03/</span>
+        <h2
+          class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white"
+        >
+          Our Impact
+        </h2>
+      </div>
+      <p
+        class="max-w-md text-gray-600 dark:text-gray-400 text-lg leading-relaxed"
+      >
+        We measure our success by the growth of our members and the strength of
+        our community.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <div class="border-l-4 border-blue-500 pl-6 py-4">
+        <div
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="600"
+        >
+          0+
+        </div>
+        <div
+          class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
+        >
+          Active Members
+        </div>
+      </div>
+      <div class="border-l-4 border-red-500 pl-6 py-4">
+        <div
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="20"
+        >
+          0+
+        </div>
+        <div
+          class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
+        >
+          Sessions
+        </div>
+      </div>
+      <div class="border-l-4 border-yellow-500 pl-6 py-4">
+        <div
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="12"
+        >
+          0+
+        </div>
+        <div
+          class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
+        >
+          Expert Speakers
+        </div>
+      </div>
+      <div class="border-l-4 border-green-500 pl-6 py-4">
+        <div
+          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 counter"
+          data-target="10"
+        >
+          0+
+        </div>
+        <div
+          class="text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest text-xs"
+        >
+          Workshops
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
-	const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+  function animateCounter(el: any) {
+    const target = parseInt(el.getAttribute("data-target"));
+    const duration = 3000; // 3 seconds
+    const start = 0;
+    let startTime: number | null = null;
+
+    function step(timestamp: number) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const current = Math.floor(progress * (target - start) + start);
+      el.textContent = current + "+";
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = target + "+";
+      }
     }
+
+    window.requestAnimationFrame(step);
+  }
+
+  const observerOptions = {
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".counter").forEach((counter) => {
+    observer.observe(counter);
   });
-}, {
-  threshold: 0.1
-});
-document.querySelectorAll('.scroll-section').forEach(section => {
-  observer.observe(section);
-});
-  const cards = document.querySelectorAll<HTMLDivElement>('.card');
-const container = document.getElementById('cardContainer') as HTMLDivElement | null;
-const next = document.getElementById('nextBtn') as HTMLButtonElement | null;
-const prev = document.getElementById('prevBtn') as HTMLButtonElement | null;
-let index = 0;
-let autoSlideInterval: ReturnType<typeof setInterval> | undefined;
-function updateCards(): void {
-  if (!container) return; // Prevent null errors
-  cards.forEach(card => card.classList.remove('active'));
-  if (cards[index]) cards[index].classList.add('active');
-  container.style.transform = `translateX(-${index * 100}%)`;
-}
-function nextCard(): void {
-  index = (index + 1) % cards.length;
-  updateCards();
-}
-function prevCard(): void {
-  index = (index - 1 + cards.length) % cards.length;
-  updateCards();
-}
-next?.addEventListener('click', () => {
-  nextCard();
-  resetAutoSlide();
-});
-prev?.addEventListener('click', () => {
-  prevCard();
-  resetAutoSlide();
-});
-function startAutoSlide(): void {
-  autoSlideInterval = setInterval(nextCard, 1500);
-}
-function resetAutoSlide(): void {
-  if (autoSlideInterval) clearInterval(autoSlideInterval);
-  startAutoSlide();
-}
-let startX = 0;
-container?.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-container?.addEventListener('touchend', e => {
-  const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) {
-    nextCard();
-    resetAutoSlide();
-  }
-  if (endX - startX > 50) {
-    prevCard();
-    resetAutoSlide();
-  }
-});
-startAutoSlide();
 </script>
-</section>
-</body>
 
-
+<style>
+  section {
+    font-family: "Google Sans", sans-serif;
+  }
+</style>

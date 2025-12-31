@@ -5,7 +5,7 @@
     "date": "Jul 00, 0000",
     "excerpt": "Machine learning is becoming the first line of defense in cybersecurity, powering anomaly detection, predictive threat intelligence, and adaptive defenses that evolve against increasingly sophisticated digital attacks.",
     "link": "https://medium.com/@eastgate/ai-for-cybersecurity-what-is-it-how-does-it-work-0ecbe6e285ac",
-    "img": "src/content/1.jpg"
+    "img": ""
   },
   {
     "title": "Reinforcement Learning in LLMs",
@@ -13,7 +13,7 @@
     "date": "Jul 00, 0000",
     "excerpt": "Reinforcement Learning from Human Feedback aligns language models with human preferences, improving accuracy, reducing harmful outputs, and enhancing conversational quality across real-world natural language processing applications.",
     "link": "https://medium.com/data-science/basics-of-reinforcement-learning-for-llms-d74c5178cd2d",
-    "img": "src/content/17.jpg"
+    "img": ""
   },
   {
     "title": "FlutterFlow Workshop",
@@ -21,7 +21,7 @@
     "date": "Jul 00, 0000",
     "excerpt": "Our FlutterFlow workshop explored drag-and-drop design, API integration, and rapid prototyping, offering developers practical tips and insights to build cross-platform apps quickly without heavy coding.",
     "link": "https://medium.com/@ahm4d.bilal/flutterflow-from-the-perspective-of-a-senior-flutter-developer-860386d29f82",
-    "img": "src/content/18.jpg"
+    "img": ""
   },
   {
     "title": "Edge AI and the Future of IoT",
@@ -29,7 +29,7 @@
     "date": "Jul 00, 0000",
     "excerpt": "Edge AI powers smarter IoT by enabling real-time decisions on devices, reducing latency, improving privacy, and transforming industries like healthcare, manufacturing, and transportation with faster, localized intelligence.",
     "link": "https://towardsdatascience.com/what-is-edge-ai-and-why-it-matters-7dff69a4c9a5",
-    "img": "src/content/51.jpg"
+    "img": ""
   }
   ,
   {

@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Winter Hackathon",
+    "date": "11 Jan 2026",
+    "type": "Hackathon",
+    "status": "Upcoming",
+    "description": "Push your limits and build innovative solutions at our annual flagship hackathon.",
+    "image": "/images/gdg1.png",
+    "link": "#"
+  },
+  {
+    "title": "Data Journey with PowerBI",
+    "date": "28 Nov 2025",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "Master data visualization and business intelligence with our hands-on PowerBI workshop.",
+    "image": "/images/workshop.png",
+    "link": "#"
+  },
+  {
+    "title": "Git/Github Workshop",
+    "date": "7 Nov 2025",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "Learn the essentials of version control and collaboration using Git and GitHub.",
+    "image": "/images/skill.png",
+    "link": "#"
+  },
+  {
+    "title": "GSoC Unlocked: Your Open Source Journey",
+    "date": "13 Oct 2025",
+    "type": "Speaker Session",
+    "status": "Completed",
+    "description": "Discover how to kickstart your open-source journey and ace Google Summer of Code.",
+    "image": "/images/opportunities.png",
+    "link": "#"
+  },
+  {
+    "title": "Info Session: The Developers' Path",
+    "date": "28 Sept 2025",
+    "type": "Info Session",
+    "status": "Completed",
+    "description": "Explore the various career paths in software development and how to navigate them.",
+    "image": "/images/session.png",
+    "link": "#"
+  },
+  {
+    "title": "HackEvl - SJEC Hackathon 2025",
+    "date": "13 Sept 2025",
+    "type": "Hackathon",
+    "status": "Completed",
+    "description": "Push your limits and build innovative solutions at our annual flagship hackathon.",
+    "image": "/images/gdg1.png",
+    "link": "#"
+  },
+  {
+    "title": "Generative AI - World of Opportunities",
+    "date": "13 May 2025",
+    "type": "Tech Talk",
+    "status": "Completed",
+    "description": "Dive into the world of GenAI and explore the endless possibilities it offers.",
+    "image": "/images/gdg2.png",
+    "link": "#"
+  }
+]

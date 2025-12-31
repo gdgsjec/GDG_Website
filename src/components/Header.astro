@@ -1,57 +1,109 @@
 ---
-import GDG_LOGO from "../assets/GDG_LOGO.png";
 import "../styles/Header.css";
+import { Image } from "astro:assets";
 ---
 
-<header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[80%] rounded-xl
-               backdrop-blur-lg bg-white/10 dark:bg-black/10 border border-black/10 dark:border-white/20 font-['Roboto']">
-
-  <div class="flex items-center justify-between px-5 py-1.5">
+<header
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[80%] rounded-xl
+               backdrop-blur-lg bg-white/10 dark:bg-black/10 border border-black/10 dark:border-white/20 font-['Roboto']"
+>
+  <div class="flex items-center justify-between px-6 py-3">
     <!-- Logo -->
-    <a href="/" class="flex items-center space-x-2">
-      <img src={GDG_LOGO.src} alt="GDG Logo" class="h-6 w-12" />
+    <a href="/" class="flex items-center">
+      <Image
+        src="/images/GDG_LOGO.png"
+        alt="GDG Logo"
+        class="h-5 md:h-6 w-auto transition-all"
+        width={100}
+        height={100}
+        fetchpriority="high"
+      />
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-6 font-bold uppercase text-xs tracking-wider text-[#3C3C43] dark:text-[#F2F4F7]">
-      <a href="#about" class="corner-link">About</a>
-      <a href="#blogs" class="corner-link">Blogs</a>
-      <a href="#team" class="corner-link">Team</a>
-      <a href="#events" class="corner-link">Events</a>
-      <a href="#projects" class="corner-link">Projects</a>
+    <nav
+      class="hidden md:flex items-center space-x-6 font-bold uppercase text-xs tracking-wider text-[#3C3C43] dark:text-[#F2F4F7]"
+    >
+      <a href="/blog" class="text-md corner-link">Blog</a>
+      <a href="/team" class="text-md corner-link">Team</a>
+      <a href="/events" class="text-md corner-link">Events</a>
+      <a href="/projects" class="text-md corner-link">Projects</a>
     </nav>
 
-    <!-- Desktop Theme Toggle -->
+    <!-- Desktop Theme Toggle (Liquid Glass) -->
     <div class="hidden md:flex">
-      <button 
-        id="theme-toggle" 
-        class="theme-toggle-btn text-black dark:text-white"
+      <button
+        id="theme-toggle"
+        class="liquid-glass-switcher group relative w-16 h-8 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-xl transition-all duration-500 flex items-center p-1 overflow-hidden"
         aria-label="Toggle theme"
-        type="button"
       >
-        <span class="theme-icon-wrapper sun-wrapper">
-          <svg class="w-4.5 h-4.5 transition-transform duration-500 hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-        </span>
-        <span class="theme-icon-wrapper moon-wrapper hidden">
-          <svg class="w-4.5 h-4.5 transition-transform duration-500 hover:-rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
-        </span>
+        <!-- Icons (Permanent) -->
+        <div
+          class="relative z-10 flex w-full justify-between items-center px-1.5 pointer-events-none"
+        >
+          <div
+            class="sun-wrapper text-gray-400 group-hover:text-yellow-500 transition-colors"
+          >
+            <svg
+              class="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path>
+            </svg>
+          </div>
+          <div
+            class="moon-wrapper text-gray-400 group-hover:text-blue-400 transition-colors"
+          >
+            <svg
+              class="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Liquid Indicator -->
+        <div
+          id="theme-indicator"
+          class="absolute left-1 w-6 h-6 rounded-full bg-white dark:bg-white shadow-[0_2px_10px_rgba(0,0,0,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+        >
+        </div>
       </button>
     </div>
 
     <!-- Mobile Hamburger -->
-    <button 
-      id="menu-btn" 
-      class="md:hidden flex flex-col items-center justify-center w-10 h-10 relative group text-black dark:text-white focus:outline-none"
+    <button
+      id="menu-btn"
+      class="md:hidden flex flex-col items-center justify-center w-8 h-8 relative group text-black dark:text-white focus:outline-none"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
-      <span id="hamburger-line-1" class="w-6 h-0.5 bg-current transition-all duration-300 absolute"></span>
-      <span id="hamburger-line-2" class="w-6 h-0.5 bg-current transition-all duration-300"></span>
-      <span id="hamburger-line-3" class="w-6 h-0.5 bg-current transition-all duration-300 absolute"></span>
+      <span
+        id="hamburger-line-1"
+        class="w-6 h-0.5 bg-current transition-all duration-300 absolute"
+      ></span>
+      <span
+        id="hamburger-line-2"
+        class="w-6 h-0.5 bg-current transition-all duration-300"></span>
+      <span
+        id="hamburger-line-3"
+        class="w-6 h-0.5 bg-current transition-all duration-300 absolute"
+      ></span>
     </button>
   </div>
 </header>
@@ -68,34 +120,80 @@ import "../styles/Header.css";
   role="navigation"
   aria-label="Mobile navigation menu"
 >
-  <a href="#about" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">About</a>
-  <a href="#blogs" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Blogs</a>
-  <a href="#team" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Team</a>
-  <a href="#events" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Events</a>
-  <a href="#projects" class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform">Projects</a>
-  
+  <a
+    href="/blog"
+    class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform"
+    >Blog</a
+  >
+  <a
+    href="/team"
+    class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform"
+    >Team</a
+  >
+  <a
+    href="/events"
+    class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform"
+    >Events</a
+  >
+  <a
+    href="/projects"
+    class="corner-link w-full text-center text-[#3C3C43] dark:text-[#DFDFD6] block py-2 hover:scale-105 active:scale-95 transition-transform"
+    >Projects</a
+  >
+
   <!-- Mobile Theme Toggle -->
-  <button 
-    id="theme-toggle-mobile" 
+  <button
+    id="theme-toggle-mobile"
     class="mobile-theme-btn w-full font-extrabold text-[#3C3C43] dark:text-[#DFDFD6] py-2 hover:scale-105 active:scale-95 transition-transform flex items-center justify-between px-4"
     aria-label="Toggle dark mode"
     type="button"
   >
     <span class="flex items-center gap-3">
-      <span class="theme-mobile-icon sun-mobile-icon w-6 h-6 flex items-center justify-center">
-        <svg class="w-5 h-5 transition-transform duration-500 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+      <span
+        class="theme-mobile-icon sun-mobile-icon w-6 h-6 flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5 transition-transform duration-500 group-hover:rotate-180"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
         </svg>
       </span>
-      <span class="theme-mobile-icon moon-mobile-icon w-6 h-6 hidden items-center justify-center">
-        <svg class="w-5 h-5 transition-transform duration-500 group-hover:-rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+      <span
+        class="theme-mobile-icon moon-mobile-icon w-6 h-6 hidden items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5 transition-transform duration-500 group-hover:-rotate-12"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
         </svg>
       </span>
-      <span class="text-sm font-medium" id="theme-label-mobile">Light Mode</span>
+      <span class="text-sm font-medium" id="theme-label-mobile">Light Mode</span
+      >
     </span>
-    <div class="w-11 h-6 bg-gray-300 dark:bg-gray-600 rounded-full p-1 transition-colors duration-300">
-      <div id="toggle-circle" class="w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 translate-x-0"></div>
+    <div
+      class="w-11 h-6 bg-gray-300 dark:bg-gray-600 rounded-full p-1 transition-colors duration-300"
+    >
+      <div
+        id="toggle-circle"
+        class="w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 translate-x-0"
+      >
+      </div>
     </div>
   </button>
 </nav>
@@ -118,10 +216,22 @@ import "../styles/Header.css";
     opacity: 0;
     transition: all 0.4s ease;
   }
-  .corner-link::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
-  .corner-link::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+  .corner-link::before {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .corner-link::after {
+    bottom: 0;
+    right: 0;
+    border-left: 0;
+    border-top: 0;
+  }
   .corner-link:hover::before,
-  .corner-link:hover::after { opacity: 1; }
+  .corner-link:hover::after {
+    opacity: 1;
+  }
 
   /* Desktop Theme Toggle Button - Enhanced */
   .theme-toggle-btn {
@@ -132,29 +242,29 @@ import "../styles/Header.css";
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: #3C3C43;
-    border: 2px solid #E5E5E5;
+    color: #3c3c43;
+    border: 2px solid #e5e5e5;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: visible;
   }
-  
+
   :global(.dark) .theme-toggle-btn {
-    color: #F2F4F7;
+    color: #f2f4f7;
     border-color: #484848;
   }
-  
+
   .theme-toggle-btn:hover {
     transform: scale(1.1) rotate(10deg);
   }
-  
+
   :global(.dark) .theme-toggle-btn:hover {
   }
-  
+
   .theme-toggle-btn:active {
     transform: scale(0.95);
   }
-  
+
   .theme-icon-wrapper {
     display: flex;
     align-items: center;
@@ -181,35 +291,47 @@ import "../styles/Header.css";
     opacity: 0;
     transition: opacity 0.4s ease;
   }
-  .mobile-theme-btn::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
-  .mobile-theme-btn::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+  .mobile-theme-btn::before {
+    top: -2px;
+    left: -2px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .mobile-theme-btn::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: 0;
+    border-top: 0;
+  }
   .mobile-theme-btn:hover::before,
-  .mobile-theme-btn:hover::after { opacity: 1; }
+  .mobile-theme-btn:hover::after {
+    opacity: 1;
+  }
 
   /* Toggle Switch Animation */
   :global(.dark) #toggle-circle {
     transform: translateX(1.25rem);
-    background-color: #FCD34D;
+    background-color: #fcd34d;
   }
 
   /* Hamburger Animation */
   #hamburger-line-1 {
     transform: translateY(-0.5rem);
   }
-  
+
   #hamburger-line-3 {
     transform: translateY(0.5rem);
   }
-  
+
   #menu-btn.active #hamburger-line-1 {
     transform: translateY(0) rotate(45deg);
   }
-  
+
   #menu-btn.active #hamburger-line-2 {
     opacity: 0;
     transform: scaleX(0);
   }
-  
+
   #menu-btn.active #hamburger-line-3 {
     transform: translateY(0) rotate(-45deg);
   }
@@ -235,109 +357,144 @@ import "../styles/Header.css";
 </style>
 
 <script is:inline>
-(function() {
-  // Initialize theme immediately to prevent flash
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  
-  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-    document.documentElement.classList.add("dark");
-  }
-})();
+  (function () {
+    // Initialize theme immediately to prevent flash
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  btn.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.contains("menu-open");
-    
-    if (isOpen) {
-      mobileMenu.classList.remove("menu-open");
-      btn.classList.remove("active");
-      mobileMenu.setAttribute("aria-hidden", "true");
-      btn.setAttribute("aria-expanded", "false");
-    } else {
-      mobileMenu.classList.add("menu-open");
-      btn.classList.add("active");
-      mobileMenu.setAttribute("aria-hidden", "false");
-      btn.setAttribute("aria-expanded", "true");
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark");
     }
-  });
+  })();
 
-  // Close mobile menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!mobileMenu.contains(e.target) && !btn.contains(e.target)) {
-      if (mobileMenu.classList.contains("menu-open")) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("menu-open");
+
+      if (isOpen) {
         mobileMenu.classList.remove("menu-open");
         btn.classList.remove("active");
         mobileMenu.setAttribute("aria-hidden", "true");
         btn.setAttribute("aria-expanded", "false");
+      } else {
+        mobileMenu.classList.add("menu-open");
+        btn.classList.add("active");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        btn.setAttribute("aria-expanded", "true");
       }
-    }
-  });
-
-  // Theme toggle functionality
-  const html = document.documentElement;
-  const desktopToggle = document.getElementById("theme-toggle");
-  const mobileToggle = document.getElementById("theme-toggle-mobile");
-  const themeLabelMobile = document.getElementById("theme-label-mobile");
-
-  const updateThemeUI = (dark) => {
-    const sunWrappers = document.querySelectorAll(".sun-wrapper, .sun-mobile-icon");
-    const moonWrappers = document.querySelectorAll(".moon-wrapper, .moon-mobile-icon");
-    
-    if (dark) {
-      sunWrappers.forEach(icon => icon.classList.add("hidden"));
-      moonWrappers.forEach(icon => icon.classList.remove("hidden"));
-      if (themeLabelMobile) themeLabelMobile.textContent = "Dark Mode";
-    } else {
-      sunWrappers.forEach(icon => icon.classList.remove("hidden"));
-      moonWrappers.forEach(icon => icon.classList.add("hidden"));
-      if (themeLabelMobile) themeLabelMobile.textContent = "Light Mode";
-    }
-  };
-
-  const setTheme = (dark) => {
-    if (dark) {
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-    }
-    localStorage.setItem("theme", dark ? "dark" : "light");
-    updateThemeUI(dark);
-  };
-
-  // Initialize UI based on current theme
-  const currentTheme = localStorage.getItem("theme");
-  const isDark = currentTheme === "dark" || (!currentTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
-  updateThemeUI(isDark);
-
-  // Add click handlers
-  if (desktopToggle) {
-    desktopToggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isDark = html.classList.contains("dark");
-      setTheme(!isDark);
     });
-  }
 
-  if (mobileToggle) {
-    mobileToggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isDark = html.classList.contains("dark");
-      setTheme(!isDark);
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !btn.contains(e.target)) {
+        if (mobileMenu.classList.contains("menu-open")) {
+          mobileMenu.classList.remove("menu-open");
+          btn.classList.remove("active");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      }
     });
-  }
 
-  // Listen for system theme changes
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-    const savedTheme = localStorage.getItem("theme");
-    if (!savedTheme) {
-      setTheme(e.matches);
+    // Theme toggle functionality
+    const html = document.documentElement;
+    const desktopToggle = document.getElementById("theme-toggle");
+    const footerToggle = document.getElementById("theme-toggle-footer");
+    const mobileToggle = document.getElementById("theme-toggle-mobile");
+    const themeLabelMobile = document.getElementById("theme-label-mobile");
+    const desktopIndicator = document.getElementById("theme-indicator");
+    const footerIndicator = document.getElementById("theme-indicator-footer");
+
+    const updateThemeUI = (dark) => {
+      if (themeLabelMobile)
+        themeLabelMobile.textContent = dark ? "Dark Mode" : "Light Mode";
+
+      // Desktop indicator position
+      if (desktopIndicator) {
+        desktopIndicator.style.transform = dark
+          ? "translateX(1.75rem)"
+          : "translateX(0)";
+      }
+
+      // Footer indicator position
+      if (footerIndicator) {
+        footerIndicator.style.transform = dark
+          ? "translateX(1.75rem)"
+          : "translateX(0)";
+      }
+
+      // Mobile Icons toggle
+      const sunMobile = document.querySelector(".sun-mobile-icon");
+      const moonMobile = document.querySelector(".moon-mobile-icon");
+      if (sunMobile && moonMobile) {
+        if (dark) {
+          sunMobile.classList.add("hidden");
+          moonMobile.classList.remove("hidden");
+          moonMobile.classList.add("flex");
+        } else {
+          sunMobile.classList.remove("hidden");
+          moonMobile.classList.add("hidden");
+          moonMobile.classList.remove("flex");
+        }
+      }
+    };
+
+    const setTheme = (dark) => {
+      if (dark) {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+      localStorage.setItem("theme", dark ? "dark" : "light");
+      updateThemeUI(dark);
+    };
+
+    // Initialize UI based on current theme
+    const currentTheme = localStorage.getItem("theme");
+    const isDark =
+      currentTheme === "dark" ||
+      (!currentTheme &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    updateThemeUI(isDark);
+
+    // Add click handlers
+    if (desktopToggle) {
+      desktopToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isDarkNow = html.classList.contains("dark");
+        setTheme(!isDarkNow);
+      });
     }
+
+    if (footerToggle) {
+      footerToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isDarkNow = html.classList.contains("dark");
+        setTheme(!isDarkNow);
+      });
+    }
+
+    if (mobileToggle) {
+      mobileToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isDarkNow = html.classList.contains("dark");
+        setTheme(!isDarkNow);
+      });
+    }
+
+    // Listen for system theme changes
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        const savedTheme = localStorage.getItem("theme");
+        if (!savedTheme) {
+          setTheme(e.matches);
+        }
+      });
   });
-});
 </script>
