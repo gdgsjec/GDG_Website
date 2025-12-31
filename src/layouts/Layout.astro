@@ -1,5 +1,16 @@
 ---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "GDG on Campus SJEC",
+  description = "Google Developer Groups on Campus - St Joseph Engineering College",
+} = Astro.props;
+
 import Font from "../lib/Font.astro";
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -9,7 +20,8 @@ import Font from "../lib/Font.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>GDG on Campus SJEC</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <Font />
     <script is:inline>
       (function () {
