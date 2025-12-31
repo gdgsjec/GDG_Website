@@ -4,9 +4,9 @@
     "date": "11 Jan 2026",
     "type": "Hackathon",
     "status": "Upcoming",
-    "description": "Push your limits and build innovative solutions at our annual flagship hackathon.",
-    "image": "/images/gdg1.png",
-    "link": "#"
+    "description": "A 36-hour hybrid hackathon to collaborate, innovate, and compete for exciting prizes from January 11–13, 2026.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_aO5cOIe",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-winter-hackathon/"
   },
   {
     "title": "Data Journey with PowerBI",
@@ -14,8 +14,8 @@
     "type": "Workshop",
     "status": "Completed",
     "description": "Master data visualization and business intelligence with our hands-on PowerBI workshop.",
-    "image": "/images/workshop.png",
-    "link": "#"
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_eMhnbU1",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-data-journey-with-powerbi/"
   },
   {
     "title": "Git/Github Workshop",
@@ -23,43 +23,88 @@
     "type": "Workshop",
     "status": "Completed",
     "description": "Learn the essentials of version control and collaboration using Git and GitHub.",
-    "image": "/images/skill.png",
-    "link": "#"
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_epdRvy5",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-gitgithub-workshop/"
   },
   {
     "title": "GSoC Unlocked: Your Open Source Journey",
     "date": "13 Oct 2025",
-    "type": "Speaker Session",
+    "type": "Session",
     "status": "Completed",
     "description": "Discover how to kickstart your open-source journey and ace Google Summer of Code.",
-    "image": "/images/opportunities.png",
-    "link": "#"
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_OpY1fQ1_UUqfSGT",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-gsoc-unlocked-your-open-source-journey/"
   },
   {
     "title": "Info Session: The Developers' Path",
     "date": "28 Sept 2025",
     "type": "Info Session",
     "status": "Completed",
-    "description": "Explore the various career paths in software development and how to navigate them.",
-    "image": "/images/session.png",
-    "link": "#"
+    "description": "A beginner-friendly online session to explore coding basics, tech career paths, and how to get started confidently.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_HntAU9G",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-info-session-the-developers-path/"
   },
   {
     "title": "HackEvl - SJEC Hackathon 2025",
     "date": "13 Sept 2025",
     "type": "Hackathon",
     "status": "Completed",
-    "description": "Push your limits and build innovative solutions at our annual flagship hackathon.",
-    "image": "/images/gdg1.png",
-    "link": "#"
+    "description": "HackEVL is a two-phase hackathon where teams build, pitch, and win prizes and internship opportunities.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_1KlmIg9",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-hackevl-sjec-hackathon-2025/"
   },
   {
     "title": "Generative AI - World of Opportunities",
     "date": "13 May 2025",
     "type": "Tech Talk",
     "status": "Completed",
-    "description": "Dive into the world of GenAI and explore the endless possibilities it offers.",
-    "image": "/images/gdg2.png",
-    "link": "#"
+    "description": "An insightful session exploring Generative AI, prompt engineering, agentic AI, and responsible AI usage.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/IMG_0218_FQipCNX.jpeg",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-generative-ai-world-of-opportunities/"
+  }, 
+  {
+    "title": "FlutterFlow Workshop",
+    "date": "26 April 2025",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "A hands-on FlutterFlow workshop to build responsive cross-platform apps with minimal coding and leave with a working prototype.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/FLUTTER-FLOW%20LOGO_uQvjOLN.png",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-flutterflow-workshop/"
+  },
+  {
+    "title": "Web3 Connect",
+    "date": "3 March 2025",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "A hands-on Web3 session covering blockchain basics, Solidity, smart contracts, NFTs, and real-world decentralized app development.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Untitled%20design%283%29_jbbrrSo.png",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-web3-connect/"
+  },
+  {
+    "title": "Tech Winter Break GDGoC SJEC",
+    "date": "24 December 2024",
+    "type": "Challenge",
+    "status": "Completed",
+    "description": "A one-week winter tech challenge to build any app or website, learn collaboratively, and prepare for upcoming solution challenges.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Untitled%20design%283%29_jbbrrSo.png",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-tech-winter-break-gdg-on-campus-st-joseph-engineering-college/"
+  },
+  {
+    "title": "Build with AI",
+    "date": "18 November 2024",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "A hands-on AI session introducing machine learning, neural networks, LLMs, and modern AI tools through practical learning.",
+    "image": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/event_banners/GDG_Bevy_DefaultEventThumbnail_2_ku8UfdU.png",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-build-with-ai/"
+  },
+  {
+    "title": "The Developers' Path",
+    "date": "1 November 2024",
+    "type": "Info Session",
+    "status": "Completed",
+    "description": "A beginner-friendly online session to explore coding basics, tech career paths, and how to get started confidently.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/devpath_poster_r0e3IOA.jpg",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-the-developers-path/"
   }
 ]
