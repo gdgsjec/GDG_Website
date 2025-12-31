@@ -2,17 +2,17 @@
   {
     "slug": "tiara-2k25",
     "title": "Tiara 2k25",
-    "oneLiner": "An intuitive platform for effortless event management and participation.",
+    "oneLiner": "Tiara 2k25 is a national-level techno-cultural fest platform developed for St. Joseph Engineering College (SJEC), Mangalore. It serves as a centralized digital hub that enables seamless discovery, registration, and participation in a wide range of technical, non-technical, cultural, and mega events conducted during the fest. The platform focuses on ease of participation, transparency, and real-time coordination, replacing fragmented manual processes with a unified web-based system.",
     "description": "Tiara 2k25 is the premier technical fest platform designed to streamline event registrations, schedule tracking, and user engagement for the campus community.",
     "category": "Web App",
     "tags": ["Event Management", "Technical Fest"],
     "problemStatement": "Organizing large-scale college fests involves complex coordination between multiple departments, manual registration processes, and difficulty in providing real-time updates to participants.",
-    "targetAudience": "Students, Faculty, and External Participants of the college technical fest.",
+    "targetAudience": "Students of SJEC (primary participants), External participants from other colleges and institutions, Event coordinators and volunteers managing fest operations",
     "detailedDescription": "The platform provides a centralized hub for all fest-related activities. Users can browse events, register with ease, track their participation, and receive real-time notifications about schedule changes.",
     "techStack": {
       "languages": ["TypeScript", "JavaScript"],
       "frameworks": ["Next.js", "Tailwind CSS"],
-      "googleTechnologies": ["Google Analytics", "Google Cloud"],
+      "googleTechnologies": [],
       "others": ["Supabase", "RazorPay"]
     },
     "links": {
@@ -56,6 +56,51 @@
           "yearBranch": "Multiple",
           "github": "",
           "linkedin": ""
+        }
+      ]
+    }
+  },
+  {
+    "slug": "letsbunk",
+    "title": "LetsBunk",
+    "oneLiner": "LetsBunk is a lightweight attendance tracking web application designed to help college students easily calculate attendance percentages and determine how many classes they can safely bunk or need to attend to meet required attendance criteria. The platform simplifies attendance planning by providing instant insights without relying on manual calculations or institutional portals.",
+    "description": "LetsBunk is a student-focused attendance tracker that helps plan class attendance smartly and stress-free.",
+    "category": "Web App",
+    "tags": ["Attendance Tracker", "Student Utility", "Productivity"],
+    "problemStatement": "Students often struggle to track attendance accurately and calculate how many classes they can miss or must attend to meet minimum attendance requirements, leading to confusion, miscalculations, and academic stress.",
+    "targetAudience": "College students who want a simple, fast, and reliable way to track attendance and plan bunking decisions",
+    "detailedDescription": "LetsBunk provides an intuitive interface where users can input total classes conducted, classes attended, and minimum attendance requirements. The system instantly calculates attendance percentage and clearly indicates whether the student can bunk upcoming classes or needs to attend more. By removing manual math and dependency on complex ERP systems, LetsBunk offers a quick, distraction-free solution tailored for everyday student use.",
+    "techStack": {
+      "languages": ["TypeScript"],
+      "frameworks": ["Next.js", "Tailwind CSS"],
+      "googleTechnologies": [],
+      "others": ["Netlify"]
+    },
+    "links": {
+      "github": "https://github.com/roche-jeethan/lets-bunk",
+      "live": "https://letsbunk.netlify.app/",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/projects/letsbunk.png",
+      "screenshots": ["/images/projects/letsbunk.png"],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "Solo Project",
+      "contributors": [
+        {
+          "name": "Jeethan Roche",
+          "role": "Full Stack Developer",
+          "gdgRole": "",
+          "yearBranch": "CSE Data Science, 3rd year",
+          "github": "https://github.com/roche-jeethan",
+          "linkedin": "https://www.linkedin.com/in/roche-jeethan/"
         }
       ]
     }
