@@ -91,6 +91,7 @@ if (limit) {
 
               <!-- Buttons -->
               <div class="mt-auto flex flex-row items-center gap-3">
+                {project.githubLink && project.githubLink !== "#" && project.githubLink !== "" && (
                 <a
                   href={project.githubLink}
                   target="_blank"
@@ -101,6 +102,7 @@ if (limit) {
                   </svg>
                   Github
                 </a>
+              )}
 
                 {project.websiteLink && project.websiteLink !== "#" && project.websiteLink !== "" && (
                   <a

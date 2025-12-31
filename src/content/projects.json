@@ -1,13 +1,13 @@
 [
   {
-    "title": "ChronoTask",
+    "title": "Tiara 2k25",
     "description": "An intuitive mobile application for effortless task and schedule management.",
-    "tag": "Mobile App",
-    "image": "/images/gdg1.png",
-    "websiteLink": "https://chronotask.example.com",
-    "githubLink": "https://github.com/gdgsjec/chronotask",
-    "contributors": ["Jeethan", "Rohit", "Ananya"],
-    "techStack": ["Flutter", "Firebase", "Dart"]
+    "tag": "Web App",
+    "image": "/images/projects/tiara2k25v2.png",
+    "websiteLink": "https://tiarasjec.com/",
+    "githubLink": "",
+    "contributors": ["Vyshnav K", "Joshua Albuquerque", "GDG Team"],
+    "techStack": ["NextJS", "Tailwind", "TypeScript", "Supabase", "RazorPay"]
   },
   {
     "title": "MemeSphere",
