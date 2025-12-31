@@ -5,7 +5,7 @@ description: "Discover the process behind building the new GDG portfolio website
 author: "The GDG Team"
 image: "/images/blog/gdg-portfolio-making.png"
 tags: ["Astro", "Design", "Development"]
-category: "Engineering"
+category: "Design"
 ---
 
 Building a platform that represents a community as dynamic as the Google Developer Groups (GDG) requires more than just code; it requires a vision for a seamless, premium, and performant user experience. Today, we're diving into the "Making of" the new GDG Portfolio website.
