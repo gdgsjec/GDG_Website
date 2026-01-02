@@ -1,0 +1,63 @@
+[
+  {
+    "slug": "", 
+    "title": "",
+    "oneLiner": "",
+    "description": "",
+    "category": "",
+    "tags": [""],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": ["",""],
+      "frameworks": ["", ""],
+      "googleTechnologies": [],
+      "others": ["", ""]
+    },
+    "links": {
+      "github": "",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "",
+      "screenshots": [""],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": false,
+    "team": {
+      "type": "",
+      "contributors": [
+        {
+          "name": "",
+          "role": "",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "",
+          "role": "",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "",
+          "role": "",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        }
+      ]
+    }
+  }
+]
