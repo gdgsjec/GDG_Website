@@ -104,5 +104,52 @@
         }
       ]
     }
+  },
+    {
+    "slug": "lunar-lander-rl-agent",
+    "title": "Lunar Lander RL Agent",
+    "oneLiner": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
+    "description": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
+    "category": "Machine Learning / AI",
+    "tags": ["Reinforcement Learning", "Deep Learning", "Autonomous Systems"],
+    "problemStatement": "It solves the complex control theory problem of stabilizing and landing a rocket in a continuous state space.",
+    "targetAudience": "AI/ML enthusiasts, developers interested in autonomous systems and reinforcement learning",
+    "detailedDescription": "It demonstrates how Reinforcement Learning agents can learn optimal control policies from scratch without hard-coded rules.",
+    "techStack": {
+      "languages": ["Python"],
+      "frameworks": ["Gymnasium (OpenAI Gym)", "Stable Baselines3"],
+      "googleTechnologies": [],
+      "others": ["PyTorch", "NumPy", "TensorBoard", "TensorFlow"]
+    },
+    "links": {
+      "github": "https://github.com/carlpinto25/lunar-lander-rl",
+      "live": "",
+      "docs": "https://github.com/carlpinto25/lunar-lander-rl/blob/master/README.md"
+    },
+    "media": {
+      "thumbnail": "/images/projects/lunar.png",
+      "screenshots": [
+        ""
+      ],
+      "video": "https://drive.google.com/file/d/12TkzG0ln09iHmpN_YHmsHPE9u3zRlCFV/view?usp=sharing"
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": false,
+    "team": {
+      "type": "Individual Project",
+      "contributors": [
+        {
+          "name": "Carl Pinto",
+          "role": "Developer",
+          "gdgRole": "Member",
+          "yearBranch": "3rd Sem CSE",
+          "github": "https://github.com/carlpinto25",
+          "linkedin": "https://www.linkedin.com/in/carl-pinto-2609502a3/"
+        }
+      ]
+    }
   }
 ]
