@@ -59,7 +59,7 @@ const {
                 {title}
             </h1>
             <p
-                class="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-medium max-w-3xl leading-relaxed text-justify"
+                class="text-md md:text-lg text-gray-600 dark:text-gray-400 font-medium w-full leading-relaxed"
             >
                 {oneLiner}
             </p>
@@ -69,15 +69,97 @@ const {
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
             <div class="lg:col-span-8">
                 <div
-                    class="w-full aspect-[16/9] rounded-[2.5rem] overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl group hover:shadow-blue-500/10 transition-all duration-500"
+                    class="w-full aspect-[16/9] rounded-[2.5rem] overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl group transition-all duration-500 relative"
                 >
-                    <Image
-                        src={media.thumbnail}
-                        alt={title}
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        width={1200}
-                        height={675}
-                    />
+                    {
+                        (media.screenshots &&
+                            media.screenshots.filter((s: string) => s !== "")
+                                .length > 1) ? (
+                            <div class="relative w-full h-full group/carousel">
+                                <div
+                                    id="carousel-track"
+                                    class="flex h-full transition-transform duration-700 ease-in-out"
+                                >
+                                    {media.screenshots
+                                        .filter((s: string) => s !== "")
+                                        .map((s: string, idx: number) => (
+                                            <div class="min-w-full h-full flex-shrink-0">
+                                                <Image
+                                                    src={s}
+                                                    alt={`${title} screenshot ${idx + 1}`}
+                                                    class="w-full h-full object-cover"
+                                                    width={1200}
+                                                    height={675}
+                                                />
+                                            </div>
+                                        ))}
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <button
+                                    id="prev-slide"
+                                    class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center lg:opacity-0 lg:group-hover/carousel:opacity-100 opacity-100 transition-all hover:bg-white/40 z-10"
+                                    aria-label="Previous slide"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="2.5"
+                                        stroke="currentColor"
+                                        class="w-6 h-6"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5"
+                                        />
+                                    </svg>
+                                </button>
+                                <button
+                                    id="next-slide"
+                                    class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center lg:opacity-0 lg:group-hover/carousel:opacity-100 opacity-100 transition-all hover:bg-white/40 z-10"
+                                    aria-label="Next slide"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="2.5"
+                                        stroke="currentColor"
+                                        class="w-6 h-6"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                        />
+                                    </svg>
+                                </button>
+
+                                <!-- Indicators -->
+                                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                    {media.screenshots
+                                        .filter((s: string) => s !== "")
+                                        .map((_: any, idx: number) => (
+                                            <button
+                                                class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all hover:bg-white/60"
+                                                data-index={idx}
+                                                aria-label={`Go to slide ${idx + 1}`}
+                                            />
+                                        ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <Image
+                                src={media.thumbnail}
+                                alt={title}
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                width={1200}
+                                height={675}
+                            />
+                        )
+                    }
                 </div>
             </div>
             <div class="lg:col-span-4 flex flex-col gap-6">
@@ -138,8 +220,8 @@ const {
         </div>
 
         <!-- Content Sections -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <div class="lg:col-span-8">
+        <div class="flex flex-col gap-16">
+            <div class="w-full">
                 <section class="mb-16">
                     <h2
                         class="text-3xl font-bold mb-6 text-gray-900 dark:text-white"
@@ -147,7 +229,7 @@ const {
                         The Problem
                     </h2>
                     <p
-                        class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+                        class="text-md md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
                     >
                         {problemStatement}
                     </p>
@@ -160,7 +242,7 @@ const {
                         Target Audience
                     </h2>
                     <p
-                        class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+                        class="text-md md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
                     >
                         {targetAudience}
                     </p>
@@ -173,7 +255,7 @@ const {
                         Project Details
                     </h2>
                     <div
-                        class="project-content text-gray-600 dark:text-gray-400 leading-relaxed"
+                        class="text-md md:text-lg project-content text-gray-600 dark:text-gray-400 leading-relaxed"
                     >
                         {detailedDescription || description}
                     </div>
@@ -217,31 +299,10 @@ const {
                         )
                 }
 
-                {
-                    media.screenshots && media.screenshots.length > 1 && (
-                        <section class="mb-16">
-                            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-                                Gallery
-                            </h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {media.screenshots.map((s: any, idx: any) => (
-                                    <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5">
-                                        <Image
-                                            src={s}
-                                            alt={`Screenshot ${idx + 1}`}
-                                            width={600}
-                                            height={400}
-                                            class="w-full h-auto"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-                    )
-                }
             </div>
 
-            <div class="lg:col-span-4 flex flex-col gap-12">
+            <!-- Sidebar Info moved to bottom in 2 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-16 border-t border-gray-100 dark:border-white/5">
                 <!-- Tech Stack -->
                 <section>
                     <h3
@@ -355,6 +416,66 @@ const {
     </main>
 
     <Footer />
+
+    <script>
+        const track = document.getElementById("carousel-track");
+        const prevBtn = document.getElementById("prev-slide");
+        const nextBtn = document.getElementById("next-slide");
+        const dots = document.querySelectorAll(".carousel-dot");
+
+        if (track && prevBtn && nextBtn) {
+            let currentSlide = 0;
+            const slides = track.children;
+            const totalSlides = slides.length;
+
+            const updateCarousel = (index: number) => {
+                currentSlide = (index + totalSlides) % totalSlides;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === currentSlide) {
+                        dot.classList.add("bg-white", "w-6");
+                        dot.classList.remove("bg-white/30");
+                    } else {
+                        dot.classList.remove("bg-white", "w-6");
+                        dot.classList.add("bg-white/30");
+                    }
+                });
+            };
+
+            // Initialize dots
+            updateCarousel(0);
+
+            prevBtn.addEventListener("click", () =>
+                updateCarousel(currentSlide - 1),
+            );
+            nextBtn.addEventListener("click", () =>
+                updateCarousel(currentSlide + 1),
+            );
+
+            dots.forEach((dot) => {
+                dot.addEventListener("click", () => {
+                    const index = parseInt(
+                        dot.getAttribute("data-index") || "0",
+                    );
+                    updateCarousel(index);
+                });
+            });
+
+            // Auto-play
+            let interval = setInterval(() => updateCarousel(currentSlide + 1), 5000);
+
+            // Pause on hover
+            const container = track.parentElement;
+            if (container) {
+                container.addEventListener("mouseenter", () => clearInterval(interval));
+                container.addEventListener("mouseleave", () => {
+                    interval = setInterval(() => updateCarousel(currentSlide + 1), 5000);
+                });
+            }
+        }
+    </script>
 </Layout>
 
 <style is:global>
