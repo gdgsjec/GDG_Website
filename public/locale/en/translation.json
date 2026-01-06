@@ -1,0 +1,10 @@
+{
+  "header": {
+    "blog": "Blog",
+    "team": "Team",
+    "events": "Events",
+    "projects": "Projects",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  }
+}
