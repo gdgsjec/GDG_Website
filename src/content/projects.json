@@ -21,8 +21,8 @@
       "docs": ""
     },
     "media": {
-      "thumbnail": "/images/projects/tiara2k25v2.png",
-      "screenshots": ["/images/projects/tiara2k25v2.png"],
+      "thumbnail": "/images/projects/tiara2k25v2.webp",
+      "screenshots": ["/images/projects/tiara2k25v2.webp"],
       "video": ""
     },
     "hackathon": {
@@ -82,8 +82,8 @@
       "docs": ""
     },
     "media": {
-      "thumbnail": "/images/projects/letsbunk.png",
-      "screenshots": ["/images/projects/letsbunk.png"],
+      "thumbnail": "/images/projects/letsbunk.webp",
+      "screenshots": ["/images/projects/letsbunk.webp"],
       "video": ""
     },
     "hackathon": {
@@ -127,7 +127,7 @@
       "docs": "https://github.com/carlpinto25/lunar-lander-rl/blob/master/README.md"
     },
     "media": {
-      "thumbnail": "/images/projects/lunar.png",
+      "thumbnail": "/images/projects/lunar.webp",
       "screenshots": [
         ""
       ],
