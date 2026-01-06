@@ -22,6 +22,11 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
     <Font />
     <script is:inline>
       (function () {
@@ -35,6 +40,15 @@ import "../styles/global.css";
           document.documentElement.classList.remove("dark");
         }
       })();
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((reg) => console.log("SW registered!", reg))
+            .catch((err) => console.error("SW registration failed:", err));
+        });
+      }
     </script>
   </head>
   <body class="bg-white dark:bg-[#0B0D17] text-gray-900 dark:text-gray-100">
