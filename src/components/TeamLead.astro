@@ -10,7 +10,7 @@ const colors = {
 }
 ---
 
-<section id="team" class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white relative">
+<section id="team-lead" class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white relative">
   <!-- Dynamic Background Elements -->
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 dark:bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
   <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-500/5 dark:bg-blue-500/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
@@ -32,8 +32,8 @@ const colors = {
     <!-- Team Slider Container -->
     <div class="relative group/slider">
       <div 
-        id="team-slider" 
-        class="flex justify-center overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0"
+        id="team-lead-slider" 
+        class="flex lg:justify-center overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0"
       >
         {teamMembers.map((member) => (
           <div class="flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start md:snap-start">
@@ -82,7 +82,7 @@ const colors = {
       <!-- Navigation Arrows -->
       <div class="flex items-center gap-4 mt-8 px-4">
         <button 
-          id="prev-team"
+          id="prev-lead"
           aria-label="Previous member"
           class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none bg-white dark:bg-[#0B0D17]"
         >
@@ -91,7 +91,7 @@ const colors = {
           </svg>
         </button>
         <button 
-          id="next-team"
+          id="next-lead"
           aria-label="Next member"
           class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none bg-white dark:bg-[#0B0D17]"
         >
@@ -105,9 +105,9 @@ const colors = {
 </section>
 
 <script>
-  const slider = document.getElementById('team-slider');
-  const nextBtn = document.getElementById('next-team');
-  const prevBtn = document.getElementById('prev-team');
+  const slider = document.getElementById('team-lead-slider');
+  const nextBtn = document.getElementById('next-lead');
+  const prevBtn = document.getElementById('prev-lead');
 
   if (slider && nextBtn && prevBtn) {
     const scroll = (direction: string) => {
