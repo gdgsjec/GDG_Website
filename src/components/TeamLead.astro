@@ -1,5 +1,5 @@
 ---
-import teamMembers from '../content/team.json';
+import teamMembers from '../content/teamLead.json';
 import { Image } from "astro:assets";
 
 const colors = {
@@ -18,14 +18,14 @@ const colors = {
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-20">
       <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
-        Meet the <span
-          class="text-blue-500 dark:text-blue-400">C</span
-        ><span class="text-red-500 dark:text-red-400">O</span><span
-          class="text-[#FBBC04] dark:text-yellow-400">R</span
-        ><span class="text-green-500 dark:text-green-400">E</span> Team
+        The Past <span
+          class="text-blue-500 dark:text-blue-400">L</span
+        ><span class="text-red-500 dark:text-red-400">E</span><span
+          class="text-[#FBBC04] dark:text-yellow-400">A</span
+        ><span class="text-green-500 dark:text-green-400">D</span>'s
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-        The minds shaping GDG SJEC’s tech culture.
+        The minds whose impact continues beyond their term.
       </p>
     </div>
 
@@ -33,7 +33,7 @@ const colors = {
     <div class="relative group/slider">
       <div 
         id="team-slider" 
-        class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0"
+        class="flex justify-center overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0"
       >
         {teamMembers.map((member) => (
           <div class="flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start md:snap-start">
