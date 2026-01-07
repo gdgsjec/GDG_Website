@@ -60,7 +60,148 @@
       ]
     }
   },
+    {
+    "slug": "lunar-lander-rl-agent",
+    "title": "Lunar Lander RL Agent",
+    "oneLiner": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
+    "description": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
+    "category": "Machine Learning / AI",
+    "tags": ["Reinforcement Learning", "Deep Learning", "Autonomous Systems"],
+    "problemStatement": "It solves the complex control theory problem of stabilizing and landing a rocket in a continuous state space.",
+    "targetAudience": "AI/ML enthusiasts, developers interested in autonomous systems and reinforcement learning",
+    "detailedDescription": "It demonstrates how Reinforcement Learning agents can learn optimal control policies from scratch without hard-coded rules.",
+    "techStack": {
+      "languages": ["Python"],
+      "frameworks": ["Gymnasium (OpenAI Gym)", "Stable Baselines3"],
+      "googleTechnologies": [],
+      "others": ["PyTorch", "NumPy", "TensorBoard", "TensorFlow"]
+    },
+    "links": {
+      "github": "https://github.com/carlpinto25/lunar-lander-rl",
+      "live": "",
+      "docs": "https://github.com/carlpinto25/lunar-lander-rl/blob/master/README.md"
+    },
+    "media": {
+      "thumbnail": "/images/projects/lunar.webp",
+      "screenshots": [
+        ""
+      ],
+      "video": "https://drive.google.com/file/d/12TkzG0ln09iHmpN_YHmsHPE9u3zRlCFV/view?usp=sharing"
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": false,
+    "team": {
+      "type": "Individual Project",
+      "contributors": [
+        {
+          "name": "Carl Pinto",
+          "role": "Developer",
+          "gdgRole": "Member",
+          "yearBranch": "3rd Sem CSE",
+          "github": "https://github.com/carlpinto25",
+          "linkedin": "https://www.linkedin.com/in/carl-pinto-2609502a3/"
+        }
+      ]
+    }
+  },
   {
+    "slug": "tedx-sjec-2024",
+    "title": "TEDxSJEC 2024 Website",
+    "oneLiner": "A modern, full-stack web platform built to power TEDxSJEC 2024, showcasing ideas, speakers, and seamless event experiences.",
+    "description": "The official website for TEDxSJEC 2024, designed to represent the college-hosted TEDx event with a strong visual identity, smooth interactions, and reliable backend systems for registrations, payments, and communication.",
+    "category": "Web Development",
+    "tags": ["TEDx", "College Event", "Full Stack", "Production Website"],
+    "problemStatement": "The event required a scalable, secure, and visually engaging digital platform to manage event information, registrations, payments, and attendee communication while aligning with global TEDx standards.",
+    "targetAudience": "Students, faculty, speakers, attendees, and the wider TEDx community.",
+    "detailedDescription": "TEDxSJEC 2024 is an independently organized TEDx event bringing together innovators, thinkers, and visionaries to inspire change and spark meaningful conversations. The website serves as the central hub for event information, registrations, and updates, combining modern frontend design with robust backend infrastructure to ensure reliability and scalability throughout the event lifecycle.",
+    "techStack": {
+      "languages": ["JavaScript", "TypeScript"],
+      "frameworks": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "NextAuth.js",
+        "Prisma ORM",
+        "Framer Motion",
+        "GSAP"
+      ],
+      "googleTechnologies": [],
+      "others": [
+        "Zod",
+        "React Query",
+        "TursoDB (Cloud SQLite)",
+        "BullMQ",
+        "Redis",
+        "Razorpay",
+        "UploadThing",
+        "Vercel"
+      ]
+    },
+    "links": {
+      "github": "",
+      "live": "https://tedxsjec.in",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/projects/tedx-sjec.webp",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": false,
+    "team": {
+      "type": "Team Project",
+      "contributors": [
+        {
+          "name": "Joywin Bennis",
+          "role": "Web Lead",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "Vyshnav K",
+          "role": "Full Stack Developer",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "Santhsim",
+          "role": "Frontend Developer",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "Pranav Raja",
+          "role": "Frontend Developer",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "Naveen",
+          "role": "UI/UX Designer",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        }
+      ]
+    }
+  },
+    {
     "slug": "letsbunk",
     "title": "LetsBunk",
     "oneLiner": "LetsBunk is a lightweight attendance tracking web application designed to help college students easily calculate attendance percentages and determine how many classes they can safely bunk or need to attend to meet required attendance criteria. The platform simplifies attendance planning by providing instant insights without relying on manual calculations or institutional portals.",
@@ -106,32 +247,32 @@
     }
   },
     {
-    "slug": "lunar-lander-rl-agent",
-    "title": "Lunar Lander RL Agent",
-    "oneLiner": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
-    "description": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
-    "category": "Machine Learning / AI",
-    "tags": ["Reinforcement Learning", "Deep Learning", "Autonomous Systems"],
-    "problemStatement": "It solves the complex control theory problem of stabilizing and landing a rocket in a continuous state space.",
-    "targetAudience": "AI/ML enthusiasts, developers interested in autonomous systems and reinforcement learning",
-    "detailedDescription": "It demonstrates how Reinforcement Learning agents can learn optimal control policies from scratch without hard-coded rules.",
+    "slug": "bible-cli",
+    "title": "Bible-CLI",
+    "oneLiner": "A tiny Python-based command-line tool that prints random Bible verses or specific book passages directly in the terminal.",
+    "description": "bible-cli is a tiny Python-based command-line tool that prints random Bible verses or specific book passages in your terminal, with simple lookup and update options.",
+    "category": "Open Source",
+    "tags": ["CLI Tool", "Open Source"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
     "techStack": {
-      "languages": ["Python"],
-      "frameworks": ["Gymnasium (OpenAI Gym)", "Stable Baselines3"],
+      "languages": ["Python", "Shell"],
+      "frameworks": ["Standard Python Library"],
       "googleTechnologies": [],
-      "others": ["PyTorch", "NumPy", "TensorBoard", "TensorFlow"]
+      "others": []
     },
     "links": {
-      "github": "https://github.com/carlpinto25/lunar-lander-rl",
+      "github": "https://github.com/dionjoshualobo/bible-cli",
       "live": "",
-      "docs": "https://github.com/carlpinto25/lunar-lander-rl/blob/master/README.md"
+      "docs": ""
     },
     "media": {
-      "thumbnail": "/images/projects/lunar.webp",
+      "thumbnail": "/images/projects/biblecli.webp",
       "screenshots": [
-        ""
+        "/images/projects/biblecli.webp"
       ],
-      "video": "https://drive.google.com/file/d/12TkzG0ln09iHmpN_YHmsHPE9u3zRlCFV/view?usp=sharing"
+      "video": ""
     },
     "hackathon": {
       "name": "",
@@ -142,12 +283,130 @@
       "type": "Individual Project",
       "contributors": [
         {
-          "name": "Carl Pinto",
+          "name": "Dion Joshua Lobo",
           "role": "Developer",
-          "gdgRole": "Member",
-          "yearBranch": "3rd Sem CSE",
-          "github": "https://github.com/carlpinto25",
-          "linkedin": "https://www.linkedin.com/in/carl-pinto-2609502a3/"
+          "gdgRole": "Core Team",
+          "yearBranch": "3/CSDS",
+          "github": "https://github.com/dionjoshualobo",
+          "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290"
+        }
+      ]
+    }
+  },
+    {
+    "slug": "python-pacman",
+    "title": "Python-Pacman",
+    "oneLiner": "Pacman game implemented in Python.",
+    "description": "Pacman game implemented in Python.",
+    "category": "Open Source",
+    "tags": ["Game Clone"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": ["Python"],
+      "frameworks": ["Pygame"],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/dionjoshualobo/python-pacman",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/projects/PacMan.webp",
+      "screenshots": [
+        "/images/projects/PacMan.webp"
+      ],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "Team Project",
+      "contributors": [
+        {
+          "name": "Dion Joshua Lobo",
+          "role": "Developer",
+          "gdgRole": "Core Team",
+          "yearBranch": "3/CSDS",
+          "github": "https://github.com/dionjoshualobo",
+          "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290"
+        },
+        {
+          "name": "Reyon Joseph",
+          "role": "",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        },
+        {
+          "name": "Isabel Carina",
+          "role": "",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
+        }
+      ]
+    }
+  },
+    {
+    "slug": "buzz-realtime-game",
+    "title": "Buzz",
+    "oneLiner": "A real-time multiplayer buzz game system with WebSocket-based buzzing and live leaderboards.",
+    "description": "A real-time multiplayer buzz game system with fast WebSocket-based buzzing, vintage newspaper UI, and live leaderboards, ideal for quizzes, events, and competitive play.",
+    "category": "Web Development",
+    "tags": ["Open Source"],
+    "problemStatement": "",
+    "targetAudience": "Event organizers, quizmasters, and educators.",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": ["HTML", "CSS", "JavaScript"],
+      "frameworks": ["WebSocket", "Tailwind", "Node.js"],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/PlatypusPus/Buzz",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "/images/projects/Buzz.webp",
+      "screenshots": [
+        "/images/projects/Buzz.webp"
+      ],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "Team Project",
+      "contributors": [
+        {
+          "name": "Dion Joshua Lobo",
+          "role": "Developer",
+          "gdgRole": "Core Team",
+          "yearBranch": "3/CSDS",
+          "github": "https://github.com/dionjoshualobo",
+          "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290"
+        },
+        {
+          "name": "Shovin D'Souza",
+          "role": "",
+          "gdgRole": "",
+          "yearBranch": "",
+          "github": "",
+          "linkedin": ""
         }
       ]
     }
