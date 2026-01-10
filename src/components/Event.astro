@@ -42,10 +42,6 @@ if (limit) {
     width: fit-content;
   }
 
-  .marquee__track:hover {
-    animation-play-state: paused;
-  }
-
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -56,13 +52,13 @@ if (limit) {
 </style>
 
 {showMarquee && (
-  <div class="bg-white dark:bg-[#0B0D17] font-sans overflow-x-hidden pt-12">
+  <div class="bg-white dark:bg-[#0B0D17] font-sans overflow-hidden pt-12">
     <div
-      class="w-full sm:text-2xl rotate-1.9 bg-yellow-500 py-6 mb-10 overflow-hidden shadow-lg"
+      class="w-full sm:text-2xl rotate-1.9 bg-yellow-500 py-6 mb-10 overflow-hidden shadow-lg no-scrollbar"
     >
-      <div class="marquee__track" style="animation-duration: 15s;">
+      <div class="marquee__track no-scrollbar" style="animation-duration: 15s;">
         {
-          Array(8)
+          Array(10)
             .fill("What's Happening In SJEC?")
             .map((text) => (
               <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4">
@@ -74,11 +70,12 @@ if (limit) {
     </div>
 
     <div
-      class="w-full -rotate-3 py-6 mb-10 bg-green-600 overflow-hidden shadow-lg"
+      class="w-full py-6 mb-10 bg-green-600 overflow-hidden shadow-lg no-scrollbar"
+      style="transform: rotate(-2deg) translate(12px, -30px); width: 120%; margin-left: -10%;"
     >
-      <div class="marquee__track" style="animation-duration: 30s;">
+      <div class="marquee__track no-scrollbar" style="animation-duration: 15s;">
         {
-          Array(8)
+          Array(10)
             .fill("From Workshops To Hackathons!")
             .map((text) => (
               <span class="whitespace-nowrap text-xl sm:text-2xl font-semibold uppercase text-white px-4 ">
