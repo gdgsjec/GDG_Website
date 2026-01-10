@@ -51,7 +51,9 @@ import "../styles/global.css";
       }
     </script>
   </head>
-  <body class="bg-white dark:bg-[#0B0D17] text-gray-900 dark:text-gray-100">
+  <body
+    class="bg-white dark:bg-[#0B0D17] text-gray-900 dark:text-gray-100 font-sans"
+  >
     <slot />
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
@@ -86,6 +88,28 @@ import "../styles/global.css";
         updateIcons();
       });
     </script>
+    <!-- <script is:inline>
+      import Lenis from "lenis";
+      import "lenis/dist/lenis.css";
+
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smoothHover: true,
+        lerp: 0.05,
+        wheelMultiplier: 1,
+        infinite: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script> -->
   </body>
 </html>
 
