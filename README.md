@@ -40,22 +40,32 @@ Here's an overview of how the project is organized:
 
 ```text
 /
-├── public/                 # Static assets (fonts, images, icons)
-│   └── images/             # Organized project and team images
-├── src/                    # Source code
-│   ├── components/         # Reusable Astro/React components
-│   │   └── ui/             # Generic UI components
-│   ├── content/            # Data-driven content (JSON & Markdown)
-│   │   ├── blog/           # Blog posts in Markdown
-│   │   ├── projects.json   # Main project data
-│   │   ├── team.json       # Team member data
-│   │   └── events.json     # Event data
-│   ├── layouts/            # Page templates (Layout, ProjectLayout, BlogLayout)
-│   ├── lib/                # Utility functions and helper scripts
-│   ├── pages/              # Routing and top-level pages
-│   └── styles/             # Global CSS and layout styling
-├── package.json            # Project dependencies and Bun scripts
-└── src/content/project-template.json # Template for adding new projects
+├── astro.config.mjs        # Astro configuration
+├── package.json            # Dependencies and Bun scripts
+├── tsconfig.json           # TypeScript configuration
+├── public/                 # Static assets served as-is (fonts, icons, images)
+│   └── images/             # Blog, project, and event media
+├── src/
+│   ├── components/         # Page sections and shared UI
+│   │   └── ui/
+│   ├── content/            # JSON/MD content and collections
+│   │   ├── blog/           # Blog posts (Markdown)
+│   │   ├── config.ts       # Astro content collections config
+│   │   ├── events.json
+│   │   ├── project-template.json
+│   │   ├── projects.json
+│   │   ├── team.json
+│   │   └── teamLead.json
+│   ├── layouts/            # Layout components (Layout, BlogLayout, ProjectLayout)
+│   ├── lib/                # Shared helpers (e.g., Font.astro)
+│   ├── pages/              # Astro routes
+│   │   ├── index.astro
+│   │   ├── blog/           # Blog listing and detail
+│   │   ├── events/         # Events listing
+│   │   ├── projects/       # Project listing and detail
+│   │   └── team/           # Team page
+│   └── styles/             # Global and component CSS
+└── README.md
 ```
 
 ---
