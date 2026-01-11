@@ -18,33 +18,6 @@
     "color": "red"
   },
   {
-    "name": "Viona Noronha",
-    "role": "Secretary",
-    "bio": "While others commit code, I commit to keeping the team sane",
-    "image": "/images/output/Viona.webp",
-    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
-    "github": "https://github.com/vionoronha",
-    "color": "yellow"
-  },
-  {
-    "name": "Shreya Shettigar",
-    "role": "Joint Secretary",
-    "bio": "Coordinating chaos into clarity, one plan at a time",
-    "image": "/images/output/Shreya.webp",
-    "linkedin": "https://www.linkedin.com/in/shreya1107/",
-    "github": "https://github.com/shreyavshettigar",
-    "color": "green"
-  },
-  {
-    "name": "Dion Lobo",
-    "role": "Cloud Lead",
-    "bio": "I prefer the cloud, because when it crashes, at least it takes everyone down with me",
-    "image": "/images/output/Dion.webp",
-    "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290",
-    "github": "https://github.com/dionjoshualobo",
-    "color": "blue"
-  },
-  {
     "name": "Reuben A Vinod",
     "role": "Web Lead",
     "bio": "I always prefer dark mode, because light attracts bugs. Pun intended",
@@ -63,6 +36,15 @@
     "color": "yellow"
   },
   {
+    "name": "Dion Lobo",
+    "role": "Cloud Lead",
+    "bio": "I prefer the cloud, because when it crashes, at least it takes everyone down with me",
+    "image": "/images/output/Dion.webp",
+    "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290",
+    "github": "https://github.com/dionjoshualobo",
+    "color": "blue"
+  },
+  {
     "name": "Ankit Shah",
     "role": "AI/ML Lead",
     "bio": "Training models and minds, both need patience and good data.",
@@ -79,6 +61,24 @@
     "linkedin": "https://www.linkedin.com/in/shamitha-kv-70b7b6294",
     "github": "https://github.com/Shamitha512",
     "color": "blue"
+  },
+  {
+    "name": "Viona Noronha",
+    "role": "Secretary",
+    "bio": "While others commit code, I commit to keeping the team sane",
+    "image": "/images/output/Viona.webp",
+    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
+    "github": "https://github.com/vionoronha",
+    "color": "yellow"
+  },
+  {
+    "name": "Shreya Shettigar",
+    "role": "Joint Secretary",
+    "bio": "Coordinating chaos into clarity, one plan at a time",
+    "image": "/images/output/Shreya.webp",
+    "linkedin": "https://www.linkedin.com/in/shreya1107/",
+    "github": "https://github.com/shreyavshettigar",
+    "color": "green"
   },
   {
     "name": "Reevan Fernandes",
