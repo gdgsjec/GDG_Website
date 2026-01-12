@@ -17,6 +17,24 @@
     "github": "https://github.com/SANTHSIM22",
     "color": "red"
   },
+    {
+    "name": "Viona Noronha",
+    "role": "Secretary",
+    "bio": "While others commit code, I commit to keeping the team sane",
+    "image": "/images/output/Viona.webp",
+    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
+    "github": "https://github.com/vionoronha",
+    "color": "yellow"
+  },
+  {
+    "name": "Shreya Shettigar",
+    "role": "Joint Secretary",
+    "bio": "Coordinating chaos into clarity, one plan at a time",
+    "image": "/images/output/Shreya.webp",
+    "linkedin": "https://www.linkedin.com/in/shreya1107/",
+    "github": "https://github.com/shreyavshettigar",
+    "color": "green"
+  },
   {
     "name": "Reuben A Vinod",
     "role": "Web Lead",
@@ -54,31 +72,13 @@
     "color": "green"
   },
   {
-    "name": "Shamitha",
+    "name": "Shamitha K V",
     "role": "Events Lead",
     "bio": "From idea to spotlight, I run the show (literally)",
     "image": "/images/output/Shamitha.webp",
     "linkedin": "https://www.linkedin.com/in/shamitha-kv-70b7b6294",
     "github": "https://github.com/Shamitha512",
     "color": "blue"
-  },
-  {
-    "name": "Viona Noronha",
-    "role": "Secretary",
-    "bio": "While others commit code, I commit to keeping the team sane",
-    "image": "/images/output/Viona.webp",
-    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
-    "github": "https://github.com/vionoronha",
-    "color": "yellow"
-  },
-  {
-    "name": "Shreya Shettigar",
-    "role": "Joint Secretary",
-    "bio": "Coordinating chaos into clarity, one plan at a time",
-    "image": "/images/output/Shreya.webp",
-    "linkedin": "https://www.linkedin.com/in/shreya1107/",
-    "github": "https://github.com/shreyavshettigar",
-    "color": "green"
   },
   {
     "name": "Reevan Fernandes",
