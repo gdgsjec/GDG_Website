@@ -40,14 +40,14 @@ const colors: Record<string, string> = {
         id={isScrollable ? "team-lead-slider" : "team-lead-grid"}
         class={isScrollable 
           ? "flex md:grid md:grid-cols-2 lg:grid-cols-5 overflow-x-auto md:overflow-visible no-scrollbar gap-6 md:gap-8 pb-12 pt-4 px-2 snap-x snap-mandatory" 
-          : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"}
+          : "flex flex-wrap justify-center gap-8 md:gap-10"}
       >
         {teamMembers.map((member, index) => (
-          <div class={isScrollable ? "flex-shrink-0 w-[85%] md:w-full snap-center" : "w-full"}>
-            <div class="group/card flex flex-col h-[25rem] md:h-[30rem] bg-gray-50 dark:bg-[#1A1D2B] border border-gray-100 dark:border-white/5 rounded-[2.5rem] p-8 md:p-10 items-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2">
+          <div class={isScrollable ? "flex-shrink-0 w-[85%] md:w-full snap-center" : "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(20%-1.6rem)]"}>
+            <div class="group/card flex flex-col h-full bg-gray-50 dark:bg-[#1A1D2B] border border-gray-100 dark:border-white/5 rounded-[2.5rem] p-8 md:p-10 items-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2">
               
               <!-- Circular Image (Matching Event style) -->
-              <div class={`w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-6 border-4 shadow-lg shrink-0 mx-auto transition-transform duration-500 group-hover/card:scale-110 ${Object.values(colors)[index % 4]}`}>
+              <div class={`w-32 h-32 md:w-32 md:h-32 rounded-full overflow-hidden mb-6 border-4 shadow-lg shrink-0 mx-auto transition-transform duration-500 group-hover/card:scale-110 ${Object.values(colors)[index % 4]}`}>
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -58,11 +58,11 @@ const colors: Record<string, string> = {
               </div>
 
               <!-- Information Below -->
-              <div class="flex-grow flex flex-col items-center w-full">
-                <h3 class="text-xl md:text-2xl font-bold mb-1 group-hover/card:text-blue-500 dark:group-hover/card:text-blue-400 transition-colors text-gray-900 dark:text-white">
+              <div class="flex flex-col items-center w-full mb-6 text-gray-900 dark:text-white">
+                <h3 class="text-xl md:text-2xl font-bold mb-1 group-hover/card:text-blue-500 dark:group-hover/card:text-blue-400 transition-colors">
                   {member.name}
                 </h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base font-semibold mb-4 uppercase tracking-wider">
+                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base font-semibold uppercase tracking-wider mb-4">
                   {member.role}
                 </p>
               </div>
