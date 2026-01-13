@@ -1,5 +1,32 @@
 [
   {
+    "title": "Google AI Studio: Winter Hackathon Edition",
+    "date": "12 Jan 2026",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "An AI talk for shortlisted Winter Hackathon teams on using Google AI Studio effectively.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_mmySvje",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-google-ai-studio-winter-hackathon-edition/"
+  },
+  {
+    "title": "Unlocking the Power of Gemini for App Building: Winter Hackathon Edition",
+    "date": "12 Jan 2026",
+    "type": "Tech Talk",
+    "status": "Completed",
+    "description": "A focused session for shortlisted Winter Hackathon teams exploring how Gemini can elevate app development.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_belSYAd",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-unlocking-the-power-of-gemini-for-app-building/"
+  },
+  {
+    "title": "Open Source AI: Winter Hackathon Edition",
+    "date": "12 Jan 2026",
+    "type": "Tech Talk",
+    "status": "Completed",
+    "description": "An open-source AI talk for shortlisted Winter Hackathon participants to learn, interact, and get inspired",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_HHu1ybB",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-open-source-ai-tech-talk-unveiling-the-future/"
+  },
+  {
     "title": "Winter Hackathon",
     "date": "11 Jan 2026",
     "type": "Hackathon",
@@ -86,7 +113,7 @@
     "type": "Challenge",
     "status": "Completed",
     "description": "A one-week winter tech challenge to build any app or website, learn collaboratively, and prepare for upcoming solution challenges.",
-    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Untitled%20design%283%29_jbbrrSo.png",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/WhatsApp%20Image%202025-01-09%20at%207.21.53%20PM_AYZzCwR.jpeg",
     "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-tech-winter-break-gdg-on-campus-st-joseph-engineering-college/"
   },
   {
