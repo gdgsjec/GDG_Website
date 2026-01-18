@@ -10,30 +10,12 @@
   },
   {
     "name": "Santhsim Dsouza",
-    "role": "Co Organizer",
+    "role": "Co Lead",
     "bio": "I treat production like a 5-hour contest, one wrong submission and chaos begins.",
     "image": "/images/output/Santhsim.webp",
     "linkedin": "https://www.linkedin.com/in/santhsim-v-dsouza",
     "github": "https://github.com/SANTHSIM22",
     "color": "red"
-  },
-    {
-    "name": "Viona Noronha",
-    "role": "Secretary",
-    "bio": "While others commit code, I commit to keeping the team sane",
-    "image": "/images/output/Viona.webp",
-    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
-    "github": "https://github.com/vionoronha",
-    "color": "yellow"
-  },
-  {
-    "name": "Shreya Shettigar",
-    "role": "Joint Secretary",
-    "bio": "Coordinating chaos into clarity, one plan at a time",
-    "image": "/images/output/Shreya.webp",
-    "linkedin": "https://www.linkedin.com/in/shreya1107/",
-    "github": "https://github.com/shreyavshettigar",
-    "color": "green"
   },
   {
     "name": "Reuben A Vinod",
@@ -88,5 +70,23 @@
     "linkedin": "https://www.instagram.com/_reevan12",
     "github": "https://github.com/reevan12",
     "color": "red"
+  },
+  {
+    "name": "Viona Noronha",
+    "role": "Secretary",
+    "bio": "While others commit code, I commit to keeping the team sane",
+    "image": "/images/output/Viona.webp",
+    "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
+    "github": "https://github.com/vionoronha",
+    "color": "yellow"
+  },
+  {
+    "name": "Shreya Shettigar",
+    "role": "Joint Secretary",
+    "bio": "Coordinating chaos into clarity, one plan at a time",
+    "image": "/images/output/Shreya.webp",
+    "linkedin": "https://www.linkedin.com/in/shreya1107/",
+    "github": "https://github.com/shreyavshettigar",
+    "color": "green"
   }
 ]
