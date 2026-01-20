@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
+import { ChevronRight } from "@lucide/astro"
 ---
 
 <section
@@ -73,19 +74,7 @@ import { Image } from "astro:assets";
           class="group px-10 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl flex items-center gap-2"
         >
           Join Chapter
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2.5"
-            stroke="currentColor"
-            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-          </svg>
+          <ChevronRight/>
         </a>
         <a
           href="#about"
