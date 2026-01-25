@@ -89,28 +89,35 @@ import "../styles/global.css";
         updateIcons();
       });
     </script>
-    <!-- <script is:inline>
+    <script>
       import Lenis from "lenis";
       import "lenis/dist/lenis.css";
 
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: "vertical",
-        gestureDirection: "vertical",
-        smoothHover: true,
-        lerp: 0.05,
-        wheelMultiplier: 1,
-        infinite: false,
-      });
+      const initLenis = () => {
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          direction: "vertical",
+          gestureDirection: "vertical",
+          smoothWheel: true,
+          lerp: 0.1,
+          wheelMultiplier: 1,
+          infinite: false,
+        });
 
-      function raf(time) {
-        lenis.raf(time);
+        function raf(time: number) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+
         requestAnimationFrame(raf);
-      }
+      };
 
-      requestAnimationFrame(raf);
-    </script> -->
+      initLenis();
+
+      // Re-initialize on Astro page transitions
+      document.addEventListener("astro:after-swap", initLenis);
+    </script>
   </body>
 </html>
 
