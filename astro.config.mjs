@@ -3,11 +3,13 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import lenis from "astro-lenis";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.gdgsjec.in",
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap(), lenis()],
 });
