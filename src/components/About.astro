@@ -25,27 +25,18 @@ import { Image } from "astro:assets";
     <!-- Apple Glass Reveal Container -->
     <div
       id="about-glass-card"
-      class="relative z-10 max-w-4xl mx-auto px-12 py-16 rounded-[40px]
+      class="relative z-10 h-full w-[90%] md:w-[70%] px-6 md:px-12 py-16 rounded-[40px]
              backdrop-blur-2xl bg-white/10 dark:bg-black/40
              border border-white/30 dark:border-white/10
              shadow-[0_20px_50px_rgba(0,0,0,0.3)]
-             flex flex-col items-center text-center opacity-0 transform translate-y-20"
+             flex flex-col items-center justify-center text-center opacity-0 transform translate-y-20 overflow-hidden"
     >
       <h1
         id="about-revealing-title"
-        class="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-[1.1] tracking-tighter"
+        class="text-4xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tighter"
       >
         We Build <br /> The Future <br /> Together
       </h1>
-      <div
-        id="about-revealing-subtitle"
-        class="mt-8 flex items-center gap-4 text-gray-800 dark:text-gray-200"
-      >
-        <div class="w-12 h-[2px] bg-blue-500"></div>
-        <span class="text-sm font-bold uppercase tracking-[0.2em]"
-          >Google Developer Groups • SJEC</span
-        >
-      </div>
     </div>
   </div>
 
@@ -296,27 +287,36 @@ import { Image } from "astro:assets";
       scrollTrigger: {
         trigger: "#about-hero",
         start: "top top",
-        end: "+=150%", // How long it stays pinned
+        end: "+=250%", // Longer pin for more dramatic expansion
         pin: true,
         scrub: 1,
         anticipatePin: 1,
       },
     });
 
-    // Reveal the glass card
+    // Reveal and Expand the glass card
     heroTl
       .to("#about-glass-card", {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 2,
         ease: "power2.out",
+      })
+      .to("#about-glass-card", {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.4)",
+        borderWidth: 0,
+        duration: 4,
+        ease: "none",
       })
       // Subtle scale up of the background image while pinned
       .to(
         "#about-hero img",
         {
-          scale: 1.1,
-          duration: 1.5,
+          scale: 1.15,
+          duration: 6,
           ease: "none",
         },
         0,
