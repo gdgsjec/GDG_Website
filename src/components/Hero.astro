@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
-import { ChevronRight } from "@lucide/astro"
+import { ChevronRight } from "@lucide/astro";
 ---
 
 <section
@@ -43,19 +43,25 @@ import { ChevronRight } from "@lucide/astro"
     <!-- Main Heading -->
     <div class="max-w-5xl text-center pt-20 line-height-tight">
       <h1
-        class="text-6xl md:text-8xl lg:text-9xl font-bold text-gray-900 dark:text-white leading-[1] tracking-tighter mb-8 animate-fade-in-up"
+        id="hero-title"
+        class="text-5xl md:text-8xl lg:text-9xl font-bold text-gray-900 dark:text-white leading-[1.1] md:leading-[1] tracking-tighter mb-8"
       >
-        Connect. <br class="hidden md:block" /> Build. <span
-          class="text-blue-500 dark:text-blue-400">G</span
-        ><span class="text-red-500 dark:text-red-400">r</span><span
-          class="text-yellow-400 dark:text-yellow-400">o</span
-        ><span class="text-green-500 dark:text-green-400">w.</span>
+        <span class="inline-block">Connect.</span>
+        <br class="hidden md:block" />
+        <span class="inline-block">Build.</span>
+        <span class="inline-block whitespace-nowrap">
+          <span class="text-blue-500 dark:text-blue-400">G</span><span
+            class="text-red-500 dark:text-red-400">r</span
+          ><span class="text-yellow-400 dark:text-yellow-400">o</span><span
+            class="text-green-500 dark:text-green-400">w.</span
+          >
+        </span>
       </h1>
 
       <!-- Subtext -->
       <p
-        class="max-w-xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-12 animate-fade-in-up"
-        style="animation-delay: 0.2s;"
+        id="hero-subtext"
+        class="max-w-xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-12"
       >
         Bridging the gap between theory and practice at <span
           class="font-bold text-gray-900 dark:text-gray-100"
@@ -65,8 +71,8 @@ import { ChevronRight } from "@lucide/astro"
 
       <!-- Call to Action -->
       <div
-        class="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up"
-        style="animation-delay: 0.4s;"
+        id="hero-cta"
+        class="flex flex-col sm:flex-row items-center justify-center gap-6"
       >
         <a
           href="https://gdg.community.dev/gdg-on-campus-st-joseph-engineering-college-mangaluru-india/"
@@ -74,7 +80,7 @@ import { ChevronRight } from "@lucide/astro"
           class="group px-10 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl flex items-center gap-2"
         >
           Join Chapter
-          <ChevronRight/>
+          <ChevronRight />
         </a>
         <a
           href="#about"

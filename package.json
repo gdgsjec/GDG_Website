@@ -17,6 +17,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
     "astro": "^5.15.4",
+    "astro-lenis": "^1.0.5",
     "gsap": "^3.13.0",
     "motion": "^12.23.24",
     "ogl": "^1.0.11",
