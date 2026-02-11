@@ -10,6 +10,9 @@ category: "Event"
 
 The Winter Hackathon 2026, a 36-hour intensive hybrid event, recently concluded, bringing together 147 student developers to solve real-world challenges through technology. Hosted by GDG On Campus SJEC in collaboration with SCEPTIX and the Department of Computer Science and Engineering at St. Joseph Engineering College, Mangaluru, the event served as a catalyst for innovation and community problem-solving.
 
+> "The energy and innovation displayed by the students over these 36 hours was truly inspiring. It's about more than just code; it's about solving real problems for our community."
+> _— Event Organizer_
+
 ## A Platform for Open Innovation
 
 Held from January 11th to 13th, the hackathon centered on the theme of "Open Innovation." Participants were tasked with identifying tangible challenges within their campus or local communities and developing practical solutions leveraging Google technologies. The hybrid nature of the event allowed for a seamless transition from an online inaugural ceremony to high-energy offline coding sessions, workshops, and evaluations on campus.

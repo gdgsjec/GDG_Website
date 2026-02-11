@@ -1,4 +1,11 @@
 ---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import team from "../content/team.json";
+import { ChevronLeft } from "@lucide/astro";
+
 const { frontmatter } = Astro.props;
 const { title, description, pubDate, author, image, category } = frontmatter;
 
@@ -8,64 +15,134 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
     day: "numeric",
 });
 
-import Layout from "./Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { Image } from "astro:assets";
+// Find author in team data
+const authorInfo = team.find((m) => m.name === author) || {
+    name: author,
+    role: "GDG Member",
+    image: "/favicon.svg",
+};
+
+// Calculate read time (rough estimate)
+const wordsPerMinute = 200;
+// We can't easily get the word count here without the content, but we can pass it or estimate
+// For now, let's use a fixed 3-5 min read or logic to estimate if content was available.
+// Since we are in a layout, we can't easily access the raw content string from the slot.
+// Let's assume a default based on description length or just use "5 minute read".
+const readTime = "5 minute read";
 ---
 
 <Layout title={`${title} | GDG Blog`} description={description}>
     <Header />
 
-    <main
-        class="pt-[8rem] md:pt-[12rem] pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto"
-    >
-        <!-- Article Header -->
-        <header class="flex flex-col items-center text-center mb-16">
-            <div
-                class="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-[#3C3C43]/70 dark:text-white/50 mb-6"
-            >
-                <span>{category}</span>
-                <span class="w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full"
-                ></span>
-                <span>{formattedDate}</span>
-            </div>
-
-            <h1
-                class="text-4xl md:text-6xl font-bold mb-8 max-w-5xl leading-tight tracking-tight"
-            >
-                {title}
-            </h1>
-
-            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
-                {author}
-            </p>
-        </header>
-
-        <!-- Hero Image -->
-        <div
-            class="w-full aspect-[21/9] rounded-[3rem] overflow-hidden mb-20 bg-gradient-to-br from-blue-500/10 to-purple-600/10 dark:from-blue-500/5 dark:to-purple-600/5 shadow-2xl relative"
+    <main class="min-h-screen">
+        <!-- Dark Header Section -->
+        <section
+            class="bg-[#0B0D17] pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12"
         >
-            <Image
-                src={image}
-                alt={title}
-                class="w-full h-full object-cover relative z-10"
-                onerror="this.style.opacity='0'"
-                width={100}
-                height={100}
-                fetchpriority="high"
-            />
-            <div
-                class="absolute inset-0 flex items-center justify-center text-blue-500/20 font-bold text-[10vw]"
-            >
-                {title.charAt(0)}
-            </div>
-        </div>
+            <div class="max-w-4xl mx-auto">
+                <a
+                    href="/blog"
+                    class="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-12 text-sm font-medium"
+                >
+                    <ChevronLeft size={16} />
+                    All Blogs
+                </a>
 
-        <!-- Article Content -->
-        <div class="max-w-3xl mx-auto blog-content">
-            <slot />
-        </div>
+                <h1
+                    class="text-4xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight"
+                >
+                    {title}
+                </h1>
+                <p
+                    class="text-xl md:text-2xl text-white/80 font-medium max-w-2xl leading-relaxed"
+                >
+                    {description}
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section
+            class="bg-white dark:bg-[#0B0D17] py-20 px-6 md:px-12 min-h-screen"
+        >
+            <div class="max-w-4xl mx-auto">
+                <!-- Author & Meta Info -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-16 border-b border-black/10 dark:border-white/10 mb-20"
+                >
+                    <div class="flex flex-col gap-4">
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-widest text-black/40 dark:text-white/40"
+                            >WRITTEN BY</span
+                        >
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800"
+                            >
+                                <img
+                                    src={authorInfo.image}
+                                    alt={authorInfo.name}
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-bold text-gray-900 dark:text-white"
+                                    >{authorInfo.name}</span
+                                >
+                                <span
+                                    class="text-sm text-gray-500 dark:text-gray-400"
+                                    >{authorInfo.role}</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-widest text-black/40 dark:text-white/40"
+                            >DATE</span
+                        >
+                        <span
+                            class="text-lg font-medium text-gray-900 dark:text-white"
+                            >{formattedDate}</span
+                        >
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-widest text-black/40 dark:text-white/40"
+                            >READ TIME</span
+                        >
+                        <span
+                            class="text-lg font-medium text-gray-900 dark:text-white"
+                            >{readTime}</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Featured Image -->
+                <div
+                    class="w-full aspect-video rounded-[2.5rem] overflow-hidden mb-20 shadow-2xl"
+                >
+                    <Image
+                        src={image}
+                        alt={title}
+                        class="w-full h-full object-cover"
+                        width={1200}
+                        height={675}
+                        fetchpriority="high"
+                    />
+                </div>
+
+                <!-- Article Content -->
+                <div
+                    class="blog-content prose prose-lg dark:prose-invert max-w-none"
+                >
+                    <slot />
+                </div>
+            </div>
+        </section>
     </main>
 
     <Footer />
@@ -73,24 +150,80 @@ import { Image } from "astro:assets";
 
 <style is:global>
     .blog-content {
-        font-size: 1.125rem;
+        font-family: var(--font-sans);
+        font-size: 1.15rem;
         line-height: 1.8;
-        color: #3c3c43;
+        color: #1a1a1c;
     }
 
     .dark .blog-content {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: #fff;
+        color: #f1f1f1;
+    }
+
+    /* Support for multiple photos (standard markdown images) */
+    .blog-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 2.5rem;
+        margin: 4rem 0;
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Support for multiple quotes */
+    .blog-content blockquote {
+        position: relative;
+        padding: 4rem 0;
+        margin: 4rem 0;
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        font-family: var(--font-sans);
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 1.3;
+        text-align: center;
+        color: #1a1a1c;
+        letter-spacing: -0.02em;
+    }
+
+    .dark .blog-content blockquote {
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    .blog-content blockquote p {
+        margin: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-content blockquote p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Add attribution to blockquote if needed (e.g. using a cite or em at the end) */
+    .blog-content blockquote cite,
+    .blog-content blockquote em {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        margin-top: 1.5rem;
+        color: rgba(0, 0, 0, 0.5);
+    }
+    .dark .blog-content blockquote cite,
+    .dark .blog-content blockquote em {
+        color: rgba(255, 255, 255, 0.5);
     }
 
     .blog-content h2 {
-        font-size: 2.25rem;
+        font-family: var(--font-sans);
+        font-size: 2.5rem;
         font-weight: 700;
-        margin-top: 4rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: -0.025em;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
         color: #1a1a1c;
+        letter-spacing: -0.02em;
     }
 
     .dark .blog-content h2 {
@@ -101,45 +234,36 @@ import { Image } from "astro:assets";
         margin-bottom: 2rem;
     }
 
-    .blog-content a {
-        color: #4285f4;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .blog-content a:hover {
-        text-decoration: underline;
-    }
-
-    .blog-content img {
-        width: 100%;
-        border-radius: 2rem;
-        margin: 3rem 0;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    }
-
     .blog-content ul,
     .blog-content ol {
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         padding-left: 1.5rem;
     }
 
     .blog-content li {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
     }
 
-    .blog-content strong {
-        color: #1a1a1c;
-        font-weight: 700;
+    /* Custom classes for the user to use in MD if they want variety */
+    .image-grid {
+        display: grid;
+        grid-template-cols: 1fr 1fr;
+        gap: 2rem;
+        margin: 4rem 0;
     }
 
-    .dark .blog-content strong {
-        color: #ffffff;
-    }
-    :global(html),
-    :global(body) {
-        margin: 0;
-        width: 100%;
-        overflow-x: hidden;
+    @media (max-width: 768px) {
+        .image-grid {
+            grid-template-cols: 1fr;
+        }
+
+        .blog-content blockquote {
+            font-size: 1.5rem;
+            padding: 3rem 0;
+        }
+
+        .blog-content h2 {
+            font-size: 2rem;
+        }
     }
 </style>
