@@ -7,9 +7,17 @@ interface Props {
   limit?: number;
   showAllLink?: boolean;
   showMarquee?: boolean;
+  isGrid?: boolean;
+  initialCount?: number;
 }
 
-const { limit, showAllLink = false, showMarquee = true } = Astro.props;
+const { 
+  limit, 
+  showAllLink = false, 
+  showMarquee = true, 
+  isGrid = false,
+  initialCount = 8
+} = Astro.props;
 
 let events = EventsData.map((event) => ({
   title: event.title,
@@ -22,6 +30,8 @@ let events = EventsData.map((event) => ({
   link: event.link,
 }));
 
+// If it's a grid (like on the events page), we might want to handle limits differently
+// But if limit is provided, we still slice
 if (limit) {
   events = events.slice(0, limit);
 }
@@ -49,6 +59,10 @@ if (limit) {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .event-card-hidden {
+    display: none;
   }
 </style>
 
@@ -101,15 +115,18 @@ if (limit) {
       </p>
     </div>
 
-    <!-- Timeline Slider -->
+    <!-- Events Container -->
     <div class="relative group/slider">
       <div 
-        id="event-slider" 
-        class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0 relative z-10"
+        id="events-container" 
+        class={`${isGrid ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8' : 'flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 no-scrollbar scroll-smooth px-4 md:px-0 relative z-10'}`}
       >
         {events.map((event, index) => (
-          <div class="flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start md:snap-start flex flex-col">
-            <!-- Event Card (Fixed height and width for total uniformity) -->
+          <div 
+            class={`${isGrid ? 'flex flex-col' : 'flex-none w-[85%] sm:w-[45%] lg:w-[31%] xl:w-[23%] snap-start md:snap-start flex flex-col'} ${isGrid && index >= initialCount ? 'event-card-hidden' : ''}`}
+            data-event-card
+          >
+            <!-- Event Card -->
             <a 
               href={event.link} 
               target="_blank" 
@@ -154,26 +171,7 @@ if (limit) {
             </a>
           </div>
         ))}
-        <!-- Spacer to fix right snapping -->
-        <div class="flex-none w-px h-full"></div>
-      </div>
-
-      <!-- Navigation Arrows (Left Aligned) -->
-      <div class="flex items-center gap-4 mt-8 px-4">
-        <button 
-          id="prev-event"
-          aria-label="Previous event"
-          class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none bg-white dark:bg-[#0B0D17] shadow-sm"
-        >
-          <ChevronLeft/>
-        </button>
-        <button 
-          id="next-event"
-          aria-label="Next event"
-          class="p-3 border border-gray-200 dark:border-gray-800 rounded-full text-gray-400 dark:text-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all duration-300 focus:outline-none bg-white dark:bg-[#0B0D17] shadow-sm"
-        >
-          <ChevronRight/>
-        </button>
+        {!isGrid && <div class="flex-none w-px h-full"></div>}
       </div>
     </div>
 
@@ -184,26 +182,44 @@ if (limit) {
         </a>
       </div>
     )}
+
+    {isGrid && events.length > initialCount && (
+      <div class="flex justify-center mt-20">
+        <button 
+          id="load-more-events"
+          class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300 hover:cursor-pointer"
+        >
+          Load more events
+        </button>
+      </div>
+    )}
   </div>  
 </section>
-</div>
 
 <script>
-  const slider = document.getElementById('event-slider');
-  const nextBtn = document.getElementById('next-event');
-  const prevBtn = document.getElementById('prev-event');
+  const loadMoreBtn = document.getElementById('load-more-events');
+  const hiddenCards = document.querySelectorAll('.event-card-hidden');
+  
+  if (loadMoreBtn) {
+    let currentlyShown = 8; // Matching initialCount
+    const batchSize = 8;
 
-  if (slider && nextBtn && prevBtn) {
-    const scroll = (direction: string) => {
-      const card = slider.querySelector('.flex-none');
-      if (!card) return;
-      const cardWidth = card.clientWidth;
-      const spacing = 32; // gap-8
-      const scrollVal = direction === 'next' ? (cardWidth + spacing) : -(cardWidth + spacing);
-      slider.scrollBy({ left: scrollVal, behavior: 'smooth' });
-    };
+    loadMoreBtn.addEventListener('click', () => {
+      const allCards = document.querySelectorAll('[data-event-card]');
+      let revealedCount = 0;
+      
+      allCards.forEach((card, index) => {
+        if (index >= currentlyShown && revealedCount < batchSize) {
+          card.classList.remove('event-card-hidden');
+          revealedCount++;
+        }
+      });
 
-    nextBtn.addEventListener('click', () => scroll('next'));
-    prevBtn.addEventListener('click', () => scroll('prev'));
+      currentlyShown += revealedCount;
+
+      if (currentlyShown >= allCards.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
   }
 </script>

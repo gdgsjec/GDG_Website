@@ -63,7 +63,7 @@ html {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+    background: #000;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 100px;
@@ -73,7 +73,7 @@ html {
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+    background: #fff;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
