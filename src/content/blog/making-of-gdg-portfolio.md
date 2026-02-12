@@ -2,10 +2,12 @@
 title: "Making of the GDG Portfolio: A Journey Through Design and Code"
 pubDate: 2025-12-25
 description: "Discover the process behind building the new GDG portfolio website, from initial design concepts to the final agentic-driven development phase."
-author: "The GDG Team"
+author: "Viona Noronha"
 image: "/images/blog/gdg-portfolio-making.webp"
 tags: ["Astro", "Design", "Development"]
 category: "Design"
+wordCount: 470
+authorImage: "/images/output/Viona.webp"
 ---
 
 Building a platform that represents a community as dynamic as the Google Developer Groups (GDG) requires more than just code; it requires a vision for a seamless, premium, and performant user experience. Today, we're diving into the "Making of" the new GDG Portfolio website.
