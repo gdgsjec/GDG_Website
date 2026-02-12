@@ -2,10 +2,12 @@
 title: "Winter Hackathon 2026: Fostering Open Innovation"
 pubDate: 2026-01-16
 description: "A recap of the Winter Hackathon 2026, a 36-hour hybrid event organized by GDG On Campus SJEC in association with SCEPTIX, bringing together over 140 developers."
-author: "The GDG Team"
+author: "Shreya Shettigar"
+authorImage: "/images/output/Shreya.webp"
 image: "/images/blog/winter-hackathon-2026.webp"
 tags: ["Hackathon", "Open Innovation", "Google Technologies"]
 category: "Event"
+wordCount: 470
 ---
 
 The Winter Hackathon 2026, a 36-hour intensive hybrid event, recently concluded, bringing together 147 student developers to solve real-world challenges through technology. Hosted by GDG On Campus SJEC in collaboration with SCEPTIX and the Department of Computer Science and Engineering at St. Joseph Engineering College, Mangaluru, the event served as a catalyst for innovation and community problem-solving.

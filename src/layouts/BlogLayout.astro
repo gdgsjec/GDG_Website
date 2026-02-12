@@ -7,7 +7,16 @@ import team from "../content/team.json";
 import { ChevronLeft } from "@lucide/astro";
 
 const { frontmatter } = Astro.props;
-const { title, description, pubDate, author, image, category } = frontmatter;
+const {
+    title,
+    description,
+    pubDate,
+    author,
+    image,
+    category,
+    wordCount,
+    authorImage,
+} = frontmatter;
 
 const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
     year: "numeric",
@@ -15,27 +24,23 @@ const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
     day: "numeric",
 });
 
-// Find author in team data
-const authorInfo = team.find((m) => m.name === author) || {
-    name: author,
-    role: "GDG Member",
-    image: "/favicon.svg",
+const member = team.find((m) => m.name === author);
+const authorInfo = {
+    name: member?.name || author,
+    role: member?.role || "GDG Member",
+    image: authorImage || member?.image || "/favicon.svg",
 };
 
-// Calculate read time (rough estimate)
 const wordsPerMinute = 200;
-// We can't easily get the word count here without the content, but we can pass it or estimate
-// For now, let's use a fixed 3-5 min read or logic to estimate if content was available.
-// Since we are in a layout, we can't easily access the raw content string from the slot.
-// Let's assume a default based on description length or just use "5 minute read".
-const readTime = "5 minute read";
+const readTime = wordCount
+    ? `${Math.ceil(wordCount / wordsPerMinute)} min read`
+    : "3 min read";
 ---
 
 <Layout title={`${title} | GDG Blog`} description={description}>
     <Header />
 
     <main class="min-h-screen">
-        <!-- Dark Header Section -->
         <section
             class="bg-white dark:bg-[#0B0D17] pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12"
         >
@@ -61,12 +66,10 @@ const readTime = "5 minute read";
             </div>
         </section>
 
-        <!-- Content Section -->
         <section
             class="bg-white dark:bg-[#0B0D17] py-20 px-6 md:px-12 min-h-screen"
         >
             <div class="max-w-4xl mx-auto">
-                <!-- Author & Meta Info -->
                 <div
                     class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-16 border-b border-black/10 dark:border-white/10 mb-20"
                 >
@@ -121,7 +124,6 @@ const readTime = "5 minute read";
                     </div>
                 </div>
 
-                <!-- Featured Image -->
                 <div
                     class="w-full aspect-video rounded-[2.5rem] overflow-hidden mb-20 shadow-2xl"
                 >
@@ -135,7 +137,6 @@ const readTime = "5 minute read";
                     />
                 </div>
 
-                <!-- Article Content -->
                 <div
                     class="blog-content prose prose-lg dark:prose-invert max-w-none"
                 >
@@ -160,7 +161,6 @@ const readTime = "5 minute read";
         color: #f1f1f1;
     }
 
-    /* Support for multiple photos (standard markdown images) */
     .blog-content img {
         width: 100%;
         height: auto;
@@ -169,7 +169,6 @@ const readTime = "5 minute read";
         box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
     }
 
-    /* Support for multiple quotes */
     .blog-content blockquote {
         position: relative;
         padding: 4rem 0;
@@ -200,7 +199,6 @@ const readTime = "5 minute read";
         margin-bottom: 0;
     }
 
-    /* Add attribution to blockquote if needed (e.g. using a cite or em at the end) */
     .blog-content blockquote cite,
     .blog-content blockquote em {
         display: block;
@@ -244,7 +242,6 @@ const readTime = "5 minute read";
         margin-bottom: 1rem;
     }
 
-    /* Custom classes for the user to use in MD if they want variety */
     .image-grid {
         display: grid;
         grid-template-cols: 1fr 1fr;
