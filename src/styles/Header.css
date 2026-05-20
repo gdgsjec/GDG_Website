@@ -1,8 +1,36 @@
-@media (min-width: 768px) {
+.corner-link {
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  color: inherit;
+  display: inline-block;
+}
 
-  .dark #theme-toggle::before,
-  .dark #theme-toggle::after {
-    border-color: white;
-    /* make the corner borders white */
-  }
+.corner-link::before,
+.corner-link::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 2px solid currentColor;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.corner-link::before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.corner-link::after {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.corner-link:hover::before,
+.corner-link:hover::after {
+  opacity: 1;
 }
