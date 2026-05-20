@@ -16,7 +16,14 @@
     "readme": {
       "title": "Hi, I'm Joywin Bennis! 👋",
       "description": "GDG Organizer (2024-25). Full-stack web developer and designer. I love Next.js, React, Tailwind, and Node.js. Always striving to build clean, modern, and accessible software.",
-      "skills": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
+      "skills": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB"
+      ],
       "pinned": [
         {
           "name": "joywin-portfolio",
@@ -32,7 +39,7 @@
   {
     "name": "Anish Shobith P S",
     "role": "GDSC Lead 2023-24",
-    "image": "https://avatars.githubusercontent.com/u/38991749",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_face,h_400,q_auto:good,w_400/v1/gcs/platform-data-goog/events/WhatsApp%2520IMG%25201518_16y0wu2.jpg",
     "linkedin": "https://github.com/anishshobithps",
     "github": "https://github.com/anishshobithps",
     "username": "anishshobithps",

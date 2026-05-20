@@ -5,11 +5,12 @@ import { Image } from "astro:assets";
 
 interface Props {
   isScrollable?: boolean;
+  showInfo?: boolean;
 }
 
 const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
-const { isScrollable = false } = Astro.props;
+const { isScrollable = false, showInfo = false } = Astro.props;
 
 const colors: Record<string, string> = {
   blue: "border-blue-500/20 dark:border-blue-400/30",
@@ -53,35 +54,67 @@ const colors: Record<string, string> = {
                 class="group/card flex flex-col items-center text-center bg-gray-50 dark:bg-[#1A1D2B] border border-gray-100 dark:border-white/5 rounded-[2rem] p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 h-[20rem] md:h-[24rem] relative"
               >
                 <!-- Main Info Section Wrapped in link with absolute overlay -->
-                <a 
-                  href={`/team/${slug}`}
-                  class="flex flex-col items-center w-full after:absolute after:inset-0 after:content-[''] after:z-0 cursor-pointer"
-                >
-                  <!-- Circular Image (Matching Event style scaled) -->
-                  <div class={`w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mb-6 border-4 shadow-lg shrink-0 mx-auto transition-transform duration-500 group-hover/card:scale-110 ${Object.values(colors)[index % 4]}`}>
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      class="w-full h-full object-cover"
-                      width={200}
-                      height={200}
-                    />
-                  </div>
-                  
-                  <!-- Information Section -->
-                  <div class="flex flex-col items-center w-full text-gray-900 dark:text-white">
-                    <h3 class="text-lg md:text-xl font-bold group-hover/card:text-blue-500 dark:group-hover/card:text-blue-400 transition-colors leading-tight">
-                      {member.name.split(' ')[0]} <br /> {member.name.split(' ').slice(1).join(' ')}
-                    </h3>
+                {showInfo ? (
+                  <a 
+                    href={`/team/${slug}`}
+                    class="flex flex-col items-center w-full after:absolute after:inset-0 after:content-[''] after:z-0 cursor-pointer"
+                  >
+                    <!-- Circular Image (Matching Event style scaled) -->
+                    <div class={`w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mb-6 border-4 shadow-lg shrink-0 mx-auto transition-transform duration-500 group-hover/card:scale-110 ${Object.values(colors)[index % 4]}`}>
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        class="w-full h-full object-cover"
+                        width={200}
+                        height={200}
+                      />
+                    </div>
                     
-                    <!-- 2 lines of spacing -->
-                    <div class="h-6 md:h-8"></div>
+                    <!-- Information Section -->
+                    <div class="flex flex-col items-center w-full text-gray-900 dark:text-white">
+                      <h3 class="text-lg md:text-xl font-bold group-hover/card:text-blue-500 dark:group-hover/card:text-blue-400 transition-colors leading-tight">
+                        {member.name.split(' ')[0]} <br /> {member.name.split(' ').slice(1).join(' ')}
+                      </h3>
+                      
+                      <!-- 2 lines of spacing -->
+                      <div class="h-6 md:h-8"></div>
+                      
+                      <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-1">
+                        {member.role}
+                      </p>
+                    </div>
+                  </a>
+                ) : (
+                  <div 
+                    class="flex flex-col items-center w-full cursor-pointer team-card-locked"
+                    data-name={member.name}
+                  >
+                    <!-- Circular Image (Matching Event style scaled) -->
+                    <div class={`w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mb-6 border-4 shadow-lg shrink-0 mx-auto transition-transform duration-500 group-hover/card:scale-110 ${Object.values(colors)[index % 4]}`}>
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        class="w-full h-full object-cover"
+                        width={200}
+                        height={200}
+                      />
+                    </div>
                     
-                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-1">
-                      {member.role}
-                    </p>
+                    <!-- Information Section -->
+                    <div class="flex flex-col items-center w-full text-gray-900 dark:text-white">
+                      <h3 class="text-lg md:text-xl font-bold group-hover/card:text-blue-500 dark:group-hover/card:text-blue-400 transition-colors leading-tight">
+                        {member.name.split(' ')[0]} <br /> {member.name.split(' ').slice(1).join(' ')}
+                      </h3>
+                      
+                      <!-- 2 lines of spacing -->
+                      <div class="h-6 md:h-8"></div>
+                      
+                      <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-1">
+                        {member.role}
+                      </p>
+                    </div>
                   </div>
-                </a>
+                )}
 
                 <!-- Social Links at Bottom -->
                 <div class="mt-auto flex gap-4 relative z-10">
@@ -146,11 +179,43 @@ const colors: Record<string, string> = {
     }
   }
 
+  let toastTimeout: any = null;
+  function setupLockedCards() {
+    const lockedCards = document.querySelectorAll('.team-card-locked');
+    lockedCards.forEach(card => {
+      card.addEventListener('click', () => {
+        let container = document.getElementById('toast-notification');
+        if (!container) {
+          container = document.createElement('div');
+          container.id = 'toast-notification';
+          container.className = 'fixed max-w-md bottom-12 left-1/2 -translate-x-1/2 z-50 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3.5 rounded-full shadow-xl text-sm font-semibold flex items-center gap-2 border border-white/10 dark:border-black/5 transition-all duration-300 opacity-0 translate-y-4 select-none';
+          document.body.appendChild(container);
+        }
+        container.innerHTML = `<span>Juicy component is coming, Stay tuned</span>`;
+        
+        if (toastTimeout) {
+          clearTimeout(toastTimeout);
+        }
+        container.classList.remove('opacity-0', 'translate-y-4');
+        container.classList.add('opacity-100', 'translate-y-0');
+        
+        toastTimeout = setTimeout(() => {
+          container?.classList.remove('opacity-100', 'translate-y-0');
+          container?.classList.add('opacity-0', 'translate-y-4');
+        }, 3000);
+      });
+    });
+  }
+
   // Initial setup
   setupLeadSlider();
+  setupLockedCards();
 
   // Re-run on View Transitions
-  document.addEventListener('astro:page-load', setupLeadSlider);
+  document.addEventListener('astro:page-load', () => {
+    setupLeadSlider();
+    setupLockedCards();
+  });
 </script>
 
 <style>
