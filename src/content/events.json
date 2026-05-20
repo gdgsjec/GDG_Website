@@ -1,5 +1,23 @@
 [
   {
+    "title": "Solution Challenge 2026:Kickstart Session",
+    "date": "8 Apr 2026",
+    "type": "Session",
+    "status": "Completed",
+    "description": "An introductory session on Solution Challenge 2026 exploring AI-powered innovation, Google technologies, and opportunities to build impactful real-world solutions.",
+    "image": "https://res.cloudinary.com/startup-grind/image/fetch/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG_Bevy_DefaultEventThumbnail_2_va1kAS9.png",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-introductory-session-on-solution-challenge/"
+  },
+  {
+    "title": "Full Stack Development Workshop with NextJS",
+    "date": "27 Feb 2026",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "A hands-on full-stack web development session exploring NextJS, server-side rendering, API routes, and modern app building techniques.",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_Q59QaIG",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-full-stack-development-workshop-with-nextjs/"
+  },
+  {
     "title": "Google AI Studio: Winter Hackathon Edition",
     "date": "12 Jan 2026",
     "type": "Workshop",
@@ -88,7 +106,7 @@
     "description": "An insightful session exploring Generative AI, prompt engineering, agentic AI, and responsible AI usage.",
     "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/IMG_0218_FQipCNX.jpeg",
     "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-generative-ai-world-of-opportunities/"
-  }, 
+  },
   {
     "title": "FlutterFlow Workshop",
     "date": "26 April 2025",
