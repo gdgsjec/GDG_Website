@@ -8,6 +8,9 @@ import lenis from "astro-lenis";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.gdgsjec.in",
+  image: {
+    domains: ["avatars.githubusercontent.com", "www.joywincodes.tech"],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

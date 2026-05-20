@@ -6,7 +6,38 @@
     "image": "/images/output/Ashley.webp",
     "linkedin": "https://www.linkedin.com/in/ashley-cleon-pinto",
     "github": "https://github.com/Ashley-Pinto25",
-    "color": "blue"
+    "color": "blue",
+    "username": "Ashley-Pinto25",
+    "pronouns": "he/him",
+    "followers": "32",
+    "following": "15",
+    "location": "Mangalore, India",
+    "email": "ashleycleonpinto@gmail.com",
+    "website": "https://ashleypinto.dev",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Ashley Pinto! 👋",
+      "description": "I'm a final year CSE student and GDG Organizer at St Joseph Engineering College, Mangalore. Passionate about community building, technology, and organizing high-impact events. I love bringing developers together to learn, share, and build cool projects.",
+      "skills": ["Git", "GitHub", "Event Management", "Project Planning", "Public Speaking"],
+      "pinned": [
+        {
+          "name": "GDG_Website",
+          "description": "The official website for Google Developer Groups on Campus SJEC.",
+          "stars": 12,
+          "forks": 5,
+          "language": "Astro",
+          "color": "#FF5D01"
+        },
+        {
+          "name": "Community-Dashboard",
+          "description": "A web app to manage registrations, attendance, and certificates for local community meetups.",
+          "stars": 8,
+          "forks": 2,
+          "language": "TypeScript",
+          "color": "#3178C6"
+        }
+      ]
+    }
   },
   {
     "name": "Santhsim Dsouza",
@@ -15,7 +46,30 @@
     "image": "/images/output/Santhsim.webp",
     "linkedin": "https://www.linkedin.com/in/santhsim-v-dsouza",
     "github": "https://github.com/SANTHSIM22",
-    "color": "red"
+    "color": "red",
+    "username": "SANTHSIM22",
+    "pronouns": "he/him",
+    "followers": "18",
+    "following": "10",
+    "location": "Mangalore, India",
+    "email": "santhsimdsouza@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Santhsim! 👋",
+      "description": "Co-Lead at GDG SJEC. I am a competitive programmer, algorithm enthusiast, and software developer. I enjoy writing clean, optimized code and solving complex algorithmic challenges. Let's build the future together!",
+      "skills": ["C++", "Python", "Data Structures", "Algorithms", "React"],
+      "pinned": [
+        {
+          "name": "competitive-programming",
+          "description": "My solutions to various algorithmic problems from Codeforces, CodeChef, and LeetCode.",
+          "stars": 15,
+          "forks": 1,
+          "language": "C++",
+          "color": "#f34b7d"
+        }
+      ]
+    }
   },
   {
     "name": "Reuben A Vinod",
@@ -24,7 +78,30 @@
     "image": "/images/output/Reuben.webp",
     "linkedin": "https://www.linkedin.com/in/reuben-antony-vinod/",
     "github": "https://github.com/RagedRebel",
-    "color": "red"
+    "color": "red",
+    "username": "RagedRebel",
+    "pronouns": "he/him",
+    "followers": "28",
+    "following": "24",
+    "location": "Mangalore, India",
+    "email": "reubenvinod@gmail.com",
+    "website": "https://ragedrebel.github.io",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Reuben! 👋",
+      "description": "Web Lead at GDG SJEC. Full-stack developer with a passion for beautiful, accessible, and high-performance web applications. I love CSS, Vite, Astro, and React. Always coding in dark mode.",
+      "skills": ["Astro", "React", "Node.js", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
+      "pinned": [
+        {
+          "name": "custom-portfolio",
+          "description": "A dark-themed portfolio website showcasing my works and articles, built with Astro.",
+          "stars": 9,
+          "forks": 3,
+          "language": "Astro",
+          "color": "#FF5D01"
+        }
+      ]
+    }
   },
   {
     "name": "Jeethan Roche",
@@ -33,7 +110,30 @@
     "image": "/images/output/Jeethan.webp",
     "linkedin": "https://www.linkedin.com/in/roche-jeethan/",
     "github": "https://github.com/roche-jeethan",
-    "color": "yellow"
+    "color": "yellow",
+    "username": "roche-jeethan",
+    "pronouns": "he/him",
+    "followers": "22",
+    "following": "21",
+    "location": "Mangalore, India",
+    "email": "jeethanroche@gmail.com",
+    "website": "https://jeethanroche.tech",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hello, I'm Jeethan Roche! 👋",
+      "description": "I'm a Computer Science Engineering undergrad with a keen interest in Data Science, currently studying at St. Joseph Engineering College, Mangalore. My journey in technology is fueled by my love in exploring new concepts and having a foundational setup in Mathematics, Statistical Concepts.\n\nBeyond academics, I am the member in The Sceptix Club, our college's coding club, where I collaborate with like-minded peers to explore and create innovative projects. I believe in continuous learning and the power of technology to make a meaningful impact.\n\nIn addition to my technical pursuits, I have a creative side that's expressed through my small YouTube channel, which I started in 2020, but currently on hold.",
+      "skills": ["Python", "HTML5", "CSS3", "JavaScript", "Java", "C", "R"],
+      "pinned": [
+        {
+          "name": "Sceptix-App",
+          "description": "A cross-platform mobile application for Sceptix Club announcements and challenges.",
+          "stars": 14,
+          "forks": 4,
+          "language": "Flutter",
+          "color": "#02569B"
+        }
+      ]
+    }
   },
   {
     "name": "Dion Lobo",
@@ -42,7 +142,30 @@
     "image": "/images/output/Dion.webp",
     "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290",
     "github": "https://github.com/dionjoshualobo",
-    "color": "blue"
+    "color": "blue",
+    "username": "dionjoshualobo",
+    "pronouns": "he/him",
+    "followers": "14",
+    "following": "11",
+    "location": "Mangalore, India",
+    "email": "dionlobo@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Dion! 👋",
+      "description": "Cloud Lead at GDG SJEC. Enthusiastic about DevOps, Cloud Computing (Google Cloud, AWS), Kubernetes, Docker, and infrastructure as code. I like breaking and fixing deployments.",
+      "skills": ["Google Cloud", "AWS", "Docker", "Kubernetes", "DevOps", "Bash"],
+      "pinned": [
+        {
+          "name": "gcp-deployment-pipelines",
+          "description": "CI/CD pipelines automation templates using GitHub Actions for deploying Node.js apps on GCP Cloud Run.",
+          "stars": 11,
+          "forks": 3,
+          "language": "Shell",
+          "color": "#89e051"
+        }
+      ]
+    }
   },
   {
     "name": "Ankit Shah",
@@ -51,7 +174,30 @@
     "image": "/images/output/Ankit.webp",
     "linkedin": "https://www.linkedin.com/in/ankitscreation/",
     "github": "https://github.com/ankeet15",
-    "color": "green"
+    "color": "green",
+    "username": "ankeet15",
+    "pronouns": "he/him",
+    "followers": "31",
+    "following": "19",
+    "location": "Mangalore, India",
+    "email": "ankitshah@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Ankit Shah! 👋",
+      "description": "AI/ML Lead at GDG SJEC. Deeply interested in Computer Vision, Natural Language Processing, and Deep Learning. I love training PyTorch models and building AI-powered web prototypes.",
+      "skills": ["Python", "PyTorch", "TensorFlow", "scikit-learn", "Flask", "OpenCV"],
+      "pinned": [
+        {
+          "name": "vision-assistant",
+          "description": "Real-time object detection and audio feedback system using YOLOv8 and PyTorch.",
+          "stars": 16,
+          "forks": 6,
+          "language": "Python",
+          "color": "#3572A5"
+        }
+      ]
+    }
   },
   {
     "name": "Shamitha K V",
@@ -60,7 +206,30 @@
     "image": "/images/output/Shamitha.webp",
     "linkedin": "https://www.linkedin.com/in/shamitha-kv-70b7b6294",
     "github": "https://github.com/Shamitha512",
-    "color": "blue"
+    "color": "blue",
+    "username": "Shamitha512",
+    "pronouns": "she/her",
+    "followers": "15",
+    "following": "12",
+    "location": "Mangalore, India",
+    "email": "shamitha@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Shamitha! 👋",
+      "description": "Events Lead at GDG SJEC. Organising tech events, hackathons, and workshops is my forte. I bridge the gap between ideas and seamless event executions.",
+      "skills": ["Management", "Public Relations", "Marketing", "Event Coordination", "Figma"],
+      "pinned": [
+        {
+          "name": "event-tracker",
+          "description": "A minimal web app to schedule events, assign tasks, and track volunteer progress.",
+          "stars": 7,
+          "forks": 1,
+          "language": "JavaScript",
+          "color": "#f1e05a"
+        }
+      ]
+    }
   },
   {
     "name": "Reevan Fernandes",
@@ -69,7 +238,30 @@
     "image": "/images/output/Reevan.webp",
     "linkedin": "https://www.instagram.com/_reevan12",
     "github": "https://github.com/reevan12",
-    "color": "red"
+    "color": "red",
+    "username": "reevan12",
+    "pronouns": "he/him",
+    "followers": "20",
+    "following": "16",
+    "location": "Mangalore, India",
+    "email": "reevan@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Reevan! 👋",
+      "description": "Media Lead at GDG SJEC. Creative designer, photographer, and video editor. I design visually stunning graphics and run social media campaigns. When I am not shooting, I code.",
+      "skills": ["Photoshop", "Premiere Pro", "Figma", "UI/UX Design", "HTML", "CSS"],
+      "pinned": [
+        {
+          "name": "gdg-sjec-graphics",
+          "description": "A collection of social media templates, posters, and brand designs created for GDG SJEC.",
+          "stars": 5,
+          "forks": 2,
+          "language": "Figma",
+          "color": "#a547eb"
+        }
+      ]
+    }
   },
   {
     "name": "Viona Noronha",
@@ -78,7 +270,30 @@
     "image": "/images/output/Viona.webp",
     "linkedin": "https://www.linkedin.com/in/viona-noronha-6aa83a301/",
     "github": "https://github.com/vionoronha",
-    "color": "yellow"
+    "color": "yellow",
+    "username": "vionoronha",
+    "pronouns": "she/her",
+    "followers": "19",
+    "following": "15",
+    "location": "Mangalore, India",
+    "email": "viona@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Viona! 👋",
+      "description": "Secretary at GDG SJEC. Handling documentation, schedules, communications, and administrative operations. I ensure our team stays organized and operates efficiently.",
+      "skills": ["Technical Writing", "Documentation", "Communication", "Management", "Git"],
+      "pinned": [
+        {
+          "name": "team-docs-template",
+          "description": "A repository of markdown templates for project documentation, agendas, and logs.",
+          "stars": 6,
+          "forks": 1,
+          "language": "Markdown",
+          "color": "#083fae"
+        }
+      ]
+    }
   },
   {
     "name": "Shreya Shettigar",
@@ -87,6 +302,29 @@
     "image": "/images/output/Shreya.webp",
     "linkedin": "https://www.linkedin.com/in/shreya1107/",
     "github": "https://github.com/shreyavshettigar",
-    "color": "green"
+    "color": "green",
+    "username": "shreyavshettigar",
+    "pronouns": "she/her",
+    "followers": "17",
+    "following": "14",
+    "location": "Mangalore, India",
+    "email": "shreya@gmail.com",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Shreya! 👋",
+      "description": "Joint Secretary at GDG SJEC. I specialize in organization, team coordination, and project execution. Passionate about community engagement and learning new tech stacks.",
+      "skills": ["Management", "Leadership", "React", "CSS", "Python"],
+      "pinned": [
+        {
+          "name": "student-success-tracker",
+          "description": "A database tool to track student participation in coding contests and certifications.",
+          "stars": 8,
+          "forks": 2,
+          "language": "JavaScript",
+          "color": "#f1e05a"
+        }
+      ]
+    }
   }
 ]
