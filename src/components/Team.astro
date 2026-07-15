@@ -1,16 +1,25 @@
 ---
-import teamMembers from '../content/team.json';
+import defaultTeamMembers from '../content/team.json';
 import { Image } from "astro:assets";
 import { Linkedin, Github } from '@lucide/astro';
 
 interface Props {
   isScrollable?: boolean;
   showInfo?: boolean;
+  members?: any[];
+  batchYear?: string;
 }
 
 const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
-const { isScrollable = false, showInfo = false } = Astro.props;
+const { 
+  isScrollable = false, 
+  showInfo = false,
+  members,
+  batchYear
+} = Astro.props;
+
+const teamMembers = members || defaultTeamMembers;
 
 const colors: Record<string, string> = {
   blue: "border-blue-500/20 dark:border-blue-400/30",
@@ -18,9 +27,18 @@ const colors: Record<string, string> = {
   yellow: "border-yellow-500/20 dark:border-yellow-400/30",
   green: "border-green-500/20 dark:border-green-400/30"
 }
+
+const batchColors: Record<string, string> = {
+  "2025-26": "text-blue-500 dark:text-blue-400",
+  "2024-25": "text-red-500 dark:text-red-400",
+  "2023-24": "text-[#FBBC04] dark:text-yellow-400",
+  "2022-23": "text-green-500 dark:text-green-400"
+}
+
+const sectionId = batchYear ? `team-${batchYear}` : "team";
 ---
 
-<section id="team" class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white relative overflow-hidden">
+<section id={sectionId} class="w-full py-24 px-6 md:px-12 lg:px-24 font-sans text-gray-900 dark:text-white relative overflow-hidden">
   <!-- Dynamic Background Elements -->
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 dark:bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
   <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-500/5 dark:bg-blue-500/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
@@ -28,14 +46,21 @@ const colors: Record<string, string> = {
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
-        Meet the <span
-          class="text-blue-500 dark:text-blue-400">C</span
-        ><span class="text-red-500 dark:text-red-400">O</span><span
-          class="text-[#FBBC04] dark:text-yellow-400">R</span
-        ><span class="text-green-500 dark:text-green-400">E</span> Team
+        {batchYear ? (
+          <>
+            Core Team <span class={batchColors[batchYear] || "text-blue-500"}>{batchYear}</span>
+          </>
+        ) : (
+          <>
+            Meet the <span class="text-blue-500 dark:text-blue-400">C</span><span class="text-red-500 dark:text-red-400">O</span><span class="text-[#FBBC04] dark:text-yellow-400">R</span><span class="text-green-500 dark:text-green-400">E</span> Team
+          </>
+        )}
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-        The minds shaping GDG SJEC’s tech culture.
+        {batchYear === "2025-26" || !batchYear
+          ? "The minds shaping GDG SJEC’s tech culture."
+          : `The minds that shaped GDG SJEC’s tech culture during the ${batchYear} term.`
+        }
       </p>
     </div>
 
@@ -44,12 +69,12 @@ const colors: Record<string, string> = {
         id={isScrollable ? "team-slider" : "team-grid"}
         class={isScrollable 
           ? "flex md:grid md:grid-cols-2 lg:grid-cols-5 overflow-x-auto md:overflow-visible no-scrollbar gap-6 md:gap-8 pb-12 pt-4 px-2 snap-x snap-mandatory" 
-          : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8"}
+          : "flex flex-wrap justify-center gap-8 md:gap-10"}
       >
         {teamMembers.map((member) => {
           const slug = slugify(member.name);
           return (
-            <div class={isScrollable ? "flex-shrink-0 w-[85%] md:w-full snap-center" : "w-full"}>
+            <div class={isScrollable ? "flex-shrink-0 w-[85%] md:w-full snap-center" : "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(20%-1.6rem)]"}>
               <div 
                 class="group/card flex flex-col items-center text-center bg-gray-50 dark:bg-[#1A1D2B] border border-gray-100 dark:border-white/5 rounded-[2rem] p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 h-[20rem] md:h-[24rem] relative"
               >

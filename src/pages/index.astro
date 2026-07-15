@@ -6,6 +6,7 @@ import Hero from "../components/Hero.astro";
 import Blog from "../components/Blog.astro";
 import Layout from "../layouts/Layout.astro";
 import Team from "../components/Team.astro";
+import TeamLead from "../components/TeamLead.astro";
 import Event from "../components/Event.astro";
 import Footer from "../components/Footer.astro";
 import AnnouncementBar from "../components/ui/AnnouncementBar.astro";
@@ -27,6 +28,14 @@ import AnnouncementBar from "../components/ui/AnnouncementBar.astro";
   </div>
   <div id="team">
     <Team isScrollable={true} />
+  </div>
+  <div id="past-leads" class="-mt-16">
+    <TeamLead isScrollable={true} showInfo={true} />
+    <div class="flex justify-center -mt-12 mb-16">
+      <a href="/team" class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300">
+        Explore full team
+      </a>
+    </div>
   </div>
   <div id="projects">
     <Project showAllLink={true} limit={3} />

@@ -73,7 +73,7 @@ const accentColors: Record<
   },
 };
 
-const activeAccent = accentColors[member.color] || accentColors.blue;
+const activeAccent = accentColors[(member as any).color] || accentColors.blue;
 ---
 
 <Layout>
@@ -151,7 +151,7 @@ const activeAccent = accentColors[member.color] || accentColors.blue;
             >
               Status
             </div>
-            <p class="italic leading-relaxed">"{member.bio}"</p>
+            <p class="italic leading-relaxed">"{(member as any).bio || "Building the future, one line of code at a time."}"</p>
           </div>
 
           <!-- Metadata List -->

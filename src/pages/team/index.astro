@@ -3,16 +3,28 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Team from "../../components/Team.astro";
 import Footer from "../../components/Footer.astro";
-import TeamLead from "../../components/TeamLead.astro";
+import teamMembers from "../../content/team.json";
+import teamLeads from "../../content/teamLead.json";
+
+const batch2025_26 = teamMembers;
+const batch2024_25 = teamLeads.filter((member) => member.role.toLowerCase().includes("2024-25"));
+const batch2023_24 = teamLeads.filter((member) => member.role.toLowerCase().includes("2023-24"));
+const batch2022_23 = teamLeads.filter((member) => member.role.toLowerCase().includes("2022-23"));
 ---
 
 <Layout>
     <Header />
     <section class="-mt-[6rem] pt-[6rem] md:pt-[10rem]">
-        <Team showInfo={false} />
+        <Team showInfo={false} batchYear="2025-26" members={batch2025_26} />
     </section>
     <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
-        <TeamLead showInfo={false} />
+        <Team showInfo={false} batchYear="2024-25" members={batch2024_25} />
+    </section>
+    <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
+        <Team showInfo={false} batchYear="2023-24" members={batch2023_24} />
+    </section>
+    <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
+        <Team showInfo={false} batchYear="2022-23" members={batch2022_23} />
     </section>
 
     <Footer />
