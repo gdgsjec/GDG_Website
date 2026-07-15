@@ -1,0 +1,25 @@
+[
+  {
+    "name": "...",
+    "role": "...",
+    "bio": "...",
+    "image": "...",
+    "linkedin": "...",
+    "github": "...",
+    "color": "...",
+    "username": "...",
+    "pronouns": "",
+    "followers": "",
+    "following": "",
+    "location": "",
+    "email": "",
+    "website": "",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "...",
+      "description": "...",
+      "skills": [],
+      "pinned": []
+    }
+  }
+]

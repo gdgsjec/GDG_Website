@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Joywin Bennis",
+    "role": "GDG Organiser",
+    "bio": "GDG Organizer (2024-25). Full-stack web developer and designer.",
+    "color": "blue",
+    "image": "https://www.joywincodes.tech/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjoywin2003%2Fassets%2Fmain%2Fprofile1.avif&w=640&q=75",
+    "linkedin": "https://www.linkedin.com/in/joywinbennis",
+    "github": "https://github.com/joywin2003",
+    "username": "joywin2003",
+    "pronouns": "he/him",
+    "followers": "42",
+    "following": "30",
+    "location": "Mangalore, India",
+    "email": "joywin@joywincodes.tech",
+    "website": "https://www.joywincodes.tech",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Joywin Bennis! 👋",
+      "description": "GDG Organizer (2024-25). Full-stack web developer and designer. I love Next.js, React, Tailwind, and Node.js. Always striving to build clean, modern, and accessible software.",
+      "skills": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB"
+      ],
+      "pinned": [
+        {
+          "name": "joywin-portfolio",
+          "description": "My personal portfolio website built with Next.js, showing my projects and blogs.",
+          "stars": 24,
+          "forks": 4,
+          "language": "TypeScript",
+          "color": "#3178C6"
+        }
+      ]
+    }
+  }
+]

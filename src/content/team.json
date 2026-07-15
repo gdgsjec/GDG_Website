@@ -18,7 +18,13 @@
     "readme": {
       "title": "Hi, I'm Ashley Pinto! 👋",
       "description": "I'm a final year CSE student and GDG Organizer at St Joseph Engineering College, Mangalore. Passionate about community building, technology, and organizing high-impact events. I love bringing developers together to learn, share, and build cool projects.",
-      "skills": ["Git", "GitHub", "Event Management", "Project Planning", "Public Speaking"],
+      "skills": [
+        "Git",
+        "GitHub",
+        "Event Management",
+        "Project Planning",
+        "Public Speaking"
+      ],
       "pinned": [
         {
           "name": "GDG_Website",
@@ -72,33 +78,40 @@
     }
   },
   {
-    "name": "Reuben A Vinod",
-    "role": "Web Lead",
-    "bio": "I always prefer dark mode, because light attracts bugs. Pun intended",
-    "image": "/images/output/Reuben.webp",
-    "linkedin": "https://www.linkedin.com/in/reuben-antony-vinod/",
-    "github": "https://github.com/RagedRebel",
-    "color": "red",
-    "username": "RagedRebel",
+    "name": "Ankit Shah",
+    "role": "AI/ML Lead",
+    "bio": "Training models and minds, both need patience and good data.",
+    "image": "/images/output/Ankit.webp",
+    "linkedin": "https://www.linkedin.com/in/ankitscreation/",
+    "github": "https://github.com/ankeet15",
+    "color": "green",
+    "username": "ankeet15",
     "pronouns": "he/him",
-    "followers": "28",
-    "following": "24",
+    "followers": "31",
+    "following": "19",
     "location": "Mangalore, India",
-    "email": "reubenvinod@gmail.com",
-    "website": "https://ragedrebel.github.io",
+    "email": "ankitshah@gmail.com",
+    "website": "",
     "company": "GDG on Campus SJEC",
     "readme": {
-      "title": "Hi, I'm Reuben! 👋",
-      "description": "Web Lead at GDG SJEC. Full-stack developer with a passion for beautiful, accessible, and high-performance web applications. I love CSS, Vite, Astro, and React. Always coding in dark mode.",
-      "skills": ["Astro", "React", "Node.js", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
+      "title": "Hi, I'm Ankit Shah! 👋",
+      "description": "AI/ML Lead at GDG SJEC. Deeply interested in Computer Vision, Natural Language Processing, and Deep Learning. I love training PyTorch models and building AI-powered web prototypes.",
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn",
+        "Flask",
+        "OpenCV"
+      ],
       "pinned": [
         {
-          "name": "custom-portfolio",
-          "description": "A dark-themed portfolio website showcasing my works and articles, built with Astro.",
-          "stars": 9,
-          "forks": 3,
-          "language": "Astro",
-          "color": "#FF5D01"
+          "name": "vision-assistant",
+          "description": "Real-time object detection and audio feedback system using YOLOv8 and PyTorch.",
+          "stars": 16,
+          "forks": 6,
+          "language": "Python",
+          "color": "#3572A5"
         }
       ]
     }
@@ -136,6 +149,46 @@
     }
   },
   {
+    "name": "Reuben A Vinod",
+    "role": "Web Lead",
+    "bio": "I always prefer dark mode, because light attracts bugs. Pun intended",
+    "image": "/images/output/Reuben.webp",
+    "linkedin": "https://www.linkedin.com/in/reuben-antony-vinod/",
+    "github": "https://github.com/RagedRebel",
+    "color": "red",
+    "username": "RagedRebel",
+    "pronouns": "he/him",
+    "followers": "28",
+    "following": "24",
+    "location": "Mangalore, India",
+    "email": "reubenvinod@gmail.com",
+    "website": "https://ragedrebel.github.io",
+    "company": "GDG on Campus SJEC",
+    "readme": {
+      "title": "Hi, I'm Reuben! 👋",
+      "description": "Web Lead at GDG SJEC. Full-stack developer with a passion for beautiful, accessible, and high-performance web applications. I love CSS, Vite, Astro, and React. Always coding in dark mode.",
+      "skills": [
+        "Astro",
+        "React",
+        "Node.js",
+        "Tailwind CSS",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
+      "pinned": [
+        {
+          "name": "custom-portfolio",
+          "description": "A dark-themed portfolio website showcasing my works and articles, built with Astro.",
+          "stars": 9,
+          "forks": 3,
+          "language": "Astro",
+          "color": "#FF5D01"
+        }
+      ]
+    }
+  },
+  {
     "name": "Dion Lobo",
     "role": "Cloud Lead",
     "bio": "I prefer the cloud, because when it crashes, at least it takes everyone down with me",
@@ -154,7 +207,14 @@
     "readme": {
       "title": "Hi, I'm Dion! 👋",
       "description": "Cloud Lead at GDG SJEC. Enthusiastic about DevOps, Cloud Computing (Google Cloud, AWS), Kubernetes, Docker, and infrastructure as code. I like breaking and fixing deployments.",
-      "skills": ["Google Cloud", "AWS", "Docker", "Kubernetes", "DevOps", "Bash"],
+      "skills": [
+        "Google Cloud",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "DevOps",
+        "Bash"
+      ],
       "pinned": [
         {
           "name": "gcp-deployment-pipelines",
@@ -163,38 +223,6 @@
           "forks": 3,
           "language": "Shell",
           "color": "#89e051"
-        }
-      ]
-    }
-  },
-  {
-    "name": "Ankit Shah",
-    "role": "AI/ML Lead",
-    "bio": "Training models and minds, both need patience and good data.",
-    "image": "/images/output/Ankit.webp",
-    "linkedin": "https://www.linkedin.com/in/ankitscreation/",
-    "github": "https://github.com/ankeet15",
-    "color": "green",
-    "username": "ankeet15",
-    "pronouns": "he/him",
-    "followers": "31",
-    "following": "19",
-    "location": "Mangalore, India",
-    "email": "ankitshah@gmail.com",
-    "website": "",
-    "company": "GDG on Campus SJEC",
-    "readme": {
-      "title": "Hi, I'm Ankit Shah! 👋",
-      "description": "AI/ML Lead at GDG SJEC. Deeply interested in Computer Vision, Natural Language Processing, and Deep Learning. I love training PyTorch models and building AI-powered web prototypes.",
-      "skills": ["Python", "PyTorch", "TensorFlow", "scikit-learn", "Flask", "OpenCV"],
-      "pinned": [
-        {
-          "name": "vision-assistant",
-          "description": "Real-time object detection and audio feedback system using YOLOv8 and PyTorch.",
-          "stars": 16,
-          "forks": 6,
-          "language": "Python",
-          "color": "#3572A5"
         }
       ]
     }
@@ -218,7 +246,13 @@
     "readme": {
       "title": "Hi, I'm Shamitha! 👋",
       "description": "Events Lead at GDG SJEC. Organising tech events, hackathons, and workshops is my forte. I bridge the gap between ideas and seamless event executions.",
-      "skills": ["Management", "Public Relations", "Marketing", "Event Coordination", "Figma"],
+      "skills": [
+        "Management",
+        "Public Relations",
+        "Marketing",
+        "Event Coordination",
+        "Figma"
+      ],
       "pinned": [
         {
           "name": "event-tracker",
@@ -250,7 +284,14 @@
     "readme": {
       "title": "Hi, I'm Reevan! 👋",
       "description": "Media Lead at GDG SJEC. Creative designer, photographer, and video editor. I design visually stunning graphics and run social media campaigns. When I am not shooting, I code.",
-      "skills": ["Photoshop", "Premiere Pro", "Figma", "UI/UX Design", "HTML", "CSS"],
+      "skills": [
+        "Photoshop",
+        "Premiere Pro",
+        "Figma",
+        "UI/UX Design",
+        "HTML",
+        "CSS"
+      ],
       "pinned": [
         {
           "name": "gdg-sjec-graphics",
@@ -282,7 +323,13 @@
     "readme": {
       "title": "Hi, I'm Viona! 👋",
       "description": "Secretary at GDG SJEC. Handling documentation, schedules, communications, and administrative operations. I ensure our team stays organized and operates efficiently.",
-      "skills": ["Technical Writing", "Documentation", "Communication", "Management", "Git"],
+      "skills": [
+        "Technical Writing",
+        "Documentation",
+        "Communication",
+        "Management",
+        "Git"
+      ],
       "pinned": [
         {
           "name": "team-docs-template",

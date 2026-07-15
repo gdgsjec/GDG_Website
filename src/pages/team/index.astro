@@ -3,29 +3,32 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Team from "../../components/Team.astro";
 import Footer from "../../components/Footer.astro";
-import teamMembers from "../../content/team.json";
-import teamLeads from "../../content/teamLead.json";
-
-const batch2025_26 = teamMembers;
-const batch2024_25 = teamLeads.filter((member) => member.role.toLowerCase().includes("2024-25"));
-const batch2023_24 = teamLeads.filter((member) => member.role.toLowerCase().includes("2023-24"));
-const batch2022_23 = teamLeads.filter((member) => member.role.toLowerCase().includes("2022-23"));
+import batch2025_26 from "../../content/team.json";
+import batch2024_25 from "../../content/team-2024-25.json";
+import batch2023_24 from "../../content/team-2023-24.json";
+import batch2022_23 from "../../content/team-2022-23.json";
 ---
 
 <Layout>
     <Header />
-    <section class="-mt-[6rem] pt-[6rem] md:pt-[10rem]">
-        <Team showInfo={false} batchYear="2025-26" members={batch2025_26} />
-    </section>
-    <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
-        <Team showInfo={false} batchYear="2024-25" members={batch2024_25} />
-    </section>
-    <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
-        <Team showInfo={false} batchYear="2023-24" members={batch2023_24} />
-    </section>
-    <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
-        <Team showInfo={false} batchYear="2022-23" members={batch2022_23} />
-    </section>
+    <main class="relative overflow-hidden w-full min-h-screen">
+        <!-- Global background blobs for team page -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 dark:bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none select-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-500/5 dark:bg-blue-500/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none select-none"></div>
+
+        <section class="-mt-[6rem] pt-[6rem] md:pt-[10rem]">
+            <Team showInfo={false} batchYear="2025-26" members={batch2025_26} hideBackground={true} />
+        </section>
+        <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
+            <Team showInfo={false} batchYear="2024-25" members={batch2024_25} hideBackground={true} />
+        </section>
+        <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
+            <Team showInfo={false} batchYear="2023-24" members={batch2023_24} hideBackground={true} />
+        </section>
+        <section class="-mt-[12rem] pt-[6rem] md:pt-[10rem]">
+            <Team showInfo={false} batchYear="2022-23" members={batch2022_23} hideBackground={true} />
+        </section>
+    </main>
 
     <Footer />
 </Layout>

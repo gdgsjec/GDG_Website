@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Anish Shobith P S",
+    "role": "GDSC Lead",
+    "bio": "GDSC Lead (2023-24). Interested in systems programming and backend development.",
+    "color": "red",
+    "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_face,h_400,q_auto:good,w_400/v1/gcs/platform-data-goog/events/WhatsApp%2520IMG%25201518_16y0wu2.jpg",
+    "linkedin": "https://github.com/anishshobithps",
+    "github": "https://github.com/anishshobithps",
+    "username": "anishshobithps",
+    "pronouns": "he/him",
+    "followers": "35",
+    "following": "28",
+    "location": "Mangalore, India",
+    "email": "anish@gmail.com",
+    "website": "",
+    "company": "GDSC SJEC",
+    "readme": {
+      "title": "Hi, I'm Anish! 👋",
+      "description": "GDSC Lead (2023-24). Interested in systems programming, web technologies, and backend development. Love building tools and automation scripts.",
+      "skills": [
+        "Go",
+        "Node.js",
+        "Docker",
+        "JavaScript",
+        "Linux",
+        "SQL"
+      ],
+      "pinned": [
+        {
+          "name": "dev-tooling",
+          "description": "A set of shell utilities and configs for rapid developer environment setup.",
+          "stars": 18,
+          "forks": 3,
+          "language": "Go",
+          "color": "#00ADD8"
+        }
+      ]
+    }
+  }
+]
