@@ -6,11 +6,12 @@ import { Image } from "astro:assets";
 interface Props {
   isScrollable?: boolean;
   showInfo?: boolean;
+  showAllLink?: boolean;
 }
 
 const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
-const { isScrollable = false, showInfo = false } = Astro.props;
+const { isScrollable = false, showInfo = false, showAllLink = false } = Astro.props;
 
 const colors: Record<string, string> = {
   blue: "border-blue-500/20 dark:border-blue-400/30",
@@ -154,6 +155,14 @@ const colors: Record<string, string> = {
           >
             <ChevronRight/>
           </button>
+        </div>
+      )}
+
+      {showAllLink && (
+        <div class="flex justify-center mt-20">
+          <a href="/team" class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300">
+            Explore full team
+          </a>
         </div>
       )}
     </div>

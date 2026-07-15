@@ -30,12 +30,7 @@ import AnnouncementBar from "../components/ui/AnnouncementBar.astro";
     <Team isScrollable={true} />
   </div>
   <div id="past-leads" class="-mt-16">
-    <TeamLead isScrollable={true} showInfo={true} />
-    <div class="flex justify-center -mt-12 mb-16">
-      <a href="/team" class="group px-6 py-2.5 md:px-8 md:py-3.5 border border-gray-200 dark:border-gray-800 rounded-full text-sm md:text-base font-bold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300">
-        Explore full team
-      </a>
-    </div>
+    <TeamLead isScrollable={true} showInfo={true} showAllLink={true} />
   </div>
   <div id="projects">
     <Project showAllLink={true} limit={3} />
