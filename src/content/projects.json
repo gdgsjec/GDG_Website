@@ -60,7 +60,7 @@
       ]
     }
   },
-    {
+  {
     "slug": "lunar-lander-rl-agent",
     "title": "Lunar Lander RL Agent",
     "oneLiner": "An autonomous AI agent trained using Deep Reinforcement Learning (PPO) to safely land a spacecraft in a physics-based simulation.",
@@ -83,9 +83,7 @@
     },
     "media": {
       "thumbnail": "/images/projects/lunar.webp",
-      "screenshots": [
-        ""
-      ],
+      "screenshots": [""],
       "video": "https://drive.google.com/file/d/12TkzG0ln09iHmpN_YHmsHPE9u3zRlCFV/view?usp=sharing"
     },
     "hackathon": {
@@ -201,7 +199,7 @@
       ]
     }
   },
-    {
+  {
     "slug": "letsbunk",
     "title": "LetsBunk",
     "oneLiner": "LetsBunk is a lightweight attendance tracking web application designed to help college students easily calculate attendance percentages and determine how many classes they can safely bunk or need to attend to meet required attendance criteria. The platform simplifies attendance planning by providing instant insights without relying on manual calculations or institutional portals.",
@@ -246,7 +244,7 @@
       ]
     }
   },
-    {
+  {
     "slug": "bible-cli",
     "title": "Bible-CLI",
     "oneLiner": "A tiny Python-based command-line tool that prints random Bible verses or specific book passages directly in the terminal.",
@@ -269,9 +267,7 @@
     },
     "media": {
       "thumbnail": "/images/projects/biblecli.webp",
-      "screenshots": [
-        "/images/projects/biblecli.webp"
-      ],
+      "screenshots": ["/images/projects/biblecli.webp"],
       "video": ""
     },
     "hackathon": {
@@ -293,32 +289,30 @@
       ]
     }
   },
-    {
-    "slug": "python-pacman",
-    "title": "Python-Pacman",
-    "oneLiner": "Pacman game implemented in Python.",
-    "description": "Pacman game implemented in Python.",
-    "category": "Open Source",
-    "tags": ["Game Clone"],
+  {
+    "slug": "certifier-gccp",
+    "title": "Certifier - GCCP",
+    "oneLiner": "Bulk certificate generator built using Flask.",
+    "description": "Certifier is a bulk certificate generator based on an existing open source project using the Flask web framework.",
+    "category": "Web Application",
+    "tags": ["Certificate Generator", "Flask", "Open Source"],
     "problemStatement": "",
     "targetAudience": "",
     "detailedDescription": "",
     "techStack": {
-      "languages": ["Python"],
-      "frameworks": ["Pygame"],
+      "languages": [],
+      "frameworks": ["Flask"],
       "googleTechnologies": [],
       "others": []
     },
     "links": {
-      "github": "https://github.com/dionjoshualobo/python-pacman",
+      "github": "https://github.com/GDSC-SJEC/gccp-gdscsjec-certifier",
       "live": "",
       "docs": ""
     },
     "media": {
-      "thumbnail": "/images/projects/PacMan.webp",
-      "screenshots": [
-        "/images/projects/PacMan.webp"
-      ],
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/cloud.png",
+      "screenshots": [],
       "video": ""
     },
     "hackathon": {
@@ -327,61 +321,34 @@
     },
     "isOpenSource": true,
     "team": {
-      "type": "Team Project",
-      "contributors": [
-        {
-          "name": "Dion Joshua Lobo",
-          "role": "Developer",
-          "gdgRole": "Core Team",
-          "yearBranch": "3/CSDS",
-          "github": "https://github.com/dionjoshualobo",
-          "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290"
-        },
-        {
-          "name": "Reyon Joseph",
-          "role": "",
-          "gdgRole": "",
-          "yearBranch": "",
-          "github": "",
-          "linkedin": ""
-        },
-        {
-          "name": "Isabel Carina",
-          "role": "",
-          "gdgRole": "",
-          "yearBranch": "",
-          "github": "",
-          "linkedin": ""
-        }
-      ]
+      "type": "",
+      "contributors": []
     }
   },
-    {
-    "slug": "buzz-realtime-game",
-    "title": "Buzz",
-    "oneLiner": "A real-time multiplayer buzz game system with WebSocket-based buzzing and live leaderboards.",
-    "description": "A real-time multiplayer buzz game system with fast WebSocket-based buzzing, vintage newspaper UI, and live leaderboards, ideal for quizzes, events, and competitive play.",
-    "category": "Web Development",
-    "tags": ["Open Source"],
+  {
+    "slug": "team-esjec-racing-website",
+    "title": "Team eSJEC Racing Website",
+    "oneLiner": "Official website for Team eSJEC Racing.",
+    "description": "GDSC SJEC developed the official website for Team eSJEC Racing Club.",
+    "category": "Website",
+    "tags": ["Website", "Racing Club"],
     "problemStatement": "",
-    "targetAudience": "Event organizers, quizmasters, and educators.",
+    "targetAudience": "",
     "detailedDescription": "",
     "techStack": {
-      "languages": ["HTML", "CSS", "JavaScript"],
-      "frameworks": ["WebSocket", "Tailwind", "Node.js"],
+      "languages": [],
+      "frameworks": [],
       "googleTechnologies": [],
       "others": []
     },
     "links": {
-      "github": "https://github.com/PlatypusPus/Buzz",
-      "live": "",
+      "github": "https://github.com/GDSC-SJEC/tesr-website",
+      "live": "https://www.teamesjecracing.tech/",
       "docs": ""
     },
     "media": {
-      "thumbnail": "/images/projects/Buzz.webp",
-      "screenshots": [
-        "/images/projects/Buzz.webp"
-      ],
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/tesr.png",
+      "screenshots": [],
       "video": ""
     },
     "hackathon": {
@@ -390,25 +357,332 @@
     },
     "isOpenSource": true,
     "team": {
-      "type": "Team Project",
-      "contributors": [
-        {
-          "name": "Dion Joshua Lobo",
-          "role": "Developer",
-          "gdgRole": "Core Team",
-          "yearBranch": "3/CSDS",
-          "github": "https://github.com/dionjoshualobo",
-          "linkedin": "https://www.linkedin.com/in/dion-lobo-a2a411290"
-        },
-        {
-          "name": "Shovin D'Souza",
-          "role": "",
-          "gdgRole": "",
-          "yearBranch": "",
-          "github": "",
-          "linkedin": ""
-        }
-      ]
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "animedoro",
+    "title": "Animedoro",
+    "oneLiner": "Pomodoro inspired productivity application.",
+    "description": "Animedoro is a time management technique similar to Pomodoro with an anime-inspired twist.",
+    "category": "Mobile Application",
+    "tags": ["Productivity", "Pomodoro"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/Animedoro",
+      "live": "https://drive.google.com/file/d/13WEomH0wvPPFOr1BfjxwqKlnpcli2SpA/view",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/animedoro.jpg",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "gdsc-website",
+    "title": "Google DSC Website (Archived)",
+    "oneLiner": "(Archived) Official website of Google DSC SJEC.",
+    "description": "Website for Google Developer Student Clubs St Joseph Engineering College, Mangalore.",
+    "category": "Website",
+    "tags": ["Club Website"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/GDSC-Website",
+      "live": "https://gdscsjec.in/",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/website.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "discord-bot",
+    "title": "Discord Bot",
+    "oneLiner": "Multipurpose Discord bot.",
+    "description": "A Discord bot that serves multiple community purposes.",
+    "category": "Bot",
+    "tags": ["Discord", "Bot"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/discord-bot",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/discord.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "gdsc-form",
+    "title": "Google DSC Form",
+    "oneLiner": "Member registration portal.",
+    "description": "A form page to collect member details.",
+    "category": "Web Application",
+    "tags": ["Forms"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/GDSC-SJEC-Form",
+      "live": "https://details.gdscsjec.in/",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/details.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "gdsc-faq",
+    "title": "Google DSC FAQ",
+    "oneLiner": "FAQ portal for club members.",
+    "description": "FAQ page answering common questions of GDSC members.",
+    "category": "Website",
+    "tags": ["FAQ"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/GDSC-SJEC-FAQ",
+      "live": "https://faq.gdscsjec.in/",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/faq.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "gdsc-launch-game",
+    "title": "Google DSC Launch Game",
+    "oneLiner": "Recruitment game for GDSC.",
+    "description": "Ascend through challenges and join the Google DSC SJEC chapter.",
+    "category": "Game",
+    "tags": ["Game", "Recruitment"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/GSDC-LAUNCH-GAME",
+      "live": "https://akk-3211.itch.io/gdsc-launch-game2",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/launch-game.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "tedxsjec-2022",
+    "title": "TEDxSJEC 2022",
+    "oneLiner": "Official TEDxSJEC website.",
+    "description": "Official TEDxSJEC 2022 website developed by GDG SJEC (formerly Delta SJEC).",
+    "category": "Website",
+    "tags": ["TEDx"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/TEDx",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/tedx.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "tiara-2022",
+    "title": "Tiara 2022",
+    "oneLiner": "Official Tiara 2022 website.",
+    "description": "Official Tiara 2022 website developed by GDG SJEC (formerly Delta SJEC).",
+    "category": "Website",
+    "tags": ["Event Website"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/Tiara-2022",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/tiara.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
+    }
+  },
+  {
+    "slug": "delta-landing-page",
+    "title": "Delta Landing Page",
+    "oneLiner": "Landing page for GDG SJEC (formerly Delta SJEC).",
+    "description": "Landing page developed for GDG SJEC (formerly Delta SJEC).",
+    "category": "Landing Page",
+    "tags": ["Landing Page"],
+    "problemStatement": "",
+    "targetAudience": "",
+    "detailedDescription": "",
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "googleTechnologies": [],
+      "others": []
+    },
+    "links": {
+      "github": "https://github.com/GDSC-SJEC/Delta-Landing-Page",
+      "live": "",
+      "docs": ""
+    },
+    "media": {
+      "thumbnail": "https://gdsc-website-xi.vercel.app/assets/img/projects/delta.png",
+      "screenshots": [],
+      "video": ""
+    },
+    "hackathon": {
+      "name": "",
+      "awards": ""
+    },
+    "isOpenSource": true,
+    "team": {
+      "type": "",
+      "contributors": []
     }
   }
 ]

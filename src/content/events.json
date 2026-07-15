@@ -160,5 +160,104 @@
     "description": "A beginner-friendly online session to explore coding basics, tech career paths, and how to get started confidently.",
     "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/devpath_poster_r0e3IOA.jpg",
     "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-st-joseph-engineering-college-mangaluru-india-presents-the-developers-path/"
+  },
+  {
+    "title": "Code Jam",
+    "date": "25 February 2023",
+    "type": "Competition",
+    "status": "Completed",
+    "description": "Ready to solve fun, challenging problems? Coding Ninjas hosted the Code Jam in collaboration with Google Developer Student Clubs SJEC, giving participants the opportunity to test and grow their coding abilities while gaining experience with programming skills needed for technical careers.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/code-jam.jpg",
+    "link": ""
+  },
+  {
+    "title": "Flutter + Firebase Campaign",
+    "date": "",
+    "type": "Campaign",
+    "status": "Completed",
+    "description": "Flutter is Google's UI toolkit that helps developers build applications for multiple platforms using a single codebase.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/flutter.png",
+    "link": ""
+  },
+  {
+    "title": "Web Campaign",
+    "date": "",
+    "type": "Campaign",
+    "status": "Completed",
+    "description": "Introduced participants to various web technologies including HTML, CSS, Angular and modern web development concepts for building end-to-end interactive web applications.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/angular.png",
+    "link": ""
+  },
+  {
+    "title": "Solution Challenge",
+    "date": "",
+    "type": "Challenge",
+    "status": "Completed",
+    "description": "Google Developer Student Clubs Solution Challenge encouraged students to solve one of the United Nations Sustainable Development Goals using Google technologies.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/solution.webp",
+    "link": ""
+  },
+  {
+    "title": "Web Application using Flask and SQLite",
+    "date": "13 December 2022",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "A workshop covering Flask, SQLite database integration and Jinja templating for building complete web applications.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/web-app-flask.jpeg",
+    "link": ""
+  },
+  {
+    "title": "GCCP Campaign",
+    "date": "15 November 2022",
+    "type": "Campaign",
+    "status": "Completed",
+    "description": "A Google Cloud campaign providing hands-on courses, labs and skill badges to help participants learn real-world Google Cloud technologies.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/cloud.png",
+    "link": "https://www.youtube.com/watch?v=aOCVV1XT2Dc"
+  },
+  {
+    "title": "Google DSC Recruitment",
+    "date": "4 November 2022",
+    "type": "Recruitment",
+    "status": "Completed",
+    "description": "Recruitment drive inviting students to become part of Google DSC SJEC by registering through the official application process.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/recruitments.png",
+    "link": ""
+  },
+  {
+    "title": "REEL IT IN!",
+    "date": "30 October 2022",
+    "type": "Competition",
+    "status": "Completed",
+    "description": "A content creation competition challenging participants to showcase their creativity and become content creators for Google DSC SJEC.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/reel-it-in.png",
+    "link": "https://drive.google.com/file/d/1JGFhjiqNl7DDpBR2xRKbjn4KN9ATtHbb/view?usp=sharing"
+  },
+  {
+    "title": "Compose Camp",
+    "date": "17 September 2022",
+    "type": "Workshop",
+    "status": "Completed",
+    "description": "An Android development campaign introducing Jetpack Compose, Android UI development and guided learning pathways.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/compose-camp.png",
+    "link": "https://www.youtube.com/playlist?list=PLTjG9HXWOEA69_STciUwTLGIjBpx1kwYG"
+  },
+  {
+    "title": "GDSC Launch",
+    "date": "10 September 2022",
+    "type": "Launch Event",
+    "status": "Completed",
+    "description": "Official launch of Google DSC SJEC featuring the introduction of the chapter, website and Discord bot developed by the team.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/launch.png",
+    "link": "https://www.youtube.com/watch?v=bxm3OdAiKrs"
+  },
+  {
+    "title": "Orientation Program",
+    "date": "23 August 2022",
+    "type": "Orientation",
+    "status": "Completed",
+    "description": "A fun and interactive orientation session conducted for first-year students to introduce them to the Google DSC community.",
+    "image": "https://gdsc-website-xi.vercel.app/assets/img/events/orientation.jpg",
+    "link": ""
   }
 ]

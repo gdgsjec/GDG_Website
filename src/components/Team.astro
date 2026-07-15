@@ -75,14 +75,14 @@ const sectionId = batchYear ? `team-${batchYear}` : "team";
         id={isScrollable ? "team-slider" : "team-grid"}
         class={isScrollable 
           ? "flex md:grid md:grid-cols-2 lg:grid-cols-5 overflow-x-auto md:overflow-visible no-scrollbar gap-6 md:gap-8 pb-12 pt-4 px-2 snap-x snap-mandatory" 
-          : (teamMembers.length < 5 ? "flex flex-wrap justify-center gap-8 md:gap-10" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8")}
+          : "flex flex-wrap justify-center gap-8 md:gap-10"}
       >
         {teamMembers.map((member) => {
           const slug = slugify(member.name);
           return (
             <div class={isScrollable 
               ? "flex-shrink-0 w-[85%] md:w-full snap-center" 
-              : (teamMembers.length < 5 ? "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(20%-1.6rem)]" : "w-full")}
+              : "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(20%-2.2rem)]"}
             >
               <div 
                 class="group/card flex flex-col items-center text-center bg-gray-50 dark:bg-[#1A1D2B] border border-gray-100 dark:border-white/5 rounded-[2rem] p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 h-[20rem] md:h-[24rem] relative"
@@ -113,7 +113,7 @@ const sectionId = batchYear ? `team-${batchYear}` : "team";
                       <!-- 2 lines of spacing -->
                       <div class="h-6 md:h-8"></div>
                       
-                      <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-1">
+                      <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-2">
                         {member.role}
                       </p>
                     </div>
@@ -143,7 +143,7 @@ const sectionId = batchYear ? `team-${batchYear}` : "team";
                       <!-- 2 lines of spacing -->
                       <div class="h-6 md:h-8"></div>
                       
-                      <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-1">
+                      <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-bold uppercase line-clamp-2">
                         {member.role}
                       </p>
                     </div>
