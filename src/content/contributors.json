@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Ashwil Colaco",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQEL-FYmioO-rA/profile-displayphoto-crop_800_800/B4EZgzcybgHEAI-/0/1753209842089?e=1785974400&v=beta&t=NaGouLpVLGcrNbm3hBExAO666feVTmHlX02mkNpz_Xs",
+    "linkedin": "https://www.linkedin.com/in/ashwil-colaco-b95537376/",
+    "github": "https://github.com/Ashwil-Colaco",
+    "color": "blue"
+  },
+  {
+    "name": "Minora Dias",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQFKap-GehMYrg/profile-displayphoto-crop_800_800/B4EZpy9pzEKgAI-/0/1762865357234?e=1785974400&v=beta&t=kA5_DdHK4DIJsQNwUY4auamvYKo-tJiq1xHYuQCGOag",
+    "linkedin": "https://www.linkedin.com/in/minora-dias-64aa1b32b/",
+    "github": "https://github.com/mimionly",
+    "color": "purple"
+  },
+  {
+    "name": "Carl Pinto",
+    "image": "/carl-pinto.png",
+    "linkedin": "https://www.linkedin.com/in/carl-pinto-2609502a3/",
+    "github": "https://github.com/carlpinto25",
+    "color": "red"
+  },
+  {
+    "name": "Rica Crasta",
+    "image": "/rica.png",
+    "linkedin": "https://www.linkedin.com/in/rica-crasta-411736334/",
+    "github": "https://github.com/ricacrasta",
+    "color": "orange"
+  },
+  {
+    "name": "Aaditya Ashwin Rao",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQE5dAvyaFHuLw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728105797624?e=1785974400&v=beta&t=BD3H2V7M_F_yaZujCfGyodBrUF5a_1Dp-ienSA7xmsI",
+    "linkedin": "https://www.linkedin.com/in/aaditya-ashwin-rao-14965431b/",
+    "github": "https://github.com/Aaditya1608",
+    "color": "green"
+  },
+  {
+    "name": "Pooja B K",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQHq6iiSjtn1zw/profile-displayphoto-crop_800_800/B4EZl8cM4QHgAI-/0/1758729393776?e=1785974400&v=beta&t=lJiQ_8JkLbcMtNlmVlQMoOC-W-AxV4S_BxfcFZ7tFGw",
+    "linkedin": "https://www.linkedin.com/in/poojabalakrishnak/",
+    "github": "https://github.com/poojabk-18",
+    "color": "pink"
+  }
+]
